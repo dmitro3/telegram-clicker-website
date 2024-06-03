@@ -92,7 +92,8 @@ function getLeftCoins() {
 
 function getTelegramId() {
     let tg = window.Telegram.WebApp;
-    return tg.initDataUnsafe.user.id
+    return 406381016;
+    //return tg.initDataUnsafe.user.id
 }
 
 function postData(url, data) {
@@ -163,8 +164,7 @@ function showClick(event) {
 }
     
 document.getElementById('inviteFriendBox').addEventListener('click', ()=>{
-  const shareUrl = 'https://t.me/share/url?url=https%3A%2F%2Fexample.com&text=Check%20out%20this%20amazing%20website!';
+  const shareUrl = `https://t.me/share/url?url=https%3A%2F%2Ft.me/telegclick_bot?start=${getTelegramId()}&text=Join%20this%20game!`;
 
-    // Open the Telegram share link
     Telegram.WebApp.openTelegramLink(shareUrl);
 });

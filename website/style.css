@@ -16,13 +16,13 @@ html, body {
 #coinsLabel{    
     text-align: center;
     margin-top: 100px;
-    color: white;
+    color: black;
 }
 
 #energyLabel{
     text-align: center;
     margin-top: 55px;
-    color: white;
+    color: black;
 }
 
 #mainButtonBox{

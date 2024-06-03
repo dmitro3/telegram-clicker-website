@@ -5,8 +5,6 @@ const db = new sqlite3.Database('mydatabase.db');
 
 router.post('/', async (req, res, next) => {
     data = req.body;
-    console.log(data)
-
     await updateGameData(data)
     res.json({})
 });
