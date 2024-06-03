@@ -1,0 +1,144 @@
+body {
+    background: var(--tg-theme-bg-color);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-size: cover;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#coinsLabel{    
+    text-align: center;
+    margin-top: 100px;
+    color: white;
+}
+
+#energyLabel{
+    text-align: center;
+    margin-top: 55px;
+    color: white;
+}
+
+#mainButtonBox{
+    margin-top: 55px;
+    position: relative;
+    border-radius: 50%;
+    width: 70vw;
+    height: 70vw;
+}
+
+@keyframes upAndFadeOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-220px); /* Move up by 40px */
+    opacity: 0; /* Fade out */
+  }
+}
+
+#menu {
+    position: absolute;
+    margin-top: 40px;
+    padding-top: 5px;
+    text-align: center;
+    top: 620px;
+    width: 90%;
+    margin-left: 5%;
+    height: 50px;
+    background: white;
+    border-radius: 4px;
+}
+
+#friendsButton{
+    position: relative;
+    padding-top: 5px;
+    top:-45px;
+    color:white;
+    margin: 0 auto;
+    height: 40px;
+    width: 60px;
+    background-color: var(--tg-theme-bg-color);
+    border-radius: 5px;
+}
+
+#gameButton{
+    padding-top: 5px;
+    color:red;
+    position: relative;
+    margin-left: 5px;
+    height: 40px;
+    width: 60px;
+    background-color: var(--tg-theme-bg-color);
+    border-radius: 5px;
+}
+
+#inviteSimpleBox{
+    color: var(--tg-theme-bg-color);
+    position: absolute;
+    width: 90%;
+    height: 90px;
+    background-color: white;
+    border-radius: 4px;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+#invitePremiumBox{
+    color: var(--tg-theme-bg-color);
+    position: absolute;
+    width: 90%;
+    height: 90px;
+    background-color: white;
+    border-radius: 4px;
+    margin-left: 5%;
+    margin-top: 32%;
+}
+
+#friendsBox{
+    position: absolute;
+    width: 90%;
+    height: 90px;
+    background-color: white;
+    border-radius: 4px;
+    margin-left: 5%;
+    margin-top: 70%;
+}
+
+#inviteFriendBox{
+    color: var(--tg-theme-bg-color);
+    position: absolute;
+    width: 67%;
+    height: 60px;
+    background-color: white;
+    border-radius: 4px;
+    margin-left: 5%;
+    margin-top: 118%;
+}
+
+#generateLinkBox{
+    position: absolute;
+    width: 20%;
+    height: 60px;
+    background-color: white;
+    border-radius: 4px;
+    margin-left: 75%;
+    margin-top: 118%;
+}
+
+#refreshFriendsList{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 4px;
+    margin-left: 85.5%;
+    margin-top: 58.5%;
+}
