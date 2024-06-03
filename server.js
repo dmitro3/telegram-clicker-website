@@ -23,6 +23,6 @@ app.use('/getGameData', getGameData);
 
 //db.run("CREATE TABLE IF NOT EXISTS users_data (telegramId INTEGER PRIMARY KEY, energy INTEGER, coins INTEGER, time TEXT)");
 
-db.run("DROP TABLE users_data");
+//db.run("DROP TABLE users_data");
 
 db.run("CREATE TABLE IF NOT EXISTS users_data (ID INTEGER PRIMARY KEY, telegramId INTEGER, energy INTEGER, coins INTEGER, time TEXT)");
