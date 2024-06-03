@@ -1,5 +1,7 @@
 body.height = window.innerHeight
 window.onload = ()=> {
+  const currentUrl = window.location.href;
+  console.log(currentUrl)
     const tg = window.Telegram.WebApp;
     tg.expand();
     postData('/getGameData', {
