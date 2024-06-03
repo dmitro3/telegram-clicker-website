@@ -13,7 +13,7 @@ router.post('/', async (req, res, next) => {
 
 async function updateGameData(data) {
     return new Promise((resolve, reject) => {
-        db.run("INSERT INTO users_data (telegramId, energy, coins, time) VALUES (?, ?, ?, ?)", [data.telegramId, data.energy, data.coins, data.time], function (err) {
+        db.run("INSERT INTO users_data (telegramId, energy, coins, time) VALUES (?, ?, ?, ?)", [+data.telegramId, data.energy, data.coins, data.time], function (err) {
             if (err) {
                 console.error("Error inserting data:", err.message);
                 reject(err);
