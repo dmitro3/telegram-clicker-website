@@ -1,7 +1,17 @@
 {
+  "name": "telegram-clicker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
     "express": "^4.19.2",
-    "node": "^20.14.0",
+    "node-telegram-bot-api": "^0.66.0",
     "sqlite3": "^5.1.7"
   }
 }
