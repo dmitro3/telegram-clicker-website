@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npm rebuild sqlite3",
-    "postinstall": "node server.js"
+    "start": "node server.js",
+    "preinstall": "npm install sqlite3 --build-from-source",
+    "postinstall": "npm rebuild sqlite3"
   },
   "keywords": [],
   "author": "",
