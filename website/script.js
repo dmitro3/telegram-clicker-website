@@ -1,11 +1,15 @@
 body.height = window.innerHeight
 window.onload = ()=> {
   const currentUrl = `${window.location.href}`;
-  const code = currentUrl.split('start=')[1]
-  console.log(code)
   
-  console.log(startCode)
-    const tg = window.Telegram.WebApp;
+  const regex = /start=([^#]*)#/;
+
+  const match = currentUrl.match(regex);
+    const code = match[1];
+
+  console.log(code)
+
+      const tg = window.Telegram.WebApp;
     tg.expand();
     postData('/getGameData', {
         telegramId: getTelegramId(),
