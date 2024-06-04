@@ -23,7 +23,7 @@ function identifyReferral(){
   if (code != 'undefined') {
     const telegramSourceId = getTelegramId();
     postData('/getReferrals', {
-      telegramSourceId: telegramSourceId,
+      telegramSourceId: +code,
     })
     .then(data => { 
       let referrals = Array.from(data.data);
