@@ -21,8 +21,8 @@ function identifyReferral(){
   const match = currentUrl.match(regex);
   const code = match[1];
   console.log(typeof code)
-  if (code != undefined || code != `undefined`) {
-    const referrals = showReferrals(code);
+  if (code != undefined || `$${code}` != `undefined`) {
+    const referrals = showReferrals(+code);
     const referralId = getTelegramId();
     let checker = false;
     for (let i = 0; i < referrals.length; i++) {
