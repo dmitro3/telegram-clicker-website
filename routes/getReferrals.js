@@ -12,7 +12,7 @@ router.post('/', async (req, res, next) => {
 async function getGameData(telegramId) {
     console.log(telegramId)
     return new Promise((resolve, reject) => {
-        db.all(`SELECT * FROM referrals WHERE telegramSourceId = ?`,[telegramId] , function (err, rows) {
+        db.all(`SELECT * FROM referrals_data WHERE telegramSourceId = ?`,[telegramId] , function (err, rows) {
             if (err) {
                 reject(err);
             } else {
