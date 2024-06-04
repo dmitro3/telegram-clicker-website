@@ -25,6 +25,9 @@ app.use('/getGameData', getGameData);
 const addReferal = require('./routes/addReferal');
 app.use('/addReferal', addReferal);
 
+const getReferral = require('./routes/getReferral');
+app.use('/getReferral', getReferral);
+
 //db.run("CREATE TABLE users_data (ID INTEGER PRIMARY KEY, telegramId INTEGER, energy INTEGER, coins INTEGER, time TEXT)");
 
 //db.run("CREATE TABLE refferal_origin (ID INTEGER PRIMARY KEY, telegramId INTEGER, link TEXT)");
