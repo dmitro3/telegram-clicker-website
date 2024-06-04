@@ -1,30 +1,28 @@
 body.height = window.innerHeight
 window.onload = ()=> {
+  identifyReferral()
   const coins = getLeftCoins();
+  const tg = window.Telegram.WebApp;
+  tg.expand();
+  postData('/getGameData', {
+      telegramId: getTelegramId(),
+    })
+    .then(data => {
+      newData = Array.from(data.data);
+      const record = newData[newData.length-1];
+      document.getElementById('coinsLabel').innerHTML = record.coins;
+      document.getElementById('energyLabel').innerHTML = calculateEnergy(record.energy, record.time)
+    });
+}
 
+function identifyReferral(){
   const currentUrl = `${window.location.href}`;
-  
   const regex = /start=([^#]*)#/;
-
   const match = currentUrl.match(regex);
-  if (match.length != 0) {
-    const code = match[1];
-    console.log(code)
+  const code = match[1];
+  if (code != undefined || code != `undefined`) {
     addReferal(code);
   }
-
- 
-      const tg = window.Telegram.WebApp;
-    tg.expand();
-    postData('/getGameData', {
-        telegramId: getTelegramId(),
-      })
-      .then(data => {
-        newData = Array.from(data.data);
-        const record = newData[newData.length-1];
-        document.getElementById('coinsLabel').innerHTML = record.coins;
-        document.getElementById('energyLabel').innerHTML = calculateEnergy(record.energy, record.time)
-      });
 }
 
 document.getElementById('friendsButton').addEventListener('click', ()=>{

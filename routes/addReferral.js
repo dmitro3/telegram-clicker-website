@@ -11,7 +11,7 @@ router.post('/', async (req, res, next) => {
 
 async function addReferral(data) {
     return new Promise((resolve, reject) => {
-        db.run("INSERT INTO referrals (telegramSourceId, telegramReferralId, clicked) VALUES (?, ?, ?)", [+data.sourceTelegramId, +data.referralTelegramId, 0], function (err) {
+        db.run("INSERT INTO referrals (telegramSourceId, telegramReferralId, clicked, verified) VALUES (?, ?, ?, ?)", [+data.sourceTelegramId, +data.referralTelegramId, 0, 0], function (err) {
             if (err) {
                 console.error("Error inserting data:", err.message);
                 reject(err);

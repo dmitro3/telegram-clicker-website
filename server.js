@@ -32,4 +32,6 @@ app.use('/getReferrals', getReferrals);
 
 //db.run("CREATE TABLE refferal_origin (ID INTEGER PRIMARY KEY, telegramId INTEGER, link TEXT)");
 
-//db.run("CREATE TABLE referrals (ID INTEGER PRIMARY KEY, telegramSourceId INTEGER, telegramReferralId INTEGER, clicked INTEGER)");
+//db.run("CREATE TABLE referrals_data (ID INTEGER PRIMARY KEY, telegramSourceId INTEGER, telegramReferralId INTEGER, clicked INTEGER, verified INTEGER)");
+
+//db.run('drop table referrals')
