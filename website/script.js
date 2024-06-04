@@ -21,13 +21,15 @@ function identifyReferral(){
   const match = currentUrl.match(regex);
   const code = match[1];
   console.log(code)
-  if (code != undefined || `${code}` != `undefined`) {
+  if (code != undefined) {
     const telegramSourceId = getTelegramId();
     postData('/getReferrals', {
       telegramSourceId: telegramSourceId,
     })
     .then(data => { 
       let referrals = Array.from(data.data);
+      console.log('Referrals')
+      console.log(referrals)
       let checker = false;
       if (referrals.length != 0) {
         for (let i = 0; i < referrals.length; i++) {
