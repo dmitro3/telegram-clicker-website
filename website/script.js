@@ -1,9 +1,9 @@
 body.height = window.innerHeight
 window.onload = ()=> {
-  const currentUrl = window.location.href;
-  const urlObj = new URL(currentUrl);
-  const params = new URLSearchParams(urlObj.search);
-  const startCode = params.get('start');
+  const currentUrl = `${window.location.href}`;
+  const code = currentUrl.split('start=')[1]
+  console.log(code)
+  
   console.log(startCode)
     const tg = window.Telegram.WebApp;
     tg.expand();
