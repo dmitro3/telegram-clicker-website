@@ -213,7 +213,7 @@ function showReferrals(){
   })
   .then(data => { 
     newData = Array.from(data.data);
-    console.log('newData ' + newData)
+    console.log(newData)
     return newData
   });
 }
