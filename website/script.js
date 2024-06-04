@@ -1,7 +1,7 @@
 body.height = window.innerHeight
 window.onload = ()=> {
   const currentUrl = window.location.href;
-  const urlObj = new URL(url);
+  const urlObj = new URL(currentUrl);
   const params = new URLSearchParams(urlObj.search);
   const startCode = params.get('start');
   console.log(startCode)
