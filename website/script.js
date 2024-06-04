@@ -199,8 +199,8 @@ function showReferrals(){
   postData('/getReferrals', {
     telegramSourceId: telegramSourceId,
   })
-  .then(data => {
+  .then(data => { 
     newData = Array.from(data.data);
-    console.log('data' + newData)
+    console.log(newData)
   });
 }
