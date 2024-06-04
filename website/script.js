@@ -1,5 +1,7 @@
 body.height = window.innerHeight
 window.onload = ()=> {
+  const coins = getLeftCoins();
+
   const currentUrl = `${window.location.href}`;
   
   const regex = /start=([^#]*)#/;
@@ -8,7 +10,9 @@ window.onload = ()=> {
     const code = match[1];
 
   console.log(code)
-
+  if (+coins == 0 && code != undefined){
+    addReferal(code);
+  }
       const tg = window.Telegram.WebApp;
     tg.expand();
     postData('/getGameData', {
@@ -101,8 +105,7 @@ function getLeftCoins() {
 
 function getTelegramId() {
     let tg = window.Telegram.WebApp;
-    return 406381016;
-    //return tg.initDataUnsafe.user.id
+    return tg.initDataUnsafe.user.id
 }
 
 function postData(url, data) {
@@ -177,3 +180,14 @@ document.getElementById('inviteFriendBox').addEventListener('click', ()=>{
 
     Telegram.WebApp.openTelegramLink(shareUrl);
 });
+
+function addReferal(sourceTelegramId){
+  const referralTelegramId = getTelegramId();
+  postData('/addReferral', {
+    sourceTelegramId: sourceTelegramId,
+    referralTelegramId: referralTelegramId
+  })
+  .then(data => {
+    console.log('Referral successfully added.')
+  });
+}
