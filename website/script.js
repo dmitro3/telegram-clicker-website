@@ -30,6 +30,7 @@ function identifyReferral(){
       console.log('Referrals')
       console.log(referrals)
       let checker = false;
+      console.log('length - ' + referrals.length)
       if (referrals.length != 0) {
         for (let i = 0; i < referrals.length; i++) {
           if (`${+referrals[i].telegramReferralId}` == `${+getTelegramId()}`){
