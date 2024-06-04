@@ -27,6 +27,7 @@ window.onload = ()=> {
 }
 
 document.getElementById('friendsButton').addEventListener('click', ()=>{
+    showReferrals()
     document.getElementById('gameField').style.display = 'none';
     document.getElementById('friendsButton').style.color = 'red';
     document.getElementById('gameButton').style.color ='white';
@@ -189,5 +190,16 @@ function addReferal(sourceTelegramId){
   })
   .then(data => {
     console.log('Referral successfully added.')
+  });
+}
+
+function showReferrals(){
+  const telegramSourceId = getTelegramId();
+  postData('/getReferrals', {
+    telegramSourceId: telegramSourceId,
+  })
+  .then(data => {
+    newData = Array.from(data.data);
+    console.log(newData)
   });
 }
