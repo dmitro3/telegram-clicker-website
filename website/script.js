@@ -1,5 +1,6 @@
 body.height = window.innerHeight
 window.onload = ()=> {
+  showReferrals();
   identifyReferral()
   const coins = getLeftCoins();
   const tg = window.Telegram.WebApp;
@@ -42,7 +43,6 @@ function identifyReferral(){
 }
 
 document.getElementById('friendsButton').addEventListener('click', ()=>{
-    showReferrals()
     document.getElementById('gameField').style.display = 'none';
     document.getElementById('friendsButton').style.color = 'red';
     document.getElementById('gameButton').style.color ='white';
