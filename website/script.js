@@ -33,6 +33,10 @@ function identifyReferral(){
       if (referrals.length != 0) {
         for (let i = 0; i < referrals.length; i++) {
           if (`${+referrals[i].telegramReferralId}` == `${+getTelegramId()}`){
+            console.log('refid')
+            console.log(referrals[i].telegramReferralId)
+            console.log('tgid')
+            console.log(getTelegramId())
             checker = true;
           }    }
       }
