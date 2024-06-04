@@ -21,4 +21,4 @@ async function getGameData(telegramId) {
         });
     }
     )}
-module.exports = router;
+module.exports = router;  
