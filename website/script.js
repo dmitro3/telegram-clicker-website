@@ -21,17 +21,23 @@ function identifyReferral(){
   const match = currentUrl.match(regex);
   const code = match[1];
   if (code != undefined || `$${code}` != `undefined`) {
-    const referrals = showReferrals();
-    let checker = false;
-    if (referrals != undefined) {
-      for (let i = 0; i < referrals.length; i++) {
-        if (`${referrals[i].telegramSourceId}` == `${code}`){
-          checker = true;
-        }    }
-    }
-    if (checker == false) {
-      addReferal(code);
-    }
+    const telegramSourceId = getTelegramId();
+    postData('/getReferrals', {
+      telegramSourceId: telegramSourceId,
+    })
+    .then(data => { 
+      let referrals = Array.from(data.data);
+      let checker = false;
+      if (referrals.length != 0) {
+        for (let i = 0; i < referrals.length; i++) {
+          if (`${referrals[i].telegramSourceId}` == `${code}`){
+            checker = true;
+          }    }
+      }
+      if (checker == false) {
+        addReferal(code);
+      }
+    });
   }
 }
 
