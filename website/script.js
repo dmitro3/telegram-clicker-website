@@ -20,9 +20,7 @@ function identifyReferral(){
   const regex = /start=([^#]*)#/;
   const match = currentUrl.match(regex);
   const code = match[1];
-  console.log(code)
-  console.log(typeof code)
-  if (typeof +code == 'number') {
+  if (code != 'undefined') {
     const telegramSourceId = getTelegramId();
     postData('/getReferrals', {
       telegramSourceId: telegramSourceId,
