@@ -21,6 +21,7 @@ function identifyReferral(){
   const match = currentUrl.match(regex);
   const code = match[1];
   console.log(code)
+  console.log(typeof code)
   if (typeof +code == 'number') {
     const telegramSourceId = getTelegramId();
     postData('/getReferrals', {
@@ -33,7 +34,7 @@ function identifyReferral(){
       let checker = false;
       if (referrals.length != 0) {
         for (let i = 0; i < referrals.length; i++) {
-          if (`${referrals[i].telegramReferralId}` == `${getTelegramId()}`){
+          if (`${+referrals[i].telegramReferralId}` == `${+getTelegramId()}`){
             checker = true;
           }    }
       }
