@@ -23,6 +23,7 @@ function identifyReferral(){
   console.log(typeof code)
   if (code != undefined || `$${code}` != `undefined`) {
     const referrals = showReferrals();
+    console.log(referrals)
     let checker = false;
     for (let i = 0; i < referrals.length; i++) {
       if (`${referrals[i].telegramSourceId}` == `${code}`){
@@ -207,6 +208,6 @@ function showReferrals(){
   })
   .then(data => { 
     newData = Array.from(data.data);
-    console.log(newData)
+    return newData
   });
 }
