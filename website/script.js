@@ -20,15 +20,15 @@ function identifyReferral(){
   const regex = /start=([^#]*)#/;
   const match = currentUrl.match(regex);
   const code = match[1];
-  console.log(typeof code)
   if (code != undefined || `$${code}` != `undefined`) {
     const referrals = showReferrals();
-    console.log(referrals)
+    console.log('referrals ' + referrals)
     let checker = false;
-    for (let i = 0; i < referrals.length; i++) {
-      if (`${referrals[i].telegramSourceId}` == `${code}`){
-        checker = true;
-      }
+    if (referrals != undefined) {
+      for (let i = 0; i < referrals.length; i++) {
+        if (`${referrals[i].telegramSourceId}` == `${code}`){
+          checker = true;
+        }    }
     }
     if (checker == false) {
       addReferal(code);
