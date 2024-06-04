@@ -7,12 +7,13 @@ window.onload = ()=> {
   const regex = /start=([^#]*)#/;
 
   const match = currentUrl.match(regex);
+  if (match.length != 0) {
     const code = match[1];
-
-  console.log(code)
-  if (+coins == 0 && code != undefined){
+    console.log(code)
     addReferal(code);
   }
+
+ 
       const tg = window.Telegram.WebApp;
     tg.expand();
     postData('/getGameData', {
@@ -106,7 +107,7 @@ function getLeftCoins() {
 
 function getTelegramId() {
     let tg = window.Telegram.WebApp;
-    return tg.initDataUnsafe.user.id
+    return tg.initDataUnsafe.user.id;
 }
 
 function postData(url, data) {
@@ -200,6 +201,6 @@ function showReferrals(){
   })
   .then(data => {
     newData = Array.from(data.data);
-    console.log(newData)
+    console.log('data' + newData)
   });
 }

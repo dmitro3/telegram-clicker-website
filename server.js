@@ -22,8 +22,8 @@ app.use('/updateGameData', updateGameData);
 const getGameData = require('./routes/getGameData');
 app.use('/getGameData', getGameData);
 
-const addReferal = require('./routes/addReferal');
-app.use('/addReferal', addReferal);
+const addReferral = require('./routes/addReferral');
+app.use('/addReferral', addReferral);
 
 const getReferral = require('./routes/getReferral');
 app.use('/getReferral', getReferral);
