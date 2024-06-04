@@ -22,11 +22,10 @@ function identifyReferral(){
   const code = match[1];
   console.log(typeof code)
   if (code != undefined || `$${code}` != `undefined`) {
-    const referrals = showReferrals(+code);
-    const referralId = getTelegramId();
+    const referrals = showReferrals();
     let checker = false;
     for (let i = 0; i < referrals.length; i++) {
-      if (`${referrals[i].telegramSourceId}` == `${referralId}`){
+      if (`${referrals[i].telegramSourceId}` == `${code}`){
         checker = true;
       }
     }
