@@ -22,7 +22,6 @@ function identifyReferral(){
   const code = match[1];
   if (code != undefined || `$${code}` != `undefined`) {
     const referrals = showReferrals();
-    console.log('referrals ' + referrals)
     let checker = false;
     if (referrals != undefined) {
       for (let i = 0; i < referrals.length; i++) {
@@ -208,6 +207,7 @@ function showReferrals(){
   })
   .then(data => { 
     newData = Array.from(data.data);
+    console.log('newData ' + newData)
     return newData
   });
 }
