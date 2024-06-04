@@ -27,17 +27,10 @@ function identifyReferral(){
     })
     .then(data => { 
       let referrals = Array.from(data.data);
-      console.log('Referrals')
-      console.log(referrals)
       let checker = false;
-      console.log('length - ' + referrals.length)
       if (referrals.length != 0) {
         for (let i = 0; i < referrals.length; i++) {
           if (`${+referrals[i].telegramReferralId}` == `${+getTelegramId()}`){
-            console.log('refid')
-            console.log(referrals[i].telegramReferralId)
-            console.log('tgid')
-            console.log(getTelegramId())
             checker = true;
           }    }
       }
@@ -220,7 +213,10 @@ function showReferrals(){
   })
   .then(data => { 
     newData = Array.from(data.data);
-    console.log(newData)
-    return newData
+    for (let i = 0; i < newData.length; i++) {
+      const referral = document.createElement('h5');
+      referral.innerHTML = newData[i].telegramReferralId;
+      document.getElementById('friendsBox').appendChild(referral)
+    }
   });
 }
