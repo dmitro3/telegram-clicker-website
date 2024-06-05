@@ -7,7 +7,7 @@ router.post('/', async (req, res, next) => {
     const data = req.body;
     const information = await getUsersData(data.telegramId);
     console.log(typeof information)
-    console.log(information)
+    console.log(information.length)
     res.json({})
 });
 
