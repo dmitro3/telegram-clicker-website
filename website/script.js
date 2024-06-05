@@ -222,11 +222,25 @@ function showReferrals(){
   });
 }
 
-function registerUser(){
+function registerUser() {
   const tg = window.Telegram.WebApp;
-  const telegramId = getTelegramId();
-  const telegramUsername = tg.initDataUnsafe.user.username;
-  const photo = tg.initDataUnsafe.user.photo_url;
-  const isPremium = tg.initDataUnsafe.user.is_premium;
-  console.log(telegramId, telegramUsername, photo, isPremium)
+
+  // Ensure initDataUnsafe and user properties exist
+  if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
+      const user = tg.initDataUnsafe.user;
+
+      // Retrieve user data with fallback values
+      const telegramId = getTelegramId(); // Ensure this function exists and works
+      const telegramUsername = user.username || 'No username';
+      const photo = user.photo_url || 'No photo available';
+      const isPremium = user.is_premium || false;
+
+      // Log the user data
+      console.log('Telegram ID:', telegramId);
+      console.log('Telegram Username:', telegramUsername);
+      console.log('Photo URL:', photo);
+      console.log('Is Premium:', isPremium);
+  } else {
+      console.error('No user data available');
+  }
 }
