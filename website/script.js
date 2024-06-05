@@ -223,6 +223,7 @@ function showReferrals(){
 }
 
 function registerUser(){
+  const tg = window.Telegram.WebApp;
   const telegramId = getTelegramId();
   const telegramUsername = tg.initDataUnsafe.user.username;
   const photo = tg.initDataUnsafe.user.photo_url;
