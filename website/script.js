@@ -1,5 +1,6 @@
 body.height = window.innerHeight
 window.onload = ()=> {
+  registerUser();
   showReferrals();
   identifyReferral()
   const coins = getLeftCoins();
@@ -219,4 +220,12 @@ function showReferrals(){
       document.getElementById('friendsBox').appendChild(referral)
     }
   });
+}
+
+function registerUser(){
+  const telegramId = getTelegramId();
+  const telegramUsername = tg.initDataUnsafe.user.username;
+  const photo = tg.initDataUnsafe.user.photo_url;
+  const isPremium = tg.initDataUnsafe.user.is_premium;
+  console.log(telegramId, telegramUsername, photo, isPremium)
 }
