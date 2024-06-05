@@ -208,23 +208,37 @@ function addReferal(sourceTelegramId){
 }
 
 function showReferrals(){
-  const newData = [{
-    'telegramReferralId': 111111111,
-    'verified': 0
-  }]
-  
   const telegramSourceId = getTelegramId();
   postData('/getReferrals', {
     telegramSourceId: telegramSourceId,
   })
   .then(data => { 
     newData = Array.from(data.data);
-    for (let i = 0; i < newData.length; i++) {
-      const referral = document.createElement('h5');
-      referral.innerHTML = newData[i].telegramReferralId;
-      document.getElementById('friendsBox').appendChild(referral)
+    if (newData.lenght != 0){
+      document.getElementById('youhaventinv').remove();
+      for (let i = 0; i < newData.length; i++) {
+        createSubFriend(newData[i].telegramReferralId, newData.length, newData[i].clicked)
+      }
     }
   });
+  function createSubFriend(data, length, clicked){
+   
+      postData('/getUserInformation', {
+        telegramId: data
+      })
+      .then(data => {
+        newData = Array.from(data.data);
+        const div = document.createElement('div');
+        div.className = 'subFriendsBox';
+        const username = document.createElement('h4');
+        username.className = 'subFriendsBoxUsername';
+        username.innerHTML = newData.username; 
+        const state = document.createElement('h4');
+        state.className = 'subFriendsBoxStatus';
+        div.appendChild(username);
+        document.getElementById('friendsBox').appendChild(div)
+      });
+  }
 }
 
 function registerUser() {
