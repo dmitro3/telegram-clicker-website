@@ -10,7 +10,7 @@ router.post('/', async (req, res, next) => {
     console.log(table)
     console.log(information)
     if (information.length == 0) {
-        await addUser(information);
+        await addUser(data);
         res.json({information: "User added"})
     } else {
         res.json({information: "User was already in database"})
