@@ -1,5 +1,5 @@
 body {
-    background: black;
+    background: var(--tg-theme-bg-color);
     margin: 0;
     padding: 0;
     height: 100%;
@@ -46,7 +46,7 @@ html, body {
 
 #menu {
     position: absolute;
-    margin-top: -90px;
+    margin-top: 40px;
     padding-top: 5px;
     text-align: center;
     top: 620px;
@@ -157,13 +157,13 @@ html, body {
 .subFriendsBoxUsername{
     margin-left: 2vw;
     position: absolute;
-    margin-top: 2.5vw;
+    margin-top: 3.5vw;
     text-align: left;
     color: white;
 }
 
 .subFriendsBoxStatus{
-    margin-left: 60vw;
+    margin-left: 50vw;
     position: absolute;
     margin-top: 2.5vw;
     text-align: left;
