@@ -233,7 +233,7 @@ function showReferrals(){
         div.className = 'subFriendsBox';
         const username = document.createElement('h4');
         username.className = 'subFriendsBoxUsername';
-        username.innerHTML = newData.username; 
+        username.innerHTML = newData[0].username; 
         const state = document.createElement('h4');
         state.className = 'subFriendsBoxStatus';
         div.appendChild(username);
