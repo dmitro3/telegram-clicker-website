@@ -6,6 +6,8 @@ const db = new sqlite3.Database('mydatabase.db');
 router.post('/', async (req, res, next) => {
     const data = req.body;
     const information = await getUsersData(data.telegramId);
+    console.log(information.length)
+    console.log(typeof information.length)
     if (information.length != 0) {
         await addUser(information);
         res.json({information: "User added"})
