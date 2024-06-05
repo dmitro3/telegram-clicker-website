@@ -242,6 +242,7 @@ function showReferrals(){
           state.innerHTML = '--- played ---'
         }
         div.appendChild(username);
+        div.appendChild(state)
         document.getElementById('friendsBox').appendChild(div)
       });
   }
