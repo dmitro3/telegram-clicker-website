@@ -44,7 +44,7 @@ async function getUsersData(telegramId) {
 
     async function addUser(data) {
         return new Promise((resolve, reject) => {
-            db.run("INSERT INTO users_information (telegramId, username, photo, isPremium) VALUES (?, ?, ?, ?)", [+data.telegramId, data.username, data.photo, `${data.isPremium}`], function (err) {
+            db.run("INSERT INTO users_information (telegramId, username, photo, isPremium) VALUES (?, ?, ?, ?)", [+data.telegramId, data.telegramUsername, data.photo, `${data.isPremium}`], function (err) {
                 if (err) {
                     console.error("Error inserting data:", err.message);
                     reject(err);

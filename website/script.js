@@ -208,6 +208,11 @@ function addReferal(sourceTelegramId){
 }
 
 function showReferrals(){
+  const newData = [{
+    'telegramReferralId': 111111111,
+    'verified': 0
+  }]
+  
   const telegramSourceId = getTelegramId();
   postData('/getReferrals', {
     telegramSourceId: telegramSourceId,

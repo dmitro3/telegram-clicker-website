@@ -1,5 +1,5 @@
 body {
-    background: var(--tg-theme-bg-color);
+    background: black;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -103,9 +103,10 @@ html, body {
 }
 
 #friendsBox{
+    overflow-y: scroll;
     position: absolute;
     width: 90%;
-    height: 90px;
+    height: 105px;
     background-color: white;
     border-radius: 4px;
     margin-left: 5%;
@@ -141,4 +142,30 @@ html, body {
     border-radius: 4px;
     margin-left: 85.5%;
     margin-top: 58.5%;
+}
+
+.subFriendsBox{
+    border-radius: 2px;
+    background-color: black;
+    width: 90%;
+    margin-left: 5%;
+    height: 50px;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+}
+
+.subFriendsBoxUsername{
+    margin-left: 2vw;
+    position: absolute;
+    margin-top: 2.5vw;
+    text-align: left;
+    color: white;
+}
+
+.subFriendsBoxStatus{
+    margin-left: 60vw;
+    position: absolute;
+    margin-top: 2.5vw;
+    text-align: left;
+    color: red;
 }
