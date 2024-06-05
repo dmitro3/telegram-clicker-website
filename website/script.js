@@ -240,7 +240,7 @@ function registerUser() {
         isPremium: isPremium
       })
       .then(data => { 
-        console.log('User successfully added.')
+        console.log(data.information)
       });
   } 
 }

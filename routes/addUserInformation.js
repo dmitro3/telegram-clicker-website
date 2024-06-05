@@ -6,9 +6,12 @@ const db = new sqlite3.Database('mydatabase.db');
 router.post('/', async (req, res, next) => {
     const data = req.body;
     const information = await getUsersData(data.telegramId);
-    console.log(typeof information)
-    console.log(information.length)
-    res.json({})
+    if (information.length != 0) {
+        await addUser(information);
+        res.json({information: "User added"})
+    } else {
+        res.json({information: "User was already in database"})
+    }
 });
 
 async function getUsersData(telegramId) {
@@ -22,4 +25,17 @@ async function getUsersData(telegramId) {
         });
     }
     )}
+
+    async function addUser(data) {
+        return new Promise((resolve, reject) => {
+            db.run("INSERT INTO users_information (telegramId, username, photo, isPremium) VALUES (?, ?, ?, ?)", [+data.telegramId, data.username, data.photo, `${data.isPremium}`], function (err) {
+                if (err) {
+                    console.error("Error inserting data:", err.message);
+                    reject(err);
+                } else {
+                    resolve();
+                }
+            });
+        }
+        )}
 module.exports = router;  
