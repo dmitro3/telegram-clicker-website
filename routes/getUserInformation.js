@@ -11,7 +11,7 @@ router.post('/', async (req, res, next) => {
 
     async function showTable(telegramId) {
         return new Promise((resolve, reject) => {
-            db.all(`SELECT * FROM users_information WHERE telegramId = ?`, [telegramId], function (err, rows) {
+            db.all(`SELECT * FROM users_information WHERE telegramId = ?`, [+telegramId], function (err, rows) {
                 if (err) {
                     reject(err);
                 } else {

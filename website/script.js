@@ -228,6 +228,7 @@ function showReferrals(){
       })
       .then(data => {
         newData = Array.from(data.data);
+        console.log(newData)
         const div = document.createElement('div');
         div.className = 'subFriendsBox';
         const username = document.createElement('h4');
