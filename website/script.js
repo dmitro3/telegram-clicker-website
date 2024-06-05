@@ -236,6 +236,11 @@ function showReferrals(){
         username.innerHTML = newData[0].username; 
         const state = document.createElement('h4');
         state.className = 'subFriendsBoxStatus';
+        if (+clicked == 0){
+          state.innerHTML = '--did not play--'
+        } else {
+          state.innerHTML = '--- played ---'
+        }
         div.appendChild(username);
         document.getElementById('friendsBox').appendChild(div)
       });
