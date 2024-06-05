@@ -28,6 +28,9 @@ app.use('/addReferral', addReferral);
 const getReferrals = require('./routes/getReferrals');
 app.use('/getReferrals', getReferrals);
 
+const addUserInformation = require('./routes/addUserInformation');
+app.use('/addUserInformation', addUserInformation);
+
 //db.run("CREATE TABLE users_data (ID INTEGER PRIMARY KEY, telegramId INTEGER, energy INTEGER, coins INTEGER, time TEXT)");
 
 //db.run("CREATE TABLE refferal_origin (ID INTEGER PRIMARY KEY, telegramId INTEGER, link TEXT)");
@@ -36,3 +39,5 @@ app.use('/getReferrals', getReferrals);
 //db.run('drop table referrals_data')
 
 //db.run("CREATE TABLE referrals_data (ID INTEGER PRIMARY KEY, telegramSourceId INTEGER, telegramReferralId INTEGER, clicked INTEGER, verified INTEGER)");
+
+//db.run("CREATE TABLE users_information (ID INTEGER PRIMARY KEY, telegramId INTEGER, username TEXT, photo TEXT, isPremium TEXT)");
