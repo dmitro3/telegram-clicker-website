@@ -16,13 +16,13 @@ html, body {
 #coinsLabel{    
     text-align: center;
     margin-top: 100px;
-    color: black;
+    color: white;
 }
 
 #energyLabel{
     text-align: center;
     margin-top: 55px;
-    color: black;
+    color: white;
 }
 
 #mainButtonBox{
@@ -145,8 +145,8 @@ html, body {
 }
 
 .subFriendsBox{
-    border-radius: 2px;
-    background-color: black;
+    border-radius: 4px;
+    background-color: var(--tg-theme-bg-color);
     width: 90%;
     margin-left: 5%;
     height: 50px;
@@ -165,7 +165,7 @@ html, body {
 .subFriendsBoxStatus{
     margin-left: 50vw;
     position: absolute;
-    margin-top: 2.5vw;
+    margin-top: 3.5vw;
     text-align: left;
     color: red;
 }
