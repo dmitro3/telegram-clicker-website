@@ -245,7 +245,7 @@ function showReferrals(){
         }
         if (+verified == 0){
           verifyReferral(data);
-          if (isPremium == 'true'){
+          if (premium == 'true'){
             state.innerHTML = '-- +5000 --';
           } else {
             state.innerHTML = '-- +25000 --';
