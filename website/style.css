@@ -231,3 +231,35 @@ html, body {
     margin-left: 70px;
     color: black;
 }
+
+#progressBarBox{
+    width: 90vw;
+    margin-left: 5vw;
+    height: 20px;
+    border-radius: 8px;
+    background-color: white;
+    position: absolute;
+    margin-top: 185px;
+}
+
+#progressBar{
+    width: 25vw;
+    height: 20px;
+    position: absolute;
+    background-color: red;
+    border-radius: 8px;
+}
+
+#progressBarBoxStatusLabel{
+    position: absolute;
+    color: white;
+    margin-top: 160px;
+    margin-left: 5vw;
+}
+
+#progressBarBoxLevelLabel{
+    position: absolute;
+    color: white;
+    margin-top: 160px;
+    margin-left: 80vw;
+}
