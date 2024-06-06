@@ -247,10 +247,12 @@ function showReferrals(){
           verifyReferral(data);
           if (premium == 'false'){
             state.innerHTML = '-- +5000 --';
-            document.getElementById('energyLabel').innerHTML = (energy+5000) + '/1000'
+            const coins = +document.getElementById('coinsLabel').textContent;
+
+            document.getElementById('coinsLabel').innerHTML = (coins+5000) + '/1000'
           } else {
             state.innerHTML = '-- +25000 --';
-            document.getElementById('energyLabel').innerHTML = (energy+25000) + '/1000'
+            document.getElementById('coinsLabel').innerHTML = (coins+25000) + '/1000'
           }
           state.style.color = 'green'
         }else {
