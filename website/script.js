@@ -378,7 +378,7 @@ function manageProgressBar (level, levelLabel) {
   };
 
   const coins = getLeftCoins();
-  const maxValue = levelProgress.level;
+  const maxValue = levelProgress[level];
   const progression = 100/maxValue;
   const barWidth = coins*progression;
 
