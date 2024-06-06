@@ -245,15 +245,18 @@ function showReferrals(){
         }
         if (+verified == 0){
           verifyReferral(data);
-          if (premium == 'true'){
+          if (premium == 'false'){
             state.innerHTML = '-- +5000 --';
+            document.getElementById('energyLabel').innerHTML = (energy+5000) + '/1000'
           } else {
             state.innerHTML = '-- +25000 --';
+            document.getElementById('energyLabel').innerHTML = (energy+25000) + '/1000'
           }
           state.style.color = 'green'
         }else {
           state.innerHTML = 'bonus alr added'
         }
+        
         div.appendChild(username);
         div.appendChild(state)
         document.getElementById('friendsBox').appendChild(div)
