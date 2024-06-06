@@ -249,10 +249,10 @@ function showReferrals(){
             state.innerHTML = '-- +5000 --';
             const coins = +document.getElementById('coinsLabel').textContent;
 
-            document.getElementById('coinsLabel').innerHTML = (coins+5000) + '/1000'
+            document.getElementById('coinsLabel').innerHTML = (coins+5000)
           } else {
             state.innerHTML = '-- +25000 --';
-            document.getElementById('coinsLabel').innerHTML = (coins+25000) + '/1000'
+            document.getElementById('coinsLabel').innerHTML = (coins+25000)
           }
           state.style.color = 'green'
         }else {
