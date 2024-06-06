@@ -34,6 +34,9 @@ app.use('/addUserInformation', addUserInformation);
 const getUserInformation = require('./routes/getUserInformation');
 app.use('/getUserInformation', getUserInformation);
 
+const verifyReferral = require('./routes/verifyReferral');
+app.use('/verifyReferral', verifyReferral);
+
 //db.run("CREATE TABLE users_data (ID INTEGER PRIMARY KEY, telegramId INTEGER, energy INTEGER, coins INTEGER, time TEXT)");
 
 //db.run("CREATE TABLE refferal_origin (ID INTEGER PRIMARY KEY, telegramId INTEGER, link TEXT)");

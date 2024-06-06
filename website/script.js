@@ -3,7 +3,10 @@ window.onload = ()=> {
   registerUser();
   showReferrals();
   identifyReferral()
-  const coins = getLeftCoins();
+  const coins = +getLeftCoins();
+  if (coins > 0 && coins < 10){
+    adjustClickedReferral(getTelegramId());
+  }
   const tg = window.Telegram.WebApp;
   tg.expand();
   postData('/getGameData', {
@@ -217,18 +220,17 @@ function showReferrals(){
     if (newData.lenght != 0){
       document.getElementById('youhaventinv').remove();
       for (let i = 0; i < newData.length; i++) {
-        createSubFriend(newData[i].telegramReferralId, newData.length, newData[i].clicked)
+        createSubFriend(newData[i].telegramReferralId, newData.length, newData[i].clicked, newData[i].verified)
       }
     }
   });
-  function createSubFriend(data, length, clicked){
-   
+  function createSubFriend(data, length, clicked, verified){
       postData('/getUserInformation', {
         telegramId: data
       })
       .then(data => {
         newData = Array.from(data.data);
-        console.log(newData)
+        let premium = newData[0].isPremium;
         const div = document.createElement('div');
         div.className = 'subFriendsBox';
         const username = document.createElement('h4');
@@ -237,9 +239,20 @@ function showReferrals(){
         const state = document.createElement('h4');
         state.className = 'subFriendsBoxStatus';
         if (+clicked == 0){
-          state.innerHTML = '--did not play--'
+          state.innerHTML = '--did not open--'
         } else {
-          state.innerHTML = '--- played ---'
+          state.innerHTML = '--- opened ---'
+        }
+        if (+verified == 0){
+          verifyReferral(data);
+          if (isPremium == 'true'){
+            state.innerHTML = '-- +5000 --';
+          } else {
+            state.innerHTML = '-- +25000 --';
+          }
+          state.style.color = 'green'
+        }else {
+          state.innerHTML = 'bonus alr added'
         }
         div.appendChild(username);
         div.appendChild(state)
@@ -269,4 +282,24 @@ function registerUser() {
         console.log(data.information)
       });
   } 
+}
+
+function verifyReferral(telegramId){
+  postData('/verifyReferral', {
+    telegramId: telegramId,
+    verified: 1
+  })
+  .then(data => { 
+    console.log()
+  });
+}
+
+function adjustClickedReferral(telegramId){
+  postData('/adjustClickedReferral', {
+    telegramId: telegramId,
+    clicked: 1
+  })
+  .then(data => { 
+    console.log()
+  });
 }
