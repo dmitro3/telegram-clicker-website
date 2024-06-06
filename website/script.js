@@ -224,7 +224,7 @@ function showReferrals(){
       }
     }
   });
-  function createSubFriend(data, length, clicked, verified){
+  function createSubFriend(id, length, clicked, verified){
       postData('/getUserInformation', {
         telegramId: data
       })
@@ -244,7 +244,7 @@ function showReferrals(){
           state.innerHTML = '--- opened ---'
         }
         if (+verified == 0){
-          verifyReferral(data);
+          verifyReferral(id);
           if (premium == 'false'){
             state.innerHTML = '-- +5000 --';
             const coins = +document.getElementById('coinsLabel').textContent;
