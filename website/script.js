@@ -52,13 +52,33 @@ document.getElementById('friendsButton').addEventListener('click', ()=>{
     document.getElementById('friendsButton').style.color = 'red';
     document.getElementById('gameButton').style.color ='white';
     document.getElementById('referalField').style.display = 'block';
+    earnPerClickBox.style.display = 'none'
+    clicksTillLevelUp.style.display = 'none'
+    passiveClicks.style.display = 'none'
+    progressBarBoxStatusLabel.style.display = 'none'
+    progressBarBoxLevelLabel.style.display = 'none'
+    progressBarBox.style.display = 'none'
+    developerButton.style.color = 'white';
+    devField.style.display = 'none'
+
+
 });
 
 document.getElementById('gameButton').addEventListener('click', ()=>{
+  adjustProgressBar()
   document.getElementById('gameField').style.display = 'block';
   document.getElementById('friendsButton').style.color = 'white';
   document.getElementById('gameButton').style.color ='red';
   document.getElementById('referalField').style.display = 'none';
+  earnPerClickBox.style.display = 'block'
+  clicksTillLevelUp.style.display = 'block'
+  passiveClicks.style.display = 'block'
+  progressBarBoxStatusLabel.style.display = 'block'
+  progressBarBoxLevelLabel.style.display = 'block'
+  progressBarBox.style.display = 'block'
+  developerButton.style.color = 'white'
+  devField.style.display = 'none'
+
 });
 
 document.getElementById('mainButtonBox').addEventListener('touchstart', ()=>{
@@ -377,6 +397,21 @@ function manageProgressBar (level, levelLabel) {
     'Lord':        10000000000
   };
 
+  const coinsToLevelUpInfo = {
+    '1': '5K',
+    '2': '25K',
+    '3': '100K',
+    '4': '1M',
+    '5': '2M',
+    '6': '10M',
+    '7': '50M',
+    '8': '100M',
+    '9': '1B',
+    '10': '10B'
+  }
+
+  document.getElementById('clicksTillLevelUpLabel').innerHTML = coinsToLevelUpInfo[`${levelLabel}`]
+
   const coins = getLeftCoins();
   const maxValue = levelProgress[level];
   const progression = 100/maxValue;
@@ -387,5 +422,57 @@ function manageProgressBar (level, levelLabel) {
   console.log('progression:', progression);
   console.log('barWidth:', barWidth);
 
-  document.getElementById('progressBar').style.width = barWidth + 'vw'
+  document.getElementById('progressBar').style.width = (barWidth-10) + 'vw'
 } 
+
+//gggggggggggggggggggggggggggggggggggggggggggg
+
+document.getElementById('refreshFriendsList').addEventListener('click', ()=>{
+  adjustProgressBar();
+
+});
+
+developerButton.addEventListener('click', ()=>{
+  document.getElementById('gameField').style.display = 'none';
+  document.getElementById('friendsButton').style.color = 'white';
+  document.getElementById('gameButton').style.color ='white';
+  document.getElementById('referalField').style.display = 'none';
+  earnPerClickBox.style.display = 'none'
+  clicksTillLevelUp.style.display = 'none'
+  passiveClicks.style.display = 'none'
+  progressBarBoxStatusLabel.style.display = 'none'
+  progressBarBoxLevelLabel.style.display = 'none'
+  progressBarBox.style.display = 'none';
+  developerButton.style.color = 'red';
+  devField.style.display = 'block'
+})
+
+add1000.addEventListener('click', ()=>{
+  const coins = getLeftCoins();
+  document.getElementById('coinsLabel').innerHTML = coins + 1000;
+})
+
+add10000.addEventListener('click', ()=>{
+  const coins = getLeftCoins();
+  document.getElementById('coinsLabel').innerHTML = coins + 10000;
+})
+
+add100k.addEventListener('click', ()=>{
+  const coins = getLeftCoins();
+  document.getElementById('coinsLabel').innerHTML = coins + 100000;
+})
+
+add1M.addEventListener('click', ()=>{
+  const coins = getLeftCoins();
+  document.getElementById('coinsLabel').innerHTML = coins + 1000000;
+})
+
+add10M.addEventListener('click', ()=>{
+  const coins = getLeftCoins();
+  document.getElementById('coinsLabel').innerHTML = coins + 10000000;
+})
+
+add1B.addEventListener('click', ()=>{
+  const coins = getLeftCoins();
+  document.getElementById('coinsLabel').innerHTML = coins + 1000000000;
+})
