@@ -11,7 +11,7 @@ router.post('/', async (req, res, next) => {
 
 async function updateGameData(data) {
     return new Promise((resolve, reject) => {
-        db.run("UPDATE referrals_data SET clicked = ? WHERE telegramId = ?", [1, +data.telegramId], function (err) {
+        db.run("UPDATE referrals_data SET clicked = ? WHERE telegramReferralId = ?", [1, +data.telegramId], function (err) {
             if (err) {
                 console.error("Error inserting data:", err.message);
                 reject(err);
