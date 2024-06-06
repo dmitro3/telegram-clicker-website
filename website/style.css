@@ -1,5 +1,5 @@
 body {
-    background: var(--tg-theme-bg-color);
+    background: black;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -15,7 +15,7 @@ html, body {
 
 #coinsLabel{    
     text-align: center;
-    margin-top: 100px;
+    margin-top: 160px;
     color: white;
 }
 
@@ -26,7 +26,7 @@ html, body {
 }
 
 #mainButtonBox{
-    margin-top: 55px;
+    margin-top: 10px;
     position: relative;
     border-radius: 50%;
     width: 70vw;
@@ -168,4 +168,66 @@ html, body {
     margin-top: 3.5vw;
     text-align: left;
     color: red;
+}
+
+#earnPerClickBox{
+    height: 60px;
+    background-color: white;
+    width: 26.6vw;
+    border-radius: 4px;
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 5vw;
+}
+
+#clicksTillLevelUp{
+    height: 60px;
+    background-color: white;
+    width: 26.6vw;
+    border-radius: 4px;
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 36.6vw;
+}
+
+#passiveClicks{
+    height: 60px;
+    background-color: white;
+    width: 26.6vw;
+    border-radius: 4px;
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 68.2vw;
+}
+
+.insideLabel{
+    text-align: center;
+    margin-top: 5px
+}
+
+#earnPerClickCoin{
+    margin-top: -25px;
+    margin-left: 35px;
+}
+
+#earnPerClickLabel{
+    margin-top: -27px;
+    margin-left: 70px;
+    color: black;
+}
+
+#clicksTillLevelUpLabel{
+    margin-top: -10px;
+    text-align: center;
+}
+
+#passiveClicksCoin{
+    margin-top: -25px;
+    margin-left: 35px;
+}
+
+#passiveClicksLabel{
+    margin-top: -27px;
+    margin-left: 70px;
+    color: black;
 }
