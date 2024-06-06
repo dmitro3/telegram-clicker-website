@@ -1,5 +1,6 @@
 body.height = window.innerHeight
 window.onload = ()=> {
+  adjustProgressBar()
   registerUser();
   showReferrals();
   identifyReferral()
@@ -61,6 +62,7 @@ document.getElementById('gameButton').addEventListener('click', ()=>{
 });
 
 document.getElementById('mainButtonBox').addEventListener('touchstart', ()=>{
+  adjustProgressBar()
     if (window.Telegram.WebApp.platform == 'ios'){
         for (let i = 0; i < event.touches.length; i++) {
         showClick(event.touches[i]);
@@ -77,6 +79,7 @@ document.getElementById('mainButtonBox').addEventListener('touchstart', ()=>{
   });
 
 document.getElementById('mainButtonBox').addEventListener('click', ()=>{
+  adjustProgressBar()
     if (window.Telegram.WebApp.platform == 'tdesktop'){
     showClick(event);
     let energy = getLeftEnergy();
@@ -308,3 +311,75 @@ function adjustClickedReferral(telegramId){
     console.log()
   });
 }
+
+function adjustProgressBar() {
+  const coins = getLeftCoins();
+  let nameLabel;
+  let levelLabel;
+  if (coins >= 0 && coins <= 5000) {
+    nameLabel = 'Bronze';
+    levelLabel = 1;
+    manageProgressBar(nameLabel, levelLabel);
+  } else if (coins > 5000 && coins <= 25000) {
+    nameLabel = 'Silver';
+    levelLabel = 2;
+    manageProgressBar(nameLabel, levelLabel);
+  } else if (coins > 25000 && coins <= 100000) {
+    nameLabel = 'Gold';
+    levelLabel = 3;
+    manageProgressBar(nameLabel, levelLabel);
+  } else if (coins > 100000 && coins <= 1000000) {
+    nameLabel = 'Platinum';
+    levelLabel = 4;
+    manageProgressBar(nameLabel, levelLabel);
+  } else if (coins > 1000000 && coins <= 2000000) {
+    nameLabel = 'Diamond';
+    levelLabel = 5;
+    manageProgressBar(nameLabel, levelLabel);
+  } else if (coins > 2000000 && coins <= 10000000) {
+    nameLabel = 'Epic';
+    levelLabel = 6;
+    manageProgressBar(nameLabel, levelLabel);
+  } else if (coins > 10000000 && coins <= 50000000) {
+    nameLabel = 'Legendary';
+    levelLabel = 7;
+    manageProgressBar(nameLabel, levelLabel);
+  } else if (coins > 50000000 && coins <= 100000000) {
+    nameLabel = 'Master';
+    levelLabel = 8;
+    manageProgressBar(nameLabel, levelLabel);
+  }else if (coins > 100000000 && coins <= 1000000000) {
+    nameLabel = 'Grandmaster';
+    levelLabel = 9;
+    manageProgressBar(nameLabel, levelLabel);
+  }else if (coins > 1000000000) {
+    nameLabel = 'Lord';
+    levelLabel = 10;
+    manageProgressBar(nameLabel, levelLabel);
+  }
+}
+
+function manageProgressBar (level, levelLabel) {
+
+  document.getElementById('progressBarBoxStatusLabel').innerHTML = level + ' >';
+  document.getElementById('progressBarBoxLevelLabel').innerHTML = 'Level '+levelLabel +'/10'
+
+  const levelProgress = {
+    'Bronze':      5000,
+    'Silver':      25000,
+    'Gold':        100000, 
+    'Platinum':    1000000,
+    'Diamond':     2000000,
+    'Epic':        10000000,
+    'Legendary':   50000000,
+    'Master':      100000000,
+    'Grandmaster': 1000000000,
+    'Lord':        10000000000
+  };
+
+  const coins = getLeftCoins();
+  const maxValue = levelProgress.level;
+  const progression = 100/maxValue;
+  const barWidth = coins*progression;
+  document.getElementById('progressBar').style.width = barWidth + 'vw'
+} 

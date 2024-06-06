@@ -243,7 +243,7 @@ html, body {
 }
 
 #progressBar{
-    width: 25vw;
+    width: 0vw;
     height: 20px;
     position: absolute;
     background-color: red;
