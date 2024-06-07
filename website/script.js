@@ -272,13 +272,12 @@ function showReferrals(){
           verifyReferral(id);
           if (premium == 'false'){
             state.innerHTML = '-- +5000 --';
-            const coins = +document.getElementById('coinsLabel').textContent;
-
-            document.getElementById('coinsLabel').innerHTML = (coins+5000)
+            const coins = +getLeftCoins();
+            adjustCoinsVisual(coins+5000)
           } else {
             state.innerHTML = '-- +25000 --';
-            document.getElementById('coinsLabel').innerHTML = (coins+25000)
-          }
+            const coins = +getLeftCoins();
+            adjustCoinsVisual(coins+25000)          }
           state.style.color = 'green'
         }else {
           state.innerHTML = 'bonus alr added'
