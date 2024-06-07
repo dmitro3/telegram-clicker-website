@@ -1,7 +1,6 @@
 body.height = window.innerHeight
 window.onload = ()=> {
   adjustProgressBar()
-  adjustCoinsVisual();
   registerUser();
   showReferrals();
   identifyReferral()
@@ -17,6 +16,9 @@ window.onload = ()=> {
     .then(data => {
       newData = Array.from(data.data);
       const record = newData[newData.length-1];
+      const coins = record.coins;
+      adjustCoinsVisual(coins);
+
       document.getElementById('coinsLabel').innerHTML = record.coins;
       document.getElementById('energyLabel').innerHTML = calculateEnergy(record.energy, record.time)
     });
@@ -84,7 +86,6 @@ document.getElementById('gameButton').addEventListener('click', ()=>{
 
 document.getElementById('mainButtonBox').addEventListener('touchstart', ()=>{
   adjustProgressBar()
-  adjustCoinsVisual()
     if (window.Telegram.WebApp.platform == 'ios'){
         for (let i = 0; i < event.touches.length; i++) {
         showClick(event.touches[i]);
@@ -95,7 +96,7 @@ document.getElementById('mainButtonBox').addEventListener('touchstart', ()=>{
         energy -= event.touches.length;
         coins += event.touches.length;
         document.getElementById('energyLabel').innerHTML = energy + '/1000'
-        document.getElementById('coinsLabel').innerHTML = coins
+        adjustCoinsVisual(coins)
         }
     }
   });
@@ -143,7 +144,7 @@ function getLeftEnergy() {
 }
 
 function getLeftCoins() {
-    return +document.getElementById('coinsLabel').textContent;
+    return +(document.getElementById('coinsLabel').textContent.replace(/,/g, ''));
 }
 
 function getTelegramId() {
@@ -479,11 +480,6 @@ add1B.addEventListener('click', ()=>{
   document.getElementById('coinsLabel').innerHTML = coins + 1000000000;
 })
 
-function adjustCoinsVisual () {
-  const coins = +getLeftCoins();
-  if (coins < 1000) {
-    document.getElementById('coinsLabel').innerHTML = coins
-  } else if (coins >= 1000 && coins < 10000)  {
-    document.getElementById('coinsLabel').innerHTML = +(+coins.toString()[0]+','+ +(coins.toString().slice(0)))
-  }
+function adjustCoinsVisual (coins) {
+  document.getElementById('coinsLabel').innerHTML = coins.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
