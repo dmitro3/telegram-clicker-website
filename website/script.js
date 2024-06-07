@@ -1,6 +1,5 @@
 body.height = window.innerHeight
 window.onload = ()=> {
-  adjustProgressBar()
   registerUser();
   showReferrals();
   identifyReferral()
@@ -18,8 +17,7 @@ window.onload = ()=> {
       const record = newData[newData.length-1];
       const coins = record.coins;
       adjustCoinsVisual(coins);
-
-      document.getElementById('coinsLabel').innerHTML = record.coins;
+      adjustProgressBar()
       document.getElementById('energyLabel').innerHTML = calculateEnergy(record.energy, record.time)
     });
 }
