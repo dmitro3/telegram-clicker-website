@@ -251,7 +251,7 @@ function showReferrals(){
   });
   function createSubFriend(id, length, clicked, verified){
       postData('/getUserInformation', {
-        telegramId: data
+        telegramId: id
       })
       .then(data => {
         newData = Array.from(data.data);
