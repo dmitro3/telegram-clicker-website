@@ -4,6 +4,8 @@ window.onload = ()=> {
   showReferrals();
   identifyReferral()
   const coins = +getLeftCoins();
+  let tg = window.Telegram.WebApp;
+  document.getElementById('usernameLabel').innerHTML = tg.initDataUnsafe.user.username;
   if (coins > 0 && coins < 10){
     adjustClickedReferral(getTelegramId());
   }
