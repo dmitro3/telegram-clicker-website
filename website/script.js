@@ -9,7 +9,6 @@ window.onload = ()=> {
   if (coins > 0 && coins < 10){
     adjustClickedReferral(getTelegramId());
   }
-  const tg = window.Telegram.WebApp;
   tg.expand();
   postData('/getGameData', {
       telegramId: getTelegramId(),
