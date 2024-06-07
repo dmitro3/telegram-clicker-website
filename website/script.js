@@ -1,6 +1,7 @@
 body.height = window.innerHeight
 window.onload = ()=> {
   adjustProgressBar()
+  adjustCoinsVisual();
   registerUser();
   showReferrals();
   identifyReferral()
@@ -83,6 +84,7 @@ document.getElementById('gameButton').addEventListener('click', ()=>{
 
 document.getElementById('mainButtonBox').addEventListener('touchstart', ()=>{
   adjustProgressBar()
+  adjustCoinsVisual()
     if (window.Telegram.WebApp.platform == 'ios'){
         for (let i = 0; i < event.touches.length; i++) {
         showClick(event.touches[i]);
@@ -476,3 +478,12 @@ add1B.addEventListener('click', ()=>{
   const coins = getLeftCoins();
   document.getElementById('coinsLabel').innerHTML = coins + 1000000000;
 })
+
+function adjustCoinsVisual () {
+  const coins = +getLeftCoins();
+  if (coins < 1000) {
+    document.getElementById('coinsLabel').innerHTML = coins
+  } else if (coins >= 1000 && coins < 10000)  {
+    document.getElementById('coinsLabel').innerHTML = +(+coins.toString()[0]+','+ +(coins.toString().slice(0)))
+  }
+}
