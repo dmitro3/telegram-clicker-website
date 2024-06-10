@@ -443,7 +443,144 @@ html, body {
     height: 40px;
     background-color: white;
     border-radius: 10px;
-    top: 20px;
+    margin-top: 5vw;
     position: absolute;
     margin-left: 85vw;
+}
+
+#popUpCalendar{
+    width: 15vw;
+    height: 15vw;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 5vw;
+    margin-left: 40vw;
+}
+
+#calendarLogoPopUp{
+    width: 13vw;
+    margin-top: 1vw;
+    margin-left: 1vw;
+    height: 13vw;
+}
+
+#popUpBoxLabel{
+    text-align: center;
+    color: white;
+}
+
+#popUpBoxDescription{
+    color: white;
+    text-align: center;
+    margin-top: -10px;
+}
+
+#day1Box{
+    position: absolute;
+    width: 18.75vw;
+    height: 18.75vw;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 5vw;
+    margin-top: -2vw;
+}
+
+#day2Box{
+    position: absolute;
+    width: 18.75vw;
+    height: 18.75vw;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 28.75vw;
+    margin-top: -2vw;
+}
+
+#day3Box{
+    position: absolute;
+    width: 18.75vw;
+    height: 18.75vw;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 52.5vw;
+    margin-top: -2vw;
+}
+
+#day4Box{
+    position: absolute;
+    width: 18.75vw;
+    height: 18.75vw;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 76.25vw;
+    margin-top: -2vw;
+}
+
+#day5Box{
+    position: absolute;
+    width: 18.75vw;
+    height: 18.75vw;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 5vw;
+    margin-top: 21.75vw;
+}
+
+#day6Box{
+    position: absolute;
+    width: 18.75vw;
+    height: 18.75vw;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 28.75vw;
+    margin-top: 21.75vw;
+}
+
+#day7Box{
+    position: absolute;
+    width: 18.75vw;
+    height: 18.75vw;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 52.5vw;
+    margin-top: 21.75vw;
+}
+
+#day8Box{
+    position: absolute;
+    width: 18.75vw;
+    height: 18.75vw;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 76.25vw;
+    margin-top: 21.75vw;
+}
+
+#day9Box{
+    position: absolute;
+    width: 18.75vw;
+    height: 18.75vw;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 5vw;
+    margin-top: 45.5vw;
+}
+
+#day10Box{
+    position: absolute;
+    width: 18.75vw;
+    height: 18.75vw;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 28.75vw;
+    margin-top: 45.5vw;
+}
+
+#popUpClaimButton{
+    height: 60px;
+    width: 90vw;
+    margin-left: 5vw;
+    background-color: blue;
+    position: absolute;
+    border-radius: 5px;
+    margin-top: 69.25vw;
 }
