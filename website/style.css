@@ -454,7 +454,7 @@ html, body {
     background-color: white;
     border-radius: 5px;
     margin-top: 5vw;
-    margin-left: 40vw;
+    margin-left: 42.5vw;
 }
 
 #calendarLogoPopUp{
@@ -476,6 +476,7 @@ html, body {
 }
 
 #day1Box{
+    border: 3px solid green;
     position: absolute;
     width: 18.75vw;
     height: 18.75vw;
@@ -486,6 +487,7 @@ html, body {
 }
 
 #day2Box{
+    opacity: 50%;
     position: absolute;
     width: 18.75vw;
     height: 18.75vw;
@@ -496,6 +498,7 @@ html, body {
 }
 
 #day3Box{
+    opacity: 50%;
     position: absolute;
     width: 18.75vw;
     height: 18.75vw;
@@ -506,6 +509,7 @@ html, body {
 }
 
 #day4Box{
+    opacity: 50%;
     position: absolute;
     width: 18.75vw;
     height: 18.75vw;
@@ -516,6 +520,7 @@ html, body {
 }
 
 #day5Box{
+    opacity: 50%;
     position: absolute;
     width: 18.75vw;
     height: 18.75vw;
@@ -526,6 +531,7 @@ html, body {
 }
 
 #day6Box{
+    opacity: 50%;
     position: absolute;
     width: 18.75vw;
     height: 18.75vw;
@@ -536,6 +542,7 @@ html, body {
 }
 
 #day7Box{
+    opacity: 50%;
     position: absolute;
     width: 18.75vw;
     height: 18.75vw;
@@ -546,6 +553,7 @@ html, body {
 }
 
 #day8Box{
+    opacity: 50%;
     position: absolute;
     width: 18.75vw;
     height: 18.75vw;
@@ -556,6 +564,7 @@ html, body {
 }
 
 #day9Box{
+    opacity: 50%;
     position: absolute;
     width: 18.75vw;
     height: 18.75vw;
@@ -566,6 +575,7 @@ html, body {
 }
 
 #day10Box{
+    opacity: 50%;
     position: absolute;
     width: 18.75vw;
     height: 18.75vw;
