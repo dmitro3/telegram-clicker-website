@@ -417,6 +417,6 @@ html, body {
 #arrowLabelEarnBox{
     position: absolute;
     color: black;
-    margin-left: 410px;
+    margin-left: 80vw;
     margin-top: -40px; 
 }
