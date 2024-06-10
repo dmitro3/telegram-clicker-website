@@ -505,3 +505,7 @@ function adjustCoinsVisual (coins) {
 document.getElementById('dailyRewardsBox').addEventListener('click', ()=>{
   dailyRewardsPopUpBox.style.display = 'block'
 });
+
+document.getElementById('closeDailyRewardsPopUpBoxBox').addEventListener('click', ()=>{
+  dailyRewardsPopUpBox.style.display = 'none'
+});
