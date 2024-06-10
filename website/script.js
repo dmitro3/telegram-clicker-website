@@ -62,8 +62,8 @@ document.getElementById('friendsButton').addEventListener('click', ()=>{
     progressBarBox.style.display = 'none'
     developerButton.style.color = 'white';
     devField.style.display = 'none'
-
-
+    earnBox.style.display = 'none';
+    earnButton.style.color = 'white';
 });
 
 document.getElementById('gameButton').addEventListener('click', ()=>{
@@ -80,8 +80,26 @@ document.getElementById('gameButton').addEventListener('click', ()=>{
   progressBarBox.style.display = 'block'
   developerButton.style.color = 'white'
   devField.style.display = 'none'
-
+  earnBox.style.display = 'none';
+  earnButton.style.color = 'white';
 });
+
+document.getElementById('earnButton').addEventListener('click', ()=>{
+  document.getElementById('gameField').style.display = 'none';
+  document.getElementById('friendsButton').style.color = 'white';
+  document.getElementById('gameButton').style.color ='white';
+  document.getElementById('referalField').style.display = 'none';
+  earnPerClickBox.style.display = 'none'
+  clicksTillLevelUp.style.display = 'none'
+  passiveClicks.style.display = 'none'
+  progressBarBoxStatusLabel.style.display = 'none'
+  progressBarBoxLevelLabel.style.display = 'none'
+  progressBarBox.style.display = 'none'
+  developerButton.style.color = 'white'
+  earnBox.style.display = 'none';
+  earnButton.style.color = 'red';
+  devField.style.display = 'none'
+})
 
 document.getElementById('mainButtonBox').addEventListener('touchstart', ()=>{
   adjustProgressBar()
@@ -446,6 +464,8 @@ developerButton.addEventListener('click', ()=>{
   progressBarBox.style.display = 'none';
   developerButton.style.color = 'red';
   devField.style.display = 'block'
+  earnBox.style.display = 'none';
+  earnButton.style.color = 'white';
 })
 
 add1000.addEventListener('click', ()=>{

@@ -58,24 +58,39 @@ html, body {
 }
 
 #friendsButton{
-    position: relative;
+    position: absolute;
+    left: 35.6vw;
+
     padding-top: 5px;
-    top:-45px;
+    top:5px;
     color:white;
     margin: 0 auto;
     height: 40px;
-    width: 60px;
+    width: 16.8vw;
     background-color: black;
     border-radius: 5px;
+}
+
+#earnButton{
+    position: absolute;
+    padding-top: 5px;
+    top: 5px;
+    color:white;
+    margin: 0 auto;
+    height: 40px;
+    width: 16.8vw;
+    margin-left: 53.4vw;
+    background-color: black;
+    border-radius: 5px; 
 }
 
 #gameButton{
     padding-top: 5px;
     color:red;
-    position: relative;
-    margin-left: 5px;
+    position: absolute;
+    margin-left: 1vw;
     height: 40px;
-    width: 60px;
+    width: 16.8vw;
     background-color: black;
     border-radius: 5px;
 }
@@ -269,12 +284,12 @@ html, body {
     padding-top: 5px;
     color:white;
     position: absolute;
-    margin-left: 325px;
+    margin-left: 71.2vw;
     height: 40px;
-    width: 60px;
+    width: 16.8vw;
     background-color: black;
     border-radius: 5px;
-    margin-top: -90px;
+    top: 5px;
 }
 
 #add1000{
