@@ -501,3 +501,7 @@ add1B.addEventListener('click', ()=>{
 function adjustCoinsVisual (coins) {
   document.getElementById('coinsLabel').innerHTML = coins.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
+
+document.getElementById('dailyRewardsBox').addEventListener('click', ()=>{
+  dailyRewardsPopUpBox.style.display = 'block'
+});
