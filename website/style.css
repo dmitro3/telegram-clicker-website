@@ -368,3 +368,55 @@ html, body {
     position: relative;
     color: white;
 }
+
+#coinLogoEarnBox{
+    margin-left: 43vw;
+    margin-top: 10vw
+}
+
+#earnBoxLabel{
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#dailyTasksLabel{
+    color: white;
+    margin-top: 10px;
+    margin-left: 5vw;
+}
+
+#dailyRewardsBox{
+    margin-left: 5vw;
+    width: 90vw;
+    height: 60px;
+    background-color: white;
+    position: absolute;
+    border-radius: 5px;
+}
+
+#calendarLogo{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#dailyRewardLabel{
+    position: absolute;
+    color: black;
+    margin-left: 70px;
+    margin-top: -45px;
+}
+
+#plusMoneyLabel{
+    position: absolute;
+    color: black;
+    margin-left: 100px;
+    margin-top: -20px;
+}
+
+#arrowLabelEarnBox{
+    position: absolute;
+    color: black;
+    margin-left: 410px;
+    margin-top: -40px; 
+}

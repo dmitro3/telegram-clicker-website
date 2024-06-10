@@ -96,7 +96,7 @@ document.getElementById('earnButton').addEventListener('click', ()=>{
   progressBarBoxLevelLabel.style.display = 'none'
   progressBarBox.style.display = 'none'
   developerButton.style.color = 'white'
-  earnBox.style.display = 'none';
+  earnBox.style.display = 'block';
   earnButton.style.color = 'red';
   devField.style.display = 'none'
 })
