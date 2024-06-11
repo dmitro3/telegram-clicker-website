@@ -525,13 +525,13 @@ function adjustDailyRewards () {
 function adjustDailyRewardsPopUpBox(day) {
   if (day.day == 'day1') {
     day1Box.style.opacity = '100%';
-    day1Box.styel.border = '3px solid green';
+    day1Box.style.border = '3px solid green';
     popUpClaimButton.value = 'day1'
   } else if (day.day == 'day2') {
     day1Box.style.opacity = '100%';
     day2Box.style.opacity = '100%';
     day1Box.style.backgroundColor = 'green';
-    day2Box.styel.border = '3px solid green';
+    day2Box.style.border = '3px solid green';
     popUpClaimButton.value = 'day2'
   } else if (day.day == 'day3') {
     day1Box.style.opacity = '100%';
@@ -541,7 +541,7 @@ function adjustDailyRewardsPopUpBox(day) {
     day3Box.style.opacity = '100%';
     day2Box.style.backgroundColor = 'green';
     popUpClaimButton.value = 'day3'
-    day3Box.styel.border = '3px solid green';
+    day3Box.style.border = '3px solid green';
   }else if (day.day == 'day4') {
     day1Box.style.opacity = '100%';
     day2Box.style.opacity = '100%';
@@ -550,7 +550,7 @@ function adjustDailyRewardsPopUpBox(day) {
     day1Box.style.backgroundColor = 'green';
     day2Box.style.backgroundColor = 'green';
     day3Box.style.backgroundColor = 'green';
-    day4Box.styel.border = '3px solid green';
+    day4Box.style.border = '3px solid green';
     popUpClaimButton.value = 'day4'
   }else if (day.day == 'day5') {
     day1Box.style.opacity = '100%';
@@ -562,7 +562,7 @@ function adjustDailyRewardsPopUpBox(day) {
     day2Box.style.backgroundColor = 'green';
     day3Box.style.backgroundColor = 'green';
     day4Box.style.backgroundColor = 'green';
-    day5Box.styel.border = '3px solid green';
+    day5Box.style.border = '3px solid green';
     popUpClaimButton.value = 'day5'
   }else if (day.day == 'day6') {
     day1Box.style.opacity = '100%';
@@ -576,7 +576,7 @@ function adjustDailyRewardsPopUpBox(day) {
     day3Box.style.backgroundColor = 'green';
     day4Box.style.backgroundColor = 'green';
     day5Box.style.backgroundColor = 'green';
-    day6Box.styel.border = '3px solid green';
+    day6Box.style.border = '3px solid green';
     popUpClaimButton.value = 'day6'
   }else if (day.day == 'day7') {
     day1Box.style.opacity = '100%';
@@ -592,7 +592,7 @@ function adjustDailyRewardsPopUpBox(day) {
     day4Box.style.backgroundColor = 'green';
     day5Box.style.backgroundColor = 'green';
     day6Box.style.backgroundColor = 'green';
-    day7Box.styel.border = '3px solid green';
+    day7Box.style.border = '3px solid green';
     popUpClaimButton.value = 'day7'
   }else if (day.day == 'day8') {
     day1Box.style.opacity = '100%';
@@ -610,7 +610,7 @@ function adjustDailyRewardsPopUpBox(day) {
     day5Box.style.backgroundColor = 'green';
     day6Box.style.backgroundColor = 'green';
     day7Box.style.backgroundColor = 'green';
-    day8Box.styel.border = '3px solid green';
+    day8Box.style.border = '3px solid green';
     popUpClaimButton.value = 'day8'
   }else if (day.day == 'day9') {
     day1Box.style.opacity = '100%';
@@ -630,7 +630,7 @@ function adjustDailyRewardsPopUpBox(day) {
     day6Box.style.backgroundColor = 'green';
     day7Box.style.backgroundColor = 'green';
     day8Box.style.backgroundColor = 'green';
-    day9Box.styel.border = '3px solid green';
+    day9Box.style.border = '3px solid green';
     popUpClaimButton.value = 'day9'
   }
   else if (day.day == 'day10') {
@@ -653,7 +653,7 @@ function adjustDailyRewardsPopUpBox(day) {
     day7Box.style.backgroundColor = 'green';
     day8Box.style.backgroundColor = 'green';
     day9Box.style.backgroundColor = 'green';
-    day10Box.styel.border = '3px solid green';
+    day10Box.style.border = '3px solid green';
     popUpClaimButton.value = 'day10'
   } else{
     day1Box.style.opacity = '100%';
