@@ -37,6 +37,9 @@ app.use('/getUserInformation', getUserInformation);
 const verifyReferral = require('./routes/verifyReferral');
 app.use('/verifyReferral', verifyReferral);
 
+const getDailyRewardsState = require('./routes/getDailyRewardsState');
+app.use('/getDailyRewardsState', getDailyRewardsState);
+
 //db.run("CREATE TABLE users_data (ID INTEGER PRIMARY KEY, telegramId INTEGER, energy INTEGER, coins INTEGER, time TEXT)");
 
 //db.run("CREATE TABLE refferal_origin (ID INTEGER PRIMARY KEY, telegramId INTEGER, link TEXT)");
@@ -47,3 +50,5 @@ app.use('/verifyReferral', verifyReferral);
 //db.run("CREATE TABLE referrals_data (ID INTEGER PRIMARY KEY, telegramSourceId INTEGER, telegramReferralId INTEGER, clicked INTEGER, verified INTEGER)");
 
 //db.run("CREATE TABLE users_information (ID INTEGER PRIMARY KEY, telegramId INTEGER, username TEXT, photo TEXT, isPremium TEXT)");
+
+//db.run('CREATE TABLE daily_rewards (ID INTEGER PRIMARY KEY, telegramId INTEGER, day1_claimed TEXT, day1_date TEXT, day2_claimed TEXT, day2_date TEXT, day3_claimed TEXT, day3_date TEXT, day4_claimed TEXT, day4_date TEXT, day5_claimed TEXT, day5_date TEXT, day6_claimed TEXT, day6_date TEXT, day7_claimed TEXT, day7_date TEXT, day8_claimed TEXT, day8_date TEXT, day9_claimed TEXT, day9_date TEXT, day10_claimed TEXT, day10_date TEXT)')

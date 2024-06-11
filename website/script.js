@@ -503,9 +503,21 @@ function adjustCoinsVisual (coins) {
 }
 
 document.getElementById('dailyRewardsBox').addEventListener('click', ()=>{
-  dailyRewardsPopUpBox.style.display = 'block'
+  dailyRewardsPopUpBox.style.display = 'block';
+  adjustDailyRewards();
 });
 
 document.getElementById('closeDailyRewardsPopUpBoxBox').addEventListener('click', ()=>{
   dailyRewardsPopUpBox.style.display = 'none'
 });
+
+function adjustDailyRewards () {
+  const telegramId = getTelegramId();
+  postData('/getDailyRewardsState', {
+    telegramId: telegramId,
+    clicked: 1
+  })
+  .then(data => { 
+    console.log()
+  });
+}
