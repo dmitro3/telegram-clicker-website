@@ -518,8 +518,7 @@ function adjustDailyRewards () {
   })
   .then(data => { 
     const day = Array.from([data.day]);
-    console.log(day)
-    adjustDailyRewardsPopUpBox(day);
+    adjustDailyRewardsPopUpBox(day[0]);
   });
 }
 
