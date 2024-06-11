@@ -31,7 +31,7 @@ router.post('/', async (req, res, next) => {
 
 async function updateDay1(data) {
     return new Promise((resolve, reject) => {
-        db.run("UPDATE daily_rewards SET day1_claimed = ? day1_date = ? WHERE telegramId = ?", ['true', data.data +data.telegramId], function (err) {
+        db.run("UPDATE daily_rewards SET day1_claimed = ? day1_date = ? WHERE telegramId = ?", ['true', data.data, +data.telegramId], function (err) {
             if (err) {
                 console.error("Error inserting data:", err.message);
                 reject(err);
@@ -44,7 +44,7 @@ async function updateDay1(data) {
 
     async function updateDay2(data) {
         return new Promise((resolve, reject) => {
-            db.run("UPDATE daily_rewards SET day2_claimed = ? day2_date = ? WHERE telegramId = ?", ['true', data.data +data.telegramId], function (err) {
+            db.run("UPDATE daily_rewards SET day2_claimed = ? day2_date = ? WHERE telegramId = ?", ['true', data.data, +data.telegramId], function (err) {
                 if (err) {
                     console.error("Error inserting data:", err.message);
                     reject(err);
@@ -56,7 +56,7 @@ async function updateDay1(data) {
         )}
         async function updateDay3(data) {
             return new Promise((resolve, reject) => {
-                db.run("UPDATE daily_rewards SET day3_claimed = ? day3_date = ? WHERE telegramId = ?", ['true', data.data +data.telegramId], function (err) {
+                db.run("UPDATE daily_rewards SET day3_claimed = ? day3_date = ? WHERE telegramId = ?", ['true', data.data, +data.telegramId], function (err) {
                     if (err) {
                         console.error("Error inserting data:", err.message);
                         reject(err);
@@ -69,7 +69,7 @@ async function updateDay1(data) {
 
             async function updateDay4(data) {
                 return new Promise((resolve, reject) => {
-                    db.run("UPDATE daily_rewards SET day4_claimed = ? day4_date = ? WHERE telegramId = ?", ['true', data.data +data.telegramId], function (err) {
+                    db.run("UPDATE daily_rewards SET day4_claimed = ? day4_date = ? WHERE telegramId = ?", ['true', data.data, +data.telegramId], function (err) {
                         if (err) {
                             console.error("Error inserting data:", err.message);
                             reject(err);
@@ -82,7 +82,7 @@ async function updateDay1(data) {
 
                 async function updateDay5(data) {
                     return new Promise((resolve, reject) => {
-                        db.run("UPDATE daily_rewards SET day5_claimed = ? day5_date = ? WHERE telegramId = ?", ['true', data.data +data.telegramId], function (err) {
+                        db.run("UPDATE daily_rewards SET day5_claimed = ? day5_date = ? WHERE telegramId = ?", ['true', data.data, +data.telegramId], function (err) {
                             if (err) {
                                 console.error("Error inserting data:", err.message);
                                 reject(err);
@@ -95,7 +95,7 @@ async function updateDay1(data) {
 
                     async function updateDay6(data) {
                         return new Promise((resolve, reject) => {
-                            db.run("UPDATE daily_rewards SET day6_claimed = ? day6_date = ? WHERE telegramId = ?", ['true', data.data +data.telegramId], function (err) {
+                            db.run("UPDATE daily_rewards SET day6_claimed = ? day6_date = ? WHERE telegramId = ?", ['true', data.data, +data.telegramId], function (err) {
                                 if (err) {
                                     console.error("Error inserting data:", err.message);
                                     reject(err);
@@ -107,7 +107,7 @@ async function updateDay1(data) {
                         )}
                         async function updateDay7(data) {
                             return new Promise((resolve, reject) => {
-                                db.run("UPDATE daily_rewards SET day7_claimed = ? day7_date = ? WHERE telegramId = ?", ['true', data.data +data.telegramId], function (err) {
+                                db.run("UPDATE daily_rewards SET day7_claimed = ? day7_date = ? WHERE telegramId = ?", ['true', data.data, +data.telegramId], function (err) {
                                     if (err) {
                                         console.error("Error inserting data:", err.message);
                                         reject(err);
@@ -120,7 +120,7 @@ async function updateDay1(data) {
 
                             async function updateDay8(data) {
                                 return new Promise((resolve, reject) => {
-                                    db.run("UPDATE daily_rewards SET day8_claimed = ? day8_date = ? WHERE telegramId = ?", ['true', data.data +data.telegramId], function (err) {
+                                    db.run("UPDATE daily_rewards SET day8_claimed = ? day8_date = ? WHERE telegramId = ?", ['true', data.data, +data.telegramId], function (err) {
                                         if (err) {
                                             console.error("Error inserting data:", err.message);
                                             reject(err);
@@ -133,7 +133,7 @@ async function updateDay1(data) {
 
                                 async function updateDay9(data) {
                                     return new Promise((resolve, reject) => {
-                                        db.run("UPDATE daily_rewards SET day9_claimed = ? day9_date = ? WHERE telegramId = ?", ['true', data.data +data.telegramId], function (err) {
+                                        db.run("UPDATE daily_rewards SET day9_claimed = ? day9_date = ? WHERE telegramId = ?", ['true', data.data, +data.telegramId], function (err) {
                                             if (err) {
                                                 console.error("Error inserting data:", err.message);
                                                 reject(err);
@@ -146,7 +146,7 @@ async function updateDay1(data) {
 
                                     async function updateDay10(data) {
                                         return new Promise((resolve, reject) => {
-                                            db.run("UPDATE daily_rewards SET day10_claimed = ? day10_date = ? WHERE telegramId = ?", ['true', data.data +data.telegramId], function (err) {
+                                            db.run("UPDATE daily_rewards SET day10_claimed = ? day10_date = ? WHERE telegramId = ?", ['true', data.data, +data.telegramId], function (err) {
                                                 if (err) {
                                                     console.error("Error inserting data:", err.message);
                                                     reject(err);
