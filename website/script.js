@@ -681,7 +681,7 @@ function adjustDailyRewardsPopUpBox(day) {
   }
 }
 
-document.getElementById('dailyRewardsPopUpBox').addEventListener('click', ()=>{
+document.getElementById('popUpClaimButton').addEventListener('click', ()=>{
   const telegramId = getTelegramId();
   if (popUpClaimButton.value != 'COMPLETED'){
     postData('/updateDailyRewards', {
@@ -690,7 +690,7 @@ document.getElementById('dailyRewardsPopUpBox').addEventListener('click', ()=>{
       data: getCurrentDateFormatted()
     })
     .then(data => { 
-      document.getElementById('popUpClaimButton').style.display = 'none';
+      document.getElementById('dailyRewardsPopUpBox').style.display = 'none';
     });
   }
 });
