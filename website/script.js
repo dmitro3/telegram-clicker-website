@@ -517,7 +517,7 @@ function adjustDailyRewards () {
     telegramId: telegramId
   })
   .then(data => { 
-    const day = Array.from(data.day.day);
+    const day = Array.from([data.day]);
     console.log(day)
     adjustDailyRewardsPopUpBox(day);
   });
