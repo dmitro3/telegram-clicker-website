@@ -655,7 +655,7 @@ function adjustDailyRewardsPopUpBox(day) {
     day9Box.style.backgroundColor = 'green';
     day10Box.style.border = '3px solid green';
     popUpClaimButton.value = 'day10'
-  } else{
+  } else if(day.day == 'COMPLETED'){
     day1Box.style.opacity = '100%';
     day2Box.style.opacity = '100%';
     day3Box.style.opacity = '100%';
@@ -681,7 +681,7 @@ function adjustDailyRewardsPopUpBox(day) {
   }
 }
 
-document.getElementById('popUpClaimButton').addEventListener('click', ()=>{
+document.getElementById('dailyRewardsPopUpBox').addEventListener('click', ()=>{
   const telegramId = getTelegramId();
   if (popUpClaimButton.value != 'COMPLETED'){
     postData('/updateDailyRewards', {
