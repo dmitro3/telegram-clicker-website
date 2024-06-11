@@ -14,7 +14,7 @@ router.post('/', async (req, res, next) => {
     } else {
         const day = getLastDay(information[0]);
         console.log(day)
-        res.json({day})
+        res.json(day)
     }
 });
 

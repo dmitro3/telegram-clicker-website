@@ -518,6 +518,7 @@ function adjustDailyRewards () {
   })
   .then(data => { 
     const day = Array.from(data);
+    console.log(day)
     adjustDailyRewardsPopUpBox(day);
   });
 }
