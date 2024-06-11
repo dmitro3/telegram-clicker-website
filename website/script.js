@@ -514,10 +514,192 @@ document.getElementById('closeDailyRewardsPopUpBoxBox').addEventListener('click'
 function adjustDailyRewards () {
   const telegramId = getTelegramId();
   postData('/getDailyRewardsState', {
-    telegramId: telegramId,
-    clicked: 1
+    telegramId: telegramId
   })
   .then(data => { 
-    console.log()
+    const day = Array.from(data);
+    adjustDailyRewardsPopUpBox(day);
   });
+}
+
+function adjustDailyRewardsPopUpBox(day) {
+  if (day.day == 'day1') {
+    day1Box.style.opacity = '100%';
+    day1Box.styel.border = '3px solid green';
+    popUpClaimButton.value = 'day1'
+  } else if (day.day == 'day2') {
+    day1Box.style.opacity = '100%';
+    day2Box.style.opacity = '100%';
+    day1Box.style.backgroundColor = 'green';
+    day2Box.styel.border = '3px solid green';
+    popUpClaimButton.value = 'day2'
+  } else if (day.day == 'day3') {
+    day1Box.style.opacity = '100%';
+    day2Box.style.opacity = '100%';
+    day1Box.style.backgroundColor = 'green';
+    day2Box.style.backgroundColor = 'green';
+    day3Box.style.opacity = '100%';
+    day2Box.style.backgroundColor = 'green';
+    popUpClaimButton.value = 'day3'
+    day3Box.styel.border = '3px solid green';
+  }else if (day.day == 'day4') {
+    day1Box.style.opacity = '100%';
+    day2Box.style.opacity = '100%';
+    day3Box.style.opacity = '100%';
+    day4Box.style.opacity = '100%';
+    day1Box.style.backgroundColor = 'green';
+    day2Box.style.backgroundColor = 'green';
+    day3Box.style.backgroundColor = 'green';
+    day4Box.styel.border = '3px solid green';
+    popUpClaimButton.value = 'day4'
+  }else if (day.day == 'day5') {
+    day1Box.style.opacity = '100%';
+    day2Box.style.opacity = '100%';
+    day3Box.style.opacity = '100%';
+    day4Box.style.opacity = '100%';
+    day5Box.style.opacity = '100%';
+    day1Box.style.backgroundColor = 'green';
+    day2Box.style.backgroundColor = 'green';
+    day3Box.style.backgroundColor = 'green';
+    day4Box.style.backgroundColor = 'green';
+    day5Box.styel.border = '3px solid green';
+    popUpClaimButton.value = 'day5'
+  }else if (day.day == 'day6') {
+    day1Box.style.opacity = '100%';
+    day2Box.style.opacity = '100%';
+    day3Box.style.opacity = '100%';
+    day4Box.style.opacity = '100%';
+    day5Box.style.opacity = '100%';
+    day6Box.style.opacity = '100%';
+    day1Box.style.backgroundColor = 'green';
+    day2Box.style.backgroundColor = 'green';
+    day3Box.style.backgroundColor = 'green';
+    day4Box.style.backgroundColor = 'green';
+    day5Box.style.backgroundColor = 'green';
+    day6Box.styel.border = '3px solid green';
+    popUpClaimButton.value = 'day6'
+  }else if (day.day == 'day7') {
+    day1Box.style.opacity = '100%';
+    day2Box.style.opacity = '100%';
+    day3Box.style.opacity = '100%';
+    day4Box.style.opacity = '100%';
+    day5Box.style.opacity = '100%';
+    day6Box.style.opacity = '100%';
+    day7Box.style.opacity = '100%';
+    day1Box.style.backgroundColor = 'green';
+    day2Box.style.backgroundColor = 'green';
+    day3Box.style.backgroundColor = 'green';
+    day4Box.style.backgroundColor = 'green';
+    day5Box.style.backgroundColor = 'green';
+    day6Box.style.backgroundColor = 'green';
+    day7Box.styel.border = '3px solid green';
+    popUpClaimButton.value = 'day7'
+  }else if (day.day == 'day8') {
+    day1Box.style.opacity = '100%';
+    day2Box.style.opacity = '100%';
+    day3Box.style.opacity = '100%';
+    day4Box.style.opacity = '100%';
+    day5Box.style.opacity = '100%';
+    day6Box.style.opacity = '100%';
+    day7Box.style.opacity = '100%';
+    day8Box.style.opacity = '100%';
+    day1Box.style.backgroundColor = 'green';
+    day2Box.style.backgroundColor = 'green';
+    day3Box.style.backgroundColor = 'green';
+    day4Box.style.backgroundColor = 'green';
+    day5Box.style.backgroundColor = 'green';
+    day6Box.style.backgroundColor = 'green';
+    day7Box.style.backgroundColor = 'green';
+    day8Box.styel.border = '3px solid green';
+    popUpClaimButton.value = 'day8'
+  }else if (day.day == 'day9') {
+    day1Box.style.opacity = '100%';
+    day2Box.style.opacity = '100%';
+    day3Box.style.opacity = '100%';
+    day4Box.style.opacity = '100%';
+    day5Box.style.opacity = '100%';
+    day6Box.style.opacity = '100%';
+    day7Box.style.opacity = '100%';
+    day8Box.style.opacity = '100%';
+    day9Box.style.opacity = '100%';
+    day1Box.style.backgroundColor = 'green';
+    day2Box.style.backgroundColor = 'green';
+    day3Box.style.backgroundColor = 'green';
+    day4Box.style.backgroundColor = 'green';
+    day5Box.style.backgroundColor = 'green';
+    day6Box.style.backgroundColor = 'green';
+    day7Box.style.backgroundColor = 'green';
+    day8Box.style.backgroundColor = 'green';
+    day9Box.styel.border = '3px solid green';
+    popUpClaimButton.value = 'day9'
+  }
+  else if (day.day == 'day10') {
+    day1Box.style.opacity = '100%';
+    day2Box.style.opacity = '100%';
+    day3Box.style.opacity = '100%';
+    day4Box.style.opacity = '100%';
+    day5Box.style.opacity = '100%';
+    day6Box.style.opacity = '100%';
+    day7Box.style.opacity = '100%';
+    day8Box.style.opacity = '100%';
+    day9Box.style.opacity = '100%';
+    day10Box.style.opacity = '100%';
+    day1Box.style.backgroundColor = 'green';
+    day2Box.style.backgroundColor = 'green';
+    day3Box.style.backgroundColor = 'green';
+    day4Box.style.backgroundColor = 'green';
+    day5Box.style.backgroundColor = 'green';
+    day6Box.style.backgroundColor = 'green';
+    day7Box.style.backgroundColor = 'green';
+    day8Box.style.backgroundColor = 'green';
+    day9Box.style.backgroundColor = 'green';
+    day10Box.styel.border = '3px solid green';
+    popUpClaimButton.value = 'day10'
+  } else{
+    day1Box.style.opacity = '100%';
+    day2Box.style.opacity = '100%';
+    day3Box.style.opacity = '100%';
+    day4Box.style.opacity = '100%';
+    day5Box.style.opacity = '100%';
+    day6Box.style.opacity = '100%';
+    day7Box.style.opacity = '100%';
+    day8Box.style.opacity = '100%';
+    day9Box.style.opacity = '100%';
+    day10Box.style.opacity = '100%';
+    day1Box.style.backgroundColor = 'green';
+    day2Box.style.backgroundColor = 'green';
+    day3Box.style.backgroundColor = 'green';
+    day4Box.style.backgroundColor = 'green';
+    day5Box.style.backgroundColor = 'green';
+    day6Box.style.backgroundColor = 'green';
+    day7Box.style.backgroundColor = 'green';
+    day8Box.style.backgroundColor = 'green';
+    day9Box.style.backgroundColor = 'green';
+    day10Box.style.backgroundColor = 'green';
+    popUpClaimButton.textContent = 'Everything Claimed'
+    popUpClaimButton.value = 'COMPLETED'
+  }
+}
+
+document.getElementById('popUpClaimButton').addEventListener('click', ()=>{
+  const telegramId = getTelegramId();
+  if (popUpClaimButton.value != 'COMPLETED'){
+    postData('/updateDailyRewards', {
+      telegramId: telegramId,
+      day: popUpClaimButton.value,
+      data: getCurrentDateFormatted()
+    })
+    .then(data => { 
+      document.getElementById('popUpClaimButton').style.display = 'none';
+    });
+  }
+});
+
+function getCurrentDateFormatted() {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+  const day = String(today.getDate()).padStart(2, '0');
+
+  return `${year}-${month}-${day}`;
 }

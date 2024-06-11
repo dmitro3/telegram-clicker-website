@@ -476,7 +476,7 @@ html, body {
 }
 
 #day1Box{
-    border: 3px solid green;
+    opacity: 50%;
     position: absolute;
     width: 18.75vw;
     height: 18.75vw;
