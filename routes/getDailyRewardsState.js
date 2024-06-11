@@ -10,11 +10,12 @@ router.post('/', async (req, res, next) => {
     if (information.length == 0) {
         await addUser(data);
         console.log(information)
-        res.json({day: 'day1'})
+        const day = [{day: 'day1'}]
+        res.json({day: day})
     } else {
         const day = getLastDay(information[0]);
         console.log(day)
-        res.json(day)
+        res.json({day: day})
     }
 });
 
