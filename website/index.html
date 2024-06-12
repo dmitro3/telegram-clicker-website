@@ -7,7 +7,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="body">
-    <div style="text-align: center; width: 100%;"><h4 id="usernameLabel"></h4></div>
+
+    <div id="menu">
+        <div id="gameButton">
+            <h6 class="gameButtonLabel">Game</h6>
+        </div>
+        <div id="friendsButton">
+            <h6 class="gameButtonLabel">Friends</h6>
+        </div> 
+        <div id="earnButton">
+            <h6 class="gameButtonLabel">Earn</h6>
+        </div>
+        <div id="developerButton">
+            <h6 class="gameButtonLabel">Dev</h6>
+        </div>
+    </div>
+    <div id="userLogoBackgroundDiv">
+        <img id="userLogoPhoto" src="user.png" width="100%" height="100%"></div>
+    <h4 id="usernameLabel">Vadym Pershoguba</h4>
+
+    <div id="exchangeBox">
+        <img src="binance.png" width="25vh" height="25vh" style="margin-top: 0.5vh; margin-left: 1vw;">
+        <h5 id="exchangeBoxLabel">Binance</h5>
+    </div>
+
+    <div id="gameField">
     <div id="earnPerClickBox">
         <h5 class="insideLabel">Earn per tap</h5>
         <img id="earnPerClickCoin" src="coin.png" width="25px" height="25px">
@@ -28,11 +52,10 @@
     <div id="progressBarBox">
         <div id="progressBar"></div>
     </div>
-    <div id="gameField">
-        <h1 id="coinsLabel">0</h1>
-        <div style="text-align: center;">
-            <button id="mainButtonBox"></button>
+        <div id="coinsBox">
+            <h1 id="coinsLabel">0</h1>
         </div>
+            <button id="mainButtonBox"></button>
 
         <h3 id="energyLabel">1000/1000</h3>
     </div>
@@ -137,20 +160,7 @@
         </div>
     </div>
     <div style="text-align: center;">
-        <div id="menu">
-            <div id="gameButton">
-                <h6>Game</h6>
-            </div>
-            <div id="friendsButton">
-                <h6>Friends</h6>
-            </div> 
-            <div id="earnButton">
-                <h6>Earn</h6>
-            </div>
-            <div id="developerButton">
-                <h6>Dev</h6>
-            </div>
-        </div>
+        
     </div>
     <div id="dailyRewardsPopUpBox">
         <div id="closeDailyRewardsPopUpBoxBox"><img id="closeDailyRewardsPopUpBox" src="close.png" width="30px" height="30px" style="margin-top: 5px;margin-left: 5px;"></div>
