@@ -395,15 +395,16 @@ html, body {
     background-color: white;
     position: absolute;
     border-radius: 5px;
+    margin-top: -10px;
 }
 
-#calendarLogo{
+.calendarLogo{
     z-index: 0;
     margin-top: 10px;
     margin-left: 10px;
 }
 
-#dailyRewardLabel{
+.dailyRewardLabel{
     z-index: 0;
     position: absolute;
     color: black;
@@ -411,14 +412,14 @@ html, body {
     margin-top: -45px;
 }
 
-#plusMoneyLabel{
+.plusMoneyLabel{
     position: absolute;
     color: black;
     margin-left: 100px;
     margin-top: -20px;
 }
 
-#arrowLabelEarnBox{
+.arrowLabelEarnBox{
     position: absolute;
     color: black;
     margin-left: 80vw;
@@ -593,4 +594,73 @@ html, body {
     position: absolute;
     border-radius: 5px;
     margin-top: 69.25vw;
+}
+
+#tasksListLabel{
+    color: white;
+    margin-top: 100px;
+    margin-left: 5vw;
+}
+
+#youtubeUpdateBox{
+    z-index: 0;
+    margin-left: 5vw;
+    width: 90vw;
+    height: 60px;
+    background-color: white;
+    position: absolute;
+    border-radius: 5px;
+    margin-top: -10px;
+}
+
+#telegramJoinBox{
+    z-index: 0;
+    margin-left: 5vw;
+    width: 90vw;
+    height: 60px;
+    background-color: white;
+    position: absolute;
+    border-radius: 5px;
+    margin-top: 70px;
+}
+
+#xAccountBox{
+    z-index: 0;
+    margin-left: 5vw;
+    width: 90vw;
+    height: 60px;
+    background-color: white;
+    position: absolute;
+    border-radius: 5px;
+    margin-top: 150px;
+}
+
+#chooseExchangeBox{
+    z-index: 0;
+    margin-left: 5vw;
+    width: 90vw;
+    height: 60px;
+    background-color: white;
+    position: absolute;
+    border-radius: 5px;
+    margin-top: 230px;
+}
+
+#youtubeUpdateBoxLogo{
+    margin-left: 2vw;
+    margin-top: 2vw;
+}
+
+#youtubeUpdateLabel{
+    z-index: 0;
+    position: absolute;
+    color: black;
+    margin-left: 70px;
+    margin-top: -45px;
+}
+
+.coinLogoDailyRewards{
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
 }
