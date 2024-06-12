@@ -526,7 +526,8 @@ function adjustDailyRewardsPopUpBox(day) {
   if (day.day == 'day1') {
     day1Box.style.opacity = '100%';
     day1Box.style.border = '3px solid green';
-    popUpClaimButton.value = 'day1'
+    popUpClaimButton.value = 'day1';
+    popUpClaimButton.onclick = popUpClaimButtonOnclick();
   } else if (day.day == 'day2') {
     day1Box.style.opacity = '100%';
     day2Box.style.opacity = '100%';
