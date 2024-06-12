@@ -54,10 +54,7 @@ async function getUserDailyRewards(telegramId) {
             return data;
         } else if (information.day2_claimed == 'false') {
             data.day = 'day2';
-            console.log(information.day1_claimed)
-            console.log(getCurrentDateFormatted())
-            console.log(information.day1_claimed == getCurrentDateFormatted())
-            if (information.day1_claimed != getCurrentDateFormatted()) {
+            if (information.day1_date != getCurrentDateFormatted()) {
                 data.canClaim = 'true';
             } else {
                 data.canClaim = 'false';
@@ -65,7 +62,7 @@ async function getUserDailyRewards(telegramId) {
             return data;
         } else if (information.day3_claimed == 'false') {
             data.day = 'day3';
-            if (information.day2_claimed != getCurrentDateFormatted()) {
+            if (information.day2_date != getCurrentDateFormatted()) {
                 data.canClaim = 'true';
             } else {
                 data.canClaim = 'false';
@@ -73,7 +70,7 @@ async function getUserDailyRewards(telegramId) {
             return data;
         }else if (information.day4_claimed == 'false') {
             data.day = 'day4';
-            if (information.day3_claimed != getCurrentDateFormatted()) {
+            if (information.day3_date != getCurrentDateFormatted()) {
                 data.canClaim = 'true';
             } else {
                 data.canClaim = 'false';
@@ -81,7 +78,7 @@ async function getUserDailyRewards(telegramId) {
             return data;
         }else if (information.day5_claimed == 'false') {
             data.day = 'day5';
-            if (information.day4_claimed != getCurrentDateFormatted()) {
+            if (information.day4_date != getCurrentDateFormatted()) {
                 data.canClaim = 'true';
             } else {
                 data.canClaim = 'false';
@@ -89,7 +86,7 @@ async function getUserDailyRewards(telegramId) {
             return data;
         }else if (information.day6_claimed == 'false') {
             data.day = 'day6';
-            if (information.day5_claimed != getCurrentDateFormatted()) {
+            if (information.day5_date != getCurrentDateFormatted()) {
                 data.canClaim = 'true';
             } else {
                 data.canClaim = 'false';
@@ -97,7 +94,7 @@ async function getUserDailyRewards(telegramId) {
             return data;
         }else if (information.day7_claimed == 'false') {
             data.day = 'day7';
-            if (information.day6_claimed != getCurrentDateFormatted()) {
+            if (information.day6_date != getCurrentDateFormatted()) {
                 data.canClaim = 'true';
             } else {
                 data.canClaim = 'false';
@@ -105,7 +102,7 @@ async function getUserDailyRewards(telegramId) {
             return data;
         }else if (information.day8_claimed == 'false') {
             data.day = 'day8';
-            if (information.day7_claimed != getCurrentDateFormatted()) {
+            if (information.day7_date != getCurrentDateFormatted()) {
                 data.canClaim = 'true';
             } else {
                 data.canClaim = 'false';
@@ -113,7 +110,7 @@ async function getUserDailyRewards(telegramId) {
             return data;
         }else if (information.day9_claimed == 'false') {
             data.day = 'day9';
-            if (information.day8_claimed != getCurrentDateFormatted()) {
+            if (information.day8_date != getCurrentDateFormatted()) {
                 data.canClaim = 'true';
             } else {
                 data.canClaim = 'false';
@@ -121,7 +118,7 @@ async function getUserDailyRewards(telegramId) {
             return data;
         }else if (information.day10_claimed == 'false') {
             data.day = 'day10';
-            if (information.day9_claimed != getCurrentDateFormatted()) {
+            if (information.day9_date != getCurrentDateFormatted()) {
                 data.canClaim = 'true';
             } else {
                 data.canClaim = 'false';
