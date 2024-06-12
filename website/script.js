@@ -784,3 +784,7 @@ function getCurrentDateFormatted() {
 
   return `${year}-${month}-${day}`;
 }
+
+document.getElementById('youtubeUpdateBox').addEventListener('click', ()=>{
+  window.location.href = 'https://youtu.be/geVLJ--2zgE?si=EpneavKxn31kVpjr';
+});
