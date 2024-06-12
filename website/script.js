@@ -3,9 +3,11 @@ var viewportWidth = window.innerWidth;
 
 // Get the height of the visible area of the web page
 var viewportHeight = window.innerHeight;
+let tg = window.Telegram.WebApp;
 
-console.log("Viewport width: " + viewportWidth + "px");
-console.log("Viewport height: " + viewportHeight + "px");
+tg.expand();
+alert("Viewport width: " + viewportWidth + "px");
+alert("Viewport height: " + viewportHeight + "px");
 window.onload = ()=> {
   registerUser();
   showReferrals();
