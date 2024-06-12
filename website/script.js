@@ -755,8 +755,25 @@ function popUpClaimButtonOnclick () {
     })
     .then(data => { 
       document.getElementById('dailyRewardsPopUpBox').style.display = 'none';
+      const coins = getLeftCoins();
+      const day = popUpClaimButton.value;
+      const coins_data = {
+        'day1': 500,
+        'day2': 1000,
+        'day3': 2500,
+        'day4': 5000,
+        'day5': 15000,
+        'day6': 25000,
+        'day7': 100000,
+        'day8': 500000,
+        'day9': 1000000,
+        'day10': 5000000
+      }
+      const amount = coins_data[day]
+      adjustCoinsVisual(coins+amount)
     });
   }
+  popUpClaimButton.onclick = null;
 }
 
 function getCurrentDateFormatted() {
