@@ -788,3 +788,11 @@ function getCurrentDateFormatted() {
 document.getElementById('youtubeUpdateBox').addEventListener('click', ()=>{
   window.location.href = 'https://youtu.be/geVLJ--2zgE?si=EpneavKxn31kVpjr';
 });
+
+document.getElementById('telegramJoinBox').addEventListener('click', ()=>{
+  window.location.href = 'https://t.me/hamster_kombat';
+});
+
+document.getElementById('xAccountBox').addEventListener('click', ()=>{
+  window.location.href = 'https://x.com/hamster_kombat';
+});
