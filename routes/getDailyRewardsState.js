@@ -137,8 +137,10 @@ async function getUserDailyRewards(telegramId) {
         if (today.getFullYear() === inputDate.getFullYear() &&
             today.getMonth() === inputDate.getMonth() &&
             today.getDate() === inputDate.getDate()) {
+                console.log('today')
             return 'today';
         } else {
+            console.log('not-today')
             return 'not-today';
         }
     }
