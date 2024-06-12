@@ -1,4 +1,11 @@
 body.height = window.innerHeight
+var viewportWidth = window.innerWidth;
+
+// Get the height of the visible area of the web page
+var viewportHeight = window.innerHeight;
+
+console.log("Viewport width: " + viewportWidth + "px");
+console.log("Viewport height: " + viewportHeight + "px");
 window.onload = ()=> {
   registerUser();
   showReferrals();
@@ -6,6 +13,7 @@ window.onload = ()=> {
   adjustDailyRewards();
   const coins = +getLeftCoins();
   let tg = window.Telegram.WebApp;
+
   document.getElementById('usernameLabel').innerHTML = tg.initDataUnsafe.user.username;
   if (coins > 0 && coins < 10){
     adjustClickedReferral(getTelegramId());
