@@ -532,7 +532,13 @@ function adjustDailyRewardsPopUpBox(day) {
     day2Box.style.opacity = '100%';
     day1Box.style.backgroundColor = 'green';
     day2Box.style.border = '3px solid green';
-    popUpClaimButton.value = 'day2'
+    if (day.canClaim != 'false'){
+      popUpClaimButton.value = 'day2';
+      popUpClaimButton.onclick = popUpClaimButtonOnclick();
+    }
+    else {
+      popUpClaimButton.style.backgroundColor = 'red';
+    }
   } else if (day.day == 'day3') {
     day1Box.style.opacity = '100%';
     day2Box.style.opacity = '100%';
@@ -540,8 +546,14 @@ function adjustDailyRewardsPopUpBox(day) {
     day2Box.style.backgroundColor = 'green';
     day3Box.style.opacity = '100%';
     day2Box.style.backgroundColor = 'green';
-    popUpClaimButton.value = 'day3'
     day3Box.style.border = '3px solid green';
+    if (day.canClaim != 'false'){
+      popUpClaimButton.value = 'day3';
+      popUpClaimButton.onclick = popUpClaimButtonOnclick();
+    }
+    else {
+      popUpClaimButton.style.backgroundColor = 'red';
+    }
   }else if (day.day == 'day4') {
     day1Box.style.opacity = '100%';
     day2Box.style.opacity = '100%';
@@ -551,7 +563,14 @@ function adjustDailyRewardsPopUpBox(day) {
     day2Box.style.backgroundColor = 'green';
     day3Box.style.backgroundColor = 'green';
     day4Box.style.border = '3px solid green';
-    popUpClaimButton.value = 'day4'
+    popUpClaimButton.value = 'day4';
+    if (day.canClaim != 'false'){
+      popUpClaimButton.value = 'day4';
+      popUpClaimButton.onclick = popUpClaimButtonOnclick();
+    }
+    else {
+      popUpClaimButton.style.backgroundColor = 'red';
+    }
   }else if (day.day == 'day5') {
     day1Box.style.opacity = '100%';
     day2Box.style.opacity = '100%';
@@ -564,6 +583,13 @@ function adjustDailyRewardsPopUpBox(day) {
     day4Box.style.backgroundColor = 'green';
     day5Box.style.border = '3px solid green';
     popUpClaimButton.value = 'day5'
+    if (day.canClaim != 'false'){
+      popUpClaimButton.value = 'day5';
+      popUpClaimButton.onclick = popUpClaimButtonOnclick();
+    }
+    else {
+      popUpClaimButton.style.backgroundColor = 'red';
+    }
   }else if (day.day == 'day6') {
     day1Box.style.opacity = '100%';
     day2Box.style.opacity = '100%';
@@ -578,6 +604,13 @@ function adjustDailyRewardsPopUpBox(day) {
     day5Box.style.backgroundColor = 'green';
     day6Box.style.border = '3px solid green';
     popUpClaimButton.value = 'day6'
+    if (day.canClaim != 'false'){
+      popUpClaimButton.value = 'day6';
+      popUpClaimButton.onclick = popUpClaimButtonOnclick();
+    }
+    else {
+      popUpClaimButton.style.backgroundColor = 'red';
+    }
   }else if (day.day == 'day7') {
     day1Box.style.opacity = '100%';
     day2Box.style.opacity = '100%';
@@ -594,6 +627,13 @@ function adjustDailyRewardsPopUpBox(day) {
     day6Box.style.backgroundColor = 'green';
     day7Box.style.border = '3px solid green';
     popUpClaimButton.value = 'day7'
+    if (day.canClaim != 'false'){
+      popUpClaimButton.value = 'day7';
+      popUpClaimButton.onclick = popUpClaimButtonOnclick();
+    }
+    else {
+      popUpClaimButton.style.backgroundColor = 'red';
+    }
   }else if (day.day == 'day8') {
     day1Box.style.opacity = '100%';
     day2Box.style.opacity = '100%';
@@ -612,6 +652,13 @@ function adjustDailyRewardsPopUpBox(day) {
     day7Box.style.backgroundColor = 'green';
     day8Box.style.border = '3px solid green';
     popUpClaimButton.value = 'day8'
+    if (day.canClaim != 'false'){
+      popUpClaimButton.value = 'day8';
+      popUpClaimButton.onclick = popUpClaimButtonOnclick();
+    }
+    else {
+      popUpClaimButton.style.backgroundColor = 'red';
+    }
   }else if (day.day == 'day9') {
     day1Box.style.opacity = '100%';
     day2Box.style.opacity = '100%';
@@ -632,6 +679,13 @@ function adjustDailyRewardsPopUpBox(day) {
     day8Box.style.backgroundColor = 'green';
     day9Box.style.border = '3px solid green';
     popUpClaimButton.value = 'day9'
+    if (day.canClaim != 'false'){
+      popUpClaimButton.value = 'day9';
+      popUpClaimButton.onclick = popUpClaimButtonOnclick();
+    }
+    else {
+      popUpClaimButton.style.backgroundColor = 'red';
+    }
   }
   else if (day.day == 'day10') {
     day1Box.style.opacity = '100%';
@@ -655,6 +709,13 @@ function adjustDailyRewardsPopUpBox(day) {
     day9Box.style.backgroundColor = 'green';
     day10Box.style.border = '3px solid green';
     popUpClaimButton.value = 'day10'
+    if (day.canClaim != 'false'){
+      popUpClaimButton.value = 'day10';
+      popUpClaimButton.onclick = popUpClaimButtonOnclick();
+    }
+    else {
+      popUpClaimButton.style.backgroundColor = 'red';
+    }
   } else if(day.day == 'COMPLETED'){
     day1Box.style.opacity = '100%';
     day2Box.style.opacity = '100%';
@@ -678,10 +739,11 @@ function adjustDailyRewardsPopUpBox(day) {
     day10Box.style.backgroundColor = 'green';
     popUpClaimButton.textContent = 'Everything Claimed'
     popUpClaimButton.value = 'COMPLETED'
+    popUpClaimButton.style.backgroundColor = 'green';
   }
 }
 
-document.getElementById('popUpClaimButton').addEventListener('click', ()=>{
+function popUpClaimButtonOnclick () {
   const telegramId = getTelegramId();
   if (popUpClaimButton.value != 'COMPLETED'){
     postData('/updateDailyRewards', {
@@ -693,7 +755,7 @@ document.getElementById('popUpClaimButton').addEventListener('click', ()=>{
       document.getElementById('dailyRewardsPopUpBox').style.display = 'none';
     });
   }
-});
+}
 
 function getCurrentDateFormatted() {
   const today = new Date();
