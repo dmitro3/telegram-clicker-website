@@ -54,6 +54,9 @@ async function getUserDailyRewards(telegramId) {
             return data;
         } else if (information.day2_claimed == 'false') {
             data.day = 'day2';
+            console.log(information.day1_claimed)
+            console.log(getCurrentDateFormatted())
+            console.log(information.day1_claimed == getCurrentDateFormatted())
             if (information.day1_claimed != getCurrentDateFormatted()) {
                 data.canClaim = 'true';
             } else {
