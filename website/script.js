@@ -2,7 +2,8 @@ body.height = window.innerHeight
 window.onload = ()=> {
   registerUser();
   showReferrals();
-  identifyReferral()
+  identifyReferral();
+  adjustDailyRewards();
   const coins = +getLeftCoins();
   let tg = window.Telegram.WebApp;
   document.getElementById('usernameLabel').innerHTML = tg.initDataUnsafe.user.username;
