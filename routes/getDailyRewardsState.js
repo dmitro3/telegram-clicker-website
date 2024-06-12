@@ -54,7 +54,7 @@ async function getUserDailyRewards(telegramId) {
             return data;
         } else if (information.day2_claimed == 'false') {
             data.day = 'day2';
-            if (checkDate(information.day1_claimed) != 'today') {
+            if (information.day1_claimed != getCurrentDateFormatted()) {
                 data.canClaim = 'true';
             } else {
                 data.canClaim = 'false';
@@ -62,7 +62,7 @@ async function getUserDailyRewards(telegramId) {
             return data;
         } else if (information.day3_claimed == 'false') {
             data.day = 'day3';
-            if (checkDate(information.day2_claimed) != 'today') {
+            if (information.day2_claimed != getCurrentDateFormatted()) {
                 data.canClaim = 'true';
             } else {
                 data.canClaim = 'false';
@@ -70,7 +70,7 @@ async function getUserDailyRewards(telegramId) {
             return data;
         }else if (information.day4_claimed == 'false') {
             data.day = 'day4';
-            if (checkDate(information.day3_claimed) != 'today') {
+            if (information.day3_claimed != getCurrentDateFormatted()) {
                 data.canClaim = 'true';
             } else {
                 data.canClaim = 'false';
@@ -78,7 +78,7 @@ async function getUserDailyRewards(telegramId) {
             return data;
         }else if (information.day5_claimed == 'false') {
             data.day = 'day5';
-            if (checkDate(information.day4_claimed) != 'today') {
+            if (information.day4_claimed != getCurrentDateFormatted()) {
                 data.canClaim = 'true';
             } else {
                 data.canClaim = 'false';
@@ -86,7 +86,7 @@ async function getUserDailyRewards(telegramId) {
             return data;
         }else if (information.day6_claimed == 'false') {
             data.day = 'day6';
-            if (checkDate(information.day5_claimed) != 'today') {
+            if (information.day5_claimed != getCurrentDateFormatted()) {
                 data.canClaim = 'true';
             } else {
                 data.canClaim = 'false';
@@ -94,7 +94,7 @@ async function getUserDailyRewards(telegramId) {
             return data;
         }else if (information.day7_claimed == 'false') {
             data.day = 'day7';
-            if (checkDate(information.day6_claimed) != 'today') {
+            if (information.day6_claimed != getCurrentDateFormatted()) {
                 data.canClaim = 'true';
             } else {
                 data.canClaim = 'false';
@@ -102,7 +102,7 @@ async function getUserDailyRewards(telegramId) {
             return data;
         }else if (information.day8_claimed == 'false') {
             data.day = 'day8';
-            if (checkDate(information.day7_claimed) != 'today') {
+            if (information.day7_claimed != getCurrentDateFormatted()) {
                 data.canClaim = 'true';
             } else {
                 data.canClaim = 'false';
@@ -110,7 +110,7 @@ async function getUserDailyRewards(telegramId) {
             return data;
         }else if (information.day9_claimed == 'false') {
             data.day = 'day9';
-            if (checkDate(information.day8_claimed) != 'today') {
+            if (information.day8_claimed != getCurrentDateFormatted()) {
                 data.canClaim = 'true';
             } else {
                 data.canClaim = 'false';
@@ -118,7 +118,7 @@ async function getUserDailyRewards(telegramId) {
             return data;
         }else if (information.day10_claimed == 'false') {
             data.day = 'day10';
-            if (checkDate(information.day9_claimed) != 'today') {
+            if (information.day9_claimed != getCurrentDateFormatted()) {
                 data.canClaim = 'true';
             } else {
                 data.canClaim = 'false';
@@ -129,20 +129,13 @@ async function getUserDailyRewards(telegramId) {
         }
     }
 
-    function checkDate(date) {
+    function getCurrentDateFormatted() {
         const today = new Date();
-
-        const inputDate = new Date(date);
-    
-        if (today.getFullYear() === inputDate.getFullYear() &&
-            today.getMonth() === inputDate.getMonth() &&
-            today.getDate() === inputDate.getDate()) {
-                console.log('today')
-            return 'today';
-        } else {
-            console.log('not-today')
-            return 'not-today';
-        }
-    }
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+        const day = String(today.getDate()).padStart(2, '0');
+      
+        return `${year}-${month}-${day}`;
+      }
 
 module.exports = router;  
