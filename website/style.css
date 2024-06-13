@@ -4,6 +4,7 @@ body {
     padding: 0;
     height: 100%;
     background-size: cover;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 html, body {
@@ -195,7 +196,7 @@ html, body {
     background-color: #303336;
     color: orange;
     width: 26.6vw;
-    border-radius: 4px;
+    border-radius: 10px;
     position: absolute;
     margin-top: 3vh;
     margin-left: 5vw;
@@ -205,7 +206,7 @@ html, body {
     height: 8vh;
     background-color: #303336;
     width: 26.6vw;
-    border-radius: 4px;
+    border-radius: 10px;
     position: absolute;
     margin-top: 3vh;
     margin-left: 36.6vw;
@@ -216,7 +217,7 @@ html, body {
     height: 8vh;
     background-color: #303336;
     width: 26.6vw;
-    border-radius: 4px;
+    border-radius: 10px;
     position: absolute;
     margin-top: 3vh;
     margin-left: 68.2vw;
@@ -229,12 +230,14 @@ html, body {
 }
 
 #earnPerClickCoin{
-    margin-top: -25px;
+    position: absolute;
+    margin-top: -15px;
     margin-left: 35px;
 }
 
 #earnPerClickLabel{
-    margin-top: -27px;
+    position: absolute;
+    margin-top: -13px;
     margin-left: 70px;
     color: white;
 }
@@ -246,12 +249,14 @@ html, body {
 }
 
 #passiveClicksCoin{
-    margin-top: -25px;
+    position: absolute;
+    margin-top: -15px;
     margin-left: 35px;
 }
 
 #passiveClicksLabel{
-    margin-top: -27px;
+    position: absolute;
+    margin-top: -15px;
     margin-left: 70px;
     color: black;
 }
