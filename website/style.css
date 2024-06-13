@@ -15,17 +15,18 @@ html, body {
 }
 
 #coinsLabel{    
+    margin-left: 1vw;
     color: white;
     margin-top: 14vh;
 }
 
 #coinsBox{
     text-align: center;
-
     width: 40vw;
     position: absolute;
     margin-left: 30vw;
     height: 6vh;
+    margin-top: 14vh;
 }
 
 #energyLabel{
@@ -724,5 +725,18 @@ html, body {
     border-top: 3px solid yellow;
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
-    box-shadow: 0px 0px 25px 5px yellow;
+    box-shadow: 0px 0px 30px 5px yellow;
 }
+
+#coinMainLogo, #coinsLabel{
+    display: inline;
+}
+
+@keyframes highlight {
+    0% {
+      box-shadow: 0px 0px 75px 5px yellow;
+    }
+    100% {
+        box-shadow: 0px 0px 30px 5px yellow;
+    }
+  }
