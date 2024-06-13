@@ -36,7 +36,7 @@ html, body {
 }
 
 #mainButtonBox{
-    margin-top: 26vh;
+    margin-top: 29vh;
     position: absolute;
     border-radius: 50%;
     width: 70vw;
@@ -238,7 +238,7 @@ html, body {
 #earnPerClickLabel{
     position: absolute;
     margin-top: -13px;
-    margin-left: 70px;
+    margin-left: 65px;
     color: white;
 }
 
@@ -257,7 +257,7 @@ html, body {
 #passiveClicksLabel{
     position: absolute;
     margin-top: -15px;
-    margin-left: 70px;
+    margin-left: 65px;
     color: black;
 }
 
@@ -268,7 +268,7 @@ html, body {
     border-radius: 8px;
     background-color: white;
     position: absolute;
-    margin-top: 20vh;
+    margin-top: 23vh;
 }
 
 #progressBar{
@@ -283,15 +283,15 @@ html, body {
 #progressBarBoxStatusLabel{
     position: absolute;
     color: white;
-    margin-top: 17vh;
+    margin-top: 20vh;
     margin-left: 5vw;
 }
 
 #progressBarBoxLevelLabel{
     position: absolute;
     color: white;
-    margin-top: 17vh;
-    margin-left: 80vw;
+    margin-top: 20vh;
+    margin-left: 67vw;
 }
 
 #developerButton{
