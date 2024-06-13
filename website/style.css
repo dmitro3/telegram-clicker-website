@@ -37,7 +37,7 @@ html, body {
 }
 
 #mainButtonBox{
-    margin-top: 34vh;
+    margin-top: 32vh;
     position: absolute;
     border-radius: 50%;
     width: 70vw;
@@ -269,7 +269,7 @@ html, body {
     border-radius: 8px;
     background-color: white;
     position: absolute;
-    margin-top: 28vh;
+    margin-top: 26vh;
 }
 
 #progressBar{
@@ -284,14 +284,14 @@ html, body {
 #progressBarBoxStatusLabel{
     position: absolute;
     color: white;
-    margin-top: 25vh;
+    margin-top: 23vh;
     margin-left: 5vw;
 }
 
 #progressBarBoxLevelLabel{
     position: absolute;
     color: white;
-    margin-top: 25vh;
+    margin-top: 23vh;
     margin-left: 67vw;
 }
 
