@@ -115,6 +115,7 @@ document.getElementById('mainButtonBox').addEventListener('touchstart', ()=>{
   adjustProgressBar()
     if (window.Telegram.WebApp.platform == 'ios'){
         for (let i = 0; i < event.touches.length; i++) {
+        navigator.vibrate(200)
         showClick(event.touches[i]);
     }
     let energy = getLeftEnergy();
