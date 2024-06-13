@@ -238,6 +238,7 @@ function showClick(event) {
     plusOne.style.top = (y-20) + "px";
     plusOne.style.color = "green";
     plusOne.style.animation = "upAndFadeOut 1s forwards"; 
+    gameField.style.animation = 'none'
     gameField.style.animation = 'highlight';
     gameField.style.animationDuration = '1s';
     document.body.appendChild(plusOne);
