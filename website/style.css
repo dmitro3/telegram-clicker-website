@@ -772,7 +772,7 @@ html, body {
   #mineMenuMenu{
     height: 6vh;
     position: absolute;
-    margin-top: 18vh;
+    margin-top: 19.5vh;
     margin-left: 5vw;
     width: 90vw;
     background-color: #303336;
@@ -837,16 +837,115 @@ html, body {
     border-radius: 10px;
   }
 
-  #funTokensImage{
+  #stakingBox{
+    filter: blur(3px);
+    margin-left: 52.5vw;
+    height: 10.6vh;
     position: absolute;
-    margin-left: 3vw;
+    margin-top: 26vh;
+    width: 42.5vw;
+    background-color: #303336;
+    border-radius: 10px;
+  }
+
+  #btcPairsBox{
+    filter: blur(3px);
+    height: 10.6vh;
+    position: absolute;
+    margin-top: 38.6vh;
+    margin-left: 5vw;
+    width: 42.5vw;
+    background-color: #303336;
+    border-radius: 10px;
+  }
+
+  #ethPairsBox{
+    filter: blur(3px);
+    height: 10.6vh;
+    position: absolute;
+    margin-top: 38.6vh;
+    margin-left: 52.5vw;
+    width: 42.5vw;
+    background-color: #303336;
+    border-radius: 10px;
+  }
+
+  #top10CMCBox{
+    filter: blur(3px);
+    height: 10.6vh;
+    position: absolute;
+    margin-top: 51.2vh;
+    margin-left: 5vw;
+    width: 42.5vw;
+    background-color: #303336;
+    border-radius: 10px;
+  }
+
+  #gameFiBox{
+    filter: blur(3px);
+    height: 10.6vh;
+    position: absolute;
+    margin-top: 51.2vh;
+    margin-left: 52.5vw;
+    width: 42.5vw;
+    background-color: #303336;
+    border-radius: 10px;
+  }
+
+  #defiBox{
+    filter: blur(3px);
+    height: 10.6vh;
+    position: absolute;
+    margin-top: 63.8vh;
+    margin-left: 5vw;
+    width: 42.5vw;
+    background-color: #303336;
+    border-radius: 10px;
+  }
+
+  #socialFiBox{
+    filter: blur(3px);
+    height: 10.6vh;
+    position: absolute;
+    margin-top: 63.8vh;
+    margin-left: 52.5vw;
+    width: 42.5vw;
+    background-color: #303336;
+    border-radius: 10px;
+  }
+
+  #memeCoinsBox{
+    filter: blur(3px);
+    height: 10.6vh;
+    position: absolute;
+    margin-top: 76.4vh;
+    margin-left: 5vw;
+    width: 42.5vw;
+    background-color: #303336;
+    border-radius: 10px;
+  }
+
+  #shitCoinsBox{
+    filter: blur(3px);
+    height: 10.6vh;
+    position: absolute;
+    margin-top: 76.4vh;
+    margin-left: 52.5vw;
+    width: 42.5vw;
+    background-color: #303336;
+    border-radius: 10px;
+  }
+
+  .funTokensImage{
+    position: absolute;
+    margin-left: 1.5vw;
     margin-top: 1vh;
   }
 
   #funTokensLabel{
     position: absolute;
     color: white;
-    margin-left: 11vw;
+    margin-left: 8vw;
     margin-top: 2vh;
   }
 
@@ -905,4 +1004,75 @@ html, body {
     margin-top: 8vh;
     position: absolute;
     filter: grayscale(100%);
+  }
+
+  #stakingBoxLock{
+    position: absolute;
+    margin-top: 30vh;
+    margin-left: 70vw;
+    z-index: 3;
+  }
+
+  #btcPairBoxLock{
+    position: absolute;
+    margin-top: 42.5vh;
+    margin-left: 23vw;
+    z-index: 3;
+  }
+
+  #ethPairBoxLock{
+    position: absolute;
+    margin-top: 42.5vh;
+    margin-left: 70vw;
+    z-index: 3;
+  }
+
+  #top10BoxLock{
+    position: absolute;
+    margin-top: 55vh;
+    margin-left: 23vw;
+    z-index: 3;
+  }
+
+  #gameFiBoxLock{
+    position: absolute;
+    margin-top: 55vh;
+    margin-left: 70vw;
+    z-index: 3;
+  }
+
+  #defi20BoxLock{
+    position: absolute;
+    margin-top: 67.5vh;
+    margin-left: 23vw;
+    z-index: 3;
+  }
+
+  #socialFiBoxLock{
+    position: absolute;
+    margin-top: 67.5vh;
+    margin-left: 70vw;
+    z-index: 3;
+  }
+
+  #memeBoxLock{
+    position: absolute;
+    margin-top: 80vh;
+    margin-left: 23vw;
+    z-index: 3;
+  }
+
+  #shitBoxLock{
+    position: absolute;
+    margin-top: 80vh;
+    margin-left: 70vw;
+    z-index: 3;
+  }
+
+  .prTeamCoomingSoon{
+    font-size: 8px;
+    position: absolute;
+    margin-top: -1.7vh;
+    color: grey;
+    margin-left: 5.5vw;
   }

@@ -841,5 +841,5 @@ document.getElementById('mineButton').addEventListener('click', ()=>{
   earnPerClickBox.style.marginTop = '3vh'
   clicksTillLevelUp.style.marginTop = '3vh'
   passiveClicks.style.marginTop = '3vh'
-  coinsBox.style.marginTop = '13vh'
+  coinsBox.style.marginTop = '14vh'
 });
