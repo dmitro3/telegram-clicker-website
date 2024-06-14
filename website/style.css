@@ -838,7 +838,7 @@ html, body {
   }
 
   #stakingBox{
-    filter: blur(3px);
+    filter: blur(1px);
     margin-left: 52.5vw;
     height: 10.6vh;
     position: absolute;
@@ -849,7 +849,7 @@ html, body {
   }
 
   #btcPairsBox{
-    filter: blur(3px);
+    filter: blur(1px);
     height: 10.6vh;
     position: absolute;
     margin-top: 38.6vh;
@@ -860,7 +860,7 @@ html, body {
   }
 
   #ethPairsBox{
-    filter: blur(3px);
+    filter: blur(1px);
     height: 10.6vh;
     position: absolute;
     margin-top: 38.6vh;
@@ -871,7 +871,7 @@ html, body {
   }
 
   #top10CMCBox{
-    filter: blur(3px);
+    filter: blur(1px);
     height: 10.6vh;
     position: absolute;
     margin-top: 51.2vh;
@@ -882,7 +882,7 @@ html, body {
   }
 
   #gameFiBox{
-    filter: blur(3px);
+    filter: blur(1px);
     height: 10.6vh;
     position: absolute;
     margin-top: 51.2vh;
@@ -893,7 +893,7 @@ html, body {
   }
 
   #defiBox{
-    filter: blur(3px);
+    filter: blur(1px);
     height: 10.6vh;
     position: absolute;
     margin-top: 63.8vh;
@@ -904,7 +904,7 @@ html, body {
   }
 
   #socialFiBox{
-    filter: blur(3px);
+    filter: blur(1px);
     height: 10.6vh;
     position: absolute;
     margin-top: 63.8vh;
@@ -915,7 +915,7 @@ html, body {
   }
 
   #memeCoinsBox{
-    filter: blur(3px);
+    filter: blur(1px);
     height: 10.6vh;
     position: absolute;
     margin-top: 76.4vh;
@@ -926,7 +926,7 @@ html, body {
   }
 
   #shitCoinsBox{
-    filter: blur(3px);
+    filter: blur(1px);
     height: 10.6vh;
     position: absolute;
     margin-top: 76.4vh;
