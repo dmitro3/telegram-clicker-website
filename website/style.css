@@ -839,8 +839,8 @@ html, body {
 
   #funTokensImage{
     position: absolute;
-    margin-left: 1vw;
-    margin-top: 0.5vh;
+    margin-left: 3vw;
+    margin-top: 1vh;
   }
 
   #funTokensLabel{
@@ -881,8 +881,8 @@ html, body {
 
   #funTokensPrice{
     position: absolute;
-    margin-left: 8vw;
-    margin-top: -2.6vh;
+    margin-left: 8.6vw;
+    margin-top: -2.8vh;
     color: white;
   }
 
@@ -897,11 +897,11 @@ html, body {
     margin-top: 8vh;
     color: rgb(179, 177, 177);
     position: absolute;
-    margin-left: 10vw;
+    margin-left: 11.5vw;
   }
 
   #funTokensCoinImage{
-    margin-left: 7vw;
+    margin-left: 8.5vw;
     margin-top: 8vh;
     position: absolute;
     filter: grayscale(100%);
