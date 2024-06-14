@@ -948,6 +948,7 @@ function showCurrentMineCards (information) {
   ]
   
   //fun tokens card data update
+  console.log(information)
   let level = +information.funTokens_level;
   document.getElementById('funTokens_level').innerHTML = PROGRESSION[level].level;
   document.getElementById('funTokenPrice').innerHTML = PROGRESSION[level].updatePrice;
