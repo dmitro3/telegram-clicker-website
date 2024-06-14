@@ -12,6 +12,7 @@ window.onload = ()=> {
   showReferrals();
   identifyReferral();
   adjustDailyRewards();
+  adjustMineCards();
   const coins = +getLeftCoins();
   let tg = window.Telegram.WebApp;
 
@@ -843,3 +844,96 @@ document.getElementById('mineButton').addEventListener('click', ()=>{
   passiveClicks.style.marginTop = '3vh'
   coinsBox.style.marginTop = '14vh'
 });
+
+const PROGRESSION = [
+  {
+    level: 'lvl_0',
+    updatePrice: 0,
+    coinPerHour: 0
+  },
+  {
+    level: 'lvl_1',
+    updatePrice: 500,
+    coinPerHour: 250
+  },
+  {
+    level: 'lvl_2',
+    updatePrice: 516,
+    coinPerHour: 275
+  },
+  {
+    level: 'lvl_3',
+    updatePrice: 524,
+    coinPerHour: 300
+  },
+  {
+    level: 'lvl_4',
+    updatePrice: 782,
+    coinPerHour: 325
+  },
+  {
+    level: 'lvl_5',
+    updatePrice: 941,
+    coinPerHour: 350
+  },
+  {
+    level: 'lvl_6',
+    updatePrice: 1100,
+    coinPerHour: 375
+  },
+  {
+    level: 'lvl_7',
+    updatePrice: 1258,
+    coinPerHour: 400
+  },
+  {
+    level: 'lvl_8',
+    updatePrice: 1417,
+    coinPerHour: 425
+  },
+  {
+    level: 'lvl_9',
+    updatePrice: 1576,
+    coinPerHour: 450
+  },
+  {
+    level: 'lvl_10',
+    updatePrice: 1735,
+    coinPerHour: 475
+  },
+  {
+    level: 'lvl_11',
+    updatePrice: 1894,
+    coinPerHour: 500
+  },
+  {
+    level: 'lvl_12',
+    updatePrice: 2052,
+    coinPerHour: 525
+  },
+  {
+    level: 'lvl_13',
+    updatePrice: 2211,
+    coinPerHour: 550
+  },
+  {
+    level: 'lvl_14',
+    updatePrice: 2370,
+    coinPerHour: 575
+  },
+  {
+    level: 'lvl_15',
+    updatePrice: 2529,
+    coinPerHour: 600
+  }
+];
+
+function adjustMineCards() {
+  const telegramId = getTelegramId();
+  postData('/getMineCardsInformation', {
+    telegramId: telegramId
+  })
+  .then(data => {
+    console.log(data.data)
+  });
+}
