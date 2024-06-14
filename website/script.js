@@ -964,6 +964,7 @@ document.getElementById('funTokensBox').addEventListener('click', ()=>{
     document.getElementById('funTokenLevel').innerHTML = PROGRESSION[level+1].level;
     document.getElementById('funTokenPrice').innerHTML = PROGRESSION[level+1].updatePrice;
     document.getElementById('funTokenPPH').innerHTML = '+' + PROGRESSION[level+1].coinPerHour;
+    document.getElementById('funTokensBox').value = level+1;
   }
 });
 
