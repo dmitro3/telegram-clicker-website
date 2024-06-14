@@ -296,7 +296,7 @@ html, body {
     position: absolute;
     color: white;
     margin-top: 23vh;
-    margin-left: 67vw;
+    margin-left: 73vw;
 }
 
 #developerButton{
@@ -1072,7 +1072,7 @@ html, body {
   .prTeamCoomingSoon{
     font-size: 8px;
     position: absolute;
-    margin-top: -1.7vh;
+    margin-top: -12vh;
     color: grey;
-    margin-left: 5.5vw;
+    margin-left: 5.2vw;
   }
