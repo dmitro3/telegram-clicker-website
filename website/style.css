@@ -958,7 +958,7 @@ html, body {
     border-left: 1px solid grey;
   }
 
-  #funTokensLevel{
+  .mainCardLevel{
     position: absolute;
     margin-top: 2vh;
     color: white;
@@ -970,7 +970,7 @@ html, body {
     margin-top: 6.7vh;
   }
 
-  #funTokensPrice{
+  .mainCardPrice{
     position: absolute;
     margin-left: 8.6vw;
     margin-top: -2.8vh;
@@ -984,7 +984,7 @@ html, body {
     position: absolute;
   }
 
-  #funTokensProfitPerHourPrice{
+  .mainCardPPH{
     margin-top: 8vh;
     color: rgb(179, 177, 177);
     position: absolute;

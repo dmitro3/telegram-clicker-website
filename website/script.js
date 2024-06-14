@@ -847,82 +847,82 @@ document.getElementById('mineButton').addEventListener('click', ()=>{
 
 const PROGRESSION = [
   {
-    level: 'lvl_0',
+    level: 'lvl 0',
     updatePrice: 0,
     coinPerHour: 0
   },
   {
-    level: 'lvl_1',
+    level: 'lvl 1',
     updatePrice: 500,
     coinPerHour: 250
   },
   {
-    level: 'lvl_2',
+    level: 'lvl 2',
     updatePrice: 516,
     coinPerHour: 275
   },
   {
-    level: 'lvl_3',
+    level: 'lvl 3',
     updatePrice: 524,
     coinPerHour: 300
   },
   {
-    level: 'lvl_4',
+    level: 'lvl 4',
     updatePrice: 782,
     coinPerHour: 325
   },
   {
-    level: 'lvl_5',
+    level: 'lvl 5',
     updatePrice: 941,
     coinPerHour: 350
   },
   {
-    level: 'lvl_6',
+    level: 'lvl 6',
     updatePrice: 1100,
     coinPerHour: 375
   },
   {
-    level: 'lvl_7',
+    level: 'lvl 7',
     updatePrice: 1258,
     coinPerHour: 400
   },
   {
-    level: 'lvl_8',
+    level: 'lvl 8',
     updatePrice: 1417,
     coinPerHour: 425
   },
   {
-    level: 'lvl_9',
+    level: 'lvl 9',
     updatePrice: 1576,
     coinPerHour: 450
   },
   {
-    level: 'lvl_10',
+    level: 'lvl 10',
     updatePrice: 1735,
     coinPerHour: 475
   },
   {
-    level: 'lvl_11',
+    level: 'lvl 11',
     updatePrice: 1894,
     coinPerHour: 500
   },
   {
-    level: 'lvl_12',
+    level: 'lvl 12',
     updatePrice: 2052,
     coinPerHour: 525
   },
   {
-    level: 'lvl_13',
+    level: 'lvl 13',
     updatePrice: 2211,
     coinPerHour: 550
   },
   {
-    level: 'lvl_14',
+    level: 'lvl 14',
     updatePrice: 2370,
     coinPerHour: 575
   },
   {
-    level: 'lvl_15',
+    level: 'lvl 15',
     updatePrice: 2529,
     coinPerHour: 600
   }
@@ -934,6 +934,23 @@ function adjustMineCards() {
     telegramId: telegramId
   })
   .then(data => {
-    console.log(data.data)
+    if (data.data != 'User added') {
+      const information = Array.from(data.data)[0]
+      showCurrentMineCards(information);
+    }
   });
 }
+
+function showCurrentMineCards (information) {
+  const cardsLevel = [
+    'funTokenLevel', 'stakingLevel', 'btcPairLevel', 'ethPairLevel', 'cmcPairsLevel',
+    'gameFiLevel', 'defiLevel', 'socialFiLevel', 'memeLevel', 'shitLevel'
+  ]
+  
+  //fun tokens card data update
+  let level = +information.funTokens_level;
+  document.getElementById('funTokens_level').innerHTML = PROGRESSION[level].level;
+  document.getElementById('funTokenPrice').innerHTML = PROGRESSION[level].updatePrice;
+  document.getElementById('funTokenPPH').innerHTML = PROGRESSION[level].coinPerHour;
+}
+
