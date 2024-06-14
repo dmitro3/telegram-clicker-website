@@ -78,6 +78,15 @@ document.getElementById('friendsButton').addEventListener('click', ()=>{
 
 document.getElementById('gameButton').addEventListener('click', ()=>{
   adjustProgressBar()
+  coinsBox.style.marginTop = '24vh'
+  mineMenu.style.display = 'none';
+  mineButton.style.color = 'white';
+  usernameLabel.style.display = 'block';
+  userLogoBackgroundDiv.style.display = 'block';
+  exchangeBox.style.display = 'block';
+  earnPerClickBox.style.marginTop = '13vh'
+  clicksTillLevelUp.style.marginTop = '13vh'
+  passiveClicks.style.marginTop = '13vh'
   document.getElementById('gameField').style.display = 'block';
   document.getElementById('friendsButton').style.color = 'white';
   document.getElementById('gameButton').style.color ='red';
@@ -807,4 +816,30 @@ document.getElementById('telegramJoinBox').addEventListener('click', ()=>{
 
 document.getElementById('xAccountBox').addEventListener('click', ()=>{
   window.location.href = 'https://x.com/hamster_kombat';
+});
+
+document.getElementById('mineButton').addEventListener('click', ()=>{
+  document.getElementById('gameField').style.display = 'none';
+  document.getElementById('friendsButton').style.color = 'white';
+  document.getElementById('gameButton').style.color ='white';
+  document.getElementById('referalField').style.display = 'none';
+  earnPerClickBox.style.display = 'block'
+  clicksTillLevelUp.style.display = 'block'
+  passiveClicks.style.display = 'block'
+  progressBarBoxStatusLabel.style.display = 'none'
+  progressBarBoxLevelLabel.style.display = 'none'
+  progressBarBox.style.display = 'none';
+  developerButton.style.color = 'white';
+  devField.style.display = 'none'
+  earnBox.style.display = 'none';
+  earnButton.style.color = 'white';
+  mineMenu.style.display = 'block';
+  mineButton.style.color = 'red';
+  userLogoBackgroundDiv.style.display = 'none';
+  exchangeBox.style.display = 'none';
+  usernameLabel.style.display = 'none';
+  earnPerClickBox.style.marginTop = '3vh'
+  clicksTillLevelUp.style.marginTop = '3vh'
+  passiveClicks.style.marginTop = '3vh'
+  coinsBox.style.marginTop = '13vh'
 });

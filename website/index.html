@@ -10,10 +10,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body id="body">
-
+    <div id="mineMenu">
+        <div id="mineMenuMenu">
+            <div id="marketsMenu"><h5 style="margin: 1.6vh auto; color: red;">Markets</h5></div>
+            <div id="prTeamMenu"><h5 style="margin: 1.6vh auto;">PR&Team</h5></div>
+            <div id="legalMenu"><h5 style="margin: 1.6vh auto;">Legal</h5></div>
+            <div id="specialsMenu"><h5 style="margin: 1.6vh auto;">Specials</h5></div>
+        </div>
+        <div id="marketsField">
+            <div id="funTokensBox">
+                <div id="funTokensSubBox1">
+                    <img id="funTokensImage" src="sport.png" width="40vw" height="40vw">
+                    <h6 id="funTokensLabel">Fun tokens</h6>
+                </div>
+                <div id="funTokensSubBox2">
+                    <h5 id="funTokensLevel">lvl 0</h5>
+                    <img src="coin.png" id="funTokensCoin" width="20vw" height="20vw">
+                    <h6 id="funTokensPrice">500</h6>
+                </div>
+                <img src="coin.png" id="funTokensCoinImage" width="12vw" height="12vw">
+                <h6 id="funTokensProfitPerHourLabel">Profit per hour</h6>
+                <h6 id="funTokensProfitPerHourPrice">+250</h6>
+            </div>
+        </div>
+    </div>
     <div id="menu">
         <div id="gameButton">
             <h6 class="gameButtonLabel">Game</h6>
+        </div>
+        <div id="mineButton">
+            <h6 class="gameButtonLabel">Mine</h6>
         </div>
         <div id="friendsButton">
             <h6 class="gameButtonLabel">Friends</h6>
@@ -34,7 +60,6 @@
         <h5 id="exchangeBoxLabel">Binance</h5>
     </div>
 
-    <div id="gameField">
     <div id="earnPerClickBox">
         <h5 class="insideLabel">Earn per tap</h5>
         <img id="earnPerClickCoin" src="coin.png" width="25px" height="25px">
@@ -48,17 +73,19 @@
         <h5 class="insideLabel">Profit per hour</h5>
         <img id="passiveClicksCoin" src="coin.png" width="25px" height="25px">
         <h4 style="color: white;" id="passiveClicksLabel">+100</h4>
-
     </div>
+    <div id="coinsBox">
+        <img src="coin.png" id="coinMainLogo" alt="" width="22vw" height="22vw">
+        <h1 id="coinsLabel">0</h1>
+    </div>
+    <div id="gameField">
+
     <h4 id="progressBarBoxStatusLabel">Silver ></h4>
     <h4 id="progressBarBoxLevelLabel">Level 1/10</h4>
     <div id="progressBarBox">
         <div id="progressBar"></div>
     </div>
-        <div id="coinsBox">
-            <img src="coin.png" id="coinMainLogo" alt="" width="22vw" height="22vw">
-            <h1 id="coinsLabel">0</h1>
-        </div>
+       
             <button id="mainButtonBox"></button>
 
         <h3 id="energyLabel">1000/1000</h3>
