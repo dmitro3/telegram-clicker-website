@@ -945,8 +945,9 @@ html, body {
   #funTokensLabel{
     position: absolute;
     color: white;
-    margin-left: 8vw;
+    margin-left: 8.8vw;
     margin-top: 2vh;
+    font-size: 9px;
   }
 
   #funTokensSubBox1{
