@@ -446,15 +446,15 @@ html, body {
 
 #dailyRewardsPopUpBox{
     display: none;
-    height: 700px;
+    height: 80vh;
     margin-left: 0vw;
     position: absolute;
-    margin-top: -50px;
+    margin-top: -40vh;
     width: 100vw;
     background-color: black;
     border-top: 5px solid yellow;
     border-radius: 50px;
-    z-index: 0;
+    z-index: 5;
 }
 
 #closeDailyRewardsPopUpBoxBox{
