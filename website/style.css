@@ -1074,4 +1074,5 @@ html, body {
     width: 100vw;
     height: 75vw;
     margin-top: 29.5vh;
+    touch-action: none;
   }
