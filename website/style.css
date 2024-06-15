@@ -1075,4 +1075,11 @@ html, body {
     height: 75vw;
     margin-top: 29.5vh;
     touch-action: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -ms-user-drag: none;
   }
