@@ -139,7 +139,7 @@ document.getElementById('earnButton').addEventListener('click', ()=>{
   coinsBox.style.display = 'none'
 })
 
-document.getElementById('mainButtonBox').addEventListener('touchstart', ()=>{
+document.getElementById('mainButtonCover').addEventListener('touchstart', ()=>{
   adjustProgressBar()
     if (window.Telegram.WebApp.platform == 'ios'){
         for (let i = 0; i < event.touches.length; i++) {
@@ -156,7 +156,7 @@ document.getElementById('mainButtonBox').addEventListener('touchstart', ()=>{
     }
   });
 
-document.getElementById('mainButtonBox').addEventListener('click', ()=>{
+document.getElementById('mainButtonCover').addEventListener('click', ()=>{
   adjustProgressBar()
     if (window.Telegram.WebApp.platform == 'tdesktop'){
     showClick(event);

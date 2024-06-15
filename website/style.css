@@ -38,7 +38,7 @@ html, body {
 }
 
 #mainButtonBox{
-    margin-top: 32vh;
+    margin-top: 1vh;
     position: absolute;
     border-radius: 50%;
     width: 70vw;
@@ -269,7 +269,7 @@ html, body {
 #progressBarBox{
     width: 90vw;
     margin-left: 5vw;
-    height: 20px;
+    height: 3vh;
     border-radius: 8px;
     background-color: white;
     position: absolute;
@@ -278,7 +278,7 @@ html, body {
 
 #progressBar{
     width: 0vw;
-    height: 20px;
+    height: 3vh;
     position: absolute;
     background: rgb(255,1,0);
     background: linear-gradient(90deg, rgba(255,1,0,1) 0%, rgba(0,174,255,1) 100%);
@@ -1067,4 +1067,11 @@ html, body {
     margin-top: -2.25vh;
     color: grey;
     margin-left: 5.2vw;
+  }
+
+  #mainButtonCover{
+    position: absolute;
+    width: 100vw;
+    height: 75vw;
+    margin-top: 29.5vh;
   }
