@@ -61,6 +61,10 @@ function identifyReferral(){
 }
 
 document.getElementById('friendsButton').addEventListener('click', ()=>{
+  userLogoBackgroundDiv.style.display = 'none';
+
+  exchangeBox.style.display = 'none';
+  usernameLabel.style.display = 'none';
     document.getElementById('gameField').style.display = 'none';
     document.getElementById('friendsButton').style.color = 'red';
     document.getElementById('gameButton').style.color ='white';
@@ -75,6 +79,9 @@ document.getElementById('friendsButton').addEventListener('click', ()=>{
     devField.style.display = 'none'
     earnBox.style.display = 'none';
     earnButton.style.color = 'white';
+    mineMenu.style.display = 'none';
+    coinsBox.style.display = 'none';
+    mineButton.style.color = 'white';
 });
 
 document.getElementById('gameButton').addEventListener('click', ()=>{
@@ -102,9 +109,18 @@ document.getElementById('gameButton').addEventListener('click', ()=>{
   devField.style.display = 'none'
   earnBox.style.display = 'none';
   earnButton.style.color = 'white';
+  mineMenu.style.display = 'none';
+  mineButton.style.color = 'white';
+  coinsBox.style.display = 'block'
+
 });
 
 document.getElementById('earnButton').addEventListener('click', ()=>{
+  userLogoBackgroundDiv.style.display = 'none';
+
+  exchangeBox.style.display = 'none';
+  usernameLabel.style.display = 'none';
+  mineButton.style.color = 'white';
   document.getElementById('gameField').style.display = 'none';
   document.getElementById('friendsButton').style.color = 'white';
   document.getElementById('gameButton').style.color ='white';
@@ -119,6 +135,8 @@ document.getElementById('earnButton').addEventListener('click', ()=>{
   earnBox.style.display = 'block';
   earnButton.style.color = 'red';
   devField.style.display = 'none'
+  mineMenu.style.display = 'none';
+  coinsBox.style.display = 'none'
 })
 
 document.getElementById('mainButtonBox').addEventListener('touchstart', ()=>{
@@ -475,6 +493,13 @@ document.getElementById('refreshFriendsList').addEventListener('click', ()=>{
 });
 
 developerButton.addEventListener('click', ()=>{
+  userLogoBackgroundDiv.style.display = 'none';
+
+  exchangeBox.style.display = 'none';
+  usernameLabel.style.display = 'none';
+  coinsBox.style.display = 'none'
+  mineButton.style.color = 'white';
+  mineMenu.style.display = 'none';
   document.getElementById('gameField').style.display = 'none';
   document.getElementById('friendsButton').style.color = 'white';
   document.getElementById('gameButton').style.color ='white';
@@ -836,6 +861,7 @@ document.getElementById('mineButton').addEventListener('click', ()=>{
   earnButton.style.color = 'white';
   mineMenu.style.display = 'block';
   mineButton.style.color = 'red';
+  coinsBox.style.display = 'block'
   userLogoBackgroundDiv.style.display = 'none';
   exchangeBox.style.display = 'none';
   usernameLabel.style.display = 'none';
