@@ -1,6 +1,5 @@
 body.height = window.innerHeight
 var viewportWidth = window.innerWidth;
-
 // width: 430
 // height: 733
 var viewportHeight = window.innerHeight;
@@ -62,6 +61,7 @@ function identifyReferral(){
 
 document.getElementById('friendsButton').addEventListener('click', ()=>{
   userLogoBackgroundDiv.style.display = 'none';
+  body.height = '100vh'
 
   exchangeBox.style.display = 'none';
   usernameLabel.style.display = 'none';
@@ -82,10 +82,17 @@ document.getElementById('friendsButton').addEventListener('click', ()=>{
     mineMenu.style.display = 'none';
     coinsBox.style.display = 'none';
     mineButton.style.color = 'white';
+    document.documentElement.style.overflow = 'hidden';
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto'
+  });
 });
 
 document.getElementById('gameButton').addEventListener('click', ()=>{
   adjustProgressBar()
+  body.height = '100vh'
+
   coinsBox.style.marginTop = '24vh'
   mineMenu.style.display = 'none';
   mineButton.style.color = 'white';
@@ -112,11 +119,16 @@ document.getElementById('gameButton').addEventListener('click', ()=>{
   mineMenu.style.display = 'none';
   mineButton.style.color = 'white';
   coinsBox.style.display = 'block'
-
+  document.documentElement.style.overflow = 'hidden';
+  window.scrollTo({
+    top: 0,
+    behavior: 'auto'
+});
 });
 
 document.getElementById('earnButton').addEventListener('click', ()=>{
   userLogoBackgroundDiv.style.display = 'none';
+  body.height = '100vh'
 
   exchangeBox.style.display = 'none';
   usernameLabel.style.display = 'none';
@@ -137,6 +149,11 @@ document.getElementById('earnButton').addEventListener('click', ()=>{
   devField.style.display = 'none'
   mineMenu.style.display = 'none';
   coinsBox.style.display = 'none'
+  document.documentElement.style.overflow = 'hidden';
+  window.scrollTo({
+    top: 0,
+    behavior: 'auto'
+});
 })
 
 document.getElementById('mainButtonCover').addEventListener('touchstart', ()=>{
@@ -494,7 +511,12 @@ document.getElementById('refreshFriendsList').addEventListener('click', ()=>{
 
 developerButton.addEventListener('click', ()=>{
   userLogoBackgroundDiv.style.display = 'none';
-
+  document.documentElement.style.overflow = 'hidden';
+  body.height = '100vh'
+  window.scrollTo({
+    top: 0,
+    behavior: 'auto'
+});
   exchangeBox.style.display = 'none';
   usernameLabel.style.display = 'none';
   coinsBox.style.display = 'none'
@@ -868,7 +890,8 @@ document.getElementById('mineButton').addEventListener('click', ()=>{
   earnPerClickBox.style.marginTop = '3vh'
   clicksTillLevelUp.style.marginTop = '3vh'
   passiveClicks.style.marginTop = '3vh'
-  coinsBox.style.marginTop = '14vh'
+  coinsBox.style.marginTop = '14vh';
+  document.documentElement.style.overflow = 'auto';
 });
 
 const PROGRESSION = [

@@ -2,16 +2,18 @@ body {
     background: black;
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 120vh;
     background-size: cover;
     font-family: 'Space Grotesk', sans-serif;
 }
 
 html, body {
-    height: 100%;
+    height: 124vh;
     margin: 0;
     padding: 0;
     overflow: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
 }
 
 #coinsLabel{    
@@ -59,14 +61,14 @@ html, body {
 
 #menu {
     z-index: 1;
-    position: absolute;
+    position: fixed;
     text-align: center;
     width: 90%;
     margin-left: 5%;
     background-color: #303336;
     border-radius: 10px;
     height: 8vh;
-    margin-top: 89vh;
+    margin-top: 91vh;
 }
 
 #friendsButton{
@@ -759,7 +761,7 @@ html, body {
   #mineMenu{
     display: none;
     width: 100vw;
-    height: 99vh;
+    height: 124vh;
     position: absolute;
     margin-top: 1vh;
     background-color: #1c1f24;    ;
@@ -772,7 +774,7 @@ html, body {
   #mineMenuMenu{
     height: 6vh;
     position: absolute;
-    margin-top: 19.5vh;
+    margin-top: 18.5vh;
     margin-left: 5vw;
     width: 90vw;
     background-color: #303336;
@@ -828,7 +830,7 @@ html, body {
   }
 
   #funTokensBox{
-    height: 10.6vh;
+    height: 15vh;
     position: absolute;
     margin-top: 26vh;
     margin-left: 5vw;
@@ -839,7 +841,7 @@ html, body {
 
   #stakingBox{
     margin-left: 52.5vw;
-    height: 10.6vh;
+    height: 15vh;
     position: absolute;
     margin-top: 26vh;
     width: 42.5vw;
@@ -848,9 +850,9 @@ html, body {
   }
 
   #btcPairsBox{
-    height: 10.6vh;
+    height: 15vh;
     position: absolute;
-    margin-top: 38.6vh;
+    margin-top: 44vh;
     margin-left: 5vw;
     width: 42.5vw;
     background-color: #303336;
@@ -858,9 +860,9 @@ html, body {
   }
 
   #ethPairsBox{
-    height: 10.6vh;
+    height: 15vh;
     position: absolute;
-    margin-top: 38.6vh;
+    margin-top: 44vh;
     margin-left: 52.5vw;
     width: 42.5vw;
     background-color: #303336;
@@ -868,9 +870,9 @@ html, body {
   }
 
   #top10CMCBox{
-    height: 10.6vh;
+    height: 15vh;
     position: absolute;
-    margin-top: 51.2vh;
+    margin-top: 62vh;
     margin-left: 5vw;
     width: 42.5vw;
     background-color: #303336;
@@ -878,9 +880,9 @@ html, body {
   }
 
   #gameFiBox{
-    height: 10.6vh;
+    height: 15vh;
     position: absolute;
-    margin-top: 51.2vh;
+    margin-top: 62vh;
     margin-left: 52.5vw;
     width: 42.5vw;
     background-color: #303336;
@@ -888,9 +890,9 @@ html, body {
   }
 
   #defiBox{
-    height: 10.6vh;
+    height: 15vh;
     position: absolute;
-    margin-top: 63.8vh;
+    margin-top: 80vh;
     margin-left: 5vw;
     width: 42.5vw;
     background-color: #303336;
@@ -898,9 +900,9 @@ html, body {
   }
 
   #socialFiBox{
-    height: 10.6vh;
+    height: 15vh;
     position: absolute;
-    margin-top: 63.8vh;
+    margin-top: 80vh;
     margin-left: 52.5vw;
     width: 42.5vw;
     background-color: #303336;
@@ -908,9 +910,9 @@ html, body {
   }
 
   #memeCoinsBox{
-    height: 10.6vh;
+    height: 15vh;
     position: absolute;
-    margin-top: 76.4vh;
+    margin-top: 98vh;
     margin-left: 5vw;
     width: 42.5vw;
     background-color: #303336;
@@ -918,9 +920,9 @@ html, body {
   }
 
   #shitCoinsBox{
-    height: 10.6vh;
+    height: 15vh;
     position: absolute;
-    margin-top: 76.4vh;
+    margin-top: 98vh;
     margin-left: 52.5vw;
     width: 42.5vw;
     background-color: #303336;
@@ -929,71 +931,72 @@ html, body {
 
   .funTokensImage{
     position: absolute;
-    margin-left: 1.5vw;
-    margin-top: 1vh;
+    margin-left: 2vw;
+    margin-top: 1.8vh;
   }
 
   #funTokensLabel{
     position: absolute;
     color: white;
-    margin-left: 8.8vw;
+    margin-left: 14vw;
     margin-top: 2vh;
-    font-size: 8px;
+    font-size: 12px;
   }
 
   #funTokensSubBox1{
     position: absolute;
-    width: 26vw;
+    width: 42.5vw;
     border-top-left-radius: 10px;
-    height: 5.5vh;
+    height: 9vh;
     border-bottom: 1px solid grey;
   }
 
   #funTokensSubBox2{
     position: absolute;
-    margin-left: 26vw;
-    width: 16.5vw;
+    margin-top: 10vh;
+    margin-left: 14vw;
+    width: 26vw;
     border-bottom-right-radius: 10px;
-    height: 10.6vh;
+    height: 4vh;
     border-left: 1px solid grey;
   }
 
   .mainCardLevel{
     position: absolute;
-    margin-top: 2vh;
+    margin-top: 11vh;
     color: white;
     margin-left: 5.5vw;
   }
 
   #funTokensCoin{
     margin-left: 3vw;
-    margin-top: 6.7vh;
+    margin-top: 1vh;
   }
 
   .mainCardPrice{
     position: absolute;
     margin-left: 8.6vw;
-    margin-top: -2.8vh;
+    margin-top: -2.7vh;
     color: white;
   }
 
   #funTokensProfitPerHourLabel{
-    margin-left: 5vw;
-    margin-top: 6vh;
+    margin-left: 14vw;
+    margin-top: 4.5vh;
     color: grey;
     position: absolute;
   }
 
   .mainCardPPH{
-    margin-top: 8vh;
+    margin-top: 7vh;
     color: rgb(179, 177, 177);
     position: absolute;
-    margin-left: 11.5vw;
+    margin-left: 17vw;
   }
 
   #funTokensCoinImage{
-    margin-left: 8.5vw;
-    margin-top: 8vh;
+    margin-left: 14vw;
+    margin-top: 7vh;
     position: absolute;
     filter: grayscale(100%);
   }
@@ -1082,4 +1085,11 @@ html, body {
     -webkit-user-drag: none;
     -moz-user-drag: none;
     -ms-user-drag: none;
+  }
+
+  #marketsSubMenu{
+    height: 120vh;
+    position: absolute;
+    width: 100vw;
+    -webkit-overflow-scrolling: touch;
   }
