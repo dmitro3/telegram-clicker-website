@@ -994,10 +994,10 @@ document.getElementById('funTokensBox').addEventListener('click', ()=>{
   }
 });
 
-document.addEventListener('dragstart', function(event) {
+document.getElementById('mainButtonCover').addEventListener('dragstart', function(event) {
   event.preventDefault();
 });
 
-document.addEventListener('touchmove', function(event) {
+document.getElementById('mainButtonCover').addEventListener('touchmove', function(event) {
   event.preventDefault();
 }, { passive: false });
