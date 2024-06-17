@@ -44,7 +44,7 @@ router.post('/', async (req, res, next) => {
 
 async function updateFunTokens(level, telegramId) {
     return new Promise((resolve, reject) => {
-        db.run("UPDATE mine_cards SET funTokens_level = ? WHERE telegramReferralId = ?", [+level, +telegramId], function (err) {
+        db.run("UPDATE mine_cards SET funTokens_level = ? WHERE telegramId = ?", [+level, +telegramId], function (err) {
             if (err) {
                 console.error("Error inserting data:", err.message);
                 reject(err);
@@ -57,7 +57,7 @@ async function updateFunTokens(level, telegramId) {
 
 async function updateStaking(level, telegramId) {
     return new Promise((resolve, reject) => {
-        db.run("UPDATE mine_cards SET staking_level = ? WHERE telegramReferralId = ?", [+level, +telegramId], function (err) {
+        db.run("UPDATE mine_cards SET staking_level = ? WHERE telegramId = ?", [+level, +telegramId], function (err) {
             if (err) {
                 console.error("Error inserting data:", err.message);
                 reject(err);
@@ -70,7 +70,7 @@ async function updateStaking(level, telegramId) {
 
 async function updateBTCPairsBox(level, telegramId) {
     return new Promise((resolve, reject) => {
-        db.run("UPDATE mine_cards SET btcPairs_level = ? WHERE telegramReferralId = ?", [+level, +telegramId], function (err) {
+        db.run("UPDATE mine_cards SET btcPairs_level = ? WHERE telegramId = ?", [+level, +telegramId], function (err) {
             if (err) {
                 console.error("Error inserting data:", err.message);
                 reject(err);
@@ -83,7 +83,7 @@ async function updateBTCPairsBox(level, telegramId) {
 
 async function updateETHPairsBox(level, telegramId) {
     return new Promise((resolve, reject) => {
-        db.run("UPDATE mine_cards SET ethPairs_level = ? WHERE telegramReferralId = ?", [+level, +telegramId], function (err) {
+        db.run("UPDATE mine_cards SET ethPairs_level = ? WHERE telegramId = ?", [+level, +telegramId], function (err) {
             if (err) {
                 console.error("Error inserting data:", err.message);
                 reject(err);
@@ -96,7 +96,7 @@ async function updateETHPairsBox(level, telegramId) {
 
 async function updateTop10CMCBox(level, telegramId) {
     return new Promise((resolve, reject) => {
-        db.run("UPDATE mine_cards SET top10_level = ? WHERE telegramReferralId = ?", [+level, +telegramId], function (err) {
+        db.run("UPDATE mine_cards SET top10_level = ? WHERE telegramId = ?", [+level, +telegramId], function (err) {
             if (err) {
                 console.error("Error inserting data:", err.message);
                 reject(err);
@@ -109,7 +109,7 @@ async function updateTop10CMCBox(level, telegramId) {
 
 async function updateGameFiBox(level, telegramId) {
     return new Promise((resolve, reject) => {
-        db.run("UPDATE mine_cards SET gameFi_level = ? WHERE telegramReferralId = ?", [+level, +telegramId], function (err) {
+        db.run("UPDATE mine_cards SET gameFi_level = ? WHERE telegramId = ?", [+level, +telegramId], function (err) {
             if (err) {
                 console.error("Error inserting data:", err.message);
                 reject(err);
@@ -122,7 +122,7 @@ async function updateGameFiBox(level, telegramId) {
 
 async function updateDefiBox(level, telegramId) {
     return new Promise((resolve, reject) => {
-        db.run("UPDATE defi_level SET gameFi_level = ? WHERE telegramReferralId = ?", [+level, +telegramId], function (err) {
+        db.run("UPDATE defi_level SET gameFi_level = ? WHERE telegramId = ?", [+level, +telegramId], function (err) {
             if (err) {
                 console.error("Error inserting data:", err.message);
                 reject(err);
@@ -135,7 +135,7 @@ async function updateDefiBox(level, telegramId) {
 
 async function updateSocialFiBox(level, telegramId) {
     return new Promise((resolve, reject) => {
-        db.run("UPDATE defi_level SET socialFi_level = ? WHERE telegramReferralId = ?", [+level, +telegramId], function (err) {
+        db.run("UPDATE defi_level SET socialFi_level = ? WHERE telegramId = ?", [+level, +telegramId], function (err) {
             if (err) {
                 console.error("Error inserting data:", err.message);
                 reject(err);
@@ -148,7 +148,7 @@ async function updateSocialFiBox(level, telegramId) {
 
 async function updateMemeCoinsBox(level, telegramId) {
     return new Promise((resolve, reject) => {
-        db.run("UPDATE defi_level SET meme_level = ? WHERE telegramReferralId = ?", [+level, +telegramId], function (err) {
+        db.run("UPDATE defi_level SET meme_level = ? WHERE telegramId = ?", [+level, +telegramId], function (err) {
             if (err) {
                 console.error("Error inserting data:", err.message);
                 reject(err);
@@ -161,7 +161,7 @@ async function updateMemeCoinsBox(level, telegramId) {
 
 async function updateShitCoinsBox(level, telegramId) {
     return new Promise((resolve, reject) => {
-        db.run("UPDATE defi_level SET shit_level = ? WHERE telegramReferralId = ?", [+level, +telegramId], function (err) {
+        db.run("UPDATE defi_level SET shit_level = ? WHERE telegramId = ?", [+level, +telegramId], function (err) {
             if (err) {
                 console.error("Error inserting data:", err.message);
                 reject(err);
