@@ -10,7 +10,7 @@ router.post('/', async (req, res, next) => {
         'gameFiBox', 'defiBox', 'socialFiBox', 'memeCoinsBox', 'shitCoinsBox'
     ]
     const telegramId = data.telegramId;
-    const level = data.level;
+    const level = data.cardLevel;
     const cardId = data.cardId;
     const updateFunctions = [
         (level, telegramId) => updateFunTokens(level, telegramId),
