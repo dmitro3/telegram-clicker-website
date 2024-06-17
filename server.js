@@ -52,6 +52,9 @@ app.use('/updateDailyRewards', updateDailyRewards);
 const getMineCardsInformation = require('./routes/getMineCardsInformation');
 app.use('/getMineCardsInformation', getMineCardsInformation);
 
+const updateCardLevel = require('./routes/updateCardLevel');
+app.use('/updateCardLevel', updateCardLevel);
+
 //db.run("CREATE TABLE users_data (ID INTEGER PRIMARY KEY, telegramId INTEGER, energy INTEGER, coins INTEGER, time TEXT)");
 
 //db.run("CREATE TABLE refferal_origin (ID INTEGER PRIMARY KEY, telegramId INTEGER, link TEXT)");

@@ -493,12 +493,6 @@ function manageProgressBar (level, levelLabel) {
   const maxValue = levelProgress[level];
   const progression = 100/maxValue;
   const barWidth = coins*progression;
-
-  console.log('coins:', coins);
-  console.log('maxValue:', maxValue);
-  console.log('progression:', progression);
-  console.log('barWidth:', barWidth);
-
   document.getElementById('progressBar').style.width = (barWidth-10) + 'vw'
 } 
 
@@ -998,7 +992,6 @@ function showCurrentMineCards (information) {
   
   //fun tokens card data update
   let level = +information.funTokens_level;
-  console.log(PROGRESSION[level])
   document.getElementById('funTokenLevel').innerHTML = PROGRESSION[level].level;
   document.getElementById('funTokenPrice').innerHTML = PROGRESSION[level].updatePrice;
   document.getElementById('funTokenPPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
@@ -1019,13 +1012,83 @@ document.getElementById('upgradeCardBoxClose').addEventListener('click', ()=>{
 })
 
 document.getElementById('funTokensBox').addEventListener('click', ()=>{
-  upgradeCardBox.style.display = 'block';
-  adjustUpgradeCardBox('funTokensBox');
+  const level = document.getElementById('funTokensBox').getAttribute('data-value');
+  if (level != 15) {
+    upgradeCardBox.style.display = 'block';
+    adjustUpgradeCardBox('funTokensBox');
+  }
 });
 
 document.getElementById('stakingBox').addEventListener('click', ()=>{
-  upgradeCardBox.style.display = 'block';
-  adjustUpgradeCardBox('stakingBox');
+  const level = document.getElementById('stakingBox').getAttribute('data-value');
+  if (level != 15) {
+    upgradeCardBox.style.display = 'block';
+    adjustUpgradeCardBox('stakingBox');
+  }
+});
+
+document.getElementById('btcPairsBox').addEventListener('click', ()=>{
+  const level = document.getElementById('btcPairsBox').getAttribute('data-value');
+  if (level != 15) {
+    upgradeCardBox.style.display = 'block';
+    adjustUpgradeCardBox('btcPairsBox');
+  }
+});
+
+document.getElementById('ethPairsBox').addEventListener('click', ()=>{
+  const level = document.getElementById('ethPairsBox').getAttribute('data-value');
+  if (level != 15) {
+    upgradeCardBox.style.display = 'block';
+    adjustUpgradeCardBox('ethPairsBox');
+  }
+});
+
+document.getElementById('top10CMCBox').addEventListener('click', ()=>{
+  const level = document.getElementById('top10CMCBox').getAttribute('data-value');
+  if (level != 15) {
+    upgradeCardBox.style.display = 'block';
+    adjustUpgradeCardBox('top10CMCBox');
+  }
+});
+
+document.getElementById('gameFiBox').addEventListener('click', ()=>{
+  const level = document.getElementById('gameFiBox').getAttribute('data-value');
+  if (level != 15) {
+    upgradeCardBox.style.display = 'block';
+    adjustUpgradeCardBox('gameFiBox');
+  }
+});
+
+document.getElementById('defiBox').addEventListener('click', ()=>{
+  const level = document.getElementById('defiBox').getAttribute('data-value');
+  if (level != 15) {
+    upgradeCardBox.style.display = 'block';
+    adjustUpgradeCardBox('defiBox');
+  }
+});
+
+document.getElementById('socialFiBox').addEventListener('click', ()=>{
+  const level = document.getElementById('socialFiBox').getAttribute('data-value');
+  if (level != 15) {
+    upgradeCardBox.style.display = 'block';
+    adjustUpgradeCardBox('socialFiBox');
+  }
+});
+
+document.getElementById('memeCoinsBox').addEventListener('click', ()=>{
+  const level = document.getElementById('memeCoinsBox').getAttribute('data-value');
+  if (level != 15) {
+    upgradeCardBox.style.display = 'block';
+    adjustUpgradeCardBox('memeCoinsBox');
+  }
+});
+
+document.getElementById('shitCoinsBox').addEventListener('click', ()=>{
+  const level = document.getElementById('shitCoinsBox').getAttribute('data-value');
+  if (level != 15) {
+    upgradeCardBox.style.display = 'block';
+    adjustUpgradeCardBox('shitCoinsBox');
+  }
 });
 
 const data = [
@@ -1042,6 +1105,69 @@ const data = [
     label: 'Staking',
     description: 'Digital access to exclusive fan experiences and privileges',
     currentLevel: +document.getElementById('stakingBox').getAttribute('data-value')
+  },
+  {
+    boxId: 'btcPairsBox',
+    image: 'bitcoin.png',
+    label: 'BTC pairs',
+    description: 'Digital access to exclusive fan experiences and privileges',
+    currentLevel: +document.getElementById('btcPairsBox').getAttribute('data-value')
+  },
+  {
+    boxId: 'ethPairsBox',
+    image: 'ethereum.png',
+    label: 'ETH pairs',
+    description: 'Digital access to exclusive fan experiences and privileges',
+    currentLevel: +document.getElementById('ethPairsBox').getAttribute('data-value')
+  },
+  {
+    boxId: 'top10CMCBox',
+    image: 'cmc.png',
+    label: 'Top 10 cmc pairs',
+    description: 'Digital access to exclusive fan experiences and privileges',
+    currentLevel: +document.getElementById('top10CMCBox').getAttribute('data-value')
+  },
+  {
+    boxId: 'gameFiBox',
+    image: 'gamefi.png',
+    label: 'GameFi tokens',
+    description: 'Digital access to exclusive fan experiences and privileges',
+    currentLevel: +document.getElementById('gameFiBox').getAttribute('data-value')
+  },
+  {
+    boxId: 'defiBox',
+    image: 'defi.png',
+    label: 'Defi2.0 tokens',
+    description: 'Digital access to exclusive fan experiences and privileges',
+    currentLevel: +document.getElementById('defiBox').getAttribute('data-value')
+  },
+  {
+    boxId: 'socialFiBox',
+    image: 'socialfi.png',
+    label: 'SocialFi tokens',
+    description: 'Digital access to exclusive fan experiences and privileges',
+    currentLevel: +document.getElementById('socialFiBox').getAttribute('data-value')
+  },
+  {
+    boxId: 'memeCoinsBox',
+    image: 'meme.png',
+    label: 'Meme coins',
+    description: 'Digital access to exclusive fan experiences and privileges',
+    currentLevel: +document.getElementById('memeCoinsBox').getAttribute('data-value')
+  },
+  {
+    boxId: 'shitCoinsBox',
+    image: 'shit.png',
+    label: 'Shit coins',
+    description: 'Digital access to exclusive fan experiences and privileges',
+    currentLevel: +document.getElementById('shitCoinsBox').getAttribute('data-value')
+  },
+  {
+    boxId: 'shitCoinsBox',
+    image: 'shit.png',
+    label: 'Shit coins',
+    description: 'Digital access to exclusive fan experiences and privileges',
+    currentLevel: +document.getElementById('shitCoinsBox').getAttribute('data-value')
   }
 ];
 
@@ -1052,6 +1178,76 @@ const cardsData = [
     level: 'funTokenLevel',
     price: 'funTokenPrice',
     pph: 'funTokenPPH' 
+  },
+  {
+    boxId: 'stakingBox',
+    label: 'funTokensLabel',
+    level: 'stakingLevel',
+    price: 'stakingPrice',
+    pph: 'stakingPPH' 
+  },
+  {
+    boxId: 'btcPairsBox',
+    label: 'funTokensLabel',
+    level: 'btcPairLevel',
+    price: 'btcPairPrice',
+    pph: 'btcPairPPH' 
+  },
+  {
+    boxId: 'ethPairsBox',
+    label: 'funTokensLabel',
+    level: 'ethPairLevel',
+    price: 'ethPairPrice',
+    pph: 'ethPairPPH' 
+  },
+  {
+    boxId: 'top10CMCBox',
+    label: 'funTokensLabel',
+    level: 'cmcPairsLevel',
+    price: 'cmcPairsPrice',
+    pph: 'cmcPairsPPH' 
+  },
+  {
+    boxId: 'gameFiBox',
+    label: 'funTokensLabel',
+    level: 'gameFiLevel',
+    price: 'gameFiPrice',
+    pph: 'gameFiPPH' 
+  },
+  {
+    boxId: 'defiBox',
+    label: 'funTokensLabel',
+    level: 'defiLevel',
+    price: 'defiPrice',
+    pph: 'defiPPH' 
+  },
+  {
+    boxId: 'socialFiBox',
+    label: 'funTokensLabel',
+    level: 'socialFiLevel',
+    price: 'socialFiPrice',
+    pph: 'socialFiPPH' 
+  },
+  {
+    boxId: 'memeCoinsBox',
+    label: 'funTokensLabel',
+    level: 'memeLevel',
+    price: 'memePrice',
+    pph: 'memePPH' 
+  },
+  {
+    boxId: 'shitCoinsBox',
+    label: 'funTokensLabel',
+    level: 'shitLevel',
+    price: 'shitPrice',
+    pph: 'shitPPH' 
+  },
+  {
+    boxId: 'shitCoinsBox',
+    label: 'funTokensLabel',
+    level: 'shitLevel',
+    price: 'shitPrice',
+    pph: 'shitPPH' 
   }
 ]
 
@@ -1059,7 +1255,7 @@ function adjustUpgradeCardBox (id) {
   
   
   let cardIndex;
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < data.length; i++) {
     if (data[i].boxId == id) {
       cardIndex = i;
       break;
@@ -1069,14 +1265,16 @@ function adjustUpgradeCardBox (id) {
   // get the next level data
   const cardId = data[cardIndex].boxId;
   const nextLevel = +document.getElementById(cardId).getAttribute('data-value')+1;
-  const nextLevelPPH = PROGRESSION[nextLevel].coinPerHour;
-  const nextLevelPrice = PROGRESSION[nextLevel].updatePrice;
-
-  // adjust upgrade box due to card
-  document.getElementById('upgradeCardBoxImage').src = data[cardIndex].image;
-  document.getElementById('upgradeCardBoxLabel').innerHTML = data[cardIndex].label;
-  document.getElementById('upgradeCardBoxPPH').innerHTML = '+' + nextLevelPPH;
-  document.getElementById('upgradeCardBoxPrice').innerHTML = nextLevelPrice;
+  if (nextLevel-1 != 15) {
+    const nextLevelPPH = PROGRESSION[nextLevel].coinPerHour;
+    const nextLevelPrice = PROGRESSION[nextLevel].updatePrice;
+  
+    // adjust upgrade box due to card
+    document.getElementById('upgradeCardBoxImage').src = data[cardIndex].image;
+    document.getElementById('upgradeCardBoxLabel').innerHTML = data[cardIndex].label;
+    document.getElementById('upgradeCardBoxPPH').innerHTML = '+' + nextLevelPPH;
+    document.getElementById('upgradeCardBoxPrice').innerHTML = nextLevelPrice;
+  }
 }
 
 document.getElementById('upgradeCardBoxSubmit').addEventListener('click', ()=>{
@@ -1107,6 +1305,9 @@ document.getElementById('upgradeCardBoxSubmit').addEventListener('click', ()=>{
     const cardBox = data[index].boxId;
     // get current card's level
     const level = +document.getElementById(cardBox).getAttribute('data-value');
+    if (level == 14){
+      document.getElementById('upgradeCardBox').style.display = 'none';
+    }
     // increase level
     document.getElementById(cardBox).setAttribute('data-value', level+1)
     // substract coins
@@ -1118,12 +1319,20 @@ document.getElementById('upgradeCardBoxSubmit').addEventListener('click', ()=>{
         cardData = cardsData[i];
       }
     }
-    console.log('cardData - ' + cardData)
     // adjust card visual
     document.getElementById(cardData.level).textContent = PROGRESSION[level+1].level;
     document.getElementById(cardData.price).textContent = PROGRESSION[level+2].updatePrice;
     document.getElementById(cardData.pph).textContent = '+' + PROGRESSION[level+1].coinPerHour;
     document.getElementById('upgradeCardBox').style.display = 'none';
   }
+  // update to db
+  postData('/updateCardLevel', {
+    telegramId: telegramId,
+    cardId: cardData.boxId,
+    cardLevel: +document.getElementById(cardBox).getAttribute('data-value')
+  })
+  .then(data => {
+    console.log('Card successfuly updated.')
+  })
 });
 
