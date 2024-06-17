@@ -1019,38 +1019,111 @@ document.getElementById('upgradeCardBoxClose').addEventListener('click', ()=>{
 })
 
 document.getElementById('funTokensBox').addEventListener('click', ()=>{
-  /*
-  const level = +document.getElementById('funTokensBox').value;
-  const nextLevelPrice = PROGRESSION[level+1].updatePrice;
-  const coins = +getLeftCoins();
-  if (coins > nextLevelPrice) {
-    document.getElementById('funTokenLevel').innerHTML = PROGRESSION[level+1].level;
-    document.getElementById('funTokenPrice').innerHTML = PROGRESSION[level+1].updatePrice;
-    document.getElementById('funTokenPPH').innerHTML = '+' + PROGRESSION[level+1].coinPerHour;
-    document.getElementById('funTokensBox').value = level+1;
-  }
-  */
   upgradeCardBox.style.display = 'block';
   adjustUpgradeCardBox('funTokensBox');
 });
 
-function adjustUpgradeCardBox (boxId) {
-  const data = [
-    {
-      boxId: 'funTokensBox',
-      image: 'sport.png',
-      label: 'funTokensLabel',
-      description: 'Digital access to exclusive fan experiences and privileges',
-      currentLevel: +document.getElementById('funTokensBox').value
-    }
-  ];
+document.getElementById('stakingBox').addEventListener('click', ()=>{
+  upgradeCardBox.style.display = 'block';
+  adjustUpgradeCardBox('stakingBox');
+});
 
+const data = [
+  {
+    boxId: 'funTokensBox',
+    image: 'sport.png',
+    label: 'Fun tokens',
+    description: 'Digital access to exclusive fan experiences and privileges',
+    currentLevel: +document.getElementById('funTokensBox').getAttribute('data-value')
+  },
+  {
+    boxId: 'stakingBox',
+    image: 'staking.png',
+    label: 'Staking',
+    description: 'Digital access to exclusive fan experiences and privileges',
+    currentLevel: +document.getElementById('stakingBox').getAttribute('data-value')
+  }
+];
+
+const cardsData = [
+  {
+    boxId: 'funTokensBox',
+    label: 'funTokensLabel',
+    level: 'funTokenLevel',
+    price: 'funTokenPrice',
+    pph: 'funTokenPPH' 
+  }
+]
+
+function adjustUpgradeCardBox (id) {
+  
+  
   let cardIndex;
-  for (let i = 0; i < 10; i++) {
-    if (data[i].boxId == boxId) {
+  for (let i = 0; i < 2; i++) {
+    if (data[i].boxId == id) {
       cardIndex = i;
+      break;
     }
   }
 
+  // get the next level data
+  const cardId = data[cardIndex].boxId;
+  const nextLevel = +document.getElementById(cardId).getAttribute('data-value')+1;
+  const nextLevelPPH = PROGRESSION[nextLevel].coinPerHour;
+  const nextLevelPrice = PROGRESSION[nextLevel].updatePrice;
 
+  // adjust upgrade box due to card
+  document.getElementById('upgradeCardBoxImage').src = data[cardIndex].image;
+  document.getElementById('upgradeCardBoxLabel').innerHTML = data[cardIndex].label;
+  document.getElementById('upgradeCardBoxPPH').innerHTML = '+' + nextLevelPPH;
+  document.getElementById('upgradeCardBoxPrice').innerHTML = nextLevelPrice;
 }
+
+document.getElementById('upgradeCardBoxSubmit').addEventListener('click', ()=>{
+  const labels = [
+    'Fun tokens', 'Staking', 'BTC pairs', 'ETH pairs', 'Top 10 cmc pairs',
+    'GameFi tokens', 'Defi2.0 tokens', 'SocialFi tokens', 'Meme coins', 'Shit coins'
+  ]
+  // get data needed for card upgarde
+  const coins = +getLeftCoins();
+  const price = +document.getElementById('upgradeCardBoxPrice').textContent;
+  const cardLabel = document.getElementById('upgradeCardBoxLabel').textContent;
+  // make coin update
+  if (coins >= price) {
+    // get current card
+    let card;
+    for (let i = 0; i < labels.length; i++) {
+      if (cardLabel == labels[i]){
+        card = labels[i];
+        break;
+      }
+    }
+    let index;
+    for (let i = 0; i < data.length; i++) {
+      if (card == data[i].label){
+        index = i;
+      }
+    }
+    const cardBox = data[index].boxId;
+    // get current card's level
+    const level = +document.getElementById(cardBox).getAttribute('data-value');
+    // increase level
+    document.getElementById(cardBox).setAttribute('data-value', level+1)
+    // substract coins
+    adjustCoinsVisual(coins-price);
+    // get card's ids
+    let cardData;
+    for (let i = 0; i < cardsData.length; i++) {
+      if (cardBox == cardsData[i].boxId) {
+        cardData = cardsData[i];
+      }
+    }
+    console.log('cardData - ' + cardData)
+    // adjust card visual
+    document.getElementById(cardData.level).textContent = PROGRESSION[level+1].level;
+    document.getElementById(cardData.price).textContent = PROGRESSION[level+2].updatePrice;
+    document.getElementById(cardData.pph).textContent = '+' + PROGRESSION[level+1].coinPerHour;
+    document.getElementById('upgradeCardBox').style.display = 'none';
+  }
+});
+
