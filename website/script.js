@@ -1005,7 +1005,21 @@ function showCurrentMineCards (information) {
   document.getElementById('funTokensBox').value = level;
 }
 
+document.getElementById('mainButtonCover').addEventListener('dragstart', function(event) {
+  event.preventDefault();
+});
+
+document.getElementById('mainButtonCover').addEventListener('touchmove', function(event) {
+  event.preventDefault();
+}, { passive: false });
+
+
+document.getElementById('upgradeCardBoxClose').addEventListener('click', ()=>{
+  upgradeCardBox.style.display = 'none'
+})
+
 document.getElementById('funTokensBox').addEventListener('click', ()=>{
+  /*
   const level = +document.getElementById('funTokensBox').value;
   const nextLevelPrice = PROGRESSION[level+1].updatePrice;
   const coins = +getLeftCoins();
@@ -1015,12 +1029,28 @@ document.getElementById('funTokensBox').addEventListener('click', ()=>{
     document.getElementById('funTokenPPH').innerHTML = '+' + PROGRESSION[level+1].coinPerHour;
     document.getElementById('funTokensBox').value = level+1;
   }
+  */
+  upgradeCardBox.style.display = 'block';
+  adjustUpgradeCardBox('funTokensBox');
 });
 
-document.getElementById('mainButtonCover').addEventListener('dragstart', function(event) {
-  event.preventDefault();
-});
+function adjustUpgradeCardBox (boxId) {
+  const data = [
+    {
+      boxId: 'funTokensBox',
+      image: 'sport.png',
+      label: 'funTokensLabel',
+      description: 'Digital access to exclusive fan experiences and privileges',
+      currentLevel: +document.getElementById('funTokensBox').value
+    }
+  ];
 
-document.getElementById('mainButtonCover').addEventListener('touchmove', function(event) {
-  event.preventDefault();
-}, { passive: false });
+  let cardIndex;
+  for (let i = 0; i < 10; i++) {
+    if (data[i].boxId == boxId) {
+      cardIndex = i;
+    }
+  }
+
+
+}

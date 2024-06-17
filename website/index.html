@@ -10,6 +10,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body id="body">
+
+    <div id="upgradeCardBox">
+        <img src="sport.png" id="upgradeCardBoxImage">
+        <h2 id="upgradeCardBoxLabel">Fun tokens</h2>
+        <h6 id="upgradeCardBoxDescription">Digital access to exclusive fan experiences and privileges</h6>
+        <h6 id="upgradeCardBoxPPHLabel">Profit per hour</h6>
+        <img src="coin.png" id="upgradeCardBoxPPHImage">
+        <h6 id="upgradeCardBoxPPH">+250</h6>
+        <img src="coin.png" id="upgradeCardBoxPriceImage">
+        <h2 id="upgradeCardBoxPrice">2K</h2>
+        <div id="upgradeCardBoxSubmit">
+            <h3 style="text-align: center; color: white; margin-top: 1.5vh;">Go Ahead</h3>
+        </div>
+        <div id="upgradeCardBoxClose">        
+            <img src="close.png" width="20vw" height="20vw" style="margin-top: 1vw; margin-left: 1vw;">
+        </div>
+    </div>
+
     <div id="mineMenu">
         <div id="mineMenuMenu">
             <div id="marketsMenu"><h5 style="margin: 1.6vh auto; color: red;">Markets</h5></div>
@@ -36,7 +54,7 @@
             <img  style="display: none;" id="memeBoxLock" src="lock.png" alt="" width="30vw" height="30vw">
             <img  style="display: none;" id="shitBoxLock" src="lock.png" alt="" width="30vw" height="30vw">
            <div id="marketsSubMenu">
-            <div id="funTokensBox">
+            <div id="funTokensBox" value = '0'>
                 <div id="funTokensSubBox1">
                     <img class="funTokensImage" src="sport.png" width="50vw" height="50vw">
                     <h6 id="funTokensLabel">Fun tokens</h6>
@@ -52,7 +70,7 @@
             </div>
             <div id="stakingBoxLockbox">
                 <img style="display: none;" id="stakingBoxLock" src="lock.png" alt="" width="30vw" height="30vw">
-                <div id="stakingBox">
+                <div id="stakingBox"  value = '0'>
                     <div id="funTokensSubBox1">
                         <img class="funTokensImage" src="staking.png" width="30vw" height="30vw">
                         <h6 id="funTokensLabel">Staking</h6>
@@ -68,7 +86,7 @@
             </div>
             </div>
             <div>
-            <div id="btcPairsBox">
+            <div id="btcPairsBox"  value = '0'>
                 <div id="funTokensSubBox1">
                     <img class="funTokensImage" src="bitcoin.png" width="30vw" height="30vw">
                     <h6 id="funTokensLabel">BTC pairs</h6>
@@ -82,7 +100,7 @@
                 <h6 id="funTokensProfitPerHourLabel">Profit per hour</h6>
                 <h6 id="btcPairPPH" class="mainCardPPH">+0</h6>
             </div>
-            <div id="ethPairsBox">
+            <div id="ethPairsBox"  value = '0'>
                 <div id="funTokensSubBox1">
                     <img class="funTokensImage" src="ethereum.png" width="30vw" height="30vw">
                     <h6 id="funTokensLabel">ETH pairs</h6>
@@ -96,7 +114,7 @@
                 <h6 id="funTokensProfitPerHourLabel">Profit per hour</h6>
                 <h6 id="ethPairPPH" class="mainCardPPH">+0</h6>
             </div>
-            <div id="top10CMCBox">
+            <div id="top10CMCBox"  value = '0'>
                 <div id="funTokensSubBox1">
                     <img class="funTokensImage" src="cmc.png" width="30vw" height="30vw">
                     <h6 id="funTokensLabel">Top 10 cmc pairs</h6>
@@ -110,7 +128,7 @@
                 <h6 id="funTokensProfitPerHourLabel">Profit per hour</h6>
                 <h6 id="cmcPairsPPH" class="mainCardPPH">+0</h6>
             </div>
-            <div id="gameFiBox">
+            <div id="gameFiBox"  value = '0'>
                 <div id="funTokensSubBox1">
                     <img class="funTokensImage" src="gamefi.png" width="30vw" height="30vw">
                     <h6 id="funTokensLabel">GameFi tokens</h6>
@@ -124,7 +142,7 @@
                 <h6 id="funTokensProfitPerHourLabel">Profit per hour</h6>
                 <h6 id="gameFiPPH" class="mainCardPPH">+0</h6>
             </div>
-            <div id="defiBox">
+            <div id="defiBox"  value = '0'>
                 <div id="funTokensSubBox1">
                     <img class="funTokensImage" src="defi.png" width="30vw" height="30vw">
                     <h6 id="funTokensLabel">Defi2.0 tokens</h6>
@@ -138,7 +156,7 @@
                 <h6 id="funTokensProfitPerHourLabel">Profit per hour</h6>
                 <h6 id="defiPPH" class="mainCardPPH">+0</h6>
             </div>
-            <div id="socialFiBox">
+            <div id="socialFiBox"  value = '0'>
                 <div id="funTokensSubBox1">
                     <img class="funTokensImage" src="socialfi.png" width="30vw" height="30vw">
                     <h6 id="funTokensLabel">SocialFi tokens</h6>
@@ -152,7 +170,7 @@
                 <h6 id="funTokensProfitPerHourLabel">Profit per hour</h6>
                 <h6 id="socialFiPPH" class="mainCardPPH">+0</h6>
             </div>
-            <div id="memeCoinsBox">
+            <div id="memeCoinsBox"  value = '0'>
                 <div id="funTokensSubBox1">
                     <img class="funTokensImage" src="meme.png" width="30vw" height="30vw">
                     <h6 id="funTokensLabel">Meme coins</h6>
@@ -166,7 +184,7 @@
                 <h6 id="funTokensProfitPerHourLabel">Profit per hour</h6>
                 <h6 id="memePPH" class="mainCardPPH">+0</h6>
             </div>
-            <div id="shitCoinsBox">
+            <div id="shitCoinsBox"  value = '0'>
                 <div id="funTokensSubBox1">
                     <img class="funTokensImage" src="shit.png" width="30vw" height="30vw">
                     <h6 id="funTokensLabel">Shit coins</h6>
