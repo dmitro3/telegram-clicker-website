@@ -1325,7 +1325,6 @@ document.getElementById('upgradeCardBoxSubmit').addEventListener('click', ()=>{
     document.getElementById(cardData.price).textContent = PROGRESSION[level+2].updatePrice;
     document.getElementById(cardData.pph).textContent = '+' + PROGRESSION[level+1].coinPerHour;
     document.getElementById('upgradeCardBox').style.display = 'none';
-  }
   // update to db
   postData('/updateCardLevel', {
     telegramId: getTelegramId(),
@@ -1335,5 +1334,6 @@ document.getElementById('upgradeCardBoxSubmit').addEventListener('click', ()=>{
   .then(data => {
     console.log('Card successfuly updated.')
   })
+  }
 });
 
