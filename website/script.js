@@ -996,7 +996,7 @@ function showCurrentMineCards (information) {
   document.getElementById('funTokenLevel').innerHTML = PROGRESSION[level].level;
   document.getElementById('funTokenPrice').innerHTML = PROGRESSION[level+1].updatePrice;
   document.getElementById('funTokenPPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
-  document.getElementById(funTokensBox).setAttribute('data-value', level);
+  document.getElementById('funTokensBox').setAttribute('data-value', level);
 
   level = +information.staking_level;
   document.getElementById('stakingLevel').innerHTML = PROGRESSION[level].level;
