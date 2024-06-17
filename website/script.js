@@ -979,6 +979,7 @@ function adjustMineCards() {
   .then(data => {
     if (data.data != 'User added') {
       const information = Array.from(data.data)[0]
+      console.log(information)
       showCurrentMineCards(information);
     }
   });
