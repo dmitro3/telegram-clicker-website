@@ -994,9 +994,64 @@ function showCurrentMineCards (information) {
   //fun tokens card data update
   let level = +information.funTokens_level;
   document.getElementById('funTokenLevel').innerHTML = PROGRESSION[level].level;
-  document.getElementById('funTokenPrice').innerHTML = PROGRESSION[level].updatePrice;
+  document.getElementById('funTokenPrice').innerHTML = PROGRESSION[level+1].updatePrice;
   document.getElementById('funTokenPPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
-  document.getElementById('funTokensBox').value = level;
+  document.getElementById(funTokensBox).setAttribute('data-value', level);
+
+  level = +information.staking_level;
+  document.getElementById('stakingLevel').innerHTML = PROGRESSION[level].level;
+  document.getElementById('stakingPrice').innerHTML = PROGRESSION[level+1].updatePrice;
+  document.getElementById('stakingPPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
+  document.getElementById('stakingBox').setAttribute('data-value', level);
+
+  level = +information.btcPairs_level;
+  document.getElementById('btcPairLevel').innerHTML = PROGRESSION[level].level;
+  document.getElementById('btcPairPrice').innerHTML = PROGRESSION[level+1].updatePrice;
+  document.getElementById('btcPairPPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
+  document.getElementById('btcPairsBox').setAttribute('data-value', level);
+
+  level = +information.ethPairs_level;
+  document.getElementById('ethPairLevel').innerHTML = PROGRESSION[level].level;
+  document.getElementById('ethPairPrice').innerHTML = PROGRESSION[level+1].updatePrice;
+  document.getElementById('ethPairPPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
+  document.getElementById('ethPairsBox').setAttribute('data-value', level);
+
+  level = +information.top10_level;
+  document.getElementById('cmcPairsLevel').innerHTML = PROGRESSION[level].level;
+  document.getElementById('cmcPairsPrice').innerHTML = PROGRESSION[level+1].updatePrice;
+  document.getElementById('cmcPairsPPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
+  document.getElementById('top10CMCBox').setAttribute('data-value', level);
+
+  level = +information.gameFi_level;
+  document.getElementById('gameFiLevel').innerHTML = PROGRESSION[level].level;
+  document.getElementById('gameFiPrice').innerHTML = PROGRESSION[level+1].updatePrice;
+  document.getElementById('gameFiPPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
+  document.getElementById('gameFiBox').setAttribute('data-value', level);
+
+  level = +information.defi_level;
+  document.getElementById('defiLevel').innerHTML = PROGRESSION[level].level;
+  document.getElementById('defiPrice').innerHTML = PROGRESSION[level+1].updatePrice;
+  document.getElementById('defiPPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
+  document.getElementById('defiBox').setAttribute('data-value', level);
+
+  level = +information.socialFi_level;
+  document.getElementById('socialFiLevel').innerHTML = PROGRESSION[level].level;
+  document.getElementById('socialFiPrice').innerHTML = PROGRESSION[level+1].updatePrice;
+  document.getElementById('socialFiPPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
+  document.getElementById('socialFiBox').setAttribute('data-value', level);
+
+  level = +information.meme_level;
+  document.getElementById('memeLevel').innerHTML = PROGRESSION[level].level;
+  document.getElementById('memePrice').innerHTML = PROGRESSION[level+1].updatePrice;
+  document.getElementById('memePPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
+  document.getElementById('memeCoinsBox').setAttribute('data-value', level);
+
+  level = +information.shit_level;
+  document.getElementById('shitLevel').innerHTML = PROGRESSION[level].level;
+  document.getElementById('shitPrice').innerHTML = PROGRESSION[level+1].updatePrice;
+  document.getElementById('shitPPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
+  document.getElementById('shitCoinsBox').setAttribute('data-value', level);
+
 }
 
 document.getElementById('mainButtonCover').addEventListener('dragstart', function(event) {
