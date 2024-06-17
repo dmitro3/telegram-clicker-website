@@ -1327,7 +1327,7 @@ document.getElementById('upgradeCardBoxSubmit').addEventListener('click', ()=>{
   }
   // update to db
   postData('/updateCardLevel', {
-    telegramId: telegramId,
+    telegramId: getTelegramId(),
     cardId: cardData.boxId,
     cardLevel: +document.getElementById(cardBox).getAttribute('data-value')
   })
