@@ -123,7 +123,7 @@ async function updateGameFiBox(level, telegramId) {
 
 async function updateDefiBox(level, telegramId) {
     return new Promise((resolve, reject) => {
-        db.run("UPDATE mine_cards SET gameFi_level = ? WHERE telegramId = ?", [+level, +telegramId], function (err) {
+        db.run("UPDATE mine_cards SET defi_level = ? WHERE telegramId = ?", [+level, +telegramId], function (err) {
             if (err) {
                 console.error("Error inserting data:", err.message);
                 reject(err);
