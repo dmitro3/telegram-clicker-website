@@ -20,5 +20,5 @@ async function updateGameData(data) {
             }
         });
     }
-    )}
+    )} 
 module.exports = router;
