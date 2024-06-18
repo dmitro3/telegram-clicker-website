@@ -40,6 +40,10 @@ html, body {
 }
 
 #mainButtonBox{
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.1s;
+  perspective: 1000px;
     margin-top: 1vh;
     position: absolute;
     border-radius: 50%;
