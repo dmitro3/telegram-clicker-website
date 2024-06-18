@@ -273,12 +273,12 @@ function postData(url, data) {
   }
 function showClick(event) {
   const button = document.getElementById('mainButtonBox');
-
+  triggerHapticFeedback()
   const rect = button.getBoundingClientRect();
   const xx = event.clientX - rect.left - rect.width / 2;
   const yy = event.clientY - rect.top - rect.height / 2;
-  const rotateX = (yy / rect.height) * 80;
-  const rotateY = (xx / rect.width) * -80;
+  const rotateX = (yy / rect.height) * 60;
+  const rotateY = (xx / rect.width) * -60;
   setTimeout(()=>{button.style.transform = `rotateX(0deg) rotateY(0deg)`},100);
   button.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     const x = event.clientX;
@@ -1403,7 +1403,16 @@ document.getElementById('upgradeCardBoxSubmit').addEventListener('click', ()=>{
 
 
 
-
-button.addEventListener('mouseleave', () => {
-    button.style.transform = `rotateX(0deg) rotateY(0deg)`;
-});
+function triggerHapticFeedback() {
+  if (window.navigator && window.navigator.vibrate) {
+      // Use the Vibration API as a fallback
+      window.navigator.vibrate(200);
+  } else if (window.TapticEngine) {
+      // Check if the Taptic Engine is available
+      window.TapticEngine.impactOccurred({
+          style: 'light'  // You can use 'light', 'medium', or 'heavy'
+      });
+  } else {
+      alert("Haptic feedback not supported on this device.");
+  }
+}
