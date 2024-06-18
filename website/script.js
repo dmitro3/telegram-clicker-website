@@ -1404,15 +1404,5 @@ document.getElementById('upgradeCardBoxSubmit').addEventListener('click', ()=>{
 
 
 function triggerHapticFeedback() {
-  if (window.navigator && window.navigator.vibrate) {
-      // Use the Vibration API as a fallback
-      window.navigator.vibrate(200);
-  } else if (window.TapticEngine) {
-      // Check if the Taptic Engine is available
-      window.TapticEngine.impactOccurred({
-          style: 'light'  // You can use 'light', 'medium', or 'heavy'
-      });
-  } else {
-      alert("Haptic feedback not supported on this device.");
-  }
+  Telegram.WebApp.HapticFeedback.impactOccurred('light');
 }
