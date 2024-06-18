@@ -277,9 +277,9 @@ function showClick(event) {
   const rect = button.getBoundingClientRect();
   const xx = event.clientX - rect.left - rect.width / 2;
   const yy = event.clientY - rect.top - rect.height / 2;
-  const rotateX = (yy / rect.height) * 40;
-  const rotateY = (xx / rect.width) * -40;
-
+  const rotateX = (yy / rect.height) * 80;
+  const rotateY = (xx / rect.width) * -80;
+  setTimeout(()=>{button.style.transform = `rotateX(0deg) rotateY(0deg)`},100);
   button.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     const x = event.clientX;
     const y = event.clientY;
