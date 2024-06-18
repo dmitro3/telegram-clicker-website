@@ -467,7 +467,7 @@ function adjustProgressBar() {
 
 function manageProgressBar (level, levelLabel) {
 
-  document.getElementById('progressBarBoxStatusLabel').innerHTML = level + ' ⮞';
+  document.getElementById('progressBarBoxStatusLabel').innerHTML = level + ' 🔜';
   document.getElementById('progressBarBoxLevelLabel').innerHTML = 'Level '+levelLabel +'/10'
 
   const levelProgress = {
