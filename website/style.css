@@ -80,7 +80,7 @@ html, body {
 
 #menu {
   background-color: #282B30;
-    z-index: 2;
+    z-index: 3;
     position: fixed;
     text-align: center;
     border-radius: 25px;
@@ -121,7 +121,7 @@ html, body {
     margin-left: 28px;
     margin-top: 817px;
     border-radius: 20px;
-    z-index: 3;
+    z-index: 4;
 }
 
 #inviteSimpleBox{
@@ -831,7 +831,7 @@ html, body {
     margin-top: 817px;
     margin-left: 121px;
     border-radius: 20px;
-    z-index: 3;
+    z-index: 4;
   }
 
   #mineMenu{
@@ -1103,10 +1103,10 @@ html, body {
   #funTokensLabel{
     position: absolute;
     color: white;
-    display: none;
-    margin-left: 14vw;
-    margin-top: 2vh;
-    font-size: 12px;
+    font-size: 15px;
+    margin-top: 14px;
+    margin-left: 77px;
+    font-weight: 500;
   }
 
   #funTokensSubBox1{
@@ -1152,19 +1152,29 @@ html, body {
   }
 
   #funTokensProfitPerHourLabel{
-    display: none;
-    margin-left: 14vw;
-    margin-top: 4.5vh;
     color: grey;
     position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 77px;
+    margin-top: 34px;
+  }
+
+  .coinPerHourCoinImage{
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    margin-left: 77px;
+    margin-top: 54px;
   }
 
   .mainCardPPH{
-    display: none;
-    margin-top: 7vh;
-    color: rgb(179, 177, 177);
     position: absolute;
-    margin-left: 17vw;
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 102px;
+    margin-top: 54px;
+    color: white;
   }
 
   #funTokensCoinImage{
