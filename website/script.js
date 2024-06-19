@@ -59,102 +59,111 @@ function identifyReferral(){
   }
 }
 
-document.getElementById('friendsButton').addEventListener('click', ()=>{
-  userLogoBackgroundDiv.style.display = 'none';
-  body.height = '100vh'
-
-  exchangeBox.style.display = 'none';
-  usernameLabel.style.display = 'none';
-    document.getElementById('gameField').style.display = 'none';
-    document.getElementById('friendsButton').style.color = 'red';
-    document.getElementById('gameButton').style.color ='white';
-    document.getElementById('referalField').style.display = 'block';
-    earnPerClickBox.style.display = 'none'
-    clicksTillLevelUp.style.display = 'none'
-    passiveClicks.style.display = 'none'
-    progressBarBoxStatusLabel.style.display = 'none'
-    progressBarBoxLevelLabel.style.display = 'none'
-    progressBarBox.style.display = 'none'
-    developerButton.style.color = 'white';
-    devField.style.display = 'none'
-    earnBox.style.display = 'none';
-    earnButton.style.color = 'white';
-    mineMenu.style.display = 'none';
-    coinsBox.style.display = 'none';
-    mineButton.style.color = 'white';
-    document.documentElement.style.overflow = 'hidden';
-    window.scrollTo({
-      top: 0,
-      behavior: 'auto'
+function showFriendsMenu() {
+  document.getElementById('referalField').style.display = 'block';
+  window.scrollTo({
+    top: 0,
+    behavior: 'auto'
   });
+  friendsButton.style.backgroundColor = '#1C1F24';
+  body.height = '100vh';
+  document.documentElement.style.overflow = 'hidden';
+}
+
+function hideFriendsMenu() {
+  document.getElementById('referalField').style.display = 'none';
+  friendsButton.style.backgroundColor = '#282B30';
+}
+
+document.getElementById('friendsButton').addEventListener('click', ()=>{
+  hideGameMenu();
+  hideEarnMenu();
+  hideDeveloperField();
+  hideMineField();
+  showFriendsMenu();
 });
 
-document.getElementById('gameButton').addEventListener('click', ()=>{
-  adjustProgressBar()
-  body.height = '100vh'
-
-  coinsBox.style.marginTop = '24vh'
-  mineMenu.style.display = 'none';
-  mineButton.style.color = 'white';
+function showGameMenu() {
+  exchangeBoxLabel.style.display = 'block';
+  energyImage.style.display = 'block';
+  userLogoPhoto.style.display = 'block';
+  exchangeImage.style.display = 'block';
+  usernameLabel.style.display = 'block';
   usernameLabel.style.display = 'block';
   userLogoBackgroundDiv.style.display = 'block';
   exchangeBox.style.display = 'block';
-  earnPerClickBox.style.marginTop = '13vh'
-  clicksTillLevelUp.style.marginTop = '13vh'
-  passiveClicks.style.marginTop = '13vh'
   document.getElementById('gameField').style.display = 'block';
-  document.getElementById('friendsButton').style.color = 'white';
-  document.getElementById('gameButton').style.color ='red';
-  document.getElementById('referalField').style.display = 'none';
   earnPerClickBox.style.display = 'block'
   clicksTillLevelUp.style.display = 'block'
   passiveClicks.style.display = 'block'
   progressBarBoxStatusLabel.style.display = 'block'
   progressBarBoxLevelLabel.style.display = 'block'
   progressBarBox.style.display = 'block'
-  developerButton.style.color = 'white'
-  devField.style.display = 'none'
-  earnBox.style.display = 'none';
-  earnButton.style.color = 'white';
-  mineMenu.style.display = 'none';
-  mineButton.style.color = 'white';
   coinsBox.style.display = 'block'
-  document.documentElement.style.overflow = 'hidden';
+  gameButton.style.backgroundColor = '#1C1F24';
+  body.height = '100vh'
+  coinsBox.style.marginTop = '24vh';
+  earnPerClickBox.style.marginTop = '11vh'
+  clicksTillLevelUp.style.marginTop = '11vh'
+  passiveClicks.style.marginTop = '11vh';
   window.scrollTo({
     top: 0,
     behavior: 'auto'
-});
-});
+  });
+  document.documentElement.style.overflow = 'hidden';
+}
 
-document.getElementById('earnButton').addEventListener('click', ()=>{
-  userLogoBackgroundDiv.style.display = 'none';
-  body.height = '100vh'
-
-  exchangeBox.style.display = 'none';
+function hideGameMenu() {
+  exchangeBoxLabel.style.display = 'none';
+  energyImage.style.display = 'none';
+  userLogoPhoto.style.display = 'none';
+  exchangeImage.style.display = 'none';
   usernameLabel.style.display = 'none';
-  mineButton.style.color = 'white';
+  userLogoBackgroundDiv.style.display = 'none';
+  exchangeBox.style.display = 'none';
   document.getElementById('gameField').style.display = 'none';
-  document.getElementById('friendsButton').style.color = 'white';
-  document.getElementById('gameButton').style.color ='white';
-  document.getElementById('referalField').style.display = 'none';
   earnPerClickBox.style.display = 'none'
   clicksTillLevelUp.style.display = 'none'
   passiveClicks.style.display = 'none'
   progressBarBoxStatusLabel.style.display = 'none'
   progressBarBoxLevelLabel.style.display = 'none'
   progressBarBox.style.display = 'none'
-  developerButton.style.color = 'white'
-  earnBox.style.display = 'block';
-  earnButton.style.color = 'red';
-  devField.style.display = 'none'
-  mineMenu.style.display = 'none';
   coinsBox.style.display = 'none'
-  document.documentElement.style.overflow = 'hidden';
+  gameButton.style.backgroundColor = '#282B30';
+}
+
+document.getElementById('gameButton').addEventListener('click', ()=>{
+  adjustProgressBar()
+  hideEarnMenu();
+  hideMineField();
+  hideFriendsMenu();
+  hideDeveloperField();
+  showGameMenu();
+});
+
+document.getElementById('earnButton').addEventListener('click', ()=>{
+  hideGameMenu();
+  hideFriendsMenu();
+  hideDeveloperField();
+  hideMineField();
+  showEarnMenu();
+});
+
+function showEarnMenu() {
+  body.height = '100vh'
   window.scrollTo({
     top: 0,
     behavior: 'auto'
-});
-})
+  });
+  earnBox.style.display = 'block';
+  document.documentElement.style.overflow = 'hidden';
+  earnButton.style.backgroundColor = '#1C1F24';
+}
+
+function hideEarnMenu() {
+  earnBox.style.display = 'none';
+  earnButton.style.backgroundColor = '#282B30';
+}
 
 document.getElementById('mainButtonCover').addEventListener('touchstart', ()=>{
   adjustProgressBar()
@@ -513,33 +522,28 @@ document.getElementById('refreshFriendsList').addEventListener('click', ()=>{
 });
 
 developerButton.addEventListener('click', ()=>{
-  userLogoBackgroundDiv.style.display = 'none';
-  document.documentElement.style.overflow = 'hidden';
-  body.height = '100vh'
+  hideEarnMenu();
+  hideMineField();
+  hideFriendsMenu();
+  hideGameMenu();
+  showDeveloperField();
+})
+
+function showDeveloperField() {
+  developerButton.style.backgroundColor = '#1C1F24'
   window.scrollTo({
     top: 0,
     behavior: 'auto'
-});
-  exchangeBox.style.display = 'none';
-  usernameLabel.style.display = 'none';
-  coinsBox.style.display = 'none'
-  mineButton.style.color = 'white';
-  mineMenu.style.display = 'none';
-  document.getElementById('gameField').style.display = 'none';
-  document.getElementById('friendsButton').style.color = 'white';
-  document.getElementById('gameButton').style.color ='white';
-  document.getElementById('referalField').style.display = 'none';
-  earnPerClickBox.style.display = 'none'
-  clicksTillLevelUp.style.display = 'none'
-  passiveClicks.style.display = 'none'
-  progressBarBoxStatusLabel.style.display = 'none'
-  progressBarBoxLevelLabel.style.display = 'none'
-  progressBarBox.style.display = 'none';
-  developerButton.style.color = 'red';
+  });
   devField.style.display = 'block'
-  earnBox.style.display = 'none';
-  earnButton.style.color = 'white';
-})
+  body.height = '100vh';
+  document.documentElement.style.overflow = 'hidden';
+}
+
+function hideDeveloperField() {
+  developerButton.style.backgroundColor = '#282B30'
+  devField.style.display = 'none';
+}
 
 add1000.addEventListener('click', ()=>{
   const coins = getLeftCoins();
@@ -870,32 +874,39 @@ document.getElementById('xAccountBox').addEventListener('click', ()=>{
 });
 
 document.getElementById('mineButton').addEventListener('click', ()=>{
-  document.getElementById('gameField').style.display = 'none';
-  document.getElementById('friendsButton').style.color = 'white';
-  document.getElementById('gameButton').style.color ='white';
-  document.getElementById('referalField').style.display = 'none';
+  hideDeveloperField();
+  hideEarnMenu();
+  hideFriendsMenu();
+  hideGameMenu();
+  showMineField();
+});
+
+function showMineField() {
+  marketsSubMenu.style.display = 'block';
+  marketsField.style.display = 'block';
   earnPerClickBox.style.display = 'block'
   clicksTillLevelUp.style.display = 'block'
   passiveClicks.style.display = 'block'
-  progressBarBoxStatusLabel.style.display = 'none'
-  progressBarBoxLevelLabel.style.display = 'none'
-  progressBarBox.style.display = 'none';
-  developerButton.style.color = 'white';
-  devField.style.display = 'none'
-  earnBox.style.display = 'none';
-  earnButton.style.color = 'white';
   mineMenu.style.display = 'block';
-  mineButton.style.color = 'red';
-  coinsBox.style.display = 'block'
-  userLogoBackgroundDiv.style.display = 'none';
-  exchangeBox.style.display = 'none';
-  usernameLabel.style.display = 'none';
+  coinsBox.style.display = 'block';
   earnPerClickBox.style.marginTop = '3vh'
   clicksTillLevelUp.style.marginTop = '3vh'
   passiveClicks.style.marginTop = '3vh'
   coinsBox.style.marginTop = '14vh';
   document.documentElement.style.overflow = 'auto';
-});
+  mineButton.style.backgroundColor = '#1C1F24';
+}
+
+function hideMineField() {
+  marketsSubMenu.style.display = 'none';
+  marketsField.style.display = 'none';
+  earnPerClickBox.style.display = 'none'
+  clicksTillLevelUp.style.display = 'none'
+  passiveClicks.style.display = 'none'
+  mineMenu.style.display = 'none';
+  coinsBox.style.display = 'none';
+  mineButton.style.backgroundColor = '#282B30';
+}
 
 const PROGRESSION = [
   {
