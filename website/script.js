@@ -18,7 +18,7 @@ const mineFieldElements = [
   'earnPerClickBox', 'clicksTillLevelUp', 'earnPerClickCoin', 'earnPerClickLabel', 'clicksTillLevelUpLabel',
   'insideEarnPerClickLabel', 'insideCoinsTillLevelUpLabel', 'passiveClicks', 'insidePassiveCLicksLabel', 'passiveClicksCoin', 'passiveClicksLabel',
   'coinMainLogo', 'coinsLabel', 'funTokensBox', 'stakingBox', 'btcPairsBox', 'ethPairsBox', 'top10CMCBox', 'gameFiBox', 'defiBox', 'socialFiBox', 
-  'memeCoinsBox', 'shitCoinsBox'
+  'memeCoinsBox', 'shitCoinsBox', 'mineMenuMenu'
 ]
 
 window.onload = ()=> {
@@ -92,35 +92,33 @@ function hideFriendsMenu() {
 }
 
 function showGameMenu() {
-  gameField.style.height = '797px';
-  gameField.style.marginTop = '95px';
-  exchangeBoxLabel.style.display = 'block';
-  energyImage.style.display = 'block';
-  userLogoPhoto.style.display = 'block';
-  exchangeImage.style.display = 'block';
-  usernameLabel.style.display = 'block';
-  usernameLabel.style.display = 'block';
-  userLogoBackgroundDiv.style.display = 'block';
-  exchangeBox.style.display = 'block';
-  document.getElementById('gameField').style.display = 'block';
-  earnPerClickBox.style.display = 'block'
-  clicksTillLevelUp.style.display = 'block'
-  passiveClicks.style.display = 'block'
-  progressBarBoxStatusLabel.style.display = 'block'
-  progressBarBoxLevelLabel.style.display = 'block'
-  progressBarBox.style.display = 'block'
-  coinsBox.style.display = 'block'
-  gameButton.style.backgroundColor = '#1C1F24';
-  body.height = '100vh'
-  coinsBox.style.top = '20vh';
-  earnPerClickBox.style.marginTop = '11vh'
-  clicksTillLevelUp.style.marginTop = '11vh'
-  passiveClicks.style.marginTop = '11vh';
+  for (let i = 0; i < gameFieldElements.length; i++) {
+    document.getElementById(gameFieldElements[i]).style.display = 'block';
+  }
   window.scrollTo({
     top: 0,
     behavior: 'auto'
   });
+  earnPerClickBox.style.marginTop = '114px';
+  clicksTillLevelUp.style.marginTop = '114px';
+  passiveClicks.style.marginTop = '114px';
+  coinMainLogo.style.marginTop = '206px';
+  coinsLabel.style.marginTop = '213px';
   document.documentElement.style.overflow = 'hidden';
+  gameButton.style.backgroundColor = '#1C1F24';
+  gameField.style.height = '797px';
+  earnPerClickBox.style.marginTop = '114px';
+  clicksTillLevelUp.style.marginTop = '114px';
+  passiveClicks.style.marginTop = '114px';
+  coinMainLogo.style.marginTop = '206px';
+  coinsLabel.style.marginTop = '213px';
+  document.documentElement.style.overflow = 'hidden';
+  gameButton.style.backgroundColor = '#1C1F24';
+  gameField.style.marginTop = '95px';
+  earnPerClickCoin.style.marginTop = '145px';
+  earnPerClickLabel.style.marginTop = '146px';
+  passiveClicksCoin.style.marginTop = '145px';
+  passiveClicksLabel.style.marginTop = '146px';
 }
 
 function hideGameMenu() {
@@ -128,14 +126,16 @@ function hideGameMenu() {
     document.getElementById(gameFieldElements[i]).style.display = 'none';
   }
   gameButton.style.backgroundColor = '#282B30';
+
 }
+
 
 document.getElementById('gameButton').addEventListener('click', ()=>{
   adjustProgressBar()
-  hideEarnMenu();
+  //hideEarnMenu();
   hideMineField();
-  hideFriendsMenu();
-  hideDeveloperField();
+  //hideFriendsMenu();
+  //hideDeveloperField();
   showGameMenu();
 });
 
@@ -315,13 +315,15 @@ function showClick(event) {
     const x = event.clientX;
     const y = event.clientY;
 
-    const plusOne = document.createElement('h2');
+    const plusOne = document.createElement('h1');
     plusOne.textContent = "+1";
 
     plusOne.style.position = "absolute";
     plusOne.style.left = (x-20) + "px";
     plusOne.style.top = (y-20) + "px";
-    plusOne.style.color = "green";
+    plusOne.style.color = "white";
+    plusOne.style.zIndex = '5';
+    plusOne.style.fontSize = '20px'
     plusOne.style.animation = "upAndFadeOut 1s forwards"; 
     gameField.style.animation = 'none'
     gameField.offsetHeight;
@@ -498,8 +500,8 @@ function adjustProgressBar() {
 
 function manageProgressBar (level, levelLabel) {
 
-  document.getElementById('progressBarBoxStatusLabel').innerHTML = level + ' 🔜';
-  document.getElementById('progressBarBoxLevelLabel').innerHTML = 'Level '+levelLabel +'/10'
+  document.getElementById('progressBarBoxStatusLabel').innerHTML = level + ' ➤';
+  document.getElementById('levelLevelId').innerHTML = levelLabel;
 
   const levelProgress = {
     'Bronze':      5000,
@@ -912,13 +914,9 @@ function showMineField() {
 }
 
 function hideMineField() {
-  marketsSubMenu.style.display = 'none';
-  marketsField.style.display = 'none';
-  earnPerClickBox.style.display = 'none'
-  clicksTillLevelUp.style.display = 'none'
-  passiveClicks.style.display = 'none'
-  mineMenu.style.display = 'none';
-  coinsBox.style.display = 'none';
+  for (let i = 0; i < mineFieldElements.length; i++) {
+    document.getElementById(mineFieldElements[i]).style.display = 'none';
+  }
   mineButton.style.backgroundColor = '#282B30';
 }
 
