@@ -322,9 +322,7 @@ function showClick(event) {
     plusOne.style.position = "absolute";
     plusOne.style.left = (x-20) + "px";
     plusOne.style.top = (y-20) + "px";
-    plusOne.style.background = 'linear-gradient(to right, #27B4E6, #4149EC, #9736F0);';
-    plusOne.style.backgroundClip = 'text';
-    plusOne.style.color = 'transparent'
+    plusOne.style.color = '#9736F0'
     plusOne.style.zIndex = '5';
     plusOne.style.fontSize = '27px'
     plusOne.style.animation = "upAndFadeOut 1s forwards"; 
@@ -538,7 +536,7 @@ function manageProgressBar (level, levelLabel) {
   const maxValue = levelProgress[level];
   const progression = 100/maxValue;
   const barWidth = coins*progression;
-  document.getElementById('progressBar').style.width = ((barWidth-10)/100 * 519) + 'px'
+  document.getElementById('progressBar').style.width = ((barWidth-10)/100 * 475) + 'px'
 } 
 
 //gggggggggggggggggggggggggggggggggggggggggggg
