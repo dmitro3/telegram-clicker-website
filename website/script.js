@@ -6,6 +6,20 @@ var viewportHeight = window.innerHeight;
 let tg = window.Telegram.WebApp;
 tg.expand();
 
+const gameFieldElements = [
+  'userLogoPhoto', 'userLogoBackgroundDiv', 'exchangeBox', 'exchangeBoxLabel', 'exchangeImage',
+  'earnPerClickBox', 'clicksTillLevelUp', 'earnPerClickCoin', 'earnPerClickLabel', 'clicksTillLevelUpLabel',
+  'insideEarnPerClickLabel', 'insideCoinsTillLevelUpLabel', 'passiveClicks', 'insidePassiveCLicksLabel', 'passiveClicksCoin', 'passiveClicksLabel',
+  'coinMainLogo', 'coinsLabel', 'progressBarBoxStatusLabel', 'progressBarBoxLevelLabel', 'progressBarBoxBox', 'progressBarBox', 'progressBar',
+  'mainButtonCover', 'energyImage', 'energyLabel', 'usernameLabel'
+]
+
+const mineFieldElements = [
+  'earnPerClickBox', 'clicksTillLevelUp', 'earnPerClickCoin', 'earnPerClickLabel', 'clicksTillLevelUpLabel',
+  'insideEarnPerClickLabel', 'insideCoinsTillLevelUpLabel', 'passiveClicks', 'insidePassiveCLicksLabel', 'passiveClicksCoin', 'passiveClicksLabel',
+  'coinMainLogo', 'coinsLabel'
+]
+
 window.onload = ()=> {
   registerUser();
   showReferrals();
@@ -76,15 +90,9 @@ function hideFriendsMenu() {
   friendsButton.style.backgroundColor = '#282B30';
 }
 
-document.getElementById('friendsButton').addEventListener('click', ()=>{
-  hideGameMenu();
-  hideEarnMenu();
-  hideDeveloperField();
-  hideMineField();
-  showFriendsMenu();
-});
-
 function showGameMenu() {
+  gameField.style.height = '797px';
+  gameField.style.marginTop = '95px';
   exchangeBoxLabel.style.display = 'block';
   energyImage.style.display = 'block';
   userLogoPhoto.style.display = 'block';
@@ -115,21 +123,9 @@ function showGameMenu() {
 }
 
 function hideGameMenu() {
-  exchangeBoxLabel.style.display = 'none';
-  energyImage.style.display = 'none';
-  userLogoPhoto.style.display = 'none';
-  exchangeImage.style.display = 'none';
-  usernameLabel.style.display = 'none';
-  userLogoBackgroundDiv.style.display = 'none';
-  exchangeBox.style.display = 'none';
-  document.getElementById('gameField').style.display = 'none';
-  earnPerClickBox.style.display = 'none'
-  clicksTillLevelUp.style.display = 'none'
-  passiveClicks.style.display = 'none'
-  progressBarBoxStatusLabel.style.display = 'none'
-  progressBarBoxLevelLabel.style.display = 'none'
-  progressBarBox.style.display = 'none'
-  coinsBox.style.display = 'none'
+  for (let i = 0; i < gameFieldElements.length; i++) {
+    document.getElementById(gameFieldElements[i]).style.display = 'none';
+  }
   gameButton.style.backgroundColor = '#282B30';
 }
 
@@ -150,12 +146,36 @@ document.getElementById('earnButton').addEventListener('click', ()=>{
   showEarnMenu();
 });
 
+developerButton.addEventListener('click', ()=>{
+  hideEarnMenu();
+  hideMineField();
+  hideFriendsMenu();
+  hideGameMenu();
+  showDeveloperField();
+});
+
+document.getElementById('mineButton').addEventListener('click', ()=>{
+  hideGameMenu();
+  showMineField();
+});
+
+document.getElementById('friendsButton').addEventListener('click', ()=>{
+  hideGameMenu();
+  hideEarnMenu();
+  hideDeveloperField();
+  hideMineField();
+  showFriendsMenu();
+});
+
+
 function showEarnMenu() {
   body.height = '100vh'
   window.scrollTo({
     top: 0,
     behavior: 'auto'
   });
+  gameField.style.height = '929px';
+  gameField.style.marginTop = '16px';
   earnBox.style.display = 'block';
   document.documentElement.style.overflow = 'hidden';
   earnButton.style.backgroundColor = '#1C1F24';
@@ -522,13 +542,7 @@ document.getElementById('refreshFriendsList').addEventListener('click', ()=>{
 
 });
 
-developerButton.addEventListener('click', ()=>{
-  hideEarnMenu();
-  hideMineField();
-  hideFriendsMenu();
-  hideGameMenu();
-  showDeveloperField();
-})
+
 
 function showDeveloperField() {
   developerButton.style.backgroundColor = '#1C1F24'
@@ -874,26 +888,23 @@ document.getElementById('xAccountBox').addEventListener('click', ()=>{
   window.location.href = 'https://x.com/hamster_kombat';
 });
 
-document.getElementById('mineButton').addEventListener('click', ()=>{
-  hideDeveloperField();
-  hideEarnMenu();
-  hideFriendsMenu();
-  hideGameMenu();
-  showMineField();
-});
 
 function showMineField() {
-  marketsSubMenu.style.display = 'block';
-  marketsField.style.display = 'block';
-  earnPerClickBox.style.display = 'block'
-  clicksTillLevelUp.style.display = 'block'
-  passiveClicks.style.display = 'block'
-  mineMenu.style.display = 'block';
-  coinsBox.style.display = 'block';
-  earnPerClickBox.style.marginTop = '3vh'
-  clicksTillLevelUp.style.marginTop = '3vh'
-  passiveClicks.style.marginTop = '3vh'
-  coinsBox.style.top = '8vh';
+  for (let i = 0; i < mineFieldElements.length; i++) {
+    document.getElementById(mineFieldElements[i]).style.display = 'block'
+  }
+  mineMenuMenu.style.display = 'block'
+  coinsLabel.style.marginTop = '135px';
+  coinMainLogo.style.marginTop = '128px';
+  earnPerClickCoin.style.marginTop = '67px';
+  earnPerClickLabel.style.marginTop = '67px';
+  passiveClicksCoin.style.marginTop = '67px';
+  passiveClicksLabel.style.marginTop = '67px';
+  gameField.style.height = '929px';
+  gameField.style.marginTop = '16px';
+  earnPerClickBox.style.marginTop = '36px'
+  clicksTillLevelUp.style.marginTop = '36px'
+  passiveClicks.style.marginTop = '36px'
   document.documentElement.style.overflow = 'auto';
   mineButton.style.backgroundColor = '#1C1F24';
 }

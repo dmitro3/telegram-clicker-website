@@ -68,23 +68,23 @@
         </div>
     </div>
 
-    <div id="mineMenu">
         <div id="mineMenuMenu">
-            <div id="marketsMenu"><h5 style="margin: 1.6vh auto; color: red;">Markets</h5></div>
+            <div id="marketsMenu">
+                <h5 id="marketsLabel">Markets</h5>
+            </div>
             <div id="prTeamMenu">
-                <h5 style="margin: 1.6vh auto;">PR&Team</h5>
-                <h6 class="prTeamCoomingSoon">Coming Soon</h6>
+                <h5 id="prTeamLabel">PR&Team</h5>
+                <h6 id="prTeamSubLabel">Coming Soon</h6>
             </div>
             <div id="legalMenu">
-                <h5 style="margin: 1.6vh auto;">Legal</h5>
-                <h6 class="prTeamCoomingSoon">Coming Soon</h6>
+                <h5 id="legalLabel">Legal</h5>
+                <h6 id="legalSubLabel">Coming Soon</h6>
             </div>
             <div id="specialsMenu">
-                <h5 style="margin: 1.6vh auto;">Specials</h5>
-                <h6 class="prTeamCoomingSoon">Coming Soon</h6>
+                <h5 id="specialsLabel">Specials</h5>
+                <h6 id="specialsSubLabel">Coming Soon</h6>
             </div>
         </div>
-        <div id="marketsField">
             <img  style="display: none;" id="btcPairBoxLock" src="lock.png" alt="" width="30vw" height="30vw">
             <img  style="display: none;" id="ethPairBoxLock" src="lock.png" alt="" width="30vw" height="30vw">
             <img  style="display: none;" id="top10BoxLock" src="lock.png" alt="" width="30vw" height="30vw">
@@ -93,18 +93,18 @@
             <img  style="display: none;" id="socialFiBoxLock" src="lock.png" alt="" width="30vw" height="30vw">
             <img  style="display: none;" id="memeBoxLock" src="lock.png" alt="" width="30vw" height="30vw">
             <img  style="display: none;" id="shitBoxLock" src="lock.png" alt="" width="30vw" height="30vw">
-           <div id="marketsSubMenu">
             <div id="funTokensBox" data-value="0">
                 <div id="funTokensSubBox1">
                     <img class="funTokensImage" src="sport.png" width="50vw" height="50vw">
                     <h6 id="funTokensLabel">Fun tokens</h6>
                 </div>
-                <h5 id="funTokenLevel" class="mainCardLevel">lvl 0</h5>
+                
+                <h5 id="funTokenLevel" class="mainCardLevel">Lvl 0</h5>
+                <img src="coin.png" id="funTokensCoin" width="20vw" height="20vw">
                 <div id="funTokensSubBox2">
-                    <img src="coin.png" id="funTokensCoin" width="20vw" height="20vw">
-                    <h6 id="funTokenPrice" class="mainCardPrice">0</h6>
+                    <img src="coin.png" id="funTokensCoinImage" width="12vw" height="12vw">
+                    <h6 id="funTokenPrice" class="mainCardPrice">10 K</h6>
                 </div>
-                <img src="coin.png" id="funTokensCoinImage" width="12vw" height="12vw">
                 <h6 id="funTokensProfitPerHourLabel">Profit per hour</h6>
                 <h6 id="funTokenPPH" class="mainCardPPH">+0</h6>
             </div>
@@ -238,10 +238,8 @@
                 <h6 id="funTokensProfitPerHourLabel">Profit per hour</h6>
                 <h6 id="shitPPH" class="mainCardPPH">+0</h6>
             </div>
-        </div>
+
             </div>
-        </div>
-    </div>
     
     <img id="userLogoPhoto" src="icon.png">
     <div id="userLogoBackgroundDiv"></div>

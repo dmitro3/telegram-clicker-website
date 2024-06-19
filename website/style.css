@@ -91,7 +91,7 @@ html, body {
 }
 
 #friendsButton{
-    position: absolute;
+    position: fixed;
     color:white;
     border-radius: 20px;
     width: 93px;
@@ -102,7 +102,7 @@ html, body {
 }
 
 #earnButton{
-    position: absolute;
+    position: fixed;
     color:white;
     border-radius: 20px;
     width: 93px;
@@ -114,7 +114,7 @@ html, body {
 
 #gameButton{
     color:white;
-    position: absolute;
+    position: fixed;
     background-color: #1C1F24;
     width: 93px;
     height: 70px;
@@ -349,7 +349,7 @@ html, body {
 
 #developerButton{
     color:white;
-    position: absolute;
+    position: fixed;
     border-radius: 20px;
     width: 93px;
     height: 70px;
@@ -825,7 +825,7 @@ html, body {
 
   #mineButton{
     color:white;
-    position: absolute;
+    position: fixed;
     width: 93px;
     height: 70px;
     margin-top: 817px;
@@ -848,71 +848,122 @@ html, body {
   }
 
   #mineMenuMenu{
-    height: 6vh;
     position: absolute;
-    margin-top: 18.5vh;
-    margin-left: 5vw;
-    width: 90vw;
-    background-color: #303336;
-    border-radius: 10px;
+    background-color: #282B30;
+    border-radius: 11px;
+    width: 484px;
+    height: 58px;
+    margin-top: 216px;
+    margin-left: 18px;
+    z-index: 2;
+    display: none;
   }
 
   #marketsMenu{
     text-align: center;
     color: white;
-    height: 5vh;
-    border-radius: 10px;
-    margin-top: 0.5vh;
-    margin-left: 1vw;
     position: absolute;
-    width: 21.25vw;
     background-color: #1c1f24;
+    width: 118.5px;
+    height: 50px;
+    border-radius: 11px;
+    margin-top: 4px;
+    margin-left: 5px;
+  }
+
+  #marketsLabel{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 14px;
   }
 
   #prTeamMenu{
     text-align: center;
     color: white;
-    height: 5vh;
-    border-radius: 10px;
-    margin-top: 0.5vh;
-    margin-left: 23.25vw;
+    border-radius: 11px;
     position: absolute;
-    width: 21.25vw;
-    background-color: #1c1f24;
+    background-color: #282B30;
+    height: 50px;
+    width: 118.5px;
+    margin-top: 4px;
+    margin-left: 123.5px;
+  }
+
+  #prTeamLabel{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+  #prTeamSubLabel{
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: -33px;
+    color: #717171;
+    font-weight: 400;
   }
 
   #legalMenu{
     text-align: center;
     color: white;
-    height: 5vh;
-    border-radius: 10px;
-    margin-top: 0.5vh;
-    margin-left: 45.5vw;
+    border-radius: 11px;
     position: absolute;
-    width: 21.25vw;
-    background-color: #1c1f24;
+    background-color: #282B30;
+    width: 118.5px;
+    height: 50px;
+    margin-top: 4px;
+    margin-left: 242px;
+  }
+
+  #legalLabel{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+  #legalSubLabel{
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: -33px;
+    color: #717171;
+    font-weight: 400;
+  }
+
+  #specialsLabel{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+  #specialsSubLabel{
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: -33px;
+    color: #717171;
+    font-weight: 400;
   }
 
   #specialsMenu{
     text-align: center;
     color: white;
-    height: 5vh;
-    border-radius: 10px;
-    margin-top: 0.5vh;
-    margin-left: 67.75vw;
+    border-radius: 11px;
     position: absolute;
-    width: 21.25vw;
-    background-color: #1c1f24;
+    background-color: #282B30;
+    width: 118.5px;
+    height: 50px;
+    margin-top: 4px;
+    margin-left: 360.5px;
   }
 
   #funTokensBox{
-    height: 15vh;
     position: absolute;
-    margin-top: 26vh;
-    margin-left: 5vw;
-    width: 42.5vw;
-    background-color: #303336;
-    border-radius: 10px;
+    background-color: #282B30;
+    border-radius: 21px;
+    width: 230px;
+    height: 146px;
+    margin-top: 291px;
+    margin-left: 18px;
+    z-index: 2;
   }
 
   #stakingBox{
@@ -1006,6 +1057,7 @@ html, body {
   }
 
   .funTokensImage{
+    display: none;
     position: absolute;
     margin-left: 2vw;
     margin-top: 1.8vh;
@@ -1014,6 +1066,7 @@ html, body {
   #funTokensLabel{
     position: absolute;
     color: white;
+    display: none;
     margin-left: 14vw;
     margin-top: 2vh;
     font-size: 12px;
@@ -1021,42 +1074,48 @@ html, body {
 
   #funTokensSubBox1{
     position: absolute;
-    width: 42.5vw;
-    border-top-left-radius: 10px;
-    height: 9vh;
-    border-bottom: 1px solid grey;
+    border-top-left-radius: 21px;
+    border-top-right-radius: 21px;
+    border-bottom: 2px solid #626772;
+    height: 93.02px;
+    width: 230px;
   }
 
   #funTokensSubBox2{
     position: absolute;
-    margin-top: 10vh;
-    margin-left: 14vw;
-    width: 26vw;
-    border-bottom-right-radius: 10px;
-    height: 4vh;
-    border-left: 1px solid grey;
+    height: 53px;
+    width: 157px;
+    margin-top: 93px;
+    margin-left: 73px;
+    border-left: 2px solid #626772;
   }
 
   .mainCardLevel{
     position: absolute;
-    margin-top: 11vh;
-    color: white;
-    margin-left: 5.5vw;
+    color: #919499;
+    margin-left: 19px;
+    margin-top: 108px;
+    font-size: 18px;
+    font-weight: 600;
   }
 
   #funTokensCoin{
+    display: none;
     margin-left: 3vw;
     margin-top: 1vh;
   }
 
   .mainCardPrice{
     position: absolute;
-    margin-left: 8.6vw;
-    margin-top: -2.7vh;
     color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 14.98px;
+    margin-left: 47px;
   }
 
   #funTokensProfitPerHourLabel{
+    display: none;
     margin-left: 14vw;
     margin-top: 4.5vh;
     color: grey;
@@ -1064,6 +1123,7 @@ html, body {
   }
 
   .mainCardPPH{
+    display: none;
     margin-top: 7vh;
     color: rgb(179, 177, 177);
     position: absolute;
@@ -1071,10 +1131,11 @@ html, body {
   }
 
   #funTokensCoinImage{
-    margin-left: 14vw;
-    margin-top: 7vh;
     position: absolute;
-    filter: grayscale(100%);
+    width: 25px;
+    height: 25px;
+    margin-left: 16px;
+    margin-top: 14.98px;
   }
 
   #stakingBoxLock{
