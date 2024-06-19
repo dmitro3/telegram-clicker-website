@@ -99,6 +99,7 @@ function showGameMenu() {
     top: 0,
     behavior: 'auto'
   });
+  body.style.height = '100vh'
   earnPerClickBox.style.marginTop = '114px';
   clicksTillLevelUp.style.marginTop = '114px';
   passiveClicks.style.marginTop = '114px';
@@ -896,6 +897,7 @@ function showMineField() {
   for (let i = 0; i < mineFieldElements.length; i++) {
     document.getElementById(mineFieldElements[i]).style.display = 'block'
   }
+  body.style.height = '120vh'
   document.getElementById('menu').style.boxShadow = '0px 0px 5px 1px #000000';
   mineMenuMenu.style.display = 'block'
   coinsLabel.style.marginTop = '135px';
