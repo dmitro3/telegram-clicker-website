@@ -322,9 +322,9 @@ function showClick(event) {
     plusOne.style.position = "absolute";
     plusOne.style.left = (x-20) + "px";
     plusOne.style.top = (y-20) + "px";
-    plusOne.style.color = '#9736F0'
+    plusOne.style.color = 'green'
     plusOne.style.zIndex = '5';
-    plusOne.style.fontSize = '27px'
+    plusOne.style.fontSize = '36px'
     plusOne.style.animation = "upAndFadeOut 1s forwards"; 
     gameField.style.animation = 'none'
     gameField.offsetHeight;
@@ -531,12 +531,11 @@ function manageProgressBar (level, levelLabel) {
   }
 
   document.getElementById('clicksTillLevelUpLabel').innerHTML = coinsToLevelUpInfo[`${levelLabel}`]
-
   const coins = getLeftCoins();
   const maxValue = levelProgress[level];
   const progression = 100/maxValue;
   const barWidth = coins*progression;
-  document.getElementById('progressBar').style.width = ((barWidth-10)/100 * 475) + 'px'
+  document.getElementById('progressBar').style.width = ((barWidth)/100 * 475) + 'px';
 } 
 
 //gggggggggggggggggggggggggggggggggggggggggggg
