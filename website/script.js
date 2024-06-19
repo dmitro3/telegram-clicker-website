@@ -119,6 +119,7 @@ function showGameMenu() {
   earnPerClickLabel.style.marginTop = '146px';
   passiveClicksCoin.style.marginTop = '145px';
   passiveClicksLabel.style.marginTop = '146px';
+  menu.style.boxShadow = '0px 0px 0px 0px #000000'
 }
 
 function hideGameMenu() {
@@ -321,9 +322,11 @@ function showClick(event) {
     plusOne.style.position = "absolute";
     plusOne.style.left = (x-20) + "px";
     plusOne.style.top = (y-20) + "px";
-    plusOne.style.color = "white";
+    plusOne.style.background = 'linear-gradient(to right, #27B4E6, #4149EC, #9736F0);';
+    plusOne.style.backgroundClip = 'text';
+    plusOne.style.color = 'transparent'
     plusOne.style.zIndex = '5';
-    plusOne.style.fontSize = '20px'
+    plusOne.style.fontSize = '27px'
     plusOne.style.animation = "upAndFadeOut 1s forwards"; 
     gameField.style.animation = 'none'
     gameField.offsetHeight;
@@ -535,7 +538,7 @@ function manageProgressBar (level, levelLabel) {
   const maxValue = levelProgress[level];
   const progression = 100/maxValue;
   const barWidth = coins*progression;
-  document.getElementById('progressBar').style.width = (barWidth-10) + 'vw'
+  document.getElementById('progressBar').style.width = ((barWidth-10)/100 * 519) + 'px'
 } 
 
 //gggggggggggggggggggggggggggggggggggggggggggg
