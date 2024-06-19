@@ -16,27 +16,43 @@ html, body {
     scrollbar-width: none;
 }
 
-#coinsLabel{    
-    margin-left: 1vw;
-    color: white;
-    margin-top: 14vh;
+#coinsLabel{ 
+  color: white;
+  position: absolute;
+  margin-top: 213px;
+  margin-left: 223px;
+  z-index: 3;
+  font-size: 47px;
+  font-weight: 600;
+}
+
+#coinMainLogo{
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  margin-left: 136px;
+  margin-top: 206px;
+  z-index: 3;
 }
 
 #coinsBox{
+    display: block;
     z-index: 2;
     text-align: center;
-    width: 40vw;
+    width: 100vw;
     position: absolute;
-    margin-left: 30vw;
+    margin: 0 auto;
     height: 6vh;
-    margin-top: 24vh;
+    top: 20vh;
+    
 }
 
 #energyLabel{
-    margin-top: 75vh;
     color: white;
     position: absolute;
-    margin-left: 11.5vw;
+    margin-top: 759px;
+    margin-left: 75px;
+    z-index: 2;
 }
 
 #mainButtonBox{
@@ -44,12 +60,11 @@ html, body {
   cursor: pointer;
   transition: transform 0.1s;
   perspective: 1000px;
-    margin-top: 1vh;
-    position: absolute;
-    border-radius: 50%;
-    width: 70vw;
-    height: 70vw;
-    margin-left: 15vw;
+  position: absolute;
+  border-radius: 50%;
+  height: 385px;
+  width: 385px;
+  margin-left: 67px;
 }
 
 @keyframes upAndFadeOut {
@@ -65,46 +80,48 @@ html, body {
 
 #menu {
   background-color: #282B30;
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     text-align: center;
-    width: 90%;
-    margin-left: 5%;
-    border-radius: 10px;
-    height: 8vh;
-    margin-top: 91vh;
+    border-radius: 25px;
+    width: 483px;
+    height: 81px;
+    margin-left: 19px;
+    margin-top: 811px;
 }
 
 #friendsButton{
     position: absolute;
-    left: 35.6vw;
     color:white;
-    margin-left: 1vw;
-    height: 7vh;
-    width: 16.8vw;
-    border-radius: 10px;
-    margin-top: 0.5vh;
+    border-radius: 20px;
+    width: 93px;
+    height: 70px;
+    z-index: 4;
+    margin-top: 817px;
+    margin-left: 214px;
 }
 
 #earnButton{
     position: absolute;
     color:white;
-    height: 7vh;
-    width: 16.8vw;
-    margin-left: 54.4vw;
-    border-radius: 10px;
-    margin-top: 0.5vh;
+    border-radius: 20px;
+    width: 93px;
+    height: 70px;
+    z-index: 4;
+    margin-top: 817px;
+    margin-left: 307px;
 }
 
 #gameButton{
     color:white;
     position: absolute;
-    margin-left: 1vw;
-    height: 7vh;
-    width: 16.8vw;
-    border-radius: 10px;
-    margin-top: 0.5vh;
-    background-color: #1C1F24;    ;
+    background-color: #1C1F24;
+    width: 93px;
+    height: 70px;
+    margin-left: 28px;
+    margin-top: 817px;
+    border-radius: 20px;
+    z-index: 3;
 }
 
 #inviteSimpleBox{
@@ -199,38 +216,36 @@ html, body {
 
 #earnPerClickBox{
     z-index: 2;
-    height: 8vh;
     background-color: #282B30;
     color: linear-gradient(90deg, rgba(255,1,0,1) 0%, rgba(0,174,255,1) 100%);
-    width: 26.6vw;
     border-radius: 10px;
     position: absolute;
-    margin-top: 11vh;
-    margin-left: 5vw;
+    height: 62px;
+    width: 157px;
+    margin-top: 114px;
+    margin-left: 19px;
 }
 
 #clicksTillLevelUp{
-    height: 8vh;
-    background-color: #282B30;
-    width: 26.6vw;
-    border-radius: 10px;
-    position: absolute;
-    margin-top: 11vh;
-    z-index: 2;
-    margin-left: 36.6vw;
-    color: #4844ae;
+  background-color: #282B30;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 3;
+  height: 62px;
+  width: 157px;
+  margin-top: 114px;
+  margin-left: 182px;
 }
 
 #passiveClicks{
     z-index: 2;
-    height: 8vh;
     background-color: #282B30;
-    width: 26.6vw;
     border-radius: 10px;
     position: absolute;
-    margin-top: 11vh;
-    margin-left: 68.2vw;
-    color: rgb(110, 163, 110);
+    height: 62px;
+    width: 157px;
+    margin-top: 114px;
+    margin-left: 345px;
 }
 
 .insideLabel{
@@ -240,79 +255,107 @@ html, body {
 }
 
 #earnPerClickCoin{
-    position: absolute;
-    margin-top: -15px;
-    margin-left: 35px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 71px;
+  margin-top: 145px;
+  z-index: 3;
 }
 
 #earnPerClickLabel{
-  
     position: absolute;
-    margin-top: -13px;
-    margin-left: 65px;
     color: white;
+    margin-top: 146px;
+    margin-left: 100px;
+    z-index: 3;
+    font-size: 18px;
 }
 
 #clicksTillLevelUpLabel{
     margin-top: -10px;
     text-align: center;
     color: white;
+    font-size: 18px;
 }
 
 #passiveClicksCoin{
     position: absolute;
-    margin-top: -15px;
-    margin-left: 35px;
+    z-index: 3;
+    width: 25px;
+    height: 25px;
+    margin-left: 373px;
+    margin-top: 143px;
 }
 
 #passiveClicksLabel{
     position: absolute;
-    margin-top: -15px;
-    margin-left: 65px;
-    color: black;
+    color: white;
+    font-size: 18px;
+    margin-top: 145px;
+    margin-left: 405px;
+    z-index: 3;
 }
 
 #progressBarBox{
-    width: 90vw;
-    margin-left: 5vw;
-    height: 2vh;
-    border-radius: 8px;
-    background-color: #282B30;
+    border-radius: 25px;
+    background-color: #363A41;
     position: absolute;
-    margin-top: 24vh;
+    width: 475px;
+    height: 18px;
+    margin-left: 22px;
+    margin-top: 314px;
+    z-index: 2;
+}
+
+#progressBarBoxBox{
+  border-radius: 25px;
+  background-color: #282B30;
+  position: absolute;
+  width: 481px;
+  height: 24px;
+  margin-top: 311px;
+  margin-left: 19px;
+  z-index: 2;
 }
 
 #progressBar{
-    width: 0vw;
-    height: 2vh;
     position: absolute;
-    background: rgb(255,1,0);
     background: linear-gradient(to right, #27B4E6, #4149EC, #9736F0);
-    border-radius: 8px;
+    border-radius: 25px;
+    margin-left: 22px;
+    margin-top: 314px;
+    z-index: 2;
+    width: 200px;
+    height: 18px;
 }
 
 #progressBarBoxStatusLabel{
     position: absolute;
     color: white;
-    margin-top: 20vh;
-    margin-left: 5vw;
+    margin-top: 289px;
+    margin-left: 22px;
+    z-index: 2;
 }
 
 #progressBarBoxLevelLabel{
     position: absolute;
     color: white;
-    margin-top: 21vh;
-    margin-left: 77vw;
+    z-index: 2;
+    margin-left: 427px;
+    margin-top: 289px;
+
 }
 
 #developerButton{
     color:white;
     position: absolute;
-    margin-left: 72.2vw;
-    height: 7vh;
-    width: 16.8vw;
-    border-radius: 10px;
-    margin-top: 0.5vh;
+    border-radius: 20px;
+    width: 93px;
+    height: 70px;
+    margin-left: 400px;
+    margin-top: 817px;
+    z-index: 4;
 }
 
 #add1000{
@@ -388,9 +431,11 @@ html, body {
 
 #usernameLabel{
     color: white;
-    margin-left: 13vw;
-    margin-top: 2.8vh;
+    font-weight: 600;
+    margin-left: 76px;
+    margin-top: 34px;
     position: absolute;
+    font-size: 18px;
 }
 
 #coinLogoEarnBox{
@@ -677,7 +722,7 @@ html, body {
 #youtubeUpdateLabel{
     z-index: 0;
     position: absolute;
-    color: black;
+    color: #000000;
     margin-left: 70px;
     margin-top: -45px;
 }
@@ -693,62 +738,80 @@ html, body {
     text-align: center;
 }
 
-#userLogoBackgroundDiv{
+#userLogoBackgroundDiv{ 
     position: absolute;
-    width: 7vw;
-    height: 7vw;
-    border-radius: 5px;
-    margin-top: 2vh;
-    margin-left: 5vw;
-    background-color: #282B30;
+    width: 49px;
+    height: 49px;
+    border-radius: 11px;
+    margin-top: 21px;
+    margin-left: 18px;
+          
     z-index: 1;
-    opacity: 0.7;
+    background :rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 0px rgba(0, 0, 0, 0.1);
+  
 }
 
 
 #userLogoPhoto{
-  margin-top: 4.3vw;
-  margin-left: 6vw;
-  height: 5vw;
-  width: 5vw;
-    position: absolute;
-    z-index: 2;
+  width: 36px;
+  height: 36px;
+  margin-top: 28px;
+  margin-left: 25px;
+  position: absolute;
+  z-index: 2;
+}
+
+#exchangeImage{
+  width: 34px;
+  height: 34px;
+  margin-top: 29px;
+  margin-left: 390px;
+  position: absolute;
+  z-index: 2;
 }
 
 #exchangeBox{
-    height: 7vw;
-    margin-top: 2vh;
-    width: 20vw;
-    margin-left: 75vw;
-    position: absolute;
-    background-color: #282B30;
-    border-radius: 10px;
-    z-index: 1;
-    opacity: 0.7;
+  height: 49px;
+  width: 117px;
+  margin-top: 21px;
+  margin-left: 385px;
+  position: absolute;
+  border-radius: 11px;
+  z-index: 1;
+  background :rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 0px rgba(0, 0, 0, 0.1);
 }
 
 #exchangeBoxLabel{
     color: white;
     position: absolute;
-    margin-top: 3.3vh;
-    margin-left: 82vw;
+    margin-top: 34px;
+    margin-left: 428px;
     z-index: 2;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 #gameField {
-    width: 100vw;
-    height: 92vh;
     position: absolute;
-    margin-top: 8vh;
     background-color: #1C1F24;    ;
     border-top: 5px solid #BB82F5;
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
-    box-shadow: 0px 0px 60px 5px #BB82F5;
+    box-shadow: 0px -6px 23.4px 0px #BB82F5;
+    width: 519px;
+    height: 797px;
+    margin-top: 95px;
+    margin-left: 0px;
 }
 
 #coinMainLogo, #coinsLabel{
     display: inline;
+}
+
+#coinMainLogo{
+
 }
 
 @keyframes highlight {
@@ -763,11 +826,12 @@ html, body {
   #mineButton{
     color:white;
     position: absolute;
-    margin-left: 18.8vw;
-    height: 7vh;
-    width: 16.8vw;
-    border-radius: 10px;
-    margin-top: 0.5vh;
+    width: 93px;
+    height: 70px;
+    margin-top: 817px;
+    margin-left: 121px;
+    border-radius: 20px;
+    z-index: 3;
   }
 
   #mineMenu{
@@ -1086,9 +1150,11 @@ html, body {
 
   #mainButtonCover{
     position: absolute;
-    width: 100vw;
-    height: 75vw;
-    margin-top: 29.5vh;
+    margin-top: 356px;
+    margin-left: 0px;
+    width: 519px;
+    height: 385px;
+    z-index: 2;
     touch-action: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -1223,18 +1289,18 @@ html, body {
   }
 
   .menuImage{
-    width: 4.5vw;
-    height: 4.5vw;
-    margin-left: -2.4vw;
     position: absolute;
-    margin-top: 1vh;
+    width: 34px;
+    height: 34px;
+    margin-left: 31.5px;
+    margin-top: 5px;
   }
 
   #energyImage{
     position: absolute;
-    width: 7vw;
-    height: 7vw;
-    margin-top: 83.3vh;
-    z-index: 1;
-    margin-left: 4vw;
+    z-index: 2;
+    width: 43px;
+    height: 43px;
+    margin-top: 749px;
+    margin-left: 22px;
   }

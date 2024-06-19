@@ -12,6 +12,7 @@ window.onload = ()=> {
   identifyReferral();
   adjustDailyRewards();
   adjustMineCards();
+  adjustProgressBar();
   const coins = +getLeftCoins();
   let tg = window.Telegram.WebApp;
 
@@ -102,7 +103,7 @@ function showGameMenu() {
   coinsBox.style.display = 'block'
   gameButton.style.backgroundColor = '#1C1F24';
   body.height = '100vh'
-  coinsBox.style.marginTop = '24vh';
+  coinsBox.style.top = '20vh';
   earnPerClickBox.style.marginTop = '11vh'
   clicksTillLevelUp.style.marginTop = '11vh'
   passiveClicks.style.marginTop = '11vh';
@@ -892,7 +893,7 @@ function showMineField() {
   earnPerClickBox.style.marginTop = '3vh'
   clicksTillLevelUp.style.marginTop = '3vh'
   passiveClicks.style.marginTop = '3vh'
-  coinsBox.style.marginTop = '14vh';
+  coinsBox.style.top = '8vh';
   document.documentElement.style.overflow = 'auto';
   mineButton.style.backgroundColor = '#1C1F24';
 }
