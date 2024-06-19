@@ -804,6 +804,7 @@ html, body {
     height: 797px;
     margin-top: 95px;
     margin-left: 0px;
+    overflow: hidden;
 }
 
 #coinMainLogo, #coinsLabel{
