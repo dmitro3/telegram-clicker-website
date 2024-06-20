@@ -1080,7 +1080,7 @@ html, body {
 
   #shitCoinsBox{
     display: none;
-    position: absolute;
+    position: fixed;
     background-color: #282B30;
     border-radius: 21px;
     border-radius: 21px;
@@ -1410,4 +1410,22 @@ html, body {
     height: 43px;
     margin-top: 749px;
     margin-left: 22px;
+  }
+
+  #comingSoonDiv{
+    display: none;
+    position: absolute;
+    z-index: 5;
+    width: 519px;
+    height: 610px;
+    margin-top: 290px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+
+  #comingSoonDivLabel{
+    margin-top: 250px;
+    color: white;
   }

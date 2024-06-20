@@ -1431,3 +1431,35 @@ document.getElementById('upgradeCardBoxSubmit').addEventListener('click', ()=>{
 function triggerHapticFeedback() {
   Telegram.WebApp.HapticFeedback.impactOccurred('light');
 }
+
+document.getElementById('prTeamMenu').addEventListener('click', ()=>{
+  comingSoonDiv.style.display = 'block';
+  prTeamMenu.style.backgroundColor = '#1c1f24';
+  marketsMenu.style.backgroundColor = '#282B30';
+  legalMenu.style.backgroundColor = '#282B30';
+  specialsMenu.style.backgroundColor = '#282B30'
+});
+
+document.getElementById('legalMenu').addEventListener('click', ()=>{
+  comingSoonDiv.style.display = 'block';
+  prTeamMenu.style.backgroundColor = '#282B30';
+  legalMenu.style.backgroundColor = '#1c1f24';
+  marketsMenu.style.backgroundColor = '#282B30';
+  specialsMenu.style.backgroundColor = '#282B30'
+});
+
+document.getElementById('specialsMenu').addEventListener('click', ()=>{
+  comingSoonDiv.style.display = 'block';
+  prTeamMenu.style.backgroundColor = '#282B30';
+  legalMenu.style.backgroundColor = '#282B30';
+  marketsMenu.style.backgroundColor = '#282B30';
+  specialsMenu.style.backgroundColor = '#1c1f24'
+});
+
+document.getElementById('marketsMenu').addEventListener('click', ()=>{
+  comingSoonDiv.style.display = 'none';
+  prTeamMenu.style.backgroundColor = '#282B30';
+  legalMenu.style.backgroundColor = '#282B30';
+  marketsMenu.style.backgroundColor = '#1c1f24';
+  specialsMenu.style.backgroundColor = '#282B30'
+});
