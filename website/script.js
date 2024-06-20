@@ -76,7 +76,6 @@ function identifyReferral(){
 }
 
 function showFriendsMenu() {
-  document.getElementById('referalField').style.display = 'block';
   window.scrollTo({
     top: 0,
     behavior: 'auto'
@@ -84,6 +83,7 @@ function showFriendsMenu() {
   friendsButton.style.backgroundColor = '#1C1F24';
   body.height = '100vh';
   document.documentElement.style.overflow = 'hidden';
+  gameField.style.display = 'none';
 }
 
 function hideFriendsMenu() {
@@ -99,6 +99,7 @@ function showGameMenu() {
     top: 0,
     behavior: 'auto'
   });
+  gameField.style.display = 'block';
   body.style.height = '100vh'
   earnPerClickBox.style.marginTop = '114px';
   clicksTillLevelUp.style.marginTop = '114px';
@@ -134,7 +135,7 @@ function hideGameMenu() {
 
 document.getElementById('gameButton').addEventListener('click', ()=>{
   adjustProgressBar()
-  //hideEarnMenu();
+  hideEarnMenu();
   hideMineField();
   //hideFriendsMenu();
   //hideDeveloperField();
@@ -143,8 +144,6 @@ document.getElementById('gameButton').addEventListener('click', ()=>{
 
 document.getElementById('earnButton').addEventListener('click', ()=>{
   hideGameMenu();
-  hideFriendsMenu();
-  hideDeveloperField();
   hideMineField();
   showEarnMenu();
 });
@@ -159,33 +158,34 @@ developerButton.addEventListener('click', ()=>{
 
 document.getElementById('mineButton').addEventListener('click', ()=>{
   hideGameMenu();
+  hideEarnMenu();
   showMineField();
 });
 
 document.getElementById('friendsButton').addEventListener('click', ()=>{
-  hideGameMenu();
-  hideEarnMenu();
-  hideDeveloperField();
+  hideGameMenu();  
   hideMineField();
   showFriendsMenu();
 });
 
 
 function showEarnMenu() {
+  body.style.backgroundColor = '#000000'
   body.height = '100vh'
   window.scrollTo({
     top: 0,
     behavior: 'auto'
   });
-  gameField.style.height = '929px';
-  gameField.style.marginTop = '16px';
-  earnBox.style.display = 'block';
+  gameField.style.display = 'none'
+  earnField.style.display = 'block'
+ 
   document.documentElement.style.overflow = 'hidden';
   earnButton.style.backgroundColor = '#1C1F24';
 }
 
 function hideEarnMenu() {
-  earnBox.style.display = 'none';
+  body.style.background = '#282B30';
+  earnField.style.display = 'none';
   earnButton.style.backgroundColor = '#282B30';
 }
 
@@ -897,6 +897,7 @@ function showMineField() {
   for (let i = 0; i < mineFieldElements.length; i++) {
     document.getElementById(mineFieldElements[i]).style.display = 'block'
   }
+  gameField.style.display = 'block';
   body.style.height = '120vh'
   document.getElementById('menu').style.boxShadow = '0px 0px 5px 1px #000000';
   mineMenuMenu.style.display = 'block'
@@ -920,6 +921,7 @@ function hideMineField() {
     document.getElementById(mineFieldElements[i]).style.display = 'none';
   }
   mineButton.style.backgroundColor = '#282B30';
+  earnField.style.display = 'none'
 }
 
 const PROGRESSION = [

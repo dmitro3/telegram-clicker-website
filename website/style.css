@@ -1429,3 +1429,126 @@ html, body {
     margin-top: 250px;
     color: white;
   }
+
+  #earnField{
+    display: none;
+
+  }
+
+  #earnFieldCoinLogo{
+    width: 243px;
+    height: 243px;
+    position: absolute;
+    margin-top: 38px;
+    box-shadow: 0 0px 30px #BB82F5;
+    border-radius: 50%;
+    margin-left: 138px;
+  }
+
+  #earnFieldLabel{
+    position: absolute;
+    font-size: 50px;
+    color: white;
+    font-weight: 550;
+    margin-top: 295px;
+    margin-left: 64.125px;
+  }
+
+  #earnFieldDailyTasksLabel{
+    font-size: 20px;
+    color: white;
+    margin-left: 18px;
+    margin-top: 369px;
+    position: absolute;
+    font-weight: 450;
+  }
+
+  #earnFieldDailyRewardDiv{
+    position: absolute;
+    width: 484px;
+    height: 78px;
+    margin-top: 412px;
+    margin-left: 18px;
+    background-color: #282B30;
+    border-radius: 21px;
+  }
+  .calendarImage{
+    width: 63px;
+    height: 63px;
+    margin-left: 18px;
+    margin-top: 7px;
+    position: absolute;
+    z-index: 2;
+  }
+  
+  .dailyRewardDivLabel{
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 11px;
+    margin-left: 102px;
+    color: white;
+  }
+
+  .dailyRewardsImage{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    margin-top: -20px;
+    margin-left: 102px;
+  }
+
+  .dailyRewardDivProfit{
+    position: absolute;
+    font-size: 18px;
+    margin-left: 132px;
+    margin-top: -20px;
+    color: white;
+  }
+
+  #earnFieldDailyTasksLabel2{
+    font-size: 20px;
+    color: white;
+    margin-left: 18px;
+    margin-top: 505px;
+    position: absolute;
+    font-weight: 450;
+  }
+
+  #telegramDiv{
+    position: absolute;
+    width: 484px;
+    height: 78px;
+    margin-left: 18px;
+    margin-top: 544px;
+    background-color: #282B30;
+    border-radius: 21px;
+  }
+
+  #youtubeDiv{
+    position: absolute;
+    width: 484px;
+    height: 78px;
+    margin-left: 18px;
+    margin-top: 631px;
+    background-color: #282B30;
+    border-radius: 21px;
+  }
+
+  #xDiv{
+    position: absolute;
+    width: 484px;
+    height: 78px;
+    margin-left: 18px;
+    margin-top: 718px;
+    background-color: #282B30;
+    border-radius: 21px;
+  }
+
+  #underX{
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    margin-left: 25px;
+    margin-top: -45px;
+  }
