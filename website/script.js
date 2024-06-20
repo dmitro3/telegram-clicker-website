@@ -80,13 +80,16 @@ function showFriendsMenu() {
     top: 0,
     behavior: 'auto'
   });
+  friendsField.style.display = 'block'
   friendsButton.style.backgroundColor = '#1C1F24';
-  body.height = '100vh';
   document.documentElement.style.overflow = 'hidden';
   gameField.style.display = 'none';
+  body.style.background = '#000000';
 }
 
 function hideFriendsMenu() {
+  friendsField.style.display = 'none';
+  body.style.background = '#282B30';
   document.getElementById('referalField').style.display = 'none';
   friendsButton.style.backgroundColor = '#282B30';
 }
@@ -137,7 +140,7 @@ document.getElementById('gameButton').addEventListener('click', ()=>{
   adjustProgressBar()
   hideEarnMenu();
   hideMineField();
-  //hideFriendsMenu();
+  hideFriendsMenu();
   //hideDeveloperField();
   showGameMenu();
 });
@@ -145,6 +148,7 @@ document.getElementById('gameButton').addEventListener('click', ()=>{
 document.getElementById('earnButton').addEventListener('click', ()=>{
   hideGameMenu();
   hideMineField();
+  hideFriendsMenu();
   showEarnMenu();
 });
 
@@ -159,11 +163,13 @@ developerButton.addEventListener('click', ()=>{
 document.getElementById('mineButton').addEventListener('click', ()=>{
   hideGameMenu();
   hideEarnMenu();
+  hideFriendsMenu();
   showMineField();
 });
 
 document.getElementById('friendsButton').addEventListener('click', ()=>{
   hideGameMenu();  
+  hideEarnMenu();
   hideMineField();
   showFriendsMenu();
 });
