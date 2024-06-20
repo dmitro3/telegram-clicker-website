@@ -1745,3 +1745,81 @@ html, body {
     font-weight: 470;
     position: absolute;
   }
+
+  #airdropFieldCoinImage{
+    position: absolute;
+    width: 243px;
+    height: 243px;
+    border-radius: 50%;
+    box-shadow: 0 0px 30px #BB82F5;
+    margin-left: 138px;
+    margin-top: 38px;
+  }
+
+  #airdropFieldLabel{
+    font-size: 40px;
+    color: white;
+    font-weight: 600;
+    margin-top: 314px;
+    margin-left: 130.13px;
+  }
+
+  #airdropFieldSubLabel{
+    color: white;
+    font-weight: 520;
+    font-size: 16px;
+    text-align: center;    
+    position: absolute;
+    margin-top: -15px;
+  }
+
+  #airdropFieldTaskListLabel{
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    position: absolute;
+    margin-left: 34px;
+    margin-top: 60px;
+  }
+
+  #airdropp{
+    color: white;
+    font-size: 16px;
+    font-weight: 520;
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 10px;
+  }
+
+  #walletConnectBox{
+    width: 484px;
+    height: 81px;
+    background-color: #A472D7;
+    border-radius: 23px;
+    position: absolute;
+    margin-top: 99px;
+    margin-left: 18px;
+  }
+
+  #airdropImage{
+    position: absolute;
+    width: 59px;
+    height: 59px;
+    margin-left: 16px;
+    margin-top: 8px;
+  }
+
+  #airdropLabel{
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 30px;
+    margin-left: 88px;
+  }
+  #airdropArrow{
+    width: 21.49px;
+    height: 42.76px;
+    margin-left: 440px;
+    position: absolute;
+    margin-top: -55px;
+  }

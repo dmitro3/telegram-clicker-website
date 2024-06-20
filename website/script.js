@@ -141,7 +141,7 @@ document.getElementById('gameButton').addEventListener('click', ()=>{
   hideEarnMenu();
   hideMineField();
   hideFriendsMenu();
-  //hideDeveloperField();
+  hideDeveloperField();
   showGameMenu();
 });
 
@@ -149,6 +149,7 @@ document.getElementById('earnButton').addEventListener('click', ()=>{
   hideGameMenu();
   hideMineField();
   hideFriendsMenu();
+  hideDeveloperField();
   showEarnMenu();
 });
 
@@ -164,6 +165,7 @@ document.getElementById('mineButton').addEventListener('click', ()=>{
   hideGameMenu();
   hideEarnMenu();
   hideFriendsMenu();
+  hideDeveloperField();
   showMineField();
 });
 
@@ -171,6 +173,7 @@ document.getElementById('friendsButton').addEventListener('click', ()=>{
   hideGameMenu();  
   hideEarnMenu();
   hideMineField();
+  hideDeveloperField();
   showFriendsMenu();
 });
 
@@ -555,19 +558,23 @@ document.getElementById('refreshFriendsList').addEventListener('click', ()=>{
 
 
 function showDeveloperField() {
+  airdropField.style.display = 'block'
   developerButton.style.backgroundColor = '#1C1F24'
   window.scrollTo({
     top: 0,
     behavior: 'auto'
   });
-  devField.style.display = 'block'
   body.height = '100vh';
+  body.style.background = '#000000';
+  gameField.style.display = 'none';
   document.documentElement.style.overflow = 'hidden';
 }
 
 function hideDeveloperField() {
+  airdropField.style.display = 'none'
   developerButton.style.backgroundColor = '#282B30'
-  devField.style.display = 'none';
+  body.style.background = '#282B30'
+
 }
 
 add1000.addEventListener('click', ()=>{
