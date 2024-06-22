@@ -22,6 +22,7 @@ const mineFieldElements = [
 ]
 
 window.onload = ()=> {
+  adjustMarginCoinBox()
   registerUser();
   showReferrals();
   identifyReferral();
@@ -95,6 +96,7 @@ function hideFriendsMenu() {
 }
 
 function showGameMenu() {
+  
   for (let i = 0; i < gameFieldElements.length; i++) {
     document.getElementById(gameFieldElements[i]).style.display = 'block';
   }
@@ -1115,7 +1117,7 @@ document.getElementById('mainButtonCover').addEventListener('touchmove', functio
 document.getElementById('upgradeCardBoxClose').addEventListener('click', ()=>{
   upgradeCardBox.style.display = 'none'
 })
-
+/*
 document.getElementById('funTokensBox').addEventListener('click', ()=>{
   const level = document.getElementById('funTokensBox').getAttribute('data-value');
   if (level != 15) {
@@ -1123,7 +1125,7 @@ document.getElementById('funTokensBox').addEventListener('click', ()=>{
     adjustUpgradeCardBox('funTokensBox');
   }
 });
-
+*/
 document.getElementById('stakingBox').addEventListener('click', ()=>{
   const level = document.getElementById('stakingBox').getAttribute('data-value');
   if (level != 15) {
@@ -1478,3 +1480,51 @@ document.getElementById('marketsMenu').addEventListener('click', ()=>{
   marketsMenu.style.backgroundColor = '#1c1f24';
   specialsMenu.style.backgroundColor = '#282B30'
 });
+
+function alignCoinBox(){
+  const imageWidth = document.getElementById('coinMainLogo').clientWidth;
+  const coinsWidth = document.getElementById('coinsLabel').clientWidth;
+  const screenWidth = document.getElementById('gameField').clientWidth;
+  const imageConstMargin = 136;
+  const coinsConstMargin = 223;
+  const imageConstWidth = 75;
+  const coinsConstWidth = 164;
+
+  
+  const newCoinMargin = coinsWidth * coinsConstMargin / coinsConstWidth;
+
+  
+
+  //document.getElementById('coinMainLogo').style.marginLeft = imageMargin + 'px';
+  document.getElementById('coinsLabel').style.marginLeft = newCoinMargin + 'px';
+}
+
+const coinBoxPosition = [
+  { coinAmount: 100, imageMargin: 195, coinsMargin: 275 },
+  { coinAmount: 1000, imageMargin: 175, coinsMargin: 255 },
+  { coinAmount: 10000, imageMargin: 155, coinsMargin: 235 },
+  { coinAmount: 100000, imageMargin: 140, coinsMargin: 225 },
+  { coinAmount: 1000000, imageMargin: 130, coinsMargin: 210 },
+  { coinAmount: 10000000, imageMargin: 110, coinsMargin: 190 },
+  { coinAmount: 100000000, imageMargin: 95, coinsMargin: 175 },
+]
+
+function adjustMarginCoinBox(){
+  const coins = +getLeftCoins();
+  const index = +identifyIndex(coins);
+  console.log(coins)
+  console.log(index)
+  document.getElementById('coinsLabel').style.marginLeft = coinBoxPosition[index].coinsMargin + 'px';
+  document.getElementById('coinMainLogo').style.marginLeft = coinBoxPosition[index].imageMargin + 'px'; 
+}
+
+function identifyIndex(coins) {
+  if (coins < 100) return 0
+  return coins.toString().length-2
+}
+
+document.getElementById('funTokensBox').addEventListener('click', function() {showCardUpgradeBox('funTokensBox')});
+
+function showCardUpgradeBox (cardId) {
+  document.getElementById('cardUpgradeBox').style.display = 'block';
+}

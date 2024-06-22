@@ -19,8 +19,8 @@ html, body {
 #coinsLabel{ 
   color: white;
   position: absolute;
-  margin-top: 213px;
-  margin-left: 223px;
+  margin-top: 216px;
+  margin-left: 175px;
   z-index: 3;
   font-size: 47px;
   font-weight: 600;
@@ -30,7 +30,7 @@ html, body {
   position: absolute;
   width: 75px;
   height: 75px;
-  margin-left: 136px;
+  margin-left: 95px;
   margin-top: 206px;
   z-index: 3;
 }
@@ -796,10 +796,10 @@ html, body {
 #gameField {
     position: absolute;
     background-color: #1C1F24;    ;
-    border-top: 5px solid #BB82F5;
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
     box-shadow: 0px -6px 23.4px 0px #BB82F5;
+    border-top: 5px solid #BB82F5;
     width: 519px;
     height: 797px;
     margin-top: 95px;
@@ -1823,3 +1823,159 @@ html, body {
     position: absolute;
     margin-top: -55px;
   }
+
+  #friendBoxRestart{
+    position: absolute;
+    width: 31.22px;
+    height: 27.85px;
+    margin-top: 410px;
+    margin-left: 468.79px;
+  }
+
+  #inviteFriendDiv{
+    width: 402px;
+    height: 77px;
+    position: absolute;
+    margin-top: 728px;
+    margin-left: 18px;
+    border-radius: 23px;
+    background-color: #A472D7;
+    text-align: center;
+  }
+
+  #inviteFriendDivLabel{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  #inviteFriendsDivImage{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    margin-left: 8px;
+  }
+
+  #inviteFriendCopyDiv{
+    width: 77px;
+    height: 77px;
+    position: absolute;
+    background-color: #A472D7;
+    border-radius: 23px;
+    margin-top: 728px;
+    margin-left: 425px;
+  }
+
+  #inviteFriendCopyDivImage{
+    width: 37px;
+    height: 37px;
+    margin-top: 20px;
+    margin-left: 20px;
+    position: absolute;
+  }
+
+  #cardUpgradeBox{
+    display: none;
+    position: absolute;
+    z-index: 5;
+    width: 519px;
+    height: 619px;
+    margin-top: 278px;
+    background-color: #1c1f24;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    box-shadow: 0px -6px 23.4px 0px #BB82F5;
+    border-top: 5px solid #BB82F5;
+  }
+
+#cardUpgradeBoxImage {
+  width: 161px;
+  height: 161px;
+  position: absolute;
+  margin-left: 179px;
+  margin-top: 22px;
+}
+
+#cardUpgradeBoxLabel {
+  font-size: 35px;
+  color: white;
+  font-weight: 550;
+  text-align: center;
+  margin-top: 192px;
+}
+
+#cardUpgradeBoxSubLabel1 {
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  margin-top: -14px;
+}
+
+#cardUpgradeBoxSubLabel2{
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  margin-top: -18px;
+}
+
+#profitPerHourLabel{
+  font-size: 16px;
+  color: white;
+  font-weight: 350;
+  text-align: center;
+  margin-top: 0px;
+}
+
+#profitPerHourCoinImage{
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  margin-left: 218px;
+  margin-top: -10px;
+}
+
+#profitPerHourPrice{
+  font-size: 16px;
+  font-weight: 500;
+  position: absolute;
+  margin-left: 248px;
+  color: white;
+  margin-top: -6.5px;
+}
+
+#upgradePriceImage {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  margin-top: 50px;
+  margin-left: 181px;
+}
+
+#upgradePriceLabel{
+  font-size: 30px;
+  color: white;
+  margin-left: 219px;
+  margin-top: 50px;
+  position: absolute;
+}
+
+#getUpgradeBox{
+  position: absolute;
+  color: white;
+  background-color: #A472D7;
+  width: 480px;
+  height: 95px;
+  text-align: center;
+  border-radius: 23px;
+  margin-left: 22px;
+  margin-top: 125px;
+}
+
+#getUpgradeBoxLabel{
+  font-size: 25px;
+  font-weight: 500;
+  color: white;
+  margin-top: 35px;
+}
