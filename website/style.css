@@ -1876,7 +1876,7 @@ html, body {
 
   #cardUpgradeBox{
     display: none;
-    position: absolute;
+    position: fixed;
     z-index: 5;
     width: 519px;
     height: 619px;

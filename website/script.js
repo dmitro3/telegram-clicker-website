@@ -14,6 +14,20 @@ const gameFieldElements = [
   'mainButtonCover', 'energyImage', 'energyLabel', 'usernameLabel'
 ]
 
+const cardInfo = [
+  { cardId: 'funTokensBox', label: 'Fan tokens', level: 'funTokenLevel', price: 'funTokenPrice', pph: 'funTokenPPH', image: 'sport.png' },
+  { cardId: 'stakingBox', label: 'Staking', level: 'stakingLevel', price: 'stakingPrice', pph: 'stakingPPH', image: 'staking.png' },
+  { cardId: 'btcPairsBox', label: 'BTC pairs', level: 'btcPairLevel', price: 'btcPairPrice', pph: 'btcPairPPH', image: 'bitcoin.png' },
+  { cardId: 'ethPairsBox', label: 'ETH pairs', level: 'ethPairLevel', price: 'ethPairPrice', pph: 'ethPairPPH', image: 'ethereum.png' },
+  { cardId: 'top10CMCBox', label: 'Cmc pairs', level: 'cmcPairsLevel', price: 'cmcPairsPrice', pph: 'cmcPairsPPH', image: 'cmc.png' },
+  { cardId: 'gameFiBox', label: 'GameFi tokens', level: 'gameFiLevel', price: 'gameFiPrice', pph: 'gameFiPPH', image: 'gamefi.png' },
+  { cardId: 'defiBox', label: 'Defi2.0 tokens', level: 'defiLevel', price: 'defiPrice', pph: 'defiPPH', image: 'defi.png' },
+  { cardId: 'socialFiBox', label: 'SocialFi tokens', level: 'socialFiLevel', price: 'socialFiPrice', pph: 'socialFiPPH', image: 'socialfi.png' },
+  { cardId: 'memeCoinsBox', label: 'Meme coins', level: 'memeLevel', price: 'memePrice', pph: 'memePPH', image: 'mem.png' },
+  { cardId: 'shitCoinsBox', label: 'Shit coins', level: 'shitLevel', price: 'shitPrice', pph: 'shitPPH', image: 'shit.png' }
+];
+
+
 const mineFieldElements = [
   'earnPerClickBox', 'clicksTillLevelUp', 'earnPerClickCoin', 'earnPerClickLabel', 'clicksTillLevelUpLabel',
   'insideEarnPerClickLabel', 'insideCoinsTillLevelUpLabel', 'passiveClicks', 'insidePassiveCLicksLabel', 'passiveClicksCoin', 'passiveClicksLabel',
@@ -958,6 +972,25 @@ const levelProgression = [
   {level: 'lvl 15',updatePrice: 2529,coinPerHour: 600}
 ];
 
+const levelProgress = [
+  {level: 'lvl 0', updatePrice: 0, coinPerHour: 0},
+  {level: 'lvl 1', updatePrice: 500, coinPerHour: 250},
+  {level: 'lvl 2', updatePrice: 516, coinPerHour: 275},
+  {level: 'lvl 3', updatePrice: 524, coinPerHour: 300},
+  {level: 'lvl 4', updatePrice: 782, coinPerHour: 325},
+  {level: 'lvl 5', updatePrice: 941, coinPerHour: 350},
+  {level: 'lvl 6', updatePrice: 1100, coinPerHour: 375},
+  {level: 'lvl 7', updatePrice: 1258, coinPerHour: 400},
+  {level: 'lvl 8', updatePrice: 1417, coinPerHour: 425},
+  {level: 'lvl 9', updatePrice: 1576, coinPerHour: 450},
+  {level: 'lvl 10', updatePrice: 1735, coinPerHour: 475},
+  {level: 'lvl 11', updatePrice: 1894, coinPerHour: 500},
+  {level: 'lvl 12', updatePrice: 2052, coinPerHour: 525},
+  {level: 'lvl 13', updatePrice: 2211, coinPerHour: 550},
+  {level: 'lvl 14', updatePrice: 2370, coinPerHour: 575},
+  {level: 'lvl 15', updatePrice: 2529, coinPerHour: 600}
+];
+
 function adjustMineCards() {
   const telegramId = getTelegramId();
   postData('/getMineCardsInformation', {
@@ -965,80 +998,30 @@ function adjustMineCards() {
   })
   .then(data => {
     if (data.data != 'User added') {
-      const information = Array.from(data.data)[0]
-      console.log(information)
+      const information = Array.from(data.data)[0];
+      showCurrentMineCards(information);
     }
   });
 }
 
 function showCurrentMineCards (information) {
-  const cardsLevel = [
-    'funTokenLevel', 'stakingLevel', 'btcPairLevel', 'ethPairLevel', 'cmcPairsLevel',
-    'gameFiLevel', 'defiLevel', 'socialFiLevel', 'memeLevel', 'shitLevel'
-  ]
-  
-  //fun tokens card data update
-  let level = +information.funTokens_level;
-  document.getElementById('funTokenLevel').innerHTML = PROGRESSION[level].level;
-  document.getElementById('funTokenPrice').innerHTML = PROGRESSION[level+1].updatePrice;
-  document.getElementById('funTokenPPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
-  document.getElementById('funTokensBox').setAttribute('data-value', level);
+  for (let i = 0; i < cardInfo.length; i++) {
+    const cardId = cardInfo[i].cardId;
+    const level = information.cardId;
+    updateCard(cardId, level)
+  }
+};
 
-  level = +information.staking_level;
-  document.getElementById('stakingLevel').innerHTML = PROGRESSION[level].level;
-  document.getElementById('stakingPrice').innerHTML = PROGRESSION[level+1].updatePrice;
-  document.getElementById('stakingPPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
-  document.getElementById('stakingBox').setAttribute('data-value', level);
+function updateCard(cardId, level) {
+  const card = cardInfo.find(card => card.cardId === cardId);
+  const price = levelProgress[level+1].updatePrice;
+  const pph = levelProgress[level].coinPerHour;
+  const levelLabel = levelProgress[level].level;
 
-  level = +information.btcPairs_level;
-  document.getElementById('btcPairLevel').innerHTML = PROGRESSION[level].level;
-  document.getElementById('btcPairPrice').innerHTML = PROGRESSION[level+1].updatePrice;
-  document.getElementById('btcPairPPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
-  document.getElementById('btcPairsBox').setAttribute('data-value', level);
-
-  level = +information.ethPairs_level;
-  document.getElementById('ethPairLevel').innerHTML = PROGRESSION[level].level;
-  document.getElementById('ethPairPrice').innerHTML = PROGRESSION[level+1].updatePrice;
-  document.getElementById('ethPairPPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
-  document.getElementById('ethPairsBox').setAttribute('data-value', level);
-
-  level = +information.top10_level;
-  document.getElementById('cmcPairsLevel').innerHTML = PROGRESSION[level].level;
-  document.getElementById('cmcPairsPrice').innerHTML = PROGRESSION[level+1].updatePrice;
-  document.getElementById('cmcPairsPPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
-  document.getElementById('top10CMCBox').setAttribute('data-value', level);
-
-  level = +information.gameFi_level;
-  document.getElementById('gameFiLevel').innerHTML = PROGRESSION[level].level;
-  document.getElementById('gameFiPrice').innerHTML = PROGRESSION[level+1].updatePrice;
-  document.getElementById('gameFiPPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
-  document.getElementById('gameFiBox').setAttribute('data-value', level);
-
-  level = +information.defi_level;
-  document.getElementById('defiLevel').innerHTML = PROGRESSION[level].level;
-  document.getElementById('defiPrice').innerHTML = PROGRESSION[level+1].updatePrice;
-  document.getElementById('defiPPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
-  document.getElementById('defiBox').setAttribute('data-value', level);
-
-  level = +information.socialFi_level;
-  document.getElementById('socialFiLevel').innerHTML = PROGRESSION[level].level;
-  document.getElementById('socialFiPrice').innerHTML = PROGRESSION[level+1].updatePrice;
-  document.getElementById('socialFiPPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
-  document.getElementById('socialFiBox').setAttribute('data-value', level);
-
-  level = +information.meme_level;
-  document.getElementById('memeLevel').innerHTML = PROGRESSION[level].level;
-  document.getElementById('memePrice').innerHTML = PROGRESSION[level+1].updatePrice;
-  document.getElementById('memePPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
-  document.getElementById('memeCoinsBox').setAttribute('data-value', level);
-
-  level = +information.shit_level;
-  document.getElementById('shitLevel').innerHTML = PROGRESSION[level].level;
-  document.getElementById('shitPrice').innerHTML = PROGRESSION[level+1].updatePrice;
-  document.getElementById('shitPPH').innerHTML = '+' + PROGRESSION[level].coinPerHour;
-  document.getElementById('shitCoinsBox').setAttribute('data-value', level);
-
-}
+  document.getElementById(card.level).textContent = levelLabel;
+  document.getElementById(card.pph).textContent = pph;
+  document.getElementById(card.price).textContent = price;
+};
 
 document.getElementById('mainButtonCover').addEventListener('dragstart', function(event) {
   event.preventDefault();
@@ -1464,37 +1447,8 @@ document.getElementById('cardUpgradeBoxClose').addEventListener('click', ()=>{
 
 // mine cards upgrade menu
 
-const cardInfo = [
-  { cardId: 'funTokensBox', label: 'Fan tokens', level: 'funTokenLevel', price: 'funTokenPrice', pph: 'funTokenPPH', image: 'sport.png' },
-  { cardId: 'stakingBox', label: 'Staking', level: 'stakingLevel', price: 'stakingPrice', pph: 'stakingPPH', image: 'staking.png' },
-  { cardId: 'btcPairsBox', label: 'BTC pairs', level: 'btcPairLevel', price: 'btcPairPrice', pph: 'btcPairPPH', image: 'bitcoin.png' },
-  { cardId: 'ethPairsBox', label: 'ETH pairs', level: 'ethPairLevel', price: 'ethPairPrice', pph: 'ethPairPPH', image: 'ethereum.png' },
-  { cardId: 'top10CMCBox', label: 'Cmc pairs', level: 'cmcPairsLevel', price: 'cmcPairsPrice', pph: 'cmcPairsPPH', image: 'cmc.png' },
-  { cardId: 'gameFiBox', label: 'GameFi tokens', level: 'gameFiLevel', price: 'gameFiPrice', pph: 'gameFiPPH', image: 'gamefi.png' },
-  { cardId: 'defiBox', label: 'Defi2.0 tokens', level: 'defiLevel', price: 'defiPrice', pph: 'defiPPH', image: 'defi.png' },
-  { cardId: 'socialFiBox', label: 'SocialFi tokens', level: 'socialFiLevel', price: 'socialFiPrice', pph: 'socialFiPPH', image: 'socialfi.png' },
-  { cardId: 'memeCoinsBox', label: 'Meme coins', level: 'memeLevel', price: 'memePrice', pph: 'memePPH', image: 'mem.png' },
-  { cardId: 'shitCoinsBox', label: 'Shit coins', level: 'shitLevel', price: 'shitPrice', pph: 'shitPPH', image: 'shit.png' }
-];
 
-const levelProgress = [
-  {level: 'lvl 0', updatePrice: 0, coinPerHour: 0},
-  {level: 'lvl 1', updatePrice: 500, coinPerHour: 250},
-  {level: 'lvl 2', updatePrice: 516, coinPerHour: 275},
-  {level: 'lvl 3', updatePrice: 524, coinPerHour: 300},
-  {level: 'lvl 4', updatePrice: 782, coinPerHour: 325},
-  {level: 'lvl 5', updatePrice: 941, coinPerHour: 350},
-  {level: 'lvl 6', updatePrice: 1100, coinPerHour: 375},
-  {level: 'lvl 7', updatePrice: 1258, coinPerHour: 400},
-  {level: 'lvl 8', updatePrice: 1417, coinPerHour: 425},
-  {level: 'lvl 9', updatePrice: 1576, coinPerHour: 450},
-  {level: 'lvl 10', updatePrice: 1735, coinPerHour: 475},
-  {level: 'lvl 11', updatePrice: 1894, coinPerHour: 500},
-  {level: 'lvl 12', updatePrice: 2052, coinPerHour: 525},
-  {level: 'lvl 13', updatePrice: 2211, coinPerHour: 550},
-  {level: 'lvl 14', updatePrice: 2370, coinPerHour: 575},
-  {level: 'lvl 15', updatePrice: 2529, coinPerHour: 600}
-];
+
 
 document.getElementById('funTokensBox').addEventListener('click', function() {showCardUpgradeBox('funTokensBox')});
 document.getElementById('stakingBox').addEventListener('click', function() {showCardUpgradeBox('stakingBox')});
