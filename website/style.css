@@ -1987,3 +1987,255 @@ html, body {
   margin-top: 19px;
   margin-left: 461px;
 }
+
+#dailyRewardsWindow {
+  display: none;
+  width: 519px;
+  height: 814px;
+  position: absolute;
+  margin-top: 90px;
+  background-color: #1C1F24;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  box-shadow: 0px -6px 23.4px 0px #BB82F5;
+  border-top: 5px solid #BB82F5;
+  z-index: 5;
+}
+
+#dailyRewardsWindowClose{
+  position: absolute;
+  width: 33px;
+  height: 33px;
+  margin-left: 457px;
+  margin-top: 16px;
+}
+
+#dailyRewardsCalendarImage{
+  position: absolute;
+  width: 81px;
+  height: 81px;
+  margin-left: 219px;
+  margin-top: 40px;
+}
+
+#dailyRewardsWindowLabel{
+  position: absolute;
+  font-size: 35px;
+  font-weight: 520;
+  color: white;
+  margin-left: 149.5px;
+  margin-top: 133px;
+}
+
+#dailyRewardsWindowSubLabel1{
+  font-size: 18px;
+  color: white;
+  font-weight: 440;
+  position: absolute;
+  margin-top: 187px;
+  margin-left: 108.5px;
+}
+
+#dailyRewardsWindowSubLabel2{
+  font-size: 18px;
+  color: white;
+  font-weight: 440;
+  position: absolute;
+  margin-top: 209px;
+  margin-left: 83.5px;
+}
+
+#dailyRewardsWindowSubLabel3{
+  font-size: 18px;
+  color: white;
+  font-weight: 440;
+  position: absolute;
+  margin-top: 231px;
+  margin-left: 95.5px;
+}
+
+#dailyRewardsWindowSubLabel4{
+  font-size: 18px;
+  color: white;
+  font-weight: 440;
+  position: absolute;
+  margin-top: 253px;
+  margin-left: 182.5px;
+}
+
+#dailyRewardsWindowDay1{
+  width: 115px;
+  height: 111px;
+  background-color: #282B30;
+  box-shadow: inset 0 0 0 2px #A472D7;
+  position: absolute;
+  margin-left: 15px;
+  border-radius: 21px;
+  margin-top: 295px;
+}
+
+.dayLabel{
+  position: absolute;
+  height: 48px;
+  color: white;
+  font-size: 20px;
+  font-weight: 440;
+  margin-top: 9px;
+  margin-left: 32px;
+}
+
+.dayImage{
+  width: 29px;
+  height: 29px;
+  position: absolute;
+  margin-top: 41px;
+  margin-left: 43px;
+  box-shadow: 0 0px 30px #BB82F5;
+  border-radius: 50%;
+}
+
+.dayAward{
+  position: absolute;
+  font-size: 18px;
+  color: white;
+  margin-top: 80px;
+  margin-left: 41px;
+  font-weight: 440;
+}
+
+#dailyRewardsWindowDay2{
+  width: 115px;
+  height: 111px;
+  background-color: #282B30;
+  position: absolute;
+  margin-left: 140px;
+  border-radius: 21px;
+  margin-top: 295px;
+  opacity: .7;
+}
+
+#day2Price{
+  margin-left: 47.26px;
+}
+
+#dailyRewardsWindowDay3{
+  width: 115px;
+  height: 111px;
+  background-color: #282B30;
+  position: absolute;
+  margin-left: 265px;
+  border-radius: 21px;
+  margin-top: 295px;
+  opacity: .7;
+}
+
+#day3Price{
+  margin-left: 37.93px;
+}
+
+#dailyRewardsWindowDay4{
+  width: 115px;
+  height: 111px;
+  background-color: #282B30;
+  position: absolute;
+  margin-left: 390px;
+  border-radius: 21px;
+  margin-top: 295px;
+  opacity: .7;
+}
+
+#dailyRewardsWindowDay5{
+  width: 115px;
+  height: 111px;
+  background-color: #282B30;
+  position: absolute;
+  margin-left: 15px;
+  border-radius: 21px;
+  margin-top: 416px;
+  opacity: .7;
+}
+
+#dailyRewardsWindowDay6{
+  width: 115px;
+  height: 111px;
+  background-color: #282B30;
+  position: absolute;
+  margin-left: 140px;
+  border-radius: 21px;
+  margin-top: 416px;
+  opacity: .7;
+}
+
+#dailyRewardsWindowDay7{
+  width: 115px;
+  height: 111px;
+  background-color: #282B30;
+  position: absolute;
+  margin-left: 265px;
+  border-radius: 21px;
+  margin-top: 416px;
+  opacity: .7;
+}
+
+#day7Price{
+  margin-left: 35.6px;
+}
+
+#dailyRewardsWindowDay8{
+  width: 115px;
+  height: 111px;
+  background-color: #282B30;
+  position: absolute;
+  margin-left: 390px;
+  border-radius: 21px;
+  margin-top: 416px;
+  opacity: .7;
+}
+
+#dailyRewardsWindowDay9{
+  width: 115px;
+  height: 111px;
+  background-color: #282B30;
+  position: absolute;
+  margin-left: 15px;
+  border-radius: 21px;
+  margin-top: 536px;
+  opacity: .7;
+}
+
+#day9Price{
+  margin-left: 44px;
+}
+
+#dailyRewardsWindowDay10{
+  width: 115px;
+  height: 111px;
+  background-color: #282B30;
+  position: absolute;
+  margin-left: 140px;
+  border-radius: 21px;
+  margin-top: 536px;
+  opacity: .7;
+}
+
+#day10Label{
+  margin-left: 28px;
+}
+
+#dailyRewardsGet{
+  width: 480px;
+  height: 95px;
+  position: absolute;
+  border-radius: 23px;
+  background-color: #A472D7;
+  margin-top: 678px;
+  margin-left: 18px;
+  text-align: center;
+}
+
+#dailyRewardsGetLabel{
+  color: white;
+  font-size: 25px;
+  font-weight: 500;
+  margin-top: 33px;
+}

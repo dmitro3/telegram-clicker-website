@@ -1451,10 +1451,6 @@ document.getElementById('cardUpgradeBoxClose').addEventListener('click', ()=>{
 });
 
 // mine cards upgrade menu
-
-
-
-
 document.getElementById('funTokensBox').addEventListener('click', function() {showCardUpgradeBox('funTokensBox')});
 document.getElementById('stakingBox').addEventListener('click', function() {showCardUpgradeBox('stakingBox')});
 document.getElementById('btcPairsBox').addEventListener('click', function() {showCardUpgradeBox('btcPairsBox')});
@@ -1465,10 +1461,7 @@ document.getElementById('defiBox').addEventListener('click', function() {showCar
 document.getElementById('socialFiBox').addEventListener('click', function() {showCardUpgradeBox('socialFiBox')});
 document.getElementById('memeCoinsBox').addEventListener('click', function() {showCardUpgradeBox('memeCoinsBox')});
 document.getElementById('shitCoinsBox').addEventListener('click', function() {showCardUpgradeBox('shitCoinsBox')});
-
-
 document.getElementById('getUpgradeBox').addEventListener('click', updateCard)
-
 
 function showCardUpgradeBox (cardId) {
   const card = cardInfo.find(card => card.cardId === cardId);
@@ -1515,4 +1508,16 @@ function updateCard () {
       document.getElementById('cardUpgradeBox').style.display = 'none';
     }
   }
+}
+
+// get daily reward menu
+document.getElementById('dailyRewardsWindowClose').addEventListener('click', function () {
+  document.getElementById('dailyRewardsWindow').style.display = 'none';
+});
+
+document.getElementById('earnFieldDailyRewardDiv').addEventListener('click', showDailyRewardsWindow);
+
+
+function showDailyRewardsWindow () {
+  document.getElementById('dailyRewardsWindow').style.display = 'block';
 }
