@@ -1539,7 +1539,7 @@ function updateCard () {
   if (userCoins >= price){
     adjustCoinsVisual(userCoins - price);
     postData('/updateCardLevel', {
-      telegramId: telegramId,
+      telegramId: getTelegramId(),
       cardId: cardId,
       level: +moneyData.level.slice(4)
     })
