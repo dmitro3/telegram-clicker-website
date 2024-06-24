@@ -1979,3 +1979,11 @@ html, body {
   color: white;
   margin-top: 35px;
 }
+
+#cardUpgradeBoxClose{
+  position: absolute;
+  width: 33px;
+  height: 33px;
+  margin-top: 19px;
+  margin-left: 461px;
+}

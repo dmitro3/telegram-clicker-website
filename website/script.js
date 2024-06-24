@@ -939,87 +939,23 @@ function hideMineField() {
   earnField.style.display = 'none'
 }
 
-const PROGRESSION = [
-  {
-    level: 'lvl 0',
-    updatePrice: 0,
-    coinPerHour: 0
-  },
-  {
-    level: 'lvl 1',
-    updatePrice: 500,
-    coinPerHour: 250
-  },
-  {
-    level: 'lvl 2',
-    updatePrice: 516,
-    coinPerHour: 275
-  },
-  {
-    level: 'lvl 3',
-    updatePrice: 524,
-    coinPerHour: 300
-  },
-  {
-    level: 'lvl 4',
-    updatePrice: 782,
-    coinPerHour: 325
-  },
-  {
-    level: 'lvl 5',
-    updatePrice: 941,
-    coinPerHour: 350
-  },
-  {
-    level: 'lvl 6',
-    updatePrice: 1100,
-    coinPerHour: 375
-  },
-  {
-    level: 'lvl 7',
-    updatePrice: 1258,
-    coinPerHour: 400
-  },
-  {
-    level: 'lvl 8',
-    updatePrice: 1417,
-    coinPerHour: 425
-  },
-  {
-    level: 'lvl 9',
-    updatePrice: 1576,
-    coinPerHour: 450
-  },
-  {
-    level: 'lvl 10',
-    updatePrice: 1735,
-    coinPerHour: 475
-  },
-  {
-    level: 'lvl 11',
-    updatePrice: 1894,
-    coinPerHour: 500
-  },
-  {
-    level: 'lvl 12',
-    updatePrice: 2052,
-    coinPerHour: 525
-  },
-  {
-    level: 'lvl 13',
-    updatePrice: 2211,
-    coinPerHour: 550
-  },
-  {
-    level: 'lvl 14',
-    updatePrice: 2370,
-    coinPerHour: 575
-  },
-  {
-    level: 'lvl 15',
-    updatePrice: 2529,
-    coinPerHour: 600
-  }
+const levelProgression = [
+  {level: 'lvl 0', updatePrice: 0, coinPerHour: 0},
+  {level: 'lvl 1',updatePrice: 500,coinPerHour: 250},
+  {level: 'lvl 2',updatePrice: 516,coinPerHour: 275},
+  {level: 'lvl 3',updatePrice: 524,coinPerHour: 300},
+  {level: 'lvl 4',updatePrice: 782,coinPerHour: 325},
+  {level: 'lvl 5',updatePrice: 941,coinPerHour: 350},
+  {level: 'lvl 6',updatePrice: 1100,coinPerHour: 375},
+  {level: 'lvl 7', updatePrice: 1258,coinPerHour: 400},
+  {level: 'lvl 8',updatePrice: 1417,coinPerHour: 425},
+  {level: 'lvl 9',updatePrice: 1576, coinPerHour: 450},
+  {level: 'lvl 10',updatePrice: 1735,coinPerHour: 475},
+  {level: 'lvl 11',updatePrice: 1894,coinPerHour: 500},
+  {level: 'lvl 12',updatePrice: 2052,coinPerHour: 525},
+  {level: 'lvl 13', updatePrice: 2211,coinPerHour: 550},
+  {level: 'lvl 14', updatePrice: 2370,coinPerHour: 575},
+  {level: 'lvl 15',updatePrice: 2529,coinPerHour: 600}
 ];
 
 function adjustMineCards() {
@@ -1125,7 +1061,7 @@ document.getElementById('funTokensBox').addEventListener('click', ()=>{
     adjustUpgradeCardBox('funTokensBox');
   }
 });
-*/
+
 document.getElementById('stakingBox').addEventListener('click', ()=>{
   const level = document.getElementById('stakingBox').getAttribute('data-value');
   if (level != 15) {
@@ -1197,7 +1133,7 @@ document.getElementById('shitCoinsBox').addEventListener('click', ()=>{
     adjustUpgradeCardBox('shitCoinsBox');
   }
 });
-
+*/
 const data = [
   {
     boxId: 'funTokensBox',
@@ -1523,8 +1459,79 @@ function identifyIndex(coins) {
   return coins.toString().length-2
 }
 
+document.getElementById('cardUpgradeBoxClose').addEventListener('click', ()=>{
+  document.getElementById('cardUpgradeBox').style.display = 'none';
+});
+
+// mine cards upgrade menu
+
+const cardInfo = [
+  { cardId: 'funTokensBox', label: 'Fan tokens', level: 'funTokenLevel', price: 'funTokenPrice', pph: 'funTokenPPH', image: 'sport.png' },
+  { cardId: 'stakingBox', label: 'Staking', level: 'stakingLevel', price: 'stakingPrice', pph: 'stakingPPH', image: 'staking.png' }
+];
+
+const levelProgress = [
+  {level: 'lvl 0', updatePrice: 0, coinPerHour: 0},
+  {level: 'lvl 1', updatePrice: 500, coinPerHour: 250},
+  {level: 'lvl 2', updatePrice: 516, coinPerHour: 275},
+  {level: 'lvl 3', updatePrice: 524, coinPerHour: 300},
+  {level: 'lvl 4', updatePrice: 782, coinPerHour: 325},
+  {level: 'lvl 5', updatePrice: 941, coinPerHour: 350},
+  {level: 'lvl 6', updatePrice: 1100, coinPerHour: 375},
+  {level: 'lvl 7', updatePrice: 1258, coinPerHour: 400},
+  {level: 'lvl 8', updatePrice: 1417, coinPerHour: 425},
+  {level: 'lvl 9', updatePrice: 1576, coinPerHour: 450},
+  {level: 'lvl 10', updatePrice: 1735, coinPerHour: 475},
+  {level: 'lvl 11', updatePrice: 1894, coinPerHour: 500},
+  {level: 'lvl 12', updatePrice: 2052, coinPerHour: 525},
+  {level: 'lvl 13', updatePrice: 2211, coinPerHour: 550},
+  {level: 'lvl 14', updatePrice: 2370, coinPerHour: 575},
+  {level: 'lvl 15', updatePrice: 2529, coinPerHour: 600}
+];
+
 document.getElementById('funTokensBox').addEventListener('click', function() {showCardUpgradeBox('funTokensBox')});
+document.getElementById('stakingBox').addEventListener('click', function() {showCardUpgradeBox('stakingBox')});
+
+document.getElementById('getUpgradeBox').addEventListener('click', updateCard)
+
 
 function showCardUpgradeBox (cardId) {
-  document.getElementById('cardUpgradeBox').style.display = 'block';
+  const card = cardInfo.find(card => card.cardId === cardId);
+  const currentPPH = +document.getElementById(card.pph).textContent.slice(1);
+  const index = levelProgress.findIndex(level => level.coinPerHour === currentPPH);
+  const moneyData = levelProgress[index+1];
+  if (currentPPH !== 600){
+    document.getElementById('cardUpgradeBoxImage').src = card.image;
+    document.getElementById('cardUpgradeBoxLabel').textContent = card.label;
+    document.getElementById('profitPerHourPrice').textContent = '+' + moneyData.coinPerHour;
+    document.getElementById('upgradePriceLabel').textContent = moneyData.updatePrice;
+    document.getElementById('cardUpgradeBox').style.display = 'block';
+    document.getElementById('getUpgradeBox').setAttribute('data-value', cardId)
+  }
+}
+
+function updateCard () {
+  const cardId = document.getElementById('getUpgradeBox').getAttribute('data-value');
+  const card = cardInfo.find(card => card.cardId === cardId);
+  const currentPPH = +document.getElementById(card.pph).textContent.slice(1);
+  const index = levelProgress.findIndex(level => level.coinPerHour === currentPPH) + 1;
+  const moneyData = levelProgress[index];
+
+  const price = moneyData.updatePrice;
+  const userCoins = +getLeftCoins();
+
+  if (userCoins >= price){
+    adjustCoinsVisual(userCoins - price);
+    if (currentPPH != 575) {
+      document.getElementById(card.level).textContent = moneyData.level;
+      document.getElementById(card.price).textContent = levelProgress[index+1].updatePrice;
+      document.getElementById(card.pph).textContent = '+' + levelProgress[index].coinPerHour;
+      document.getElementById('cardUpgradeBox').style.display = 'none';
+    } else{
+      document.getElementById(card.level).textContent = moneyData.level;
+      document.getElementById(card.price).textContent = 'Completed';
+      document.getElementById(card.pph).textContent = '+' + levelProgress[index].coinPerHour;
+      document.getElementById('cardUpgradeBox').style.display = 'none';
+    }
+  }
 }
