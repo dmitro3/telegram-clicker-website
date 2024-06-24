@@ -967,7 +967,6 @@ function adjustMineCards() {
     if (data.data != 'User added') {
       const information = Array.from(data.data)[0]
       console.log(information)
-      showCurrentMineCards(information);
     }
   });
 }
@@ -1467,6 +1466,15 @@ document.getElementById('cardUpgradeBoxClose').addEventListener('click', ()=>{
 
 const cardInfo = [
   { cardId: 'funTokensBox', label: 'Fan tokens', level: 'funTokenLevel', price: 'funTokenPrice', pph: 'funTokenPPH', image: 'sport.png' },
+  { cardId: 'stakingBox', label: 'Staking', level: 'stakingLevel', price: 'stakingPrice', pph: 'stakingPPH', image: 'staking.png' },
+  { cardId: 'btcPairsBox', label: 'BTC pairs', level: 'btcPairLevel', price: 'btcPairPrice', pph: 'btcPairPPH', image: 'bitcoin.png' },
+  { cardId: 'ethPairsBox', label: 'ETH pairs', level: 'ethPairLevel', price: 'ethPairPrice', pph: 'ethPairPPH', image: 'ethereum.png' },
+  { cardId: 'top10CMCBox', label: 'Cmc pairs', level: 'cmcPairsLevel', price: 'cmcPairsPrice', pph: 'cmcPairsPPH', image: 'cmc.png' },
+  { cardId: 'stakingBox', label: 'Staking', level: 'stakingLevel', price: 'stakingPrice', pph: 'stakingPPH', image: 'staking.png' },
+  { cardId: 'stakingBox', label: 'Staking', level: 'stakingLevel', price: 'stakingPrice', pph: 'stakingPPH', image: 'staking.png' },
+  { cardId: 'stakingBox', label: 'Staking', level: 'stakingLevel', price: 'stakingPrice', pph: 'stakingPPH', image: 'staking.png' },
+  { cardId: 'stakingBox', label: 'Staking', level: 'stakingLevel', price: 'stakingPrice', pph: 'stakingPPH', image: 'staking.png' },
+  { cardId: 'stakingBox', label: 'Staking', level: 'stakingLevel', price: 'stakingPrice', pph: 'stakingPPH', image: 'staking.png' },
   { cardId: 'stakingBox', label: 'Staking', level: 'stakingLevel', price: 'stakingPrice', pph: 'stakingPPH', image: 'staking.png' }
 ];
 
@@ -1491,6 +1499,15 @@ const levelProgress = [
 
 document.getElementById('funTokensBox').addEventListener('click', function() {showCardUpgradeBox('funTokensBox')});
 document.getElementById('stakingBox').addEventListener('click', function() {showCardUpgradeBox('stakingBox')});
+document.getElementById('btcPairsBox').addEventListener('click', function() {showCardUpgradeBox('btcPairsBox')});
+document.getElementById('ethPairsBox').addEventListener('click', function() {showCardUpgradeBox('ethPairsBox')});
+document.getElementById('top10CMCBox').addEventListener('click', function() {showCardUpgradeBox('top10CMCBox')});
+document.getElementById('gameFiBox').addEventListener('click', function() {showCardUpgradeBox('gameFiBox')});
+document.getElementById('defiBox').addEventListener('click', function() {showCardUpgradeBox('defiBox')});
+document.getElementById('socialFiBox').addEventListener('click', function() {showCardUpgradeBox('socialFiBox')});
+document.getElementById('memeCoinsBox').addEventListener('click', function() {showCardUpgradeBox('memeCoinsBox')});
+document.getElementById('shitCoinsBox').addEventListener('click', function() {showCardUpgradeBox('shitCoinsBox')});
+
 
 document.getElementById('getUpgradeBox').addEventListener('click', updateCard)
 
@@ -1522,6 +1539,12 @@ function updateCard () {
 
   if (userCoins >= price){
     adjustCoinsVisual(userCoins - price);
+    postData('/updateCardLevel', {
+      telegramId: telegramId,
+      cardId: cardId,
+      level: +moneyData.level.slice(4)
+    })
+    .then(data => {});
     if (currentPPH != 575) {
       document.getElementById(card.level).textContent = moneyData.level;
       document.getElementById(card.price).textContent = levelProgress[index+1].updatePrice;

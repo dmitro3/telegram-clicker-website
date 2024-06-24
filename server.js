@@ -70,3 +70,5 @@ app.use('/updateCardLevel', updateCardLevel);
 
 
 //db.run("CREATE TABLE mine_cards (ID INTEGER PRIMARY KEY, telegramId INTEGER, funTokens_level INTEGER, staking_level INTEGER, btcPairs_level INTEGER, ethPairs_level INTEGER, top10_level INTEGER, gameFi_level INTEGER, defi_level INTEGER, socialFi_level INTEGER, meme_level INTEGER, shit_level INTEGER)");
+
+//db.run("CREATE TABLE cards (ID INTEGER PRIMARY KEY, telegramId INTEGER, funTokensBox INTEGER, stakingBox INTEGER, btcPairsBox INTEGER, ethPairsBox INTEGER, top10CMCBox INTEGER, gameFiBox INTEGER, defiBox INTEGER, socialFiBox INTEGER, memeCoinsBox INTEGER, shitCoinsBox INTEGER)");

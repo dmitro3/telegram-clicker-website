@@ -16,7 +16,7 @@ router.post('/', async (req, res, next) => {
 
 async function getMineCardsData(telegramId) {
     return new Promise((resolve, reject) => {
-        db.all(`SELECT * FROM mine_cards WHERE telegramId = ?`,[telegramId] , function (err, rows) {
+        db.all(`SELECT * FROM cards WHERE telegramId = ?`,[telegramId] , function (err, rows) {
             if (err) {
                 reject(err);
             } else {
@@ -28,7 +28,7 @@ async function getMineCardsData(telegramId) {
 
 async function addUser(data) {
     return new Promise((resolve, reject) => {
-        db.run("INSERT INTO mine_cards (telegramId, funTokens_level, staking_level, btcPairs_level, ethPairs_level, top10_level, gameFi_level, defi_level, socialFi_level, meme_level, shit_level) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [+data.telegramId, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], function (err) {
+        db.run("INSERT INTO cards ( funTokensBox, stakingBox, btcPairsBox, ethPairsBox, top10CMCBox, gameFiBox, defiBox, socialFiBox, memeCoinsBox, shitCoinsBox) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [+data.telegramId, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], function (err) {
             if (err) {
                 console.error("Error inserting data:", err.message);
                 reject(err);
