@@ -991,6 +991,9 @@ const levelProgress = [
   {level: 'lvl 15', updatePrice: 2529, coinPerHour: 600}
 ];
 
+
+
+
 function adjustMineCards() {
   const telegramId = getTelegramId();
   postData('/getMineCardsInformation', {
@@ -999,16 +1002,17 @@ function adjustMineCards() {
   .then(data => {
     if (data.data != 'User added') {
       const information = Array.from(data.data)[0];
-      console.log(information)
       showCurrentMineCards(information);
     }
   });
 }
 
+
 function showCurrentMineCards (information) {
   for (let i = 0; i < cardInfo.length; i++) {
     const cardId = cardInfo[i].cardId;
-    const level = information.cardId;
+    const level = information[cardId];
+    console.log(cardId, level)
     updateCardVisual(cardId, level)
   }
 };
