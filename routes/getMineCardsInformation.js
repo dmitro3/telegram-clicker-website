@@ -28,7 +28,7 @@ async function getMineCardsData(telegramId) {
 
 async function addUser(data) {
     return new Promise((resolve, reject) => {
-        db.run("INSERT INTO cards ( funTokensBox, stakingBox, btcPairsBox, ethPairsBox, top10CMCBox, gameFiBox, defiBox, socialFiBox, memeCoinsBox, shitCoinsBox) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [+data.telegramId, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], function (err) {
+        db.run("INSERT INTO cards (telegramId, funTokensBox, stakingBox, btcPairsBox, ethPairsBox, top10CMCBox, gameFiBox, defiBox, socialFiBox, memeCoinsBox, shitCoinsBox) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [+data.telegramId, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], function (err) {
             if (err) {
                 console.error("Error inserting data:", err.message);
                 reject(err);
