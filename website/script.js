@@ -1008,11 +1008,11 @@ function showCurrentMineCards (information) {
   for (let i = 0; i < cardInfo.length; i++) {
     const cardId = cardInfo[i].cardId;
     const level = information.cardId;
-    updateCard(cardId, level)
+    updateCardVisual(cardId, level)
   }
 };
 
-function updateCard(cardId, level) {
+function updateCardVisual(cardId, level) {
   const card = cardInfo.find(card => card.cardId === cardId);
   const price = levelProgress[level+1].updatePrice;
   const pph = levelProgress[level].coinPerHour;
