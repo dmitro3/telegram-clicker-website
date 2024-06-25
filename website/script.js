@@ -1659,10 +1659,10 @@ document.getElementById('inviteFriendDiv').addEventListener('click', ()=>{
 
 document.getElementById('inviteFriendCopyDiv').addEventListener('click', ()=>{
 
-  navigator.clipboard.writeText(userText);
+  navigator.clipboard.writeText(`https://t.me/share/url?url=https%3A%2F%2Ft.me/telegclick_bot?start=${getTelegramId()}&text=Join%20this%20game!`);
             
   Telegram.WebApp.showPopup({
-      message: 'Text copied to clipboard!',
+      message: 'Link copied to clipboard!',
       buttons: [{ type: 'ok', text: 'OK' }]
   });
 
