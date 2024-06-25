@@ -458,7 +458,7 @@ function showReferrals(){
           }else if (coins > 1000000000) {
             nameLabel = 'Lord';
           }
-  
+          const mainDiv = createElement('div', 'invitedFriendBox')
           const div = createElement('div', 'invitedFriendImageDiv');
           const image = createElement('img', 'invitedFriendImage', 'icon.png');
           const usernameLabel = createElement('h6', 'invitedFriendName');
@@ -477,8 +477,8 @@ function showReferrals(){
           div.appendChild(dot)
           div.appendChild(coin)
           div.appendChild(money)
-
-          friendsField.appendChild(div)
+          mainDiv.appendChild(div)
+          friendsField.appendChild(mainDiv)
         })
     });
   }
