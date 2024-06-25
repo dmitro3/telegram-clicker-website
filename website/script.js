@@ -413,7 +413,7 @@ function showReferrals(){
           telegramId: id
         })
         .then(data1 => {
-          const user = Array.from(data1.data)[0];
+          const user = Array.from(data1['data']);
 
           const premium = username[0].isPremium;
 
