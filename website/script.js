@@ -390,49 +390,47 @@ function showReferrals(){
   .then(data => { 
     newData = Array.from(data.data);
     if (newData.lenght != 0){
-      document.getElementById('youhaventinv').remove();
       for (let i = 0; i < newData.length; i++) {
-        createSubFriend(newData[i].telegramReferralId, newData.length, newData[i].clicked, newData[i].verified)
+        createSubFriend(newData[i].telegramReferralId, newData[i].clicked, newData[i].verified)
       }
     }
   });
-  function createSubFriend(id, length, clicked, verified){
+
+  function createElement(type, className, src) {
+    const element = document.createElement(type);
+    if (className) element.className = className;
+    if (src) element.src = src;
+    return element;
+}
+
+  function createSubFriend(id, verified){
       postData('/getUserInformation', {
         telegramId: id
       })
       .then(data => {
-        newData = Array.from(data.data);
-        let premium = newData[0].isPremium;
-        const div = document.createElement('div');
-        div.className = 'subFriendsBox';
-        const username = document.createElement('h4');
-        username.className = 'subFriendsBoxUsername';
-        username.innerHTML = newData[0].username; 
-        const state = document.createElement('h4');
-        state.className = 'subFriendsBoxStatus';
-        if (+clicked == 0){
-          state.innerHTML = '--did not open--'
-        } else {
-          state.innerHTML = '--- opened ---'
-        }
+        user = Array.from(data.data);
+        console.log(user[0])
+        const premium = user[0].isPremium;
+
+        const div = createElement('div', 'invitedFriendImageDiv');
+        const image = createElement('img', 'invitedFriendImage', 'icon.png');
+        const username = createElement('h6', 'invitedFriendName');
+        const status = createElement('h6', 'inviteFriendStatus');
+        const dot = createElement('div', 'inviteFriendDot');
+        const coin = createElement('img', 'inviteFriendCoinImage', 'coin.png');
+        const money = createElement('h6', 'invitedFriendMoney');
+
+      
+
         if (+verified == 0){
           verifyReferral(id);
           if (premium == 'false'){
-            state.innerHTML = '-- +5000 --';
             const coins = +getLeftCoins();
             adjustCoinsVisual(coins+5000)
           } else {
-            state.innerHTML = '-- +25000 --';
             const coins = +getLeftCoins();
             adjustCoinsVisual(coins+25000)          }
-          state.style.color = 'green'
-        }else {
-          state.innerHTML = 'bonus alr added'
         }
-        
-        div.appendChild(username);
-        div.appendChild(state)
-        document.getElementById('friendsBox').appendChild(div)
       });
   }
 }
@@ -1601,3 +1599,10 @@ function getDailyRewards() {
     document.getElementById('dailyRewardsWindow').style.display = 'none';
   });
 };
+
+// referral system
+document.getElementById('inviteFriendDiv').addEventListener('click', ()=>{
+  const shareUrl = `https://t.me/share/url?url=https%3A%2F%2Ft.me/telegclick_bot?start=${getTelegramId()}&text=Join%20this%20game!`;
+
+    Telegram.WebApp.openTelegramLink(shareUrl);
+});
