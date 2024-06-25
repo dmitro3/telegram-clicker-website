@@ -408,30 +408,38 @@ function showReferrals(){
         telegramId: id
       })
       .then(data => {
-        user = Array.from(data.data);
-        console.log(user[0])
-        const premium = user[0].isPremium;
+        username = Array.from(data.data)[0]['username'];
+        postData('/getGameData', {
+          telegramId: id
+        })
+        .then(data1 => {
+          user = Array.from(data1.data)[0];
 
-        const div = createElement('div', 'invitedFriendImageDiv');
-        const image = createElement('img', 'invitedFriendImage', 'icon.png');
-        const username = createElement('h6', 'invitedFriendName');
-        const status = createElement('h6', 'inviteFriendStatus');
-        const dot = createElement('div', 'inviteFriendDot');
-        const coin = createElement('img', 'inviteFriendCoinImage', 'coin.png');
-        const money = createElement('h6', 'invitedFriendMoney');
 
-      
 
-        if (+verified == 0){
-          verifyReferral(id);
-          if (premium == 'false'){
-            const coins = +getLeftCoins();
-            adjustCoinsVisual(coins+5000)
-          } else {
-            const coins = +getLeftCoins();
-            adjustCoinsVisual(coins+25000)          }
-        }
-      });
+          if (+verified == 0){
+            verifyReferral(id);
+            if (premium == 'false'){
+              const coins = +getLeftCoins();
+              adjustCoinsVisual(coins+5000)
+            } else {
+              const coins = +getLeftCoins();
+              adjustCoinsVisual(coins+25000)          }
+          }
+          console.log(user[0])
+          const premium = user[0].isPremium;
+  
+          const div = createElement('div', 'invitedFriendImageDiv');
+          const image = createElement('img', 'invitedFriendImage', 'icon.png');
+          const usernameLabel = createElement('h6', 'invitedFriendName');
+          const status = createElement('h6', 'inviteFriendStatus');
+          const dot = createElement('div', 'inviteFriendDot');
+          const coin = createElement('img', 'inviteFriendCoinImage', 'coin.png');
+          const money = createElement('h6', 'invitedFriendMoney');
+
+
+        })
+    });
   }
 }
 
