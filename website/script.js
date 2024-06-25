@@ -1656,3 +1656,14 @@ document.getElementById('inviteFriendDiv').addEventListener('click', ()=>{
 
     Telegram.WebApp.openTelegramLink(shareUrl);
 });
+
+document.getElementById('inviteFriendCopyDiv').addEventListener('click', ()=>{
+
+  navigator.clipboard.writeText(userText);
+            
+  Telegram.WebApp.showPopup({
+      message: 'Text copied to clipboard!',
+      buttons: [{ type: 'ok', text: 'OK' }]
+  });
+
+});
