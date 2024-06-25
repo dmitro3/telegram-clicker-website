@@ -427,7 +427,7 @@ function showReferrals(){
               const coins = +getLeftCoins();
               adjustCoinsVisual(coins+25000)          }
           }
-          console.log(user[0])
+          console.log(user)
   
           const div = createElement('div', 'invitedFriendImageDiv');
           const image = createElement('img', 'invitedFriendImage', 'icon.png');
