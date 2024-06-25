@@ -1,3 +1,4 @@
+
 body.height = window.innerHeight
 var viewportWidth = window.innerWidth;
 // width: 430
@@ -37,10 +38,11 @@ const mineFieldElements = [
 
 window.onload = ()=> {
   adjustMarginCoinBox()
+  dailyRewards();
   registerUser();
   showReferrals();
   identifyReferral();
-  adjustDailyRewards();
+  //adjustDailyRewards();
   adjustMineCards();
   adjustProgressBar();
   const coins = +getLeftCoins();
@@ -635,7 +637,7 @@ document.getElementById('dailyRewardsBox').addEventListener('click', ()=>{
 document.getElementById('closeDailyRewardsPopUpBoxBox').addEventListener('click', ()=>{
   dailyRewardsPopUpBox.style.display = 'none'
 });
-
+/*
 function adjustDailyRewards () {
   const telegramId = getTelegramId();
   postData('/getDailyRewardsState', {
@@ -646,7 +648,7 @@ function adjustDailyRewards () {
     adjustDailyRewardsPopUpBox(day[0]);
   });
 }
-
+*/
 function adjustDailyRewardsPopUpBox(day) {
   if (day.day == 'day1') {
     day1Box.style.opacity = '100%';
@@ -1511,13 +1513,91 @@ function updateCard () {
 }
 
 // get daily reward menu
+
+
+function getCurrentDatee () {
+  const currentDate = new Date();
+
+  const year = String(currentDate.getFullYear()).slice(-2); // Last two digits of the year
+  const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+  const day = String(currentDate.getDate()).padStart(2, '0');
+
+  const formattedDate = `${year}-${month}-${day}`;
+
+  return formattedDate;
+}
 document.getElementById('dailyRewardsWindowClose').addEventListener('click', function () {
   document.getElementById('dailyRewardsWindow').style.display = 'none';
 });
 
 document.getElementById('earnFieldDailyRewardDiv').addEventListener('click', showDailyRewardsWindow);
 
-
 function showDailyRewardsWindow () {
+  dailyRewards();
   document.getElementById('dailyRewardsWindow').style.display = 'block';
 }
+
+const dailyRewardsBegining = {
+  "ID": undefined,"telegramId": 88888,
+  "day1_claimed": "false","day1_date": "false",
+  "day2_claimed": "false","day2_date": "false",
+  "day3_claimed": "false","day3_date": "false",
+  "day4_claimed": "false","day4_date": "false",
+  "day5_claimed": "false","day5_date": "false",
+  "day6_claimed": "false","day6_date": "false",
+  "day7_claimed": "false","day7_date": "false",
+  "day8_claimed": "false","day8_date": "false",
+  "day9_claimed": "false","day9_date": "false",
+  "day10_claimed": "false","day10_date": "false"
+};
+
+function dailyRewards() {
+  postData('/getDailyRewardsState', {
+    telegramId: getTelegramId(),
+  })
+  .then(data => {
+    let dailyRewData;
+    if (data.data.length !== 0) {
+      const information = Array.from(data.data)[0];
+      dailyRewData = information;
+    } else { dailyRewData = dailyRewardsBegining }
+    modifyDailyRewardsWindow(dailyRewData);
+  });
+};
+
+function modifyDailyRewardsWindow (data) {
+  console.log(data)
+  for (let i = 2; i < 12; i++) {
+    if (data[`day${i-2}_claimed`] == 'true') {
+      document.getElementById(`dailyRewardsWindowDay${i-2}`).style.backgroundColor = 'green';
+      document.getElementById(`dailyRewardsWindowDay${i-2}`).style.boxShadow = 'inset 0 0 0 0px #A472D7';
+      document.getElementById(`dailyRewardsWindowDay${i-2}`).style.opacity = '100';
+      continue;
+    } else if (data[`day${i-2}_claimed`] == 'false'){
+        if (data[`day${i-3}_date`] != getCurrentDatee()) {
+          document.getElementById(`dailyRewardsWindowDay${i-2}`).style.boxShadow = 'inset 0 0 0 2px #A472D7';
+          document.getElementById(`dailyRewardsWindowDay${i-2}`).style.opacity = '100';
+          document.getElementById('dailyRewardsGet').setAttribute('data-value', i-2)
+        } else {
+          document.getElementById(`dailyRewardsWindowDay${i-2}`).style.backgroundColor = 'red';
+          document.getElementById(`dailyRewardsWindowDay${i-2}`).style.opacity = '100';
+          document.getElementById('dailyRewardsGet').setAttribute('data-value', 0)
+        }
+      break;
+    }
+  }
+};
+
+document.getElementById('dailyRewardsGet').addEventListener('click', getDailyRewards);
+
+function getDailyRewards() {
+  const i = document.getElementById('dailyRewardsGet').getAttribute('data-value');
+  postData('/updateDailyRewards', {
+    telegramId: getTelegramId(),
+    day: i,
+    date: getCurrentDatee()
+  })
+  .then(data => {
+    document.getElementById('dailyRewardsWindow').style.display = 'none';
+  });
+};

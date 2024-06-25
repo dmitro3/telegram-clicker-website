@@ -9,13 +9,8 @@ router.post('/', async (req, res, next) => {
     console.log(information)
     if (information.length == 0) {
         await addUser(data);
-        console.log(information)
-        res.json({day:'day1', canClaim: 'true'})
-    } else {
-        const day = getLastDay(information[0]);
-        console.log(day)
-        res.json({day: day})
     }
+    res.json({data: information})
 });
 
 async function getUserDailyRewards(telegramId) {
@@ -42,7 +37,7 @@ async function getUserDailyRewards(telegramId) {
             });
         }
         )}
-
+/*
     function getLastDay (information) {
         let data = {
             day: '',
@@ -137,5 +132,5 @@ async function getUserDailyRewards(telegramId) {
       
         return `${year}-${month}-${day}`;
       }
-
+*/
 module.exports = router;  
