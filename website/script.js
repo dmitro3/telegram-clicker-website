@@ -415,7 +415,7 @@ function showReferrals(){
         .then(data1 => {
           const user = Array.from(data1.data)[0];
 
-          const premium = user[0].isPremium;
+          const premium = username[0].isPremium;
 
 
           if (+verified == 0){
