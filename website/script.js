@@ -402,20 +402,21 @@ function showReferrals(){
     if (src) element.src = src;
     return element;
 }
-
+let aaab;
   function createSubFriend(id, verified){
       postData('/getUserInformation', {
         telegramId: id
       })
       .then(data => {
-        username = Array.from(data.data)[0]['username'];
+        username = Array.from(data.data)[0];
+        aaab = username;
         postData('/getGameData', {
           telegramId: id
         })
         .then(data1 => {
           const user = Array.from(data1['data'])[0];
-
-          const premium = username[0].isPremium;
+          let username = aaab;
+          const premium = username.isPremium;
 
 
           if (+verified == 0){
@@ -467,7 +468,7 @@ function showReferrals(){
           const coin = createElement('img', 'inviteFriendCoinImage', 'coin.png');
           const money = createElement('h6', 'invitedFriendMoney');
 
-          usernameLabel.textContent = username[0]['username'];
+          usernameLabel.textContent = username['username'];
           status.textContent = nameLabel;
           money.textContent = user.coins;
 
