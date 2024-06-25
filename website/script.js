@@ -413,7 +413,7 @@ function showReferrals(){
           telegramId: id
         })
         .then(data1 => {
-          const user = Array.from(data1['data']);
+          const user = Array.from(data1['data'])[0];
 
           const premium = username[0].isPremium;
 
@@ -427,7 +427,37 @@ function showReferrals(){
               const coins = +getLeftCoins();
               adjustCoinsVisual(coins+25000)          }
           }
-          console.log(user)
+          console.log(user);
+          const coins = user.coins;
+          let nameLabel;
+          if (coins >= 0 && coins <= 5000) {
+            nameLabel = 'Bronze';
+
+          } else if (coins > 5000 && coins <= 25000) {
+            nameLabel = 'Silver';
+
+          } else if (coins > 25000 && coins <= 100000) {
+            nameLabel = 'Gold';
+
+          } else if (coins > 100000 && coins <= 1000000) {
+            nameLabel = 'Platinum';
+
+          } else if (coins > 1000000 && coins <= 2000000) {
+            nameLabel = 'Diamond';
+
+          } else if (coins > 2000000 && coins <= 10000000) {
+            nameLabel = 'Epic';
+
+          } else if (coins > 10000000 && coins <= 50000000) {
+            nameLabel = 'Legendary';
+
+          } else if (coins > 50000000 && coins <= 100000000) {
+            nameLabel = 'Master';
+          }else if (coins > 100000000 && coins <= 1000000000) {
+            nameLabel = 'Grandmaster';
+          }else if (coins > 1000000000) {
+            nameLabel = 'Lord';
+          }
   
           const div = createElement('div', 'invitedFriendImageDiv');
           const image = createElement('img', 'invitedFriendImage', 'icon.png');
@@ -437,7 +467,18 @@ function showReferrals(){
           const coin = createElement('img', 'inviteFriendCoinImage', 'coin.png');
           const money = createElement('h6', 'invitedFriendMoney');
 
+          usernameLabel.textContent = username[0].username;
+          status.textContent = nameLabel;
+          money.textContent = user.coins;
 
+          div.appendChild(image)
+          div.appendChild(usernameLabel)
+          div.appendChild(status)
+          div.appendChild(dot)
+          div.appendChild(coin)
+          div.appendChild(money)
+
+          friendsField.appendChild(div)
         })
     });
   }
