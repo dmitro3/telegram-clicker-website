@@ -413,8 +413,9 @@ function showReferrals(){
           telegramId: id
         })
         .then(data1 => {
-          user = Array.from(data1.data)[0];
+          const user = Array.from(data1.data)[0];
 
+          const premium = user[0].isPremium;
 
 
           if (+verified == 0){
@@ -427,7 +428,6 @@ function showReferrals(){
               adjustCoinsVisual(coins+25000)          }
           }
           console.log(user[0])
-          const premium = user[0].isPremium;
   
           const div = createElement('div', 'invitedFriendImageDiv');
           const image = createElement('img', 'invitedFriendImage', 'icon.png');
