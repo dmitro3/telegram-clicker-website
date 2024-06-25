@@ -428,33 +428,33 @@ function showReferrals(){
               adjustCoinsVisual(coins+25000)          }
           }
           console.log(user);
-          const coins = user.coins;
+          const coins = +user['coins'];
           let nameLabel;
           if (coins >= 0 && coins <= 5000) {
             nameLabel = 'Bronze';
 
           } else if (coins > 5000 && coins <= 25000) {
-            nameLabel = 'Silver';
+            nameLabel = 'SILV';
 
           } else if (coins > 25000 && coins <= 100000) {
-            nameLabel = 'Gold';
+            nameLabel = 'GOLD';
 
           } else if (coins > 100000 && coins <= 1000000) {
-            nameLabel = 'Platinum';
+            nameLabel = 'PLAT';
 
           } else if (coins > 1000000 && coins <= 2000000) {
-            nameLabel = 'Diamond';
+            nameLabel = 'DIAM';
 
           } else if (coins > 2000000 && coins <= 10000000) {
             nameLabel = 'Epic';
 
           } else if (coins > 10000000 && coins <= 50000000) {
-            nameLabel = 'Legendary';
+            nameLabel = 'LEG';
 
           } else if (coins > 50000000 && coins <= 100000000) {
-            nameLabel = 'Master';
+            nameLabel = 'MAST';
           }else if (coins > 100000000 && coins <= 1000000000) {
-            nameLabel = 'Grandmaster';
+            nameLabel = 'GrMS';
           }else if (coins > 1000000000) {
             nameLabel = 'Lord';
           }
@@ -467,7 +467,7 @@ function showReferrals(){
           const coin = createElement('img', 'inviteFriendCoinImage', 'coin.png');
           const money = createElement('h6', 'invitedFriendMoney');
 
-          usernameLabel.textContent = username[0].username;
+          usernameLabel.textContent = username[0]['username'];
           status.textContent = nameLabel;
           money.textContent = user.coins;
 
