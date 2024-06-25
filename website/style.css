@@ -1673,7 +1673,7 @@ html, body {
     width: 400px;
   }
 
-  #invitedFriendBox{
+  .invitedFriendBox{
     width: 484px;
     height: 75px;
     margin-left: 18px;
