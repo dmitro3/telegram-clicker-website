@@ -5,6 +5,14 @@ body {
     height: 100vh;
     background-size: cover;
     font-family: 'Inter', sans-serif;
+    touch-action: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -ms-user-drag: none;
 }
 
 html, body {

@@ -231,6 +231,7 @@ function hideEarnMenu() {
 
 document.getElementById('mainButtonCover').addEventListener('touchstart', ()=>{
   adjustProgressBar()
+  adjustMarginCoinBox();
     if (window.Telegram.WebApp.platform == 'ios'){
         for (let i = 0; i < event.touches.length; i++) {
         showClick(event.touches[i]);
@@ -1509,8 +1510,6 @@ const coinBoxPosition = [
 function adjustMarginCoinBox(){
   const coins = +getLeftCoins();
   const index = +identifyIndex(coins);
-  console.log(coins)
-  console.log(index)
   document.getElementById('coinsLabel').style.marginLeft = coinBoxPosition[index].coinsMargin + 'px';
   document.getElementById('coinMainLogo').style.marginLeft = coinBoxPosition[index].imageMargin + 'px'; 
 }
