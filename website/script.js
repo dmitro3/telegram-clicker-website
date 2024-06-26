@@ -405,7 +405,7 @@ function showReferrals(){
     newData = Array.from(data.data);
     if (newData.lenght != 0){
       for (let i = 0; i < newData.length; i++) {
-        createSubFriend(newData[i].telegramReferralId, newData[i].clicked, newData[i].verified)
+        createSubFriend(newData[i].telegramReferralId, newData[i].verified)
       }
     }
   });
@@ -439,12 +439,11 @@ let friendDivTopMargin = 451
             if (premium == 'false'){
               const coins = +getLeftCoins();
               adjustCoinsVisual(coins+5000);
-              verifyReferral()
             } else {
               const coins = +getLeftCoins();
               adjustCoinsVisual(coins+25000);
-              verifyReferral()          }
           }
+        }
           console.log(user);
           const coins = +user['coins'];
           let nameLabel;
@@ -474,8 +473,7 @@ let friendDivTopMargin = 451
           }else if (coins > 1000000000) {
             nameLabel = 'Lord';
           }
-          let margin =
-          adjustLeftMargin(nameLabel);
+
           document.getElementById('refFriendsNumber').textContent = +refFriendsNumber.textContent + 1 ;
           const mainDiv = createElement('div', 'invitedFriendBox')
           mainDiv.style.marginTop = friendDivTopMargin + 'px';
@@ -487,10 +485,23 @@ let friendDivTopMargin = 451
           const dot = createElement('div', 'inviteFriendDot');
           const coin = createElement('img', 'inviteFriendCoinImage', 'coin.png');
           const money = createElement('h6', 'invitedFriendMoney');
-
+          status.style.width = 'auto';
           usernameLabel.textContent = username['username'];
           status.textContent = nameLabel;
           money.textContent = user.coins;
+
+          // adjusting margin of dot, coin, money 
+          const dotMargin = 135;
+          const coinMargin = 119;
+          const moneyMargin = 142;
+          const statusBasicWidth = 48.8;
+
+          const statusWidth = status.style.width;
+          const difference = statusWidth - statusBasicWidth;
+
+          dot.style.marginLeft = dotMargin + difference;
+          coin.style.marginLeft = coinMargin + difference;
+          money.style.marginLeft = moneyMargin + difference;
 
           div.appendChild(image)
           div.appendChild(usernameLabel)
@@ -504,14 +515,6 @@ let friendDivTopMargin = 451
     });
   }
 }
-
-function adjustLeftMargin(level) {
-  switch (level) {
-    case 'Silver': return 
-
-  }
-}
-
 
 function registerUser() {
   const tg = window.Telegram.WebApp;
@@ -603,7 +606,9 @@ function adjustProgressBar() {
   }
 }
 
-document.getElementById('friendBoxRestart').addEventListener('click', dailyRewards)
+document.getElementById('friendBoxRestart').addEventListener('click', function(){
+  showReferrals();
+})
 
 function manageProgressBar (level, levelLabel) {
 
