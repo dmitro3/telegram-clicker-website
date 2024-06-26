@@ -38,7 +38,6 @@ const mineFieldElements = [
 
 window.onload = ()=> {
   adjustScreenSize();
-  adjustMarginCoinBox();
   dailyRewards();
   registerUser();
   showReferrals();
@@ -47,6 +46,7 @@ window.onload = ()=> {
   adjustMineCards();
   adjustProgressBar();
   const coins = +getLeftCoins();
+  adjustMarginCoinBox();
   let tg = window.Telegram.WebApp;
 
   document.getElementById('usernameLabel').innerHTML = tg.initDataUnsafe.user.username;
@@ -492,7 +492,7 @@ let friendDivTopMargin = 451
           const statusBasicWidth = 48.8;
 
           const statusWidth = parseInt(status.style.width, 10);
-          const difference = statusWidth - statusBasicWidth;
+          const difference = 40;
 
           dot.style.marginLeft = (dotMargin + difference)+'px';
           coin.style.marginLeft = (coinMargin + difference)+'px';
