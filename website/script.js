@@ -403,6 +403,7 @@ function showReferrals(){
   })
   .then(data => { 
     newData = Array.from(data.data);
+    document.getElementById('refFriendsNumber').textContent = +newData.length ;
     if (newData.lenght != 0){
       for (let i = 0; i < newData.length; i++) {
         createSubFriend(newData[i].telegramReferralId, newData[i].verified)
@@ -469,7 +470,6 @@ let friendDivTopMargin = 451
             nameLabel = 'Lord';
           }
 
-          document.getElementById('refFriendsNumber').textContent = +refFriendsNumber.textContent + 1 ;
           const mainDiv = createElement('div', 'invitedFriendBox')
           mainDiv.style.marginTop = friendDivTopMargin + 'px';
           friendDivTopMargin += 95;
@@ -494,7 +494,7 @@ let friendDivTopMargin = 451
           const statusWidth = parseInt(status.style.width, 10);
           const difference = 40;
 
-          dot.style.marginLeft = (dotMargin + difference)+'px';
+          dot.style.marginLeft = (dotMargin + 20)+'px';
           coin.style.marginLeft = (coinMargin + difference)+'px';
           money.style.marginLeft = (moneyMargin + difference)+'px';
 
@@ -1003,6 +1003,14 @@ document.getElementById('xAccountBox').addEventListener('click', ()=>{
 
 
 function showMineField() {
+  body.style.touchAction = 'auto';
+  body.style.webkitUserSelect = 'auto';
+  body.style.mozUserSelect = 'auto';
+  body.style.msUserSelect = 'auto';
+  body.style.userSelect = 'auto';
+  body.style.webkitUserDrag = 'auto';
+  body.style.mozUserDrag = 'auto';
+  body.style.msUserDrag = 'auto';
   for (let i = 0; i < mineFieldElements.length; i++) {
     document.getElementById(mineFieldElements[i]).style.display = 'block'
   }
@@ -1026,6 +1034,14 @@ function showMineField() {
 }
 
 function hideMineField() {
+  body.style.touchAction = 'none';
+  body.style.webkitUserSelect = 'none';
+  body.style.mozUserSelect = 'none';
+  body.style.msUserSelect = 'none';
+  body.style.userSelect = 'none';
+  body.style.webkitUserDrag = 'none';
+  body.style.mozUserDrag = 'none';
+  body.style.msUserDrag = 'none';
   for (let i = 0; i < mineFieldElements.length; i++) {
     document.getElementById(mineFieldElements[i]).style.display = 'none';
   }
@@ -1695,3 +1711,15 @@ document.getElementById('inviteFriendCopyDiv').addEventListener('click', ()=>{
   });
 
 });
+
+
+// double click
+document.addEventListener('dblclick', function(event) {
+  event.preventDefault();
+}, { passive: false });
+
+document.addEventListener('touchstart', function(event) {
+  if (event.touches.length > 1) {
+      event.preventDefault();
+  }
+}, { passive: false });
