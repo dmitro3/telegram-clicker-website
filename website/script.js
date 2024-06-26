@@ -1117,7 +1117,6 @@ function updateCardVisual(cardId, level) {
   const card = cardInfo.find(card => card.cardId === cardId);
   const price = levelProgress[level+1].updatePrice;
   const pph = levelProgress[level].coinPerHour;
-  document.getElementById('passiveClicksLabel').textContent = +document.getElementById('passiveClicksLabel').textContent + pph;
   const levelLabel = levelProgress[level].level;
 
   document.getElementById(card.level).textContent = levelLabel;
@@ -1595,11 +1594,13 @@ function updateCard () {
       document.getElementById(card.level).textContent = moneyData.level;
       document.getElementById(card.price).textContent = levelProgress[index+1].updatePrice;
       document.getElementById(card.pph).textContent = '+' + levelProgress[index].coinPerHour;
+      document.getElementById('passiveClicksLabel').innerHTML = document.getElementById('passiveClicksLabel').textContent + +levelProgress[index].coinPerHour
       document.getElementById('cardUpgradeBox').style.display = 'none';
     } else{
       document.getElementById(card.level).textContent = moneyData.level;
       document.getElementById(card.price).textContent = 'Completed';
       document.getElementById(card.pph).textContent = '+' + levelProgress[index].coinPerHour;
+      document.getElementById('passiveClicksLabel').innerHTML = document.getElementById('passiveClicksLabel').textContent + +levelProgress[index].coinPerHour
       document.getElementById('cardUpgradeBox').style.display = 'none';
     }
   }
