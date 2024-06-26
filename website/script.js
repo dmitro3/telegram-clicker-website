@@ -97,8 +97,6 @@ function adjustScreenSize () {
   const basicwidth = 519;
   const userWidth = +window.innerWidth;
   const newScale = userWidth/basicwidth;
-  alert('scale: ' + newScale)
-  alert('User width: '+ userWidth)
   let viewportMeta = document.querySelector('meta[name="viewport"]');
   if (viewportMeta) {
     let newContent = `width=device-width, initial-scale=${newScale}`;
