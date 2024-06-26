@@ -37,7 +37,8 @@ const mineFieldElements = [
 ]
 
 window.onload = ()=> {
-  adjustMarginCoinBox()
+  adjustScreenSize();
+  adjustMarginCoinBox();
   dailyRewards();
   registerUser();
   showReferrals();
@@ -89,6 +90,17 @@ function identifyReferral(){
         addReferal(code);
       }
     });
+  }
+}
+
+function adjustScreenSize () {
+  const basicwidth = 519;
+  const userWidth = +window.innerWidth;
+  const newScale = userWidth/basicwidth;
+  let viewportMeta = document.querySelector('meta[name="viewport"]');
+  if (viewportMeta) {
+    let newContent = `width=device-width, initial-scale=${newScale}`;
+    viewportMeta.setAttribute('content', newContent);
   }
 }
 
@@ -403,6 +415,7 @@ function showReferrals(){
     return element;
 }
 let aaab;
+let friendDivTopMargin = 546
   function createSubFriend(id, verified){
       postData('/getUserInformation', {
         telegramId: id
@@ -433,33 +446,35 @@ let aaab;
           let nameLabel;
           if (coins >= 0 && coins <= 5000) {
             nameLabel = 'Bronze';
-
           } else if (coins > 5000 && coins <= 25000) {
-            nameLabel = 'SILV';
-
+            nameLabel = 'Silver';
           } else if (coins > 25000 && coins <= 100000) {
-            nameLabel = 'GOLD';
+            nameLabel = 'Gold';
 
           } else if (coins > 100000 && coins <= 1000000) {
-            nameLabel = 'PLAT';
+            nameLabel = 'Platinum';
 
           } else if (coins > 1000000 && coins <= 2000000) {
-            nameLabel = 'DIAM';
+            nameLabel = 'Diamond';
 
           } else if (coins > 2000000 && coins <= 10000000) {
             nameLabel = 'Epic';
 
           } else if (coins > 10000000 && coins <= 50000000) {
-            nameLabel = 'LEG';
+            nameLabel = 'Legendary';
 
           } else if (coins > 50000000 && coins <= 100000000) {
-            nameLabel = 'MAST';
+            nameLabel = 'Master';
           }else if (coins > 100000000 && coins <= 1000000000) {
-            nameLabel = 'GrMS';
+            nameLabel = 'Grand Master';
           }else if (coins > 1000000000) {
             nameLabel = 'Lord';
           }
+          let margin =adjustLeftMargin(nameLabel);
+
           const mainDiv = createElement('div', 'invitedFriendBox')
+          mainDiv.style.marginTop = friendDivTopMargin + 'px';
+          friendDivTopMargin += 95;
           const div = createElement('div', 'invitedFriendImageDiv');
           const image = createElement('img', 'invitedFriendImage', 'icon.png');
           const usernameLabel = createElement('h6', 'invitedFriendName');
@@ -484,6 +499,14 @@ let aaab;
     });
   }
 }
+
+function adjustLeftMargin(level) {
+  switch (level) {
+    case 'Silver': return 
+
+  }
+}
+
 
 function registerUser() {
   const tg = window.Telegram.WebApp;
