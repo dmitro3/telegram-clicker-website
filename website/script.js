@@ -492,9 +492,9 @@ let friendDivTopMargin = 451
           const statusBasicWidth = 48.8;
 
           const statusWidth = parseInt(status.style.width, 10);
-          const difference = 40;
+          const difference = 30;
 
-          dot.style.marginLeft = (dotMargin + 20)+'px';
+          dot.style.marginLeft = (dotMargin + 5)+'px';
           coin.style.marginLeft = (coinMargin + difference)+'px';
           money.style.marginLeft = (moneyMargin + difference)+'px';
 
@@ -1117,6 +1117,7 @@ function updateCardVisual(cardId, level) {
   const card = cardInfo.find(card => card.cardId === cardId);
   const price = levelProgress[level+1].updatePrice;
   const pph = levelProgress[level].coinPerHour;
+  document.getElementById('passiveClicksLabel').textContent = +document.getElementById('passiveClicksLabel').textContent + pph;
   const levelLabel = levelProgress[level].level;
 
   document.getElementById(card.level).textContent = levelLabel;
