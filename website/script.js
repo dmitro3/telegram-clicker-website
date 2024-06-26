@@ -453,19 +453,14 @@ let friendDivTopMargin = 451
             nameLabel = 'Silver';
           } else if (coins > 25000 && coins <= 100000) {
             nameLabel = 'Gold';
-
           } else if (coins > 100000 && coins <= 1000000) {
             nameLabel = 'Platinum';
-
           } else if (coins > 1000000 && coins <= 2000000) {
             nameLabel = 'Diamond';
-
           } else if (coins > 2000000 && coins <= 10000000) {
             nameLabel = 'Epic';
-
           } else if (coins > 10000000 && coins <= 50000000) {
             nameLabel = 'Legendary';
-
           } else if (coins > 50000000 && coins <= 100000000) {
             nameLabel = 'Master';
           }else if (coins > 100000000 && coins <= 1000000000) {
@@ -496,12 +491,12 @@ let friendDivTopMargin = 451
           const moneyMargin = 142;
           const statusBasicWidth = 48.8;
 
-          const statusWidth = status.style.width;
+          const statusWidth = parseInt(status.style.width, 10);
           const difference = statusWidth - statusBasicWidth;
 
-          dot.style.marginLeft = dotMargin + difference;
-          coin.style.marginLeft = coinMargin + difference;
-          money.style.marginLeft = moneyMargin + difference;
+          dot.style.marginLeft = (dotMargin + difference)+'px';
+          coin.style.marginLeft = (coinMargin + difference)+'px';
+          money.style.marginLeft = (moneyMargin + difference)+'px';
 
           div.appendChild(image)
           div.appendChild(usernameLabel)
