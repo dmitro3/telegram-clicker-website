@@ -95,6 +95,7 @@ function identifyReferral(){
 
 function adjustScreenSize () {
   const basicwidth = 519;
+  body.height = +window.innerHeight;
   const userWidth = +window.innerWidth;
   const newScale = userWidth/basicwidth;
   let viewportMeta = document.querySelector('meta[name="viewport"]');
