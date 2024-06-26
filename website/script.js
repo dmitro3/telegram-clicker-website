@@ -417,7 +417,7 @@ function showReferrals(){
     return element;
 }
 let aaab;
-let friendDivTopMargin = 546
+let friendDivTopMargin = 451
   function createSubFriend(id, verified){
       postData('/getUserInformation', {
         telegramId: id
@@ -473,7 +473,7 @@ let friendDivTopMargin = 546
             nameLabel = 'Lord';
           }
           let margin =adjustLeftMargin(nameLabel);
-
+          document.getElementById('refFriendsNumber').textContent = +refFriendsNumber.textContent + 1 ;
           const mainDiv = createElement('div', 'invitedFriendBox')
           mainDiv.style.marginTop = friendDivTopMargin + 'px';
           friendDivTopMargin += 95;
