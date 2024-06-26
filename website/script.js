@@ -438,10 +438,12 @@ let friendDivTopMargin = 451
             verifyReferral(id);
             if (premium == 'false'){
               const coins = +getLeftCoins();
-              adjustCoinsVisual(coins+5000)
+              adjustCoinsVisual(coins+5000);
+              verifyReferral()
             } else {
               const coins = +getLeftCoins();
-              adjustCoinsVisual(coins+25000)          }
+              adjustCoinsVisual(coins+25000);
+              verifyReferral()          }
           }
           console.log(user);
           const coins = +user['coins'];
@@ -472,7 +474,8 @@ let friendDivTopMargin = 451
           }else if (coins > 1000000000) {
             nameLabel = 'Lord';
           }
-          let margin =adjustLeftMargin(nameLabel);
+          let margin =
+          adjustLeftMargin(nameLabel);
           document.getElementById('refFriendsNumber').textContent = +refFriendsNumber.textContent + 1 ;
           const mainDiv = createElement('div', 'invitedFriendBox')
           mainDiv.style.marginTop = friendDivTopMargin + 'px';
@@ -599,6 +602,8 @@ function adjustProgressBar() {
     manageProgressBar(nameLabel, levelLabel);
   }
 }
+
+document.getElementById('friendBoxRestart').addEventListener('click', dailyRewards)
 
 function manageProgressBar (level, levelLabel) {
 
