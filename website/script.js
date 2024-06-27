@@ -245,7 +245,9 @@ document.getElementById('mainButtonCover').addEventListener('touchstart', ()=>{
   });
 
 document.getElementById('mainButtonCover').addEventListener('click', ()=>{
-  adjustProgressBar()
+  const e = +getLeftEnergy();
+  if (e >= 0){
+    adjustProgressBar()
     if (window.Telegram.WebApp.platform == 'tdesktop'){
     showClick(event);
     let energy = getLeftEnergy();
@@ -257,6 +259,7 @@ document.getElementById('mainButtonCover').addEventListener('click', ()=>{
         document.getElementById('coinsLabel').innerHTML = coins
     }
     }
+  }
 });
 
   setInterval(()=>{
