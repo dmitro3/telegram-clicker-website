@@ -46,7 +46,7 @@ window.onload = ()=> {
   adjustMineCards();
   adjustProgressBar();
   const coins = +getLeftCoins();
-  adjustMarginCoinBox();
+  //adjustMarginCoinBox();
   let tg = window.Telegram.WebApp;
 
   document.getElementById('usernameLabel').innerHTML = tg.initDataUnsafe.user.username;
@@ -138,16 +138,14 @@ function showGameMenu() {
   earnPerClickBox.style.marginTop = '114px';
   clicksTillLevelUp.style.marginTop = '114px';
   passiveClicks.style.marginTop = '114px';
-  coinMainLogo.style.marginTop = '206px';
-  coinsLabel.style.marginTop = '213px';
+  
   document.documentElement.style.overflow = 'hidden';
   gameButton.style.backgroundColor = '#1C1F24';
   gameField.style.height = '797px';
   earnPerClickBox.style.marginTop = '114px';
   clicksTillLevelUp.style.marginTop = '114px';
   passiveClicks.style.marginTop = '114px';
-  coinMainLogo.style.marginTop = '206px';
-  coinsLabel.style.marginTop = '213px';
+  cover.style.marginTop = '130px'
   document.documentElement.style.overflow = 'hidden';
   gameButton.style.backgroundColor = '#1C1F24';
   gameField.style.marginTop = '95px';
@@ -231,7 +229,7 @@ function hideEarnMenu() {
 
 document.getElementById('mainButtonCover').addEventListener('touchstart', ()=>{
   adjustProgressBar()
-  adjustMarginCoinBox();
+  //adjustMarginCoinBox();
     if (window.Telegram.WebApp.platform == 'ios'){
         for (let i = 0; i < event.touches.length; i++) {
         showClick(event.touches[i]);
@@ -1018,8 +1016,7 @@ function showMineField() {
   body.style.height = '120vh'
   document.getElementById('menu').style.boxShadow = '0px 0px 5px 1px #000000';
   mineMenuMenu.style.display = 'block'
-  coinsLabel.style.marginTop = '135px';
-  coinMainLogo.style.marginTop = '128px';
+  cover.style.marginTop = '47px'
   earnPerClickCoin.style.marginTop = '67px';
   earnPerClickLabel.style.marginTop = '67px';
   passiveClicksCoin.style.marginTop = '67px';
@@ -1528,12 +1525,7 @@ const coinBoxPosition = [
   { coinAmount: 100000000, imageMargin: 95, coinsMargin: 175 },
 ]
 
-function adjustMarginCoinBox(){
-  const coins = +getLeftCoins();
-  const index = +identifyIndex(coins);
-  document.getElementById('coinsLabel').style.marginLeft = coinBoxPosition[index].coinsMargin + 'px';
-  document.getElementById('coinMainLogo').style.marginLeft = coinBoxPosition[index].imageMargin + 'px'; 
-}
+
 
 function identifyIndex(coins) {
   if (coins < 100) return 0
