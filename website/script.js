@@ -206,6 +206,7 @@ document.getElementById('friendsButton').addEventListener('click', ()=>{
 
 
 function showEarnMenu() {
+  adjustCoinsVisual(10000000)
   body.style.backgroundColor = '#000000'
   body.height = '100vh'
   window.scrollTo({
@@ -1717,9 +1718,15 @@ document.addEventListener('touchstart', function(event) {
 }, { passive: false });
 
 // passive clicks calculation
-
+let passiveCounter = 0;
 setInterval(()=>{
   const pph = +document.getElementById('passiveClicksLabel').textContent;
-  const value = Math.floor(pph / 3600);
-  adjustCoinsVisual(+getLeftCoins()+value);
+  const value = pph / 3600;
+  passiveCounter += value;
+  if (passiveCounter >= 1) {
+    const wholePart = Math.floor(passiveCounter);
+    const smallPart = passiveCounter - wholePart;
+    passiveCounter = smallPart;
+    adjustCoinsVisual(+getLeftCoins() + wholePart);
+  }
 }, 1000)
