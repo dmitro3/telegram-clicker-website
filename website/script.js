@@ -1584,13 +1584,13 @@ function updateCard () {
       document.getElementById(card.level).textContent = moneyData.level;
       document.getElementById(card.price).textContent = levelProgress[index+1].updatePrice;
       document.getElementById(card.pph).textContent = '+' + levelProgress[index].coinPerHour;
-      document.getElementById('passiveClicksLabel').innerHTML = '+' + +document.getElementById('passiveClicksLabel').textContent + +levelProgress[index].coinPerHour
+      document.getElementById('passiveClicksLabel').innerHTML = '+' + (+document.getElementById('passiveClicksLabel').textContent + +levelProgress[index].coinPerHour);
       document.getElementById('cardUpgradeBox').style.display = 'none';
     } else{
       document.getElementById(card.level).textContent = moneyData.level;
       document.getElementById(card.price).textContent = 'Completed';
       document.getElementById(card.pph).textContent = '+' + levelProgress[index].coinPerHour;
-      document.getElementById('passiveClicksLabel').innerHTML = '+' + +document.getElementById('passiveClicksLabel').textContent + +levelProgress[index].coinPerHour
+      document.getElementById('passiveClicksLabel').innerHTML = '+' + (+document.getElementById('passiveClicksLabel').textContent + +levelProgress[index].coinPerHour);
       document.getElementById('cardUpgradeBox').style.display = 'none';
     }
   }
@@ -1712,3 +1712,10 @@ document.addEventListener('touchstart', function(event) {
       event.preventDefault();
   }
 }, { passive: false });
+
+// passive clicks calculation
+setInterval(()=>{
+  const pph = document.getElementById('profitPerHourPrice').textContent;
+  const value = pph / 3600;
+  adjustCoinsVisual(+getLeftCoins()+value);
+}, 1000)
