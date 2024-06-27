@@ -1580,17 +1580,20 @@ function updateCard () {
       level: +moneyData.level.slice(4)
     })
     .then(data => {});
+    const prevPPH = +document.getElementById(card.pph).textContent;
+    const newPPH = +levelProgress[index].coinPerHour;
+    const diff = newPPH - prevPPH;
     if (currentPPH != 575) {
       document.getElementById(card.level).textContent = moneyData.level;
       document.getElementById(card.price).textContent = levelProgress[index+1].updatePrice;
       document.getElementById(card.pph).textContent = '+' + levelProgress[index].coinPerHour;
-      document.getElementById('passiveClicksLabel').innerHTML = (+document.getElementById('passiveClicksLabel').textContent + +levelProgress[index].coinPerHour);
+      document.getElementById('passiveClicksLabel').innerHTML = (+document.getElementById('passiveClicksLabel').textContent + +diff);
       document.getElementById('cardUpgradeBox').style.display = 'none';
     } else{
       document.getElementById(card.level).textContent = moneyData.level;
       document.getElementById(card.price).textContent = 'Completed';
       document.getElementById(card.pph).textContent = '+' + levelProgress[index].coinPerHour;
-      document.getElementById('passiveClicksLabel').innerHTML = (+document.getElementById('passiveClicksLabel').textContent + +levelProgress[index].coinPerHour);
+      document.getElementById('passiveClicksLabel').innerHTML = (+document.getElementById('passiveClicksLabel').textContent + +diff);
       document.getElementById('cardUpgradeBox').style.display = 'none';
     }
   }
