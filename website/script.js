@@ -234,7 +234,7 @@ document.getElementById('mainButtonCover').addEventListener('touchstart', ()=>{
         showClick(event.touches[i]);
     }
     let energy = getLeftEnergy();
-    if (energy != 0){
+    if (energy >= 0){
         let coins = getLeftCoins();
         energy -= event.touches.length;
         coins += event.touches.length;
@@ -348,8 +348,8 @@ function showClick(event) {
   const rect = button.getBoundingClientRect();
   const xx = event.clientX - rect.left - rect.width / 2;
   const yy = event.clientY - rect.top - rect.height / 2;
-  const rotateX = (yy / rect.height) * 20;
-  const rotateY = (xx / rect.width) * -20;
+  const rotateX = (yy / rect.height) * 30;
+  const rotateY = (xx / rect.width) * -30;
   setTimeout(()=>{button.style.transform = `rotateX(0deg) rotateY(0deg)`},100);
   button.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     const x = event.clientX;
