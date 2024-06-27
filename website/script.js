@@ -361,9 +361,7 @@ function showClick(event) {
     plusOne.style.position = "absolute";
     plusOne.style.left = (x-20) + "px";
     plusOne.style.top = (y-20) + "px";
-    plusOne.style.color = 'green'
     plusOne.style.zIndex = '5';
-    plusOne.style.fontSize = '36px'
     plusOne.style.animation = "upAndFadeOut 1s forwards"; 
     gameField.style.animation = 'none'
     gameField.offsetHeight;
