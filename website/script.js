@@ -348,8 +348,8 @@ function showClick(event) {
   const rect = button.getBoundingClientRect();
   const xx = event.clientX - rect.left - rect.width / 2;
   const yy = event.clientY - rect.top - rect.height / 2;
-  const rotateX = (yy / rect.height) * 60;
-  const rotateY = (xx / rect.width) * -60;
+  const rotateX = (yy / rect.height) * 20;
+  const rotateY = (xx / rect.width) * -20;
   setTimeout(()=>{button.style.transform = `rotateX(0deg) rotateY(0deg)`},100);
   button.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     const x = event.clientX;
@@ -357,7 +357,7 @@ function showClick(event) {
 
     const plusOne = document.createElement('h1');
     plusOne.textContent = "+1";
-
+    plusOne.className = 'plusOne';
     plusOne.style.position = "absolute";
     plusOne.style.left = (x-20) + "px";
     plusOne.style.top = (y-20) + "px";

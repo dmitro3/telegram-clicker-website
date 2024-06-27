@@ -2281,3 +2281,13 @@ html, body {
 #exchangeLabel{
   margin-left: -1px;
 }
+
+.plusOne{
+  font-weight: 600;
+  background: linear-gradient(to bottom, #ffffff, #9939EF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 50px;
+
+}
