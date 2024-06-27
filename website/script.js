@@ -1715,7 +1715,7 @@ document.addEventListener('touchstart', function(event) {
 
 // passive clicks calculation
 setInterval(()=>{
-  const pph = document.getElementById('profitPerHourPrice').textContent;
+  const pph = +document.getElementById('profitPerHourPrice').textContent.toString().slice(1);
   const value = pph / 3600;
   adjustCoinsVisual(+getLeftCoins()+value);
 }, 1000)
