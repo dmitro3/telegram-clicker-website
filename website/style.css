@@ -2292,6 +2292,7 @@ html, body {
 }
 
 #passiveIncomePopUp{
+  display: none;
   position: absolute;
   z-index: 10;
   width: 519px;
