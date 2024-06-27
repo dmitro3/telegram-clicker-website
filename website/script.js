@@ -42,11 +42,9 @@ window.onload = ()=> {
   registerUser();
   showReferrals();
   identifyReferral();
-  //adjustDailyRewards();
   adjustMineCards();
   adjustProgressBar();
   const coins = +getLeftCoins();
-  //adjustMarginCoinBox();
   let tg = window.Telegram.WebApp;
 
   document.getElementById('usernameLabel').innerHTML = tg.initDataUnsafe.user.username;
@@ -1586,13 +1584,13 @@ function updateCard () {
       document.getElementById(card.level).textContent = moneyData.level;
       document.getElementById(card.price).textContent = levelProgress[index+1].updatePrice;
       document.getElementById(card.pph).textContent = '+' + levelProgress[index].coinPerHour;
-      document.getElementById('passiveClicksLabel').innerHTML = document.getElementById('passiveClicksLabel').textContent + levelProgress[index].coinPerHour
+      document.getElementById('passiveClicksLabel').innerHTML = '+' + +document.getElementById('passiveClicksLabel').textContent + +levelProgress[index].coinPerHour
       document.getElementById('cardUpgradeBox').style.display = 'none';
     } else{
       document.getElementById(card.level).textContent = moneyData.level;
       document.getElementById(card.price).textContent = 'Completed';
       document.getElementById(card.pph).textContent = '+' + levelProgress[index].coinPerHour;
-      document.getElementById('passiveClicksLabel').innerHTML = document.getElementById('passiveClicksLabel').textContent + +levelProgress[index].coinPerHour
+      document.getElementById('passiveClicksLabel').innerHTML = '+' + +document.getElementById('passiveClicksLabel').textContent + +levelProgress[index].coinPerHour
       document.getElementById('cardUpgradeBox').style.display = 'none';
     }
   }
