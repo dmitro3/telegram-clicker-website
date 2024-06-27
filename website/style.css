@@ -88,7 +88,7 @@ html, body {
     width: 483px;
     height: 81px;
     margin-left: 19px;
-    margin-top: 811px;
+    margin-top: 800px;
 }
 
 #friendsButton{
@@ -98,7 +98,7 @@ html, body {
     width: 93px;
     height: 70px;
     z-index: 4;
-    margin-top: 817px;
+    margin-top: 805px;
     margin-left: 214px;
 }
 
@@ -109,7 +109,7 @@ html, body {
     width: 93px;
     height: 70px;
     z-index: 4;
-    margin-top: 817px;
+    margin-top: 805px;
     margin-left: 307px;
 }
 
@@ -120,7 +120,7 @@ html, body {
     width: 93px;
     height: 70px;
     margin-left: 28px;
-    margin-top: 817px;
+    margin-top: 805px;
     border-radius: 20px;
     z-index: 4;
 }
@@ -355,7 +355,7 @@ html, body {
     width: 93px;
     height: 70px;
     margin-left: 400px;
-    margin-top: 817px;
+    margin-top: 805px;
     z-index: 4;
 }
 
@@ -828,7 +828,7 @@ html, body {
     position: fixed;
     width: 93px;
     height: 70px;
-    margin-top: 817px;
+    margin-top: 805px;
     margin-left: 121px;
     border-radius: 20px;
     z-index: 4;
@@ -2289,5 +2289,90 @@ html, body {
   background-clip: text;
   color: transparent;
   font-size: 50px;
+}
 
+#passiveIncomePopUp{
+  position: absolute;
+  z-index: 10;
+  width: 519px;
+  height: 510px;
+  background-color: #1C1F24;
+  margin-top: 390px;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  box-shadow: 0px -6px 23.4px 0px #BB82F5;
+  border-top: 5px solid #BB82F5;
+}
+
+#rect{
+  position: absolute;
+  background-color: #282B30;
+  border-radius: 23px;
+  margin-top: 106px;
+  margin-left: 18px;
+  width: 484px;
+  height: 231px;
+}
+
+#exchangeLogo{
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  margin-top: -70px;
+  border: 22px solid #1C1F24;
+  margin-left: 175px;
+  border-radius: 50%;
+}
+
+#popUpCoin{
+  width: 74px;
+  height: 74px;
+  position: absolute;
+  margin-left: 115px;
+  margin-top: 64px;
+}
+
+#popUpLabel{
+  position: absolute;
+  font-size: 50px;
+  color: white;
+  font-weight: 600;
+  width: 100px;
+  margin-top: 74px;
+  margin-left: 195px;
+}
+
+#popUpSubLabel{
+  position: absolute;
+  font-size: 25px;
+  font-weight: 450;
+  color: white;
+  margin-top: 166px;
+  margin-left: 57px;
+}
+
+#thanksFunticoButton{
+  position: absolute;
+  width: 484px;
+  height: 101px;
+  background-color: #A472D7;
+  margin-left: 18px;
+  margin-top: 360px;
+  color: white;
+  text-align: center;
+  border-radius: 23px;
+}
+
+#thanksFunticoLabel{
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+#closeImage1{
+  position: absolute;
+  width: 33px;
+  height: 33px;
+  margin-top: 14px;
+  margin-left: 452px;
 }

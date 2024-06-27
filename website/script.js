@@ -1740,14 +1740,16 @@ function showPassiveMining(time) {
   .then(data => {
     if (data.data != 'User added') {
       const information = Array.from(data.data)[0];
-      const pph = information.pph;
+      const pph = Math.floor(information.pph/3600);
       const currentTime = getTimeInSeconds(getCurrentTime());
       const lastTime = getTimeInSeconds(time);
       console.log('Last time - ' + lastTime);
       console.log('Current time - ' + currentTime);
       
       const difference = currentTime - lastTime;
-      
+      if (difference >= 10 && difference <= 10800){
+        showPassiveMiningPopUp(pph)
+      }
     }
   });
 };
@@ -1758,3 +1760,11 @@ function getTimeInSeconds (time) {
   let seconds = milliseconds / 1000;
   return seconds;
 }
+
+function showPassiveMiningPopUp(value){
+
+}
+
+document.getElementById('closeImage1').addEventListener('click', ()=>{
+  document.getElementById('passiveIncomePopUp').style.display = 'none'
+});
