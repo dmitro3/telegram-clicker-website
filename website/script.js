@@ -1,4 +1,3 @@
-
 body.height = window.innerHeight
 var viewportWidth = window.innerWidth;
 // width: 430
@@ -1745,7 +1744,7 @@ function showPassiveMining(time) {
       const currentTime = getCurrentTime();
       const lastTime = time;
       console.log('Last time - ' + lastTime);
-      console.log('Current time - ' = currentTime);
+      console.log('Current time - ' + currentTime);
     }
   });
 };
