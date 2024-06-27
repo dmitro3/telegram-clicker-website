@@ -1586,7 +1586,7 @@ function updateCard () {
       document.getElementById(card.level).textContent = moneyData.level;
       document.getElementById(card.price).textContent = levelProgress[index+1].updatePrice;
       document.getElementById(card.pph).textContent = '+' + levelProgress[index].coinPerHour;
-      document.getElementById('passiveClicksLabel').innerHTML = document.getElementById('passiveClicksLabel').textContent + +levelProgress[index].coinPerHour
+      document.getElementById('passiveClicksLabel').innerHTML = document.getElementById('passiveClicksLabel').textContent + levelProgress[index].coinPerHour
       document.getElementById('cardUpgradeBox').style.display = 'none';
     } else{
       document.getElementById(card.level).textContent = moneyData.level;
@@ -1599,8 +1599,6 @@ function updateCard () {
 }
 
 // get daily reward menu
-
-
 function getCurrentDatee () {
   const currentDate = new Date();
 
@@ -1705,7 +1703,6 @@ document.getElementById('inviteFriendCopyDiv').addEventListener('click', ()=>{
   });
 
 });
-
 
 // double click
 document.addEventListener('dblclick', function(event) {
