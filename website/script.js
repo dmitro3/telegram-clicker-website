@@ -61,7 +61,8 @@ window.onload = ()=> {
       const coins = record.coins;
       adjustCoinsVisual(coins);
       adjustProgressBar()
-      document.getElementById('energyLabel').innerHTML = calculateEnergy(record.energy, record.time)
+      document.getElementById('energyLabel').innerHTML = calculateEnergy(record.energy, record.time);
+      showPassiveMining(record.time);
     });
 }
 
@@ -325,7 +326,7 @@ function postData(url, data) {
         time: getCurrentTime()
       })
       .then(data => {
-        // Do something with the response data if needed
+
       });
   }, 2000);
 
@@ -1731,3 +1732,20 @@ setInterval(()=>{
     adjustCoinsVisual(+getLeftCoins() + wholePart);
   }
 }, 1000)
+
+function showPassiveMining(time) {
+  const telegramId = getTelegramId();
+  postData('/getPPHInfo', {
+    telegramId: telegramId
+  })
+  .then(data => {
+    if (data.data != 'User added') {
+      const information = Array.from(data.data)[0];
+      const pph = information.pph;
+      const currentTime = getCurrentTime();
+      const lastTime = time;
+      console.log('Last time - ' + lastTime);
+      console.log('Current time - ' = currentTime);
+    }
+  });
+};
