@@ -1741,10 +1741,20 @@ function showPassiveMining(time) {
     if (data.data != 'User added') {
       const information = Array.from(data.data)[0];
       const pph = information.pph;
-      const currentTime = getCurrentTime();
-      const lastTime = time;
+      const currentTime = getTimeInSeconds(getCurrentTime());
+      const lastTime = getTimeInSeconds(time);
       console.log('Last time - ' + lastTime);
       console.log('Current time - ' + currentTime);
+      
+      const difference = currentTime - lastTime;
+      
     }
   });
 };
+
+function getTimeInSeconds (time) {
+  let date = new Date(time);
+  let milliseconds = date.getTime();
+  let seconds = milliseconds / 1000;
+  return seconds;
+}
