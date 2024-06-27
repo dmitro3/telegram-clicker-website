@@ -744,6 +744,7 @@ html, body {
 .gameButtonLabel{
     margin-top: 4.5vh;
     text-align: center;
+    margin-left: 6.5px;
 }
 
 #userLogoBackgroundDiv{ 
@@ -2261,5 +2262,9 @@ html, body {
 }
 
 #coinBox{
-  margin-left: 105px;
+  margin-left: 20px;
+}
+
+#friendsLabel{
+  margin-left: 0px;
 }
