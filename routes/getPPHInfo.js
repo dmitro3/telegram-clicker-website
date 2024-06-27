@@ -28,7 +28,7 @@ async function getMineCardsData(telegramId) {
 
 async function addUser(data) {
     return new Promise((resolve, reject) => {
-        db.run("INSERT INTO userPPH (telegramId, pph) VALUES (?, ?)", [+data.telegramId, 0], function (err) {
+        db.run("INSERT INTO user_pph (telegramId, pph) VALUES (?, ?)", [+data.telegramId, 0], function (err) {
             if (err) {
                 console.error("Error inserting data:", err.message);
                 reject(err);
