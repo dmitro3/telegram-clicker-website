@@ -735,7 +735,7 @@ html, body {
 }
 
 .gameButtonLabel{
-    margin-top: 4.5vh;
+    margin-top: 52px;
     text-align: center;
     margin-left: 6.5px;
 }
@@ -1401,7 +1401,7 @@ html, body {
     width: 34px;
     height: 34px;
     margin-left: 31.5px;
-    margin-top: 5px;
+    margin-top: 10px;
   }
 
   #energyImage{
@@ -2279,7 +2279,7 @@ html, body {
 }
 
 #exchangeLabel{
-  margin-left: -1px;
+  margin-left: -2px;
 }
 
 .plusOne{
@@ -2375,4 +2375,9 @@ html, body {
   height: 33px;
   margin-top: 14px;
   margin-left: 452px;
+}
+
+#exchangeImage1{
+  position: absolute;
+  margin-left: 29px;
 }
