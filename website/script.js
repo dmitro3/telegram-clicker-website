@@ -1720,6 +1720,6 @@ document.addEventListener('touchstart', function(event) {
 
 setInterval(()=>{
   const pph = +document.getElementById('passiveClicksLabel').textContent;
-  const value = pph / 3600;
+  const value = Math.floor(pph / 3600);
   adjustCoinsVisual(+getLeftCoins()+value);
 }, 1000)

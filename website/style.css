@@ -2277,3 +2277,7 @@ html, body {
   z-index: 4;
   margin-top: 130px;
 }
+
+#exchangeLabel{
+  margin-left: -1px;
+}
