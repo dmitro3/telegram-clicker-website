@@ -823,10 +823,11 @@ html, body {
 
 @keyframes highlight {
     0% {
-      box-shadow: 0px 0px 120px 5px #BB82F5;
+      box-shadow: 0px 0px 40px 5px #BB82F5;
     }
     100% {
-      box-shadow: 0px 0px 60px 5px #BB82F5;
+      box-shadow: 0px 0px 30px #BB82F5;
+
     }
   }
 
@@ -2245,4 +2246,20 @@ html, body {
   font-size: 25px;
   font-weight: 500;
   margin-top: 33px;
+}
+
+#mineLabel{
+  margin-left: 6px;
+}
+
+#earnLabel {
+  margin-left: 4px;
+}
+
+#airdropLabell {
+  margin-left: 5px;
+}
+
+#coinBox{
+  margin-left: 105px;
 }
