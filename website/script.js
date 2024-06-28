@@ -1750,7 +1750,7 @@ function showPassiveMining(time) {
   .then(data => {
     if (data.data != 'User added') {
       const info = Array.from(data.data)[0];
-      console.log(infor)
+      console.log(info)
       document.getElementById('passiveClicksLabel').innerHTML = info.pph;
       const pph = Math.floor(info.pph/3600);
       const difference = getTimeInSeconds(getCurrentTime()) - getTimeInSeconds(time);
