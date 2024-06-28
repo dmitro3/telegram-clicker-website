@@ -1754,7 +1754,7 @@ function showPassiveMining(time) {
       document.getElementById('passiveClicksLabel').innerHTML = info.pph;
       const pph = Math.floor(info.pph/3600);
       const difference = getTimeInSeconds(getCurrentTime()) - getTimeInSeconds(time);
-
+      console.log(difference)
       if (difference >= 10 && difference <= 10800){
         const passiveProfit = pph * difference;
         showPassiveMiningPopUp(passiveProfit)
