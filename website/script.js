@@ -1591,12 +1591,22 @@ function updateCard () {
       document.getElementById(card.pph).textContent = '+' + levelProgress[index].coinPerHour;
       document.getElementById('passiveClicksLabel').innerHTML = (+document.getElementById('passiveClicksLabel').textContent + +diff);
       document.getElementById('cardUpgradeBox').style.display = 'none';
+      postData('/updatePPH', {
+        telegramId: getTelegramId(),
+        pph: +document.getElementById('passiveClicksLabel').textContent + +diff
+      })
+      .then(data => {});
     } else{
       document.getElementById(card.level).textContent = moneyData.level;
       document.getElementById(card.price).textContent = 'Completed';
       document.getElementById(card.pph).textContent = '+' + levelProgress[index].coinPerHour;
       document.getElementById('passiveClicksLabel').innerHTML = (+document.getElementById('passiveClicksLabel').textContent + +diff);
       document.getElementById('cardUpgradeBox').style.display = 'none';
+      postData('/updatePPH', {
+        telegramId: getTelegramId(),
+        pph: +document.getElementById('passiveClicksLabel').textContent + +diff
+      })
+      .then(data => {});
     }
   }
 }
@@ -1707,7 +1717,7 @@ document.getElementById('inviteFriendCopyDiv').addEventListener('click', ()=>{
 
 });
 
-// double click
+// double click fix
 document.addEventListener('dblclick', function(event) {
   event.preventDefault();
 }, { passive: false });
@@ -1740,14 +1750,11 @@ function showPassiveMining(time) {
   .then(data => {
     if (data.data != 'User added') {
       const info = Array.from(data.data)[0];
+      console.log(infor)
       document.getElementById('passiveClicksLabel').innerHTML = info.pph;
-      const pph = Math.floor(information.pph/3600);
-      const currentTime = getTimeInSeconds(getCurrentTime());
-      const lastTime = getTimeInSeconds(time);
-      console.log('Last time - ' + lastTime);
-      console.log('Current time - ' + currentTime);
-      
-      const difference = currentTime - lastTime;
+      const pph = Math.floor(info.pph/3600);
+      const difference = getTimeInSeconds(getCurrentTime()) - getTimeInSeconds(time);
+
       if (difference >= 10 && difference <= 10800){
         showPassiveMiningPopUp(pph * difference)
       }
@@ -1757,9 +1764,7 @@ function showPassiveMining(time) {
 
 function getTimeInSeconds (time) {
   let date = new Date(time);
-  let milliseconds = date.getTime();
-  let seconds = milliseconds / 1000;
-  return seconds;
+  return date.getTime() / 1000;
 }
 
 function showPassiveMiningPopUp(value){

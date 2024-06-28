@@ -58,6 +58,9 @@ app.use('/updateCardLevel', updateCardLevel);
 const getPPHInfo = require('./routes/getPPHInfo');
 app.use('/getPPHInfo', getPPHInfo);
 
+const updatePPH = require('./routes/updatePPH');
+app.use('/updatePPH', updatePPH);
+
 //db.run("CREATE TABLE users_data (ID INTEGER PRIMARY KEY, telegramId INTEGER, energy INTEGER, coins INTEGER, time TEXT)");
 
 //db.run("CREATE TABLE refferal_origin (ID INTEGER PRIMARY KEY, telegramId INTEGER, link TEXT)");
