@@ -1758,12 +1758,20 @@ html, body {
     margin-top: 38px;
   }
 
-  #airdropFieldLabel{
+  #airdropFieldLabel1{
     font-size: 40px;
     color: white;
     font-weight: 600;
     margin-top: 314px;
-    margin-left: 130.13px;
+    margin-left: 83.5px;
+  }
+
+  #airdropFieldLabel2{
+    font-size: 40px;
+    color: white;
+    font-weight: 600;
+    margin-top: -30px;
+    margin-left: 105px;
   }
 
   #airdropFieldSubLabel{
@@ -1838,7 +1846,7 @@ html, body {
     width: 402px;
     height: 77px;
     position: absolute;
-    margin-top: 728px;
+    margin-top: 715px;
     margin-left: 18px;
     border-radius: 23px;
     background-color: #A472D7;
@@ -1864,7 +1872,7 @@ html, body {
     position: absolute;
     background-color: #A472D7;
     border-radius: 23px;
-    margin-top: 728px;
+    margin-top: 715px;
     margin-left: 425px;
   }
 

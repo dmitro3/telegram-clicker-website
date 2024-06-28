@@ -118,7 +118,6 @@ function showFriendsMenu() {
 function hideFriendsMenu() {
   friendsField.style.display = 'none';
   body.style.background = '#282B30';
-  document.getElementById('referalField').style.display = 'none';
   friendsButton.style.backgroundColor = '#282B30';
 }
 
@@ -381,11 +380,7 @@ function showClick(event) {
     }, 1000);
 }
     
-document.getElementById('inviteFriendBox').addEventListener('click', ()=>{
-  const shareUrl = `https://t.me/share/url?url=https%3A%2F%2Ft.me/telegclick_bot?start=${getTelegramId()}&text=Join%20this%20game!`;
 
-    Telegram.WebApp.openTelegramLink(shareUrl);
-});
 
 function addReferal(sourceTelegramId){
   const referralTelegramId = getTelegramId();
@@ -674,36 +669,6 @@ function hideDeveloperField() {
   body.style.background = '#282B30'
 
 }
-
-add1000.addEventListener('click', ()=>{
-  const coins = getLeftCoins();
-  document.getElementById('coinsLabel').innerHTML = coins + 1000;
-})
-
-add10000.addEventListener('click', ()=>{
-  const coins = getLeftCoins();
-  document.getElementById('coinsLabel').innerHTML = coins + 10000;
-})
-
-add100k.addEventListener('click', ()=>{
-  const coins = getLeftCoins();
-  document.getElementById('coinsLabel').innerHTML = coins + 100000;
-})
-
-add1M.addEventListener('click', ()=>{
-  const coins = getLeftCoins();
-  document.getElementById('coinsLabel').innerHTML = coins + 1000000;
-})
-
-add10M.addEventListener('click', ()=>{
-  const coins = getLeftCoins();
-  document.getElementById('coinsLabel').innerHTML = coins + 10000000;
-})
-
-add1B.addEventListener('click', ()=>{
-  const coins = getLeftCoins();
-  document.getElementById('coinsLabel').innerHTML = coins + 1000000000;
-})
 
 function adjustCoinsVisual (coins) {
   document.getElementById('coinsLabel').innerHTML = coins.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
