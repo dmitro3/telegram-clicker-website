@@ -1756,7 +1756,8 @@ function showPassiveMining(time) {
       const difference = getTimeInSeconds(getCurrentTime()) - getTimeInSeconds(time);
 
       if (difference >= 10 && difference <= 10800){
-        showPassiveMiningPopUp(pph * difference)
+        const passiveProfit = pph * difference;s
+        showPassiveMiningPopUp(passiveProfit)
       }
     }
   });
@@ -1769,7 +1770,7 @@ function getTimeInSeconds (time) {
 
 function showPassiveMiningPopUp(value){
   document.getElementById('passiveIncomePopUp').style.display = 'block';
-  document.getElementById('popUpLabel').innerHTML = value;
+  document.getElementById('popUpLabel').textContent = value;
 }
 
 document.getElementById('closeImage1').addEventListener('click', ()=>{

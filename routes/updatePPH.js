@@ -26,7 +26,7 @@ async function updateCard(pph, telegramId) {
                 if (err) {
                     if (err.code === 'SQLITE_BUSY') {
                         console.log('Database is busy, retrying...');
-                        setTimeout(attemptUpdate, 100); // Retry after 100ms
+                        setTimeout(attemptUpdate, 100); 
                     } else {
                         console.error('Error updating card:', err.message);
                         reject(err);
