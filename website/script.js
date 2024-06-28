@@ -1752,11 +1752,12 @@ function showPassiveMining(time) {
       const info = Array.from(data.data)[0];
       console.log(info)
       document.getElementById('passiveClicksLabel').innerHTML = info.pph;
-      const pph = Math.floor(info.pph/3600);
+      const pph = info.pph / 3600;
       const difference = getTimeInSeconds(getCurrentTime()) - getTimeInSeconds(time);
       console.log(difference)
       if (difference >= 10 && difference <= 10800){
-        const passiveProfit = pph * difference;
+        const passiveProfit = Math.floor(pph * difference);
+        console.log(passiveProfit)
         showPassiveMiningPopUp(passiveProfit)
       }
     }
@@ -1768,9 +1769,9 @@ function getTimeInSeconds (time) {
   return date.getTime() / 1000;
 }
 
-function showPassiveMiningPopUp(value){
+function showPassiveMiningPopUp(text){
   document.getElementById('passiveIncomePopUp').style.display = 'block';
-  document.getElementById('popUpLabel').textContent = value;
+  document.getElementById('passivePopUpLabel').textContent = text;
 }
 
 document.getElementById('closeImage1').addEventListener('click', ()=>{

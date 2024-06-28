@@ -2333,7 +2333,7 @@ html, body {
   margin-top: 64px;
 }
 
-#popUpLabel{
+#passivePopUpLabel{
   position: absolute;
   font-size: 50px;
   color: white;
