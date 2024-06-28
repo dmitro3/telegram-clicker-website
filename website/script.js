@@ -1739,8 +1739,8 @@ function showPassiveMining(time) {
   })
   .then(data => {
     if (data.data != 'User added') {
-      const information = Array.from(data.data)[0];
-      document.getElementById('passiveClicksLabel').innerHTML = pph;
+      const info = Array.from(data.data)[0];
+      document.getElementById('passiveClicksLabel').innerHTML = info.pph;
       const pph = Math.floor(information.pph/3600);
       const currentTime = getTimeInSeconds(getCurrentTime());
       const lastTime = getTimeInSeconds(time);
