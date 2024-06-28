@@ -206,6 +206,10 @@ document.getElementById('friendsButton').addEventListener('click', ()=>{
 
 
 function showEarnMenu() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'auto'
+  });
   adjustCoinsVisual(10000000)
   body.style.backgroundColor = '#000000'
   body.height = '100vh'
@@ -1666,7 +1670,7 @@ function modifyDailyRewardsWindow (data) {
   console.log(data)
   for (let i = 2; i < 12; i++) {
     if (data[`day${i-2}_claimed`] == 'true') {
-      document.getElementById(`dailyRewardsWindowDay${i-2}`).style.backgroundColor = 'green';
+      document.getElementById(`dailyRewardsWindowDay${i-2}`).style.background = 'linear-gradient(to bottom, #A472D7, #7C59A0, #6D4C8E)';
       document.getElementById(`dailyRewardsWindowDay${i-2}`).style.boxShadow = 'inset 0 0 0 0px #A472D7';
       document.getElementById(`dailyRewardsWindowDay${i-2}`).style.opacity = '100';
       continue;
@@ -1676,8 +1680,8 @@ function modifyDailyRewardsWindow (data) {
           document.getElementById(`dailyRewardsWindowDay${i-2}`).style.opacity = '100';
           document.getElementById('dailyRewardsGet').setAttribute('data-value', i-2)
         } else {
-          document.getElementById(`dailyRewardsWindowDay${i-2}`).style.backgroundColor = 'red';
-          document.getElementById(`dailyRewardsWindowDay${i-2}`).style.opacity = '100';
+          document.getElementById('popUpClaimButton').backgroundColor = '#454648';
+          document.getElementById('claimLabel').innerHTML = 'Come back tomorrow';
           document.getElementById('dailyRewardsGet').setAttribute('data-value', 0)
         }
       break;
