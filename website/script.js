@@ -1680,8 +1680,9 @@ function modifyDailyRewardsWindow (data) {
           document.getElementById(`dailyRewardsWindowDay${i-2}`).style.opacity = '100';
           document.getElementById('dailyRewardsGet').setAttribute('data-value', i-2)
         } else {
-          document.getElementById('popUpClaimButton').backgroundColor = '#454648';
-          document.getElementById('claimLabel').innerHTML = 'Come back tomorrow';
+          document.getElementById('dailyRewardsGet').backgroundColor = '#454648';
+          document.getElementById('dailyRewardsGetLabel').innerHTML = 'Come back tomorrow';
+          document.getElementById('dailyRewardsGet').removeEventListener('click', getDailyRewards);
           document.getElementById('dailyRewardsGet').setAttribute('data-value', 0)
         }
       break;
