@@ -2329,8 +2329,8 @@ html, body {
   width: 74px;
   height: 74px;
   position: absolute;
-  margin-left: 115px;
-  margin-top: 64px;
+  margin-left: 165px;
+  margin-top: 75px;
 }
 
 #passivePopUpLabel{
@@ -2339,8 +2339,8 @@ html, body {
   color: white;
   font-weight: 600;
   width: 100px;
-  margin-top: 74px;
-  margin-left: 195px;
+  margin-top: 84px;
+  margin-left: 245px;
 }
 
 #popUpSubLabel{
