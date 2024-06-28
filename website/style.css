@@ -100,6 +100,7 @@ html, body {
     z-index: 4;
     margin-top: 805px;
     margin-left: 214px;
+    border-color: #1c1f24;
 }
 
 #earnButton{
@@ -111,6 +112,7 @@ html, body {
     z-index: 4;
     margin-top: 805px;
     margin-left: 307px;
+    border-color: #1c1f24;
 }
 
 #gameButton{
@@ -123,6 +125,7 @@ html, body {
     margin-top: 805px;
     border-radius: 20px;
     z-index: 4;
+    border-color: #1c1f24;
 }
 
 #inviteSimpleBox{
@@ -357,6 +360,7 @@ html, body {
     margin-left: 400px;
     margin-top: 805px;
     z-index: 4;
+    border-color: #1c1f24;
 }
 
 #add1000{
@@ -832,6 +836,7 @@ html, body {
     margin-left: 121px;
     border-radius: 20px;
     z-index: 4;
+    border-color: #1c1f24;
   }
 
   #mineMenu{
