@@ -408,6 +408,7 @@ function showReferrals(){
     document.getElementById('refFriendsNumber').textContent = +newData.length ;
     if (newData.lenght != 0){
       for (let i = 0; i < newData.length; i++) {
+        console.log(newData)
         createSubFriend(newData[i].telegramReferralId, newData[i].verified)
       }
     }
