@@ -404,7 +404,7 @@ function showReferrals(){
     telegramSourceId: telegramSourceId,
   })
   .then(data => { 
-    newData = Array.from(data.data);
+    const newData = Array.from(data.data);
     document.getElementById('refFriendsNumber').textContent = +newData.length ;
     if (newData.lenght != 0){
       for (let i = 0; i < newData.length; i++) {
@@ -414,15 +414,15 @@ function showReferrals(){
     }
   });
 
-  function createElement(type, className, src) {
-    const element = document.createElement(type);
-    if (className) element.className = className;
-    if (src) element.src = src;
-    return element;
+function createElement(type, className, src) {
+  const element = document.createElement(type);
+  if (className) element.className = className;
+  if (src) element.src = src;
+  return element;
 }
-let aaab;
 let friendDivTopMargin = 451
   function createSubFriend(id, verified){
+    let aaab;
       postData('/getUserInformation', {
         telegramId: id
       })
@@ -436,7 +436,6 @@ let friendDivTopMargin = 451
           const user = Array.from(data1['data'])[0];
           let username = aaab;
           const premium = username.isPremium;
-
 
           if (+verified == 0){
             verifyReferral(id);
