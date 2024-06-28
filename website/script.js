@@ -1777,3 +1777,9 @@ function showPassiveMiningPopUp(text){
 document.getElementById('closeImage1').addEventListener('click', ()=>{
   document.getElementById('passiveIncomePopUp').style.display = 'none'
 });
+
+document.getElementById('thanksFunticoLabel').addEventListener('click', ()=>{
+  const money = +document.getElementById('passivePopUpLabel').textContent;
+  adjustCoinsVisual(+getLeftCoins() + money);
+  document.getElementById('passiveIncomePopUp').style.display = 'none';
+});
