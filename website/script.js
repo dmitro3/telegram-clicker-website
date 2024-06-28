@@ -1756,7 +1756,7 @@ function showPassiveMining(time) {
       const difference = getTimeInSeconds(getCurrentTime()) - getTimeInSeconds(time);
 
       if (difference >= 10 && difference <= 10800){
-        const passiveProfit = pph * difference;s
+        const passiveProfit = pph * difference;
         showPassiveMiningPopUp(passiveProfit)
       }
     }
