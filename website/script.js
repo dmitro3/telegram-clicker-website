@@ -66,6 +66,7 @@ window.onload = ()=> {
 
 function adjustReferrals () {
   const currentUrl = `${window.location.href}`;
+  console.log('url - ' + currentUrl)
   const code = currentUrl.match(/start=([^#]*)#/)[1];
   console.log('code - ' + code)
   if (code) {
