@@ -611,7 +611,7 @@ function adjustProgressBar() {
 }
 
 document.getElementById('friendBoxRestart').addEventListener('click', function(){
-  showReferrals();
+  showReferrals(+getTelegramId());
 })
 
 function manageProgressBar (level, levelLabel) {
