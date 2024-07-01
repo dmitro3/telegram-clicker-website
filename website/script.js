@@ -643,11 +643,6 @@ function manageProgressBar (level, levelLabel) {
 
 //gggggggggggggggggggggggggggggggggggggggggggg
 
-document.getElementById('refreshFriendsList').addEventListener('click', ()=>{
-  adjustProgressBar();
-
-});
-
 
 
 function showDeveloperField() {
@@ -674,14 +669,6 @@ function adjustCoinsVisual (coins) {
   document.getElementById('coinsLabel').innerHTML = coins.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
 
-document.getElementById('dailyRewardsBox').addEventListener('click', ()=>{
-  dailyRewardsPopUpBox.style.display = 'block';
-  adjustDailyRewards();
-});
-
-document.getElementById('closeDailyRewardsPopUpBoxBox').addEventListener('click', ()=>{
-  dailyRewardsPopUpBox.style.display = 'none'
-});
 /*
 function adjustDailyRewards () {
   const telegramId = getTelegramId();
@@ -956,19 +943,6 @@ function getCurrentDateFormatted() {
   return `${year}-${month}-${day}`;
 }
 
-document.getElementById('youtubeUpdateBox').addEventListener('click', ()=>{
-  window.location.href = 'https://youtu.be/geVLJ--2zgE?si=EpneavKxn31kVpjr';
-});
-
-document.getElementById('telegramJoinBox').addEventListener('click', ()=>{
-  window.location.href = 'https://t.me/hamster_kombat';
-});
-
-document.getElementById('xAccountBox').addEventListener('click', ()=>{
-  window.location.href = 'https://x.com/hamster_kombat';
-});
-
-
 function showMineField() {
   body.style.touchAction = 'auto';
   body.style.webkitUserSelect = 'auto';
@@ -1099,9 +1073,7 @@ document.getElementById('mainButtonCover').addEventListener('touchmove', functio
 }, { passive: false });
 
 
-document.getElementById('upgradeCardBoxClose').addEventListener('click', ()=>{
-  upgradeCardBox.style.display = 'none'
-})
+
 /*
 document.getElementById('funTokensBox').addEventListener('click', ()=>{
   const level = document.getElementById('funTokensBox').getAttribute('data-value');
@@ -1369,64 +1341,6 @@ function adjustUpgradeCardBox (id) {
   }
 }
 
-document.getElementById('upgradeCardBoxSubmit').addEventListener('click', ()=>{
-  const labels = [
-    'Fun tokens', 'Staking', 'BTC pairs', 'ETH pairs', 'Top 10 cmc pairs',
-    'GameFi tokens', 'Defi2.0 tokens', 'SocialFi tokens', 'Meme coins', 'Shit coins'
-  ]
-  // get data needed for card upgarde
-  const coins = +getLeftCoins();
-  const price = +document.getElementById('upgradeCardBoxPrice').textContent;
-  const cardLabel = document.getElementById('upgradeCardBoxLabel').textContent;
-  // make coin update
-  if (coins >= price) {
-    // get current card
-    let card;
-    for (let i = 0; i < labels.length; i++) {
-      if (cardLabel == labels[i]){
-        card = labels[i];
-        break;
-      }
-    }
-    let index;
-    for (let i = 0; i < data.length; i++) {
-      if (card == data[i].label){
-        index = i;
-      }
-    }
-    const cardBox = data[index].boxId;
-    // get current card's level
-    const level = +document.getElementById(cardBox).getAttribute('data-value');
-    if (level == 14){
-      document.getElementById('upgradeCardBox').style.display = 'none';
-    }
-    // increase level
-    document.getElementById(cardBox).setAttribute('data-value', level+1)
-    // substract coins
-    adjustCoinsVisual(coins-price);
-    // get card's ids
-    let cardData;
-    for (let i = 0; i < cardsData.length; i++) {
-      if (cardBox == cardsData[i].boxId) {
-        cardData = cardsData[i];
-      }
-    }
-    // adjust card visual
-    document.getElementById(cardData.level).textContent = PROGRESSION[level+1].level;
-    document.getElementById(cardData.price).textContent = PROGRESSION[level+2].updatePrice;
-    document.getElementById(cardData.pph).textContent = '+' + PROGRESSION[level+1].coinPerHour;
-    document.getElementById('upgradeCardBox').style.display = 'none';
-  // update to db
-  postData('/updateCardLevel', {
-    telegramId: getTelegramId(),
-    cardId: cardData.boxId,
-    cardLevel: +document.getElementById(cardBox).getAttribute('data-value')
-  })
-  .then(data => {
-    console.log('Card successfuly updated.')
-  })
-  }
-});
 
 
 

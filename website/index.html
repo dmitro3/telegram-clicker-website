@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body id="body">
-    <div>
     <div id="passiveIncomePopUp">
         <img src="close.png" id="closeImage1">
         <div id="rect">
@@ -196,7 +195,7 @@
         <h6 id="exchangeLabel" class="gameButtonLabel">Exchange</h6>
     </div>
     <div id="mineButton">
-        <img src="axe.png" alt="" class="menuImage">
+        <img id="mineImage" src="axe.png" alt="" class="menuImage">
         <h6 id="mineLabel" class="gameButtonLabel">Mine</h6>
     </div>
     <div id="friendsButton">
@@ -227,22 +226,7 @@
     <h4 id="progressBarBoxLevelLabel"><span style="color: grey;">Level</span><span id="levelLevelId">1</span>/10</h4>
 
     <img src="energy.png" id="energyImage">
-    <div id="upgradeCardBox">
-        <img src="" id="upgradeCardBoxImage">
-        <h2 id="upgradeCardBoxLabel"></h2>
-        <h6 id="upgradeCardBoxDescription">Digital access to exclusive fan experiences and privileges</h6>
-        <h6 id="upgradeCardBoxPPHLabel">Profit per hour</h6>
-        <img src="coin.png" id="upgradeCardBoxPPHImage">
-        <h6 id="upgradeCardBoxPPH">250</h6>
-        <img src="coin.png" id="upgradeCardBoxPriceImage">
-        <h2 id="upgradeCardBoxPrice">2K</h2>
-        <div id="upgradeCardBoxSubmit">
-            <h3 style="text-align: center; color: white; margin-top: 1.5vh;">Go Ahead</h3>
-        </div>
-        <div id="upgradeCardBoxClose">        
-            <img src="close.png" width="20vw" height="20vw" style="margin-top: 1vw; margin-left: 1vw;">
-        </div>
-    </div>
+    
 
         <div id="mineMenuMenu">
             <div id="marketsMenu">
@@ -261,16 +245,7 @@
                 <h6 id="specialsSubLabel">Coming Soon</h6>
             </div>
         </div>
-            <img  style="display: none;" id="btcPairBoxLock" src="lock.png" alt="" width="30vw" height="30vw">
-            <img  style="display: none;" id="ethPairBoxLock" src="lock.png" alt="" width="30vw" height="30vw">
-            <img  style="display: none;" id="top10BoxLock" src="lock.png" alt="" width="30vw" height="30vw">
-            <img  style="display: none;" id="gameFiBoxLock" src="lock.png" alt="" width="30vw" height="30vw">
-            <img  style="display: none;" id="defi20BoxLock" src="lock.png" alt="" width="30vw" height="30vw">
-            <img  style="display: none;" id="socialFiBoxLock" src="lock.png" alt="" width="30vw" height="30vw">
-            <img  style="display: none;" id="memeBoxLock" src="lock.png" alt="" width="30vw" height="30vw">
-            <img  style="display: none;" id="shitBoxLock" src="lock.png" alt="" width="30vw" height="30vw">
-
-           
+     
 
             <div id="funTokensBox" data-value="0">
                 <div id="funTokensSubBox1">
@@ -468,177 +443,9 @@
     </div>
     </div>
     
-    <div id="gameField">
-
-
-      
-        
+    <div id="gameField"> 
     </div>
 
-    <div id="referalField" style="text-align: center;display: none;">
-        <h1 style=" margin-top: 25px; color: white; text-align: center;">Invite a friend!</h1>
-        <div id="inviteSimpleBox">
-            <h3>Invite a friend</h3>
-            <h4>+5,000 for you and your friend</h4>
-        </div>
-        <div id="invitePremiumBox">
-            <h3>Invite a friend with telegram premium</h3>
-            <h4>+25,000 for you and your friend</h4>
-        </div>
-        <h3 style="margin-top: 61%; color: white; margin-left: 5%; position: absolute;">List of your friends</h3>
-        <div id="refreshFriendsList">
-            <h6>Reload</h6>
-        </div>
-        <div id="friendsBox">
-            <h4 id="youhaventinv">You haven't invinted anyone yet</h4>
-        </div>
-        <div id="inviteFriendBox">
-            <h4>Invite a friend</h4>
-        </div>
-        <div id="generateLinkBox">
-            <h4>Copy</h4>
-        </div>
-    </div>
-
-    <div id="devField" style="display: none;">
-        <div id="add1000">
-            <h2>Add 1K</h2>
-        </div>
-
-        <div id="add10000">
-            <h2>Add 10K</h2>
-        </div>
-
-        <div id="add100k">
-            <h2>Add 100K</h2>
-        </div>
-
-        <div id="add1M">
-            <h2>Add 1M</h2>
-        </div>
-
-        <div id="add10M">
-            <h2>Add 10M</h2>
-        </div>
-
-        <div id="add1B">
-            <h2>Add 1B</h2>
-        </div>
-
-    </div>
-
-    <div id="earnBox" style="display: none;">
-        <img id="coinLogoEarnBox" src="coin.png" width="70vw" height="70vw">
-        <h1 id="earnBoxLabel">Earn more coins</h1>
-        <h4 id="dailyTasksLabel">Daily tasks</h4>
-
-        <div id="dailyRewardsBox">
-            <img class="calendarLogo" src="calendar.png" width="40vw" height="40vw">
-            <h4 class="dailyRewardLabel">Daily reward</h4>
-            <img class="coinLogoDailyRewards" src="coin.png">
-            <h5 class="plusMoneyLabel">+6,649,00</h5>
-            <h1 class="arrowLabelEarnBox">></h1>
-        </div>
-
-        <h4 id="tasksListLabel">Tasks list</h4>
-
-        <div id="youtubeUpdateBox">
-            <img class="calendarLogo" src="youtube.png" width="52vw" height="40vw">
-            <h4 class="dailyRewardLabel">New Youtube Update</h4>
-            <img style="margin-left: 3px;" class="coinLogoDailyRewards" src="coin.png">
-            <h5 class="plusMoneyLabel">+100,000</h5>
-            <h1 class="arrowLabelEarnBox">></h1>
-        </div>
-
-        <div id="telegramJoinBox">
-            <img class="calendarLogo" src="telegram.png" width="40vw" height="40vw">
-            <h4 class="dailyRewardLabel">Join our TG channel</h4>
-            <img class="coinLogoDailyRewards" src="coin.png">
-            <h5 class="plusMoneyLabel">+5,000</h5>
-            <h1 class="arrowLabelEarnBox">></h1>
-        </div>
-
-        <div id="xAccountBox">
-            <img class="calendarLogo" src="x.png" width="40vw" height="40vw">
-            <h4 class="dailyRewardLabel">Follow our X account</h4>
-            <img class="coinLogoDailyRewards" src="coin.png">
-            <h5 class="plusMoneyLabel">+5,000</h5>
-            <h1 class="arrowLabelEarnBox">></h1>
-        </div>
-
-        <div id="chooseExchangeBox">
-            <img class="calendarLogo" src="wallet.png" width="40vw" height="40vw">
-            <h4 class="dailyRewardLabel">Choose your exchange</h4>
-            <img class="coinLogoDailyRewards" src="coin.png">
-            <h5 class="plusMoneyLabel">+5,000</h5>
-            <h1 class="arrowLabelEarnBox">></h1>
-        </div>
-    </div>
-    <div style="text-align: center;">
-        
-    </div>
-    <div id="dailyRewardsPopUpBox">
-        <div id="closeDailyRewardsPopUpBoxBox"><img id="closeDailyRewardsPopUpBox" src="close.png" width="30px" height="30px" style="margin-top: 5px;margin-left: 5px;"></div>
-        <div id="popUpCalendar">
-            <img id="calendarLogoPopUp" src="calendar.png">
-        </div>
-        <h2 id="popUpBoxLabel">Daily reward</h2>
-        <h6 id="popUpBoxDescription">Accure coins for logging into the game daily without skipping</h6>
-        <div id="day1Box">
-            <h3 style="text-align: center; margin-top: 1vw;">Day 1</h3>
-            <img src="coin.png" style="width: 4.75vw;margin-top: -4vw; height: 4.75vw; margin-left: 7vw;">
-            <h4 style="text-align: center; margin-top: -0.7vw;">500</h4>
-        </div>
-        <div id="day2Box">
-            <h3 style="text-align: center; margin-top: 1vw;">Day 2</h3>
-            <img src="coin.png" style="width: 4.75vw;margin-top: -5vw; height: 4.75vw; margin-left: 7vw;">
-            <h4 style="text-align: center; margin-top: -0.7vw;">1K</h4>
-        </div>
-        <div id="day3Box">
-            <h3 style="text-align: center; margin-top: 1vw;">Day 3</h3>
-            <img src="coin.png" style="width: 4.75vw;margin-top: -5vw; height: 4.75vw; margin-left: 7vw;">
-            <h4 style="text-align: center; margin-top: -0.7vw;">2.5K</h4>
-        </div>
-        <div id="day4Box">
-            <h3 style="text-align: center; margin-top: 1vw;">Day 4</h3>
-            <img src="coin.png" style="width: 4.75vw;margin-top: -5vw; height: 4.75vw; margin-left: 7vw;">
-            <h4 style="text-align: center; margin-top: -0.7vw;">5K</h4>
-        </div>
-
-        <div id="day5Box">
-            <h3 style="text-align: center; margin-top: 1vw;">Day 5</h3>
-            <img src="coin.png" style="width: 4.75vw;margin-top: -5vw; height: 4.75vw; margin-left: 7vw;">
-            <h4 style="text-align: center; margin-top: -0.7vw;">15K</h4>
-        </div>
-        <div id="day6Box">
-            <h3 style="text-align: center; margin-top: 1vw;">Day 6</h3>
-            <img src="coin.png" style="width: 4.75vw;margin-top: -5vw; height: 4.75vw; margin-left: 7vw;">
-            <h4 style="text-align: center; margin-top: -0.7vw;">25K</h4>
-        </div>
-        <div id="day7Box">
-            <h3 style="text-align: center; margin-top: 1vw;">Day 7</h3>
-            <img src="coin.png" style="width: 4.75vw;margin-top: -5vw; height: 4.75vw; margin-left: 7vw;">
-            <h4 style="text-align: center; margin-top: -0.7vw;">100K</h4>
-        </div>
-        <div id="day8Box">
-            <h3 style="text-align: center; margin-top: 1vw;">Day 8</h3>
-            <img src="coin.png" style="width: 4.75vw;margin-top: -5vw; height: 4.75vw; margin-left: 7vw;">
-            <h4 style="text-align: center; margin-top: -0.7vw;">500K</h4>
-        </div>
-
-        <div id="day9Box">
-            <h3 style="text-align: center; margin-top: 1vw;">Day 9</h3>
-            <img src="coin.png" style="width: 4.75vw;margin-top: -5vw; height: 4.75vw; margin-left: 7vw;">
-            <h4 style="text-align: center; margin-top: -0.7vw;">1M</h4>
-        </div>
-        <div id="day10Box">
-            <h3 style="text-align: center; margin-top: 1vw;">Day 10</h3>
-            <img src="coin.png" style="width: 4.75vw;margin-top: -5vw; height: 4.75vw; margin-left: 7vw;">
-            <h4 style="text-align: center; margin-top: -0.7vw;">5M</h4>
-        </div> 
-
-        <div id="popUpClaimButton" style="text-align: center; color: white;"><h3 id="claimLabel">Claim</h3></div>
-    </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="script.js"></script>
 </body> 

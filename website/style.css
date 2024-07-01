@@ -2250,7 +2250,7 @@ html, body {
 }
 
 #mineLabel{
-  margin-left: 6px;
+  margin-left: 2px;
 }
 
 #earnLabel {
@@ -2390,4 +2390,8 @@ html, body {
 #exchangeImage1{
   position: absolute;
   margin-left: 29px;
+}
+
+#mineImage{
+  margin-left: 28px;
 }
