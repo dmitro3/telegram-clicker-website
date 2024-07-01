@@ -69,9 +69,9 @@ function adjustReferrals () {
   console.log('url - ' + currentUrl)
   const code = currentUrl.match(/start=([^#]*)#/)[1];
   console.log('code - ' + code)
-  if (code) {
+  if (code != undefined) {
     alert('adding Referal ' + code)
-    addReferal(code);
+    addReferal(+code);
   } else {
     showReferrals(+getTelegramId());
   }
