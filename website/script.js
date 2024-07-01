@@ -39,8 +39,6 @@ window.onload = ()=> {
   adjustScreenSize();
   dailyRewards();
   registerUser();
-  showReferrals();
-  identifyReferral();
   adjustMineCards();
   adjustProgressBar();
   const coins = +getLeftCoins();
@@ -63,6 +61,32 @@ window.onload = ()=> {
       document.getElementById('energyLabel').innerHTML = calculateEnergy(record.energy, record.time);
       showPassiveMining(record.time);
     });
+}
+
+function adjustReferrals () {
+  const currentUrl = `${window.location.href}`;
+  const code = currentUrl.match(/start=([^#]*)#/)[1];
+  if (code) {
+    addReferal(code);
+  } else {
+    showReferrals(+getTelegramId());
+  }
+};
+
+function showReferrals(id) {
+  postData('/getReferrals', {
+    telegramSourceId: id
+  })
+  .then(data => { 
+    const newData = Array.from(data.data);
+    console.log(newData)
+    document.getElementById('refFriendsNumber').textContent = +newData.length;
+    if (newData.length != 0){
+      for (let i = 0; i < newData.length; i++) {
+        createSubFriend(newData[i].telegramReferralId, newData[i].verified)
+      }
+    }
+  });
 }
 
 function identifyReferral(){
@@ -382,32 +406,16 @@ function showClick(event) {
     
 
 
-function addReferal(sourceTelegramId){
-  const referralTelegramId = getTelegramId();
+function addReferal(srcTelegramId){
+  const refTelegramId = getTelegramId();
   postData('/addReferral', {
-    sourceTelegramId: sourceTelegramId,
-    referralTelegramId: referralTelegramId
+    sourceTelegramId: srcTelegramId,
+    referralTelegramId: refTelegramId
   })
   .then(data => {
-    console.log('Referral successfully added.')
+    console.log()
   });
 }
-
-function showReferrals(){
-  const telegramSourceId = getTelegramId();
-  postData('/getReferrals', {
-    telegramSourceId: telegramSourceId,
-  })
-  .then(data => { 
-    const newData = Array.from(data.data);
-    document.getElementById('refFriendsNumber').textContent = +newData.length ;
-    if (newData.lenght != 0){
-      for (let i = 0; i < newData.length; i++) {
-        console.log(newData)
-        createSubFriend(newData[i].telegramReferralId, newData[i].verified)
-      }
-    }
-  });
 
 function createElement(type, className, src) {
   const element = document.createElement(type);
@@ -416,6 +424,7 @@ function createElement(type, className, src) {
   return element;
 }
 let friendDivTopMargin = 451
+
   function createSubFriend(id, verified){
     let aaab;
       postData('/getUserInformation', {
@@ -506,7 +515,7 @@ let friendDivTopMargin = 451
         })
     });
   }
-}
+
 
 function registerUser() {
   const tg = window.Telegram.WebApp;
