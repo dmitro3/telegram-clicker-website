@@ -1597,14 +1597,14 @@ function getDailyRewards() {
 
 // referral system
 document.getElementById('inviteFriendDiv').addEventListener('click', ()=>{
-  const shareUrl = `https://t.me/share/url?url=https%3A%2F%2Ft.me/telegclick_bot?start=${getTelegramId()}&text=Join%20this%20game!`;
+  const shareUrl = `https://t.me/share/url?url=https%3A%2F%2Ft.me/clicker_test_test_bot?start=${getTelegramId()}&text=Join%20this%20game!`;
 
     Telegram.WebApp.openTelegramLink(shareUrl);
 });
 
 document.getElementById('inviteFriendCopyDiv').addEventListener('click', ()=>{
 
-  navigator.clipboard.writeText(`https://t.me/share/url?url=https%3A%2F%2Ft.me/telegclick_bot?start=${getTelegramId()}&text=Join%20this%20game!`);
+  navigator.clipboard.writeText(`https://t.me/share/url?url=https%3A%2F%2Ft.me/clicker_test_test_bot?start=${getTelegramId()}&text=Join%20this%20game!`);
             
   Telegram.WebApp.showPopup({
       message: 'Link copied to clipboard!',
