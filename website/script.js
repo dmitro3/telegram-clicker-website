@@ -5,6 +5,7 @@ var viewportWidth = window.innerWidth;
 var viewportHeight = window.innerHeight;
 let tg = window.Telegram.WebApp;
 tg.expand();
+let friendDivTopMargin = 451
 
 const gameFieldElements = [
   'userLogoPhoto', 'userLogoBackgroundDiv', 'exchangeBox', 'exchangeBoxLabel', 'exchangeImage',
@@ -90,6 +91,7 @@ function showReferrals(id) {
       invitedFriendBoxes.forEach(box => {
       box.remove();
       });
+      friendDivTopMargin = 451;
       for (let i = 0; i < newData.length; i++) {
         createSubFriend(newData[i].telegramReferralId, newData[i].verified)
       }
@@ -431,7 +433,6 @@ function createElement(type, className, src) {
   if (src) element.src = src;
   return element;
 }
-let friendDivTopMargin = 451
 
   function createSubFriend(id, verified){
     console.log([id, verified])
