@@ -86,6 +86,10 @@ function showReferrals(id) {
     console.log(newData)
     document.getElementById('refFriendsNumber').textContent = +newData.length;
     if (newData.length != 0){
+      const invitedFriendBoxes = document.querySelectorAll('.invitedFriendBox');
+      invitedFriendBoxes.forEach(box => {
+      box.remove();
+      });
       for (let i = 0; i < newData.length; i++) {
         createSubFriend(newData[i].telegramReferralId, newData[i].verified)
       }
