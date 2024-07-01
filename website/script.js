@@ -36,6 +36,7 @@ const mineFieldElements = [
 ]
 
 window.onload = ()=> {
+  adjustReferrals();
   adjustScreenSize();
   dailyRewards();
   registerUser();
