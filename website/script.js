@@ -71,7 +71,6 @@ function identifyReferral(){
   const match = currentUrl.match(regex);
   const code = match[1];
   if (code != 'undefined') {
-    const telegramSourceId = getTelegramId();
     postData('/getReferrals', {
       telegramSourceId: +code,
     })

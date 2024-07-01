@@ -6,6 +6,7 @@ const db = new sqlite3.Database('mydatabase.db');
 router.post('/', async (req, res, next) => {
     const data = req.body;
     const rows = await getGameData(data.telegramSourceId)
+    console.log(rows)
     res.json({'data': rows})
 });
 
