@@ -430,6 +430,7 @@ function createElement(type, className, src) {
 let friendDivTopMargin = 451
 
   function createSubFriend(id, verified){
+    console.log([id, verified])
     let aaab;
       postData('/getUserInformation', {
         telegramId: id
