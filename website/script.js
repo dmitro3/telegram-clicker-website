@@ -139,6 +139,7 @@ function adjustScreenSize () {
 }
 
 function showFriendsMenu() {
+  friendsField.style.height = 'auto'
   window.scrollTo({
     top: 0,
     behavior: 'auto'
