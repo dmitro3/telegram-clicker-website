@@ -231,6 +231,10 @@ document.getElementById('mineButton').addEventListener('click', ()=>{
 
 document.getElementById('friendsButton').addEventListener('click', ()=>{
   hideGameMenu();  
+  window.scrollTo({
+    top: 0,
+    behavior: 'auto'
+  });
   hideEarnMenu();
   hideMineField();
   hideDeveloperField();
