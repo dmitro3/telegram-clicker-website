@@ -145,7 +145,8 @@ function showFriendsMenu() {
     top: 0,
     behavior: 'auto'
   });
-  friendsField.style.display = 'block'
+  friendsField.style.display = 'block';
+  friendsField.style.height = '797px'
   friendsButton.style.backgroundColor = '#1C1F24';
   document.documentElement.style.overflow = 'hidden';
   gameField.style.display = 'none';
