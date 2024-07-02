@@ -278,14 +278,14 @@ document.getElementById('mainButtonCover').addEventListener('touchstart', ()=>{
   //adjustMarginCoinBox();
     if (window.Telegram.WebApp.platform == 'ios'){
         for (let i = 0; i < event.touches.length; i++) {
-        showClick(event.touches[i]);
         let energy = getLeftEnergy();
-        if (energy >= 0){
+        if (energy >= 1){
             let coins = getLeftCoins();
             energy -= 1;
             coins += 1;
             document.getElementById('energyLabel').innerHTML = energy + '/1000'
-            adjustCoinsVisual(coins)
+            adjustCoinsVisual(coins);
+            showClick(event.touches[i]);
             }
         }
     }
