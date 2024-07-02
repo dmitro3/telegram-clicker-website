@@ -145,7 +145,7 @@ function showFriendsMenu() {
   });
   body.style.backgroundColor = '#000000'
   body.style.height = '100vh';
-  body.height = '120vh'
+  body.height = '100vh'
   window.scrollTo({
     top: 0,
     behavior: 'auto'
