@@ -343,7 +343,7 @@ html, body {
     position: absolute;
     color: white;
     z-index: 2;
-    margin-left: 427px;
+    margin-left: 420px;
     margin-top: 289px;
 
 }
@@ -2248,17 +2248,6 @@ html, body {
   margin-top: 33px;
 }
 
-#mineLabel{
- 
-}
-
-#earnLabel {
-
-}
-
-#airdropLabell {
-  margin-left: 5px;
-}
 
 #container {
   position: absolute;

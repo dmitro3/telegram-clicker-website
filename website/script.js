@@ -1,5 +1,4 @@
 body.height = window.innerHeight
-alert(123123)
 var viewportWidth = window.innerWidth;
 // width: 430
 // height: 733
@@ -72,7 +71,6 @@ function adjustReferrals () {
   const code = currentUrl.match(/start=([^#]*)#/)[1];
   console.log('code - ' + code)
   if (`${code}` != 'undefined') {
-    alert('adding Referal ' + code)
     addReferal(+code);
   } else {
     showReferrals(+getTelegramId());
@@ -281,14 +279,14 @@ document.getElementById('mainButtonCover').addEventListener('touchstart', ()=>{
     if (window.Telegram.WebApp.platform == 'ios'){
         for (let i = 0; i < event.touches.length; i++) {
         showClick(event.touches[i]);
-    }
-    let energy = getLeftEnergy();
-    if (energy >= 0){
-        let coins = getLeftCoins();
-        energy -= event.touches.length;
-        coins += event.touches.length;
-        document.getElementById('energyLabel').innerHTML = energy + '/1000'
-        adjustCoinsVisual(coins)
+        let energy = getLeftEnergy();
+        if (energy >= 0){
+            let coins = getLeftCoins();
+            energy -= 1;
+            coins += 1;
+            document.getElementById('energyLabel').innerHTML = energy + '/1000'
+            adjustCoinsVisual(coins)
+            }
         }
     }
   });
