@@ -142,7 +142,7 @@ function showFriendsMenu() {
     top: 0,
     behavior: 'auto'
   });
-  body.height = '100vh'
+  body.style.height = '100vh'
   window.scrollTo({
     top: 0,
     behavior: 'auto'
