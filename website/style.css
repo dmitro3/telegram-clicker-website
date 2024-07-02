@@ -2288,7 +2288,9 @@ html, body {
   position: absolute;
   z-index: 4;
   margin-top: 130px;
-  overflow: hidden;
+  -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -ms-user-drag: none;
 }
 
 #exchangeLabel{
