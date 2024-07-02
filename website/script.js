@@ -184,7 +184,7 @@ function showGameMenu() {
   
   document.documentElement.style.overflow = 'hidden';
   gameButton.style.backgroundColor = '#1C1F24';
-  gameField.style.height = '797px';
+  gameField.style.height = '880px';
   earnPerClickBox.style.marginTop = '114px';
   clicksTillLevelUp.style.marginTop = '114px';
   passiveClicks.style.marginTop = '114px';
