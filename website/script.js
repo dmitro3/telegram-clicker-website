@@ -139,6 +139,8 @@ function adjustScreenSize () {
 }
 
 function showFriendsMenu() {
+  body.style.height = '792px';
+  body.height = '792px';
   window.scrollTo({
     top: 0,
     behavior: 'auto'
@@ -998,11 +1000,20 @@ function hideMineField() {
     top: 0,
     behavior: 'auto'
   });
-  friendsField.style.display = 'block'
-  friendsButton.style.backgroundColor = '#1C1F24';
-  document.documentElement.style.overflow = 'hidden';
-  gameField.style.display = 'none';
-  body.style.background = '#000000';
+  body.style.touchAction = 'none';
+  body.style.webkitUserSelect = 'none';
+  body.style.mozUserSelect = 'none';
+  body.style.msUserSelect = 'none';
+  body.style.userSelect = 'none';
+  body.style.webkitUserDrag = 'none';
+  body.style.mozUserDrag = 'none';
+  body.style.msUserDrag = 'none';
+  for (let i = 0; i < mineFieldElements.length; i++) {
+    document.getElementById(mineFieldElements[i]).style.display = 'none';
+  }
+  mineButton.style.backgroundColor = '#282B30';
+  earnField.style.display = 'none'
+  body.style.height = '100vh';
 }
 
 const levelProgression = [
