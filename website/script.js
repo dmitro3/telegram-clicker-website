@@ -241,6 +241,7 @@ document.getElementById('friendsButton').addEventListener('click', ()=>{
   hideEarnMenu();
   hideMineField();
   hideDeveloperField();
+  showGameMenu()
   showFriendsMenu();
 });
 
