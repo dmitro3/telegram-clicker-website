@@ -1002,6 +1002,10 @@ function showMineField() {
 }
 
 function hideMineField() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'auto'
+  });
   body.style.touchAction = 'none';
   body.style.webkitUserSelect = 'none';
   body.style.mozUserSelect = 'none';
