@@ -142,6 +142,11 @@ function showFriendsMenu() {
     top: 0,
     behavior: 'auto'
   });
+  body.height = '100vh'
+  window.scrollTo({
+    top: 0,
+    behavior: 'auto'
+  });
   friendsField.style.display = 'block'
   friendsButton.style.backgroundColor = '#1C1F24';
   document.documentElement.style.overflow = 'hidden';
