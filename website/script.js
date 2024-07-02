@@ -138,15 +138,13 @@ function adjustScreenSize () {
 }
 
 function showFriendsMenu() {
+  window.scroll(0, 0);
+
   window.scrollTo({
     top: 0,
     behavior: 'auto'
   });
   body.style.height = '100vh'
-  window.scrollTo({
-    top: 0,
-    behavior: 'auto'
-  });
   friendsField.style.display = 'block'
   friendsButton.style.backgroundColor = '#1C1F24';
   document.documentElement.style.overflow = 'hidden';
@@ -1019,6 +1017,7 @@ function hideMineField() {
   }
   mineButton.style.backgroundColor = '#282B30';
   earnField.style.display = 'none'
+  body.style.height = '100vh';
 }
 
 const levelProgression = [
