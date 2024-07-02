@@ -7,6 +7,15 @@ let tg = window.Telegram.WebApp;
 tg.expand();
 let friendDivTopMargin = 451
 
+
+document.getElementById('body').addEventListener('touchstart', function(event) {
+  // Store the initial touch position
+  this.touchStartY = event.touches[0].clientY;
+  // Prevent scrolling on touchmove
+  document.addEventListener('touchmove', preventScroll, { passive: false });
+});
+
+
 const gameFieldElements = [
   'userLogoPhoto', 'userLogoBackgroundDiv', 'exchangeBox', 'exchangeBoxLabel', 'exchangeImage',
   'earnPerClickBox', 'clicksTillLevelUp', 'earnPerClickCoin', 'earnPerClickLabel', 'clicksTillLevelUpLabel',
