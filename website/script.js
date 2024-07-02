@@ -143,19 +143,11 @@ function showFriendsMenu() {
     top: 0,
     behavior: 'auto'
   });
-  body.style.backgroundColor = '#000000'
-  body.style.height = '100vh';
-  body.height = '100vh'
-  window.scrollTo({
-    top: 0,
-    behavior: 'auto'
-  });
-  gameField.style.display = 'none'
   friendsField.style.display = 'block'
- 
-  document.documentElement.style.overflow = 'hidden';
   friendsButton.style.backgroundColor = '#1C1F24';
-
+  document.documentElement.style.overflow = 'hidden';
+  gameField.style.display = 'none';
+  body.style.background = '#000000';
 }
 
 function hideFriendsMenu() {
@@ -239,12 +231,10 @@ document.getElementById('mineButton').addEventListener('click', ()=>{
 });
 
 document.getElementById('friendsButton').addEventListener('click', ()=>{
-  hideMineField();
-  showEarnMenu();
-  setTimeout(()=>{}, 100);
   hideGameMenu();
-  hideDeveloperField();
   hideEarnMenu();
+  hideMineField();
+  hideDeveloperField();
   showFriendsMenu();
 });
 
@@ -1008,20 +998,11 @@ function hideMineField() {
     top: 0,
     behavior: 'auto'
   });
-  body.style.touchAction = 'none';
-  body.style.webkitUserSelect = 'none';
-  body.style.mozUserSelect = 'none';
-  body.style.msUserSelect = 'none';
-  body.style.userSelect = 'none';
-  body.style.webkitUserDrag = 'none';
-  body.style.mozUserDrag = 'none';
-  body.style.msUserDrag = 'none';
-  for (let i = 0; i < mineFieldElements.length; i++) {
-    document.getElementById(mineFieldElements[i]).style.display = 'none';
-  }
-  mineButton.style.backgroundColor = '#282B30';
-  earnField.style.display = 'none'
-  body.style.height = '100vh';
+  friendsField.style.display = 'block'
+  friendsButton.style.backgroundColor = '#1C1F24';
+  document.documentElement.style.overflow = 'hidden';
+  gameField.style.display = 'none';
+  body.style.background = '#000000';
 }
 
 const levelProgression = [
