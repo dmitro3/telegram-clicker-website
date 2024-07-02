@@ -239,9 +239,9 @@ document.getElementById('mineButton').addEventListener('click', ()=>{
 });
 
 document.getElementById('friendsButton').addEventListener('click', ()=>{
+  hideMineField();
   showEarnMenu();
-  alert('hide')
-  showFriendsMenu();
+ 
 });
 
 
