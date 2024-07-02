@@ -139,6 +139,7 @@ function adjustScreenSize () {
 }
 
 function showFriendsMenu() {
+  document.getElementById('html').style.height = '797px'
   body.style.height = '792px';
   body.height = '792px';
   window.scrollTo({
