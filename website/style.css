@@ -51,8 +51,8 @@ html, body {
 #energyLabel{
     color: white;
     position: absolute;
-    margin-top: 759px;
-    margin-left: 75px;
+    margin-top: 747px;
+    margin-left: 70px;
     z-index: 2;
 }
 
@@ -87,45 +87,42 @@ html, body {
     border-radius: 25px;
     width: 483px;
     height: 81px;
-    margin-left: 19px;
-    margin-top: 800px;
+    margin-left: 18px;
+    margin-top: 793px;
 }
 
 #friendsButton{
     position: fixed;
+    position: absolute;
     color:white;
     border-radius: 20px;
-    width: 90px;
+    width: 90.2px;
     height: 70px;
-    z-index: 4;
-    margin-top: 805px;
-    margin-left: 214px;
-    border-color: #1c1f24;
+    top: 5.5px;
+    left: 196.4px;
 }
 
 #earnButton{
     position: fixed;
     color:white;
     border-radius: 20px;
-    width: 90px;
+    width: 90.2px;
     height: 70px;
-    z-index: 4;
-    margin-top: 805px;
-    margin-left: 307px;
-    border-color: #1c1f24;
+    top: 5.5px;
+    left: 292.6px;
+    position: absolute;
 }
 
 #gameButton{
     color:white;
     position: fixed;
     background-color: #1C1F24;
-    width: 90px;
+    width: 90.2px;
     height: 70px;
-    margin-left: 28px;
-    margin-top: 805px;
+   margin-top: 5.5px;
+   margin-left: 4px;
     border-radius: 20px;
-    z-index: 4;
-    border-color: #1c1f24;
+    position: absolute;
 }
 
 #inviteSimpleBox{
@@ -355,12 +352,11 @@ html, body {
     color:white;
     position: fixed;
     border-radius: 20px;
-    width: 90px;
+    width: 90.2px;
     height: 70px;
-    margin-left: 400px;
-    margin-top: 805px;
-    z-index: 4;
-    border-color: #1c1f24;
+    top: 5.5px;
+    left: 388.8px;
+    position: absolute;
 }
 
 #add1000{
@@ -740,8 +736,7 @@ html, body {
 
 .gameButtonLabel{
     margin-top: 47px;
-    text-align: center;
-    margin-left: 6.5px;
+    left: 0;
 }
 
 #userLogoBackgroundDiv{ 
@@ -826,13 +821,12 @@ html, body {
   #mineButton{
     color:white;
     position: fixed;
-    width: 88px;
+    width: 90.2px;
     height: 70px;
-    margin-top: 805px;
-    margin-left: 121px;
+    position: absolute;
+    left: 100.2px;
+    top: 5.5px;
     border-radius: 20px;
-    z-index: 4;
-    border-color: #1c1f24;
   }
 
   #mineMenu{
@@ -1401,8 +1395,9 @@ html, body {
     position: absolute;
     width: 34px;
     height: 34px;
-    margin-left: 31.5px;
-    margin-top: 10px;
+    left: 28.1px;
+    top: 10px;
+    text-align: center;
   }
 
   #energyImage{
@@ -1410,7 +1405,7 @@ html, body {
     z-index: 2;
     width: 43px;
     height: 43px;
-    margin-top: 749px;
+    margin-top: 740px;
     margin-left: 22px;
   }
 
@@ -2250,11 +2245,11 @@ html, body {
 }
 
 #mineLabel{
-  margin-left: 2px;
+ 
 }
 
 #earnLabel {
-  margin-left: 4px;
+
 }
 
 #airdropLabell {
@@ -2389,9 +2384,9 @@ html, body {
 
 #exchangeImage1{
   position: absolute;
-  margin-left: 29px;
+ 
 }
 
 #mineImage{
-  margin-left: 28px;
+ 
 }
