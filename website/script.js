@@ -139,13 +139,13 @@ function adjustScreenSize () {
 }
 
 function showFriendsMenu() {
-  friendsField.style.height = 'auto'
   window.scrollTo({
     top: 0,
     behavior: 'auto'
   });
   body.style.backgroundColor = '#000000'
-  body.style.height = '100vh'
+  body.style.height = '100vh';
+  body.height = '120vh'
   window.scrollTo({
     top: 0,
     behavior: 'auto'

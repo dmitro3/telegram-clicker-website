@@ -1570,6 +1570,10 @@ html, body {
     width: 370px;
   }
 
+  #friendsField{
+    height: 100vh;
+  }
+
   #inviteSimpleFriendDiv{
     width: 484px;
     height: 115px;
