@@ -196,7 +196,10 @@ function hideGameMenu() {
     document.getElementById(gameFieldElements[i]).style.display = 'none';
   }
   gameButton.style.backgroundColor = '#282B30';
-
+  window.scrollTo({
+    top: 0,
+    behavior: 'auto'
+  });
 }
 
 
@@ -234,6 +237,10 @@ document.getElementById('mineButton').addEventListener('click', ()=>{
 });
 
 document.getElementById('friendsButton').addEventListener('click', ()=>{
+  window.scrollTo({
+    top: 0,
+    behavior: 'auto'
+  });
   hideGameMenu();
   hideEarnMenu();
   hideMineField();
