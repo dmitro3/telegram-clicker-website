@@ -138,18 +138,22 @@ function adjustScreenSize () {
 }
 
 function showFriendsMenu() {
-  window.scroll(0, 0);
-
   window.scrollTo({
     top: 0,
     behavior: 'auto'
   });
-  body.style.height = '100vh'
+  body.style.backgroundColor = '#000000'
+  body.height = '100vh'
+  window.scrollTo({
+    top: 0,
+    behavior: 'auto'
+  });
+  gameField.style.display = 'none'
   friendsField.style.display = 'block'
-  friendsButton.style.backgroundColor = '#1C1F24';
+ 
   document.documentElement.style.overflow = 'hidden';
-  gameField.style.display = 'none';
-  body.style.background = '#000000';
+  friendsButton.style.backgroundColor = '#1C1F24';
+
 }
 
 function hideFriendsMenu() {
@@ -241,7 +245,6 @@ document.getElementById('friendsButton').addEventListener('click', ()=>{
   hideEarnMenu();
   hideMineField();
   hideDeveloperField();
-  showGameMenu()
   showFriendsMenu();
 });
 
