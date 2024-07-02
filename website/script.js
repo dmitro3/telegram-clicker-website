@@ -1003,7 +1003,7 @@ function showMineField() {
   earnPerClickLabel.style.marginTop = '67px';
   passiveClicksCoin.style.marginTop = '67px';
   passiveClicksLabel.style.marginTop = '67px';
-  gameField.style.height = '1150px';
+  gameField.style.height = '1200px';
   gameField.style.marginTop = '16px';
   earnPerClickBox.style.marginTop = '36px'
   clicksTillLevelUp.style.marginTop = '36px'
