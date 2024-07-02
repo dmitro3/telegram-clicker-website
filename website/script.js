@@ -1,4 +1,5 @@
 body.height = window.innerHeight
+alert(123123)
 var viewportWidth = window.innerWidth;
 // width: 430
 // height: 733
@@ -143,7 +144,7 @@ function showFriendsMenu() {
     behavior: 'auto'
   });
   body.style.backgroundColor = '#000000'
-  body.height = '100vh'
+  body.style.height = '100vh'
   window.scrollTo({
     top: 0,
     behavior: 'auto'
@@ -237,13 +238,9 @@ document.getElementById('mineButton').addEventListener('click', ()=>{
 });
 
 document.getElementById('friendsButton').addEventListener('click', ()=>{
-  hideGameMenu();  
-  window.scrollTo({
-    top: 0,
-    behavior: 'auto'
-  });
-  hideEarnMenu();
+  hideGameMenu();
   hideMineField();
+  hideEarnMenu();
   hideDeveloperField();
   showFriendsMenu();
 });
