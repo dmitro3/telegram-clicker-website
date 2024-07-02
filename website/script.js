@@ -241,7 +241,11 @@ document.getElementById('mineButton').addEventListener('click', ()=>{
 document.getElementById('friendsButton').addEventListener('click', ()=>{
   hideMineField();
   showEarnMenu();
- 
+  setTimeout(()=>{}, 100);
+  hideGameMenu();
+  hideDeveloperField();
+  hideEarnMenu();
+  showFriendsMenu();
 });
 
 
