@@ -1281,6 +1281,7 @@ html, body {
     -webkit-user-drag: none;
     -moz-user-drag: none;
     -ms-user-drag: none;
+    overflow: hidden;
   }
 
   #marketsSubMenu{
@@ -2288,10 +2289,7 @@ html, body {
   position: absolute;
   z-index: 4;
   margin-top: 130px;
-  -webkit-user-drag: none;
-  -moz-user-drag: none;
-  -ms-user-drag: none;
-  overflow-y: hidden;
+
 }
 
 #exchangeLabel{
