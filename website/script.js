@@ -282,7 +282,8 @@ function hideEarnMenu() {
   earnButton.style.backgroundColor = '#282B30';
 }
 
-document.getElementById('mainButtonCover').addEventListener('touchstart', ()=>{
+document.getElementById('mainButtonCover').addEventListener('touchstart', (event)=>{
+  event.preventDefault()
   adjustProgressBar()
   //adjustMarginCoinBox();
     if (window.Telegram.WebApp.platform == 'ios'){

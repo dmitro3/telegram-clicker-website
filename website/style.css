@@ -1281,7 +1281,6 @@ html, body {
     -webkit-user-drag: none;
     -moz-user-drag: none;
     -ms-user-drag: none;
-    overflow: hidden;
   }
 
   #marketsSubMenu{
