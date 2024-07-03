@@ -14,7 +14,7 @@ document.getElementById('body').addEventListener('touchstart', function(event) {
   // Prevent scrolling on touchmove
   document.addEventListener('touchmove', preventScroll, { passive: false });
 });
-
+    
 
 const gameFieldElements = [
   'userLogoPhoto', 'userLogoBackgroundDiv', 'exchangeBox', 'exchangeBoxLabel', 'exchangeImage',
