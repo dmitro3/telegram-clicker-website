@@ -807,7 +807,7 @@ html, body {
 }
 
 #gameField {
-    position: absolute;
+    position: fixed;
     background-color: #1C1F24;    ;
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
