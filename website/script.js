@@ -1030,9 +1030,6 @@ function showMineField() {
   body.style.mozUserSelect = 'auto';
   body.style.msUserSelect = 'auto';
   body.style.userSelect = 'auto';
-  body.style.webkitUserDrag = 'auto';
-  body.style.mozUserDrag = 'auto';
-  body.style.msUserDrag = 'auto';
   for (let i = 0; i < mineFieldElements.length; i++) {
     document.getElementById(mineFieldElements[i]).style.display = 'block'
   }
