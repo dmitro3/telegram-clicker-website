@@ -1791,5 +1791,12 @@ document.getElementById('scroll').addEventListener('scroll', ()=>{
   const scrollHeight = scrollableDiv.scrollHeight;
   const clientHeight = scrollableDiv.clientHeight;
   const scrolledPercentage = Math.floor((scrollTop / (scrollHeight - clientHeight))*100)/100;
-  document.getElementById('menuShadow').style.background = `linear-gradient(to bottom, rgba(28, 31, 36, 0) 0%, rgba(28, 31, 36, ${1-scrolledPercentage}) 52%, rgba(28, 31, 36, ${1-scrolledPercentage}) 100%)`;
+  if (scrolledPercentage > 0.9) {
+    document.getElementById('menuShadow').style.background = 'background: linear-gradient(to bottom, rgba(28, 31, 36, 0) 0%, rgba(28, 31, 36, 0.005) 52%, rgba(28, 31, 36, 0.005) 100%);'
+    document.getElementById('menuShadow').style.top = '700px'
+  }
+  if (scrolledPercentage < 0.9){
+    document.getElementById('menuShadow').style.background = 'background: linear-gradient(to bottom, rgba(28, 31, 36, 0) 0%, rgba(28, 31, 36, 0.8) 52%, rgba(28, 31, 36, 0.8) 100%);'
+    document.getElementById('menuShadow').style.top = '650px'
+  }
 })
