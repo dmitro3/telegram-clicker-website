@@ -89,7 +89,7 @@ html, body {
 
 #menu {
   background-color: #282B30;
-  z-index: 3;
+  z-index: 5;
   position: fixed;
   text-align: center;
   border-radius: 25px;
@@ -2438,4 +2438,13 @@ html, body {
   left: 67px;
   top: 592px;
   color: white;
+}
+
+#menuShadow{
+  background: linear-gradient(to bottom, rgba(28, 31, 36, 0) 0%, rgba(28, 31, 36, 1) 52%, rgba(28, 31, 36, 1) 100%);
+  width: 519px;
+  height: 498px;
+  position: fixed;
+  z-index: 4;
+  top: 600px;
 }
