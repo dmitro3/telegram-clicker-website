@@ -262,7 +262,6 @@ function showEarnMenu() {
     top: 0,
     behavior: 'auto'
   });
-  adjustCoinsVisual(10000000)
   body.style.backgroundColor = '#000000'
   body.height = '100vh'
   window.scrollTo({
