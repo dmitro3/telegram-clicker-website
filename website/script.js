@@ -1051,6 +1051,7 @@ function showMineField() {
   });
 
   gameField.style.display = 'block';
+  gameField.style.position = 'fixed';
   document.documentElement.style.overflow = 'hidden';
 
   document.getElementById('menu').style.boxShadow = '0px 0px 5px 1px #000000';
