@@ -1046,11 +1046,13 @@ function showMineField() {
   earnPerClickBox.style.marginTop = '36px'
   clicksTillLevelUp.style.marginTop = '36px'
   passiveClicks.style.marginTop = '36px'
+  document.documentElement.style.maxHeight = '1200px';
   document.documentElement.style.overflow = 'auto';
   mineButton.style.backgroundColor = '#1C1F24';
 }
 
 function hideMineField() {
+  document.documentElement.style.maxHeight = '100vh';
   window.scrollTo({
     top: 0,
     behavior: 'auto'
