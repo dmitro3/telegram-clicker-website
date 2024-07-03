@@ -1042,38 +1042,65 @@ function getCurrentDateFormatted() {
 }
 
 function showMineField() {
-  body.style.overflow = 'hidden';
-  html.style.overflow = 'hidden';
-  body.style.height = '100vh'
-  document.documentElement.style.overflow = 'hidden';
-  mineScrollDiv.style.display = 'block'
   for (let i = 0; i < mineFieldElements.length; i++) {
     document.getElementById(mineFieldElements[i]).style.display = 'block'
   }
+  window.scrollTo({
+    top: 0,
+    behavior: 'auto'
+  });
+
   gameField.style.display = 'block';
-  gameField.style.overflow = 'hidden';
+  document.documentElement.style.overflow = 'hidden';
+
   document.getElementById('menu').style.boxShadow = '0px 0px 5px 1px #000000';
   mineMenuMenu.style.display = 'block'
+
   cover.style.marginTop = '47px'
+  body.style.height = '100vh'
+  document.documentElement.style.overflow = 'hidden';
   earnPerClickCoin.style.marginTop = '67px';
   earnPerClickLabel.style.marginTop = '67px';
   passiveClicksCoin.style.marginTop = '67px';
   passiveClicksLabel.style.marginTop = '67px';
+
   gameField.style.height = '979px';
+
   gameField.style.marginTop = '16px';
+
   earnPerClickBox.style.marginTop = '36px'
+
   clicksTillLevelUp.style.marginTop = '36px'
+
   passiveClicks.style.marginTop = '36px'
   mineButton.style.backgroundColor = '#1C1F24';
-  document.documentElement.style.maxHeight = '100vh';
-  body.style.touchAction = 'none';
-  body.style.webkitUserSelect = 'none';
-  body.style.mozUserSelect = 'none';
-  body.style.msUserSelect = 'none';
-  body.style.userSelect = 'none';
-  body.style.webkitUserDrag = 'none';
-  body.style.mozUserDrag = 'none';
-  body.style.msUserDrag = 'none';
+
+  //asdfasdf
+  for (let i = 0; i < gameFieldElements.length; i++) {
+    document.getElementById(gameFieldElements[i]).style.display = 'block';
+  }
+  
+  gameField.style.display = 'block';
+  earnPerClickBox.style.marginTop = '114px';
+  clicksTillLevelUp.style.marginTop = '114px';
+  passiveClicks.style.marginTop = '114px';
+  
+  document.documentElement.style.overflow = 'hidden';
+  gameButton.style.backgroundColor = '#1C1F24';
+  gameField.style.height = '880px';
+  earnPerClickBox.style.marginTop = '114px';
+  clicksTillLevelUp.style.marginTop = '114px';
+  passiveClicks.style.marginTop = '114px';
+  cover.style.marginTop = '130px'
+  body.style.height = '100vh'
+  document.documentElement.style.overflow = 'hidden';
+  gameButton.style.backgroundColor = '#1C1F24';
+  gameField.style.marginTop = '95px';
+  earnPerClickCoin.style.marginTop = '145px';
+  earnPerClickLabel.style.marginTop = '146px';
+  passiveClicksCoin.style.marginTop = '145px';
+  passiveClicksLabel.style.marginTop = '146px';
+  menu.style.boxShadow = '0px 0px 0px 0px #000000'
 }
 
 function hideMineField() {
