@@ -1024,7 +1024,7 @@ function showMineField() {
     document.getElementById(mineFieldElements[i]).style.display = 'block'
   }
   gameField.style.display = 'block';
-  body.style.height = '120vh'
+  body.style.height = '1000px'
   document.getElementById('html').style.height = '797px'
   document.getElementById('menu').style.boxShadow = '0px 0px 5px 1px #000000';
   mineMenuMenu.style.display = 'block'
@@ -1033,7 +1033,7 @@ function showMineField() {
   earnPerClickLabel.style.marginTop = '67px';
   passiveClicksCoin.style.marginTop = '67px';
   passiveClicksLabel.style.marginTop = '67px';
-  gameField.style.height = '1200px';
+  gameField.style.height = '1150px';
   gameField.style.marginTop = '16px';
   earnPerClickBox.style.marginTop = '36px'
   clicksTillLevelUp.style.marginTop = '36px'
