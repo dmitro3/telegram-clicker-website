@@ -9,7 +9,7 @@ let friendDivTopMargin = 451
 
 function handleOrientationChange() {
   // Lock orientation to portrait mode (0 degrees)
-  if (window.orientation !== 0) {
+  if (window.screen.orientation !== 0) {
       // Rotate the screen back to portrait orientation
       if (window.screen.orientation && window.screen.orientation.lock) {
           window.screen.orientation.lock('portrait');
@@ -30,9 +30,12 @@ const fixedScrollPosition = { top: 0, left: 0 };
     // Listen to the scroll event
     window.addEventListener('scroll', maintainScrollPosition);
 
+    window.addEventListener('touchmove', maintainScrollPosition);
+
     // Optionally, ensure the scroll position is set on page load
     window.addEventListener('load', () => {
       window.scrollTo(fixedScrollPosition.left, fixedScrollPosition.top);
+      
     });
 
 
@@ -293,6 +296,7 @@ developerButton.addEventListener('click', ()=>{
 });
 
 document.getElementById('mineButton').addEventListener('click', ()=>{
+  document.documentElement.style.overflow = 'hidden';
   hideGameMenu();
   hideEarnMenu();
   hideFriendsMenu();
