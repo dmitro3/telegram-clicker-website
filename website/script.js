@@ -80,7 +80,7 @@ const mineFieldElements = [
   'earnPerClickBox', 'clicksTillLevelUp', 'earnPerClickCoin', 'earnPerClickLabel', 'clicksTillLevelUpLabel',
   'insideEarnPerClickLabel', 'insideCoinsTillLevelUpLabel', 'passiveClicks', 'insidePassiveCLicksLabel', 'passiveClicksCoin', 'passiveClicksLabel',
   'coinMainLogo', 'coinsLabel', 'funTokensBox', 'stakingBox', 'btcPairsBox', 'ethPairsBox', 'top10CMCBox', 'gameFiBox', 'defiBox', 'socialFiBox', 
-  'memeCoinsBox', 'shitCoinsBox', 'mineMenuMenu'
+  'memeCoinsBox', 'shitCoinsBox', 'mineMenuMenu', 'mineScrollDiv'
 ]
 
 window.onload = ()=> {
@@ -1027,6 +1027,7 @@ function showMineField() {
     document.getElementById(mineFieldElements[i]).style.display = 'block'
   }
   gameField.style.display = 'block';
+  gameField.style.overflow = 'hidden';
   document.getElementById('menu').style.boxShadow = '0px 0px 5px 1px #000000';
   mineMenuMenu.style.display = 'block'
   cover.style.marginTop = '47px'
