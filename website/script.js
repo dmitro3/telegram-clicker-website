@@ -215,7 +215,6 @@ function showGameMenu() {
     behavior: 'auto'
   });
   gameField.style.display = 'block';
-  body.style.height = '100vh'
   earnPerClickBox.style.marginTop = '114px';
   clicksTillLevelUp.style.marginTop = '114px';
   passiveClicks.style.marginTop = '114px';
@@ -227,6 +226,7 @@ function showGameMenu() {
   clicksTillLevelUp.style.marginTop = '114px';
   passiveClicks.style.marginTop = '114px';
   cover.style.marginTop = '130px'
+  body.style.height = '100vh'
   document.documentElement.style.overflow = 'hidden';
   gameButton.style.backgroundColor = '#1C1F24';
   gameField.style.marginTop = '95px';
@@ -1020,16 +1020,9 @@ function getCurrentDateFormatted() {
 }
 
 function showMineField() {
+  body.style.height = '100vh'
+  document.documentElement.style.overflow = 'hidden';
   mineScrollDiv.style.display = 'block'
-  body.style.height = '100vh';
-  html.style.height = '100vh'
-  body.style.overflow = 'hidden';
-  menuShadow.style.display = 'block'
-  body.style.touchAction = 'auto';
-  body.style.webkitUserSelect = 'auto';
-  body.style.mozUserSelect = 'auto';
-  body.style.msUserSelect = 'auto';
-  body.style.userSelect = 'auto';
   for (let i = 0; i < mineFieldElements.length; i++) {
     document.getElementById(mineFieldElements[i]).style.display = 'block'
   }
@@ -1041,12 +1034,11 @@ function showMineField() {
   earnPerClickLabel.style.marginTop = '67px';
   passiveClicksCoin.style.marginTop = '67px';
   passiveClicksLabel.style.marginTop = '67px';
-  gameField.style.height = '100vh';
+  gameField.style.height = '979px';
   gameField.style.marginTop = '16px';
   earnPerClickBox.style.marginTop = '36px'
   clicksTillLevelUp.style.marginTop = '36px'
   passiveClicks.style.marginTop = '36px'
-  gameField.style.maxHeight = '100vh';
   mineButton.style.backgroundColor = '#1C1F24';
 }
 
