@@ -1020,7 +1020,7 @@ function getCurrentDateFormatted() {
 }
 
 function showMineField() {
-  document.documentElement.style.overflow = 'hidden';
+  mineScrollDiv.style.display = 'block'
   body.style.height = '100vh';
   html.style.height = '100vh'
   body.style.overflow = 'hidden';
