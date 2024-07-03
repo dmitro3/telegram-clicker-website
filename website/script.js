@@ -25,9 +25,22 @@ handleOrientationChange();
 // Event listener for orientation change
 window.addEventListener('orientationchange', handleOrientationChange);
 
+// Function to prevent scrolling
+function preventScroll(event) {
+  // Calculate the difference between current touch position and initial touch position
+  var deltaY = event.touches[0].clientY - document.getElementById('body').touchStartY;
+  
+  // Check if scrolling is needed
+  if (Math.abs(deltaY) >= 10) {
+      event.preventDefault(); // Prevent default scrolling behavior
+  }
+}
+
+// Event listener for touch start
 document.getElementById('body').addEventListener('touchstart', function(event) {
   // Store the initial touch position
   this.touchStartY = event.touches[0].clientY;
+  
   // Prevent scrolling on touchmove
   document.addEventListener('touchmove', preventScroll, { passive: false });
 });
@@ -1012,7 +1025,7 @@ function showMineField() {
   }
   gameField.style.display = 'block';
   body.style.height = '120vh'
-  document.getElementById('html').style.height = '1200px'
+  document.getElementById('html').style.height = '797px'
   document.getElementById('menu').style.boxShadow = '0px 0px 5px 1px #000000';
   mineMenuMenu.style.display = 'block'
   cover.style.marginTop = '47px'

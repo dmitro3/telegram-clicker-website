@@ -2,9 +2,7 @@ body {
     background: #282B30;
     margin: 0;
     padding: 0;
-    height: 100vh;
     overflow: hidden;
-    background-size: cover;
     font-family: 'Inter', sans-serif;
     touch-action: none;
     -webkit-user-select: none;
@@ -17,11 +15,12 @@ body {
 }
 
 html, body {
-    height: 124vh;
+  height: 980px;
+  max-width: 519px;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    -ms-overflow-style: none;  /* IE and Edge */
+    -ms-overflow-style: none;
     scrollbar-width: none;
     -webkit-user-select: none;
     -moz-user-select: none;
