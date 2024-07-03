@@ -1050,7 +1050,6 @@ function showMineField() {
   clicksTillLevelUp.style.marginTop = '36px'
   passiveClicks.style.marginTop = '36px'
   gameField.style.maxHeight = '100vh';
-  gameField.style.overflowY = 'scroll';
   mineButton.style.backgroundColor = '#1C1F24';
 }
 
