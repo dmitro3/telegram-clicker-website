@@ -15,6 +15,10 @@ body {
     -ms-user-drag: none;
 }
 
+#scroll::-webkit-scrollbar{
+ display: none;
+}
+
 html, body {
   height: 980px;
   max-width: 519px;
@@ -971,7 +975,7 @@ html, body {
     border-radius: 21px;
     width: 230px;
     height: 146px;
-    margin-top: 291px;
+    margin-top: 0px;
     margin-left: 18px;
     z-index: 2;
     display: none;
@@ -983,7 +987,7 @@ html, body {
     border-radius: 21px;
     width: 230px;
     height: 146px;
-    margin-top: 291px;
+    margin-top: 0px;
     margin-left: 271px;
     z-index: 2;
     display: none;
@@ -997,7 +1001,7 @@ html, body {
     border-radius: 21px;
     width: 230px;
     height: 146px;
-    margin-top: 451px;
+    margin-top: 160px;
     margin-left: 18px;
     z-index: 2;
     display: none;
@@ -1011,7 +1015,7 @@ html, body {
     border-radius: 21px;
     width: 230px;
     height: 146px;
-    margin-top: 451px;
+    margin-top: 160px;
     margin-left: 271px;
     z-index: 2;
     display: none;
@@ -1025,7 +1029,7 @@ html, body {
     border-radius: 21px;
     width: 230px;
     height: 146px;
-    margin-top: 611px;
+    margin-top: 320px;
     margin-left: 18px;
     z-index: 2;
     display: none;
@@ -1039,7 +1043,7 @@ html, body {
     border-radius: 21px;
     width: 230px;
     height: 146px;
-    margin-top: 611px;
+    margin-top: 320px;
     margin-left: 271px;
     z-index: 2;
     display: none;
@@ -1053,7 +1057,7 @@ html, body {
     border-radius: 21px;
     width: 230px;
     height: 146px;
-    margin-top: 771px;
+    margin-top: 480px;
     margin-left: 18px;
     z-index: 2;
     display: none;
@@ -1067,7 +1071,7 @@ html, body {
     border-radius: 21px;
     width: 230px;
     height: 146px;
-    margin-top: 771px;
+    margin-top: 480px;
     margin-left: 271px;
     z-index: 2;
     display: none;
@@ -1081,7 +1085,7 @@ html, body {
     border-radius: 21px;
     width: 230px;
     height: 146px;
-    margin-top: 931px;
+    margin-top: 640px;
     margin-left: 18px;
     z-index: 2;
     display: none;
@@ -1096,7 +1100,7 @@ html, body {
     border-radius: 21px;
     width: 230px;
     height: 146px;
-    margin-top: 931px;
+    margin-top: 640px;
     margin-left: 271px;
     z-index: 2;
   }
