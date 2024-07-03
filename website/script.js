@@ -1076,31 +1076,7 @@ function showMineField() {
   mineButton.style.backgroundColor = '#1C1F24';
 
   //asdfasdf
-  for (let i = 0; i < gameFieldElements.length; i++) {
-    document.getElementById(gameFieldElements[i]).style.display = 'block';
-  }
   
-  gameField.style.display = 'block';
-  earnPerClickBox.style.marginTop = '114px';
-  clicksTillLevelUp.style.marginTop = '114px';
-  passiveClicks.style.marginTop = '114px';
-  
-  document.documentElement.style.overflow = 'hidden';
-  gameButton.style.backgroundColor = '#1C1F24';
-  gameField.style.height = '880px';
-  earnPerClickBox.style.marginTop = '114px';
-  clicksTillLevelUp.style.marginTop = '114px';
-  passiveClicks.style.marginTop = '114px';
-  cover.style.marginTop = '130px'
-  body.style.height = '100vh'
-  document.documentElement.style.overflow = 'hidden';
-  gameButton.style.backgroundColor = '#1C1F24';
-  gameField.style.marginTop = '95px';
-  earnPerClickCoin.style.marginTop = '145px';
-  earnPerClickLabel.style.marginTop = '146px';
-  passiveClicksCoin.style.marginTop = '145px';
-  passiveClicksLabel.style.marginTop = '146px';
-  menu.style.boxShadow = '0px 0px 0px 0px #000000'
 }
 
 function hideMineField() {
