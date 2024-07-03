@@ -1042,6 +1042,7 @@ function getCurrentDateFormatted() {
 }
 
 function showMineField() {
+  menuShadow.style.display = 'block';
   for (let i = 0; i < mineFieldElements.length; i++) {
     document.getElementById(mineFieldElements[i]).style.display = 'block'
   }
@@ -1081,6 +1082,7 @@ function showMineField() {
 }
 
 function hideMineField() {
+  menuShadow.style.display = 'none';
   menuShadow.style.display = 'none'
   document.documentElement.style.maxHeight = '100vh';
   window.scrollTo({
@@ -1781,3 +1783,13 @@ document.getElementById('thanksFunticoLabel').addEventListener('click', ()=>{
   adjustCoinsVisual(+getLeftCoins() + money);
   document.getElementById('passiveIncomePopUp').style.display = 'none';
 });
+
+//shadow tracking
+document.getElementById('scroll').addEventListener('scroll', ()=>{
+  const scrollableDiv = document.getElementById('scroll');
+  const scrollTop = scrollableDiv.scrollTop;
+  const scrollHeight = scrollableDiv.scrollHeight;
+  const clientHeight = scrollableDiv.clientHeight;
+  const scrolledPercentage = Math.floor((scrollTop / (scrollHeight - clientHeight))*100)/100;
+  document.getElementById('menuShadow').style.background = `linear-gradient(to bottom, rgba(28, 31, 36, 0) 0%, rgba(28, 31, 36, ${1-scrolledPercentage}) 52%, rgba(28, 31, 36, ${1-scrolledPercentage}) 100%)`;
+})
