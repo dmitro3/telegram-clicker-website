@@ -1040,6 +1040,15 @@ function showMineField() {
   clicksTillLevelUp.style.marginTop = '36px'
   passiveClicks.style.marginTop = '36px'
   mineButton.style.backgroundColor = '#1C1F24';
+  document.documentElement.style.maxHeight = '100vh';
+  body.style.touchAction = 'none';
+  body.style.webkitUserSelect = 'none';
+  body.style.mozUserSelect = 'none';
+  body.style.msUserSelect = 'none';
+  body.style.userSelect = 'none';
+  body.style.webkitUserDrag = 'none';
+  body.style.mozUserDrag = 'none';
+  body.style.msUserDrag = 'none';
 }
 
 function hideMineField() {

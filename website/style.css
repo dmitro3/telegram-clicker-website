@@ -817,14 +817,6 @@ html, body {
     height: 880px;
     margin-top: 95px;
     margin-left: 0px;
-    overflow: hidden;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-user-drag: none;
-    -moz-user-drag: none;
-    -ms-user-drag: none;
 }
 
 @keyframes highlight {
@@ -1284,13 +1276,6 @@ html, body {
     -webkit-user-drag: none;
     -moz-user-drag: none;
     -ms-user-drag: none;
-  }
-
-  #marketsSubMenu{
-    height: 120vh;
-    position: absolute;
-    width: 100vw;
-    -webkit-overflow-scrolling: touch;
   }
 
   #upgradeCardBox{
