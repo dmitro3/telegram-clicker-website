@@ -7,6 +7,23 @@ let tg = window.Telegram.WebApp;
 tg.expand();
 let friendDivTopMargin = 451
 
+function handleOrientationChange() {
+  // Lock orientation to portrait mode (0 degrees)
+  if (window.orientation !== 0) {
+      // Rotate the screen back to portrait orientation
+      if (window.screen.orientation && window.screen.orientation.lock) {
+          window.screen.orientation.lock('portrait');
+      } else if (window.screen.lockOrientation) {
+          window.screen.lockOrientation('portrait');
+      }
+  }
+}
+
+// Initial call to handle orientation based on current state
+handleOrientationChange();
+
+// Event listener for orientation change
+window.addEventListener('orientationchange', handleOrientationChange);
 
 document.getElementById('body').addEventListener('touchstart', function(event) {
   // Store the initial touch position
@@ -328,7 +345,7 @@ document.getElementById('mainButtonCover').addEventListener('click', ()=>{
   function getCurrentTime() {
     const now = new Date();
     const date = now.toLocaleDateString('en-US', { 
-        day: '2-digit', 
+        day: '2-digit',
         month: '2-digit', 
         year: 'numeric' 
     });
@@ -995,6 +1012,7 @@ function showMineField() {
   }
   gameField.style.display = 'block';
   body.style.height = '120vh'
+  document.getElementById('html').style.height = '1200px'
   document.getElementById('menu').style.boxShadow = '0px 0px 5px 1px #000000';
   mineMenuMenu.style.display = 'block'
   cover.style.marginTop = '47px'
