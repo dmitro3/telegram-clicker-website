@@ -1020,6 +1020,7 @@ function getCurrentDateFormatted() {
 }
 
 function showMineField() {
+  menuShadow.style.display = 'block'
   body.style.touchAction = 'auto';
   body.style.webkitUserSelect = 'auto';
   body.style.mozUserSelect = 'auto';
@@ -1047,11 +1048,12 @@ function showMineField() {
   clicksTillLevelUp.style.marginTop = '36px'
   passiveClicks.style.marginTop = '36px'
   document.documentElement.style.maxHeight = '600px';
-  document.documentElement.style.overflow = 'auto';
+  gameField.style.overflowY = 'scroll';
   mineButton.style.backgroundColor = '#1C1F24';
 }
 
 function hideMineField() {
+  menuShadow.style.display = 'none'
   document.documentElement.style.maxHeight = '100vh';
   window.scrollTo({
     top: 0,
