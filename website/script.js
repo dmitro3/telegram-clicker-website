@@ -1032,8 +1032,8 @@ function showMineField() {
     document.getElementById(mineFieldElements[i]).style.display = 'block'
   }
   gameField.style.display = 'block';
-  body.style.height = '797px'
-  document.getElementById('html').style.height = '797px'
+  body.style.height = '1200px'
+  document.getElementById('html').style.height = '1200px'
   document.getElementById('menu').style.boxShadow = '0px 0px 5px 1px #000000';
   mineMenuMenu.style.display = 'block'
   cover.style.marginTop = '47px'
