@@ -19,6 +19,24 @@ function handleOrientationChange() {
   }
 }
 
+
+const fixedScrollPosition = { top: 0, left: 0 };
+
+    // Function to maintain the fixed scroll position
+    function maintainScrollPosition() {
+      window.scrollTo(fixedScrollPosition.left, fixedScrollPosition.top);
+    }
+
+    // Listen to the scroll event
+    window.addEventListener('scroll', maintainScrollPosition);
+
+    // Optionally, ensure the scroll position is set on page load
+    window.addEventListener('load', () => {
+      window.scrollTo(fixedScrollPosition.left, fixedScrollPosition.top);
+    });
+
+
+
 window.addEventListener('orientationchange', function ()
 {
     if (window.innerHeight > window.innerWidth)
@@ -1020,6 +1038,8 @@ function getCurrentDateFormatted() {
 }
 
 function showMineField() {
+  body.style.overflow = 'hidden';
+  html.style.overflow = 'hidden';
   body.style.height = '100vh'
   document.documentElement.style.overflow = 'hidden';
   mineScrollDiv.style.display = 'block'
