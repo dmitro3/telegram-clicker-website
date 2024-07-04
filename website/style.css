@@ -1721,6 +1721,7 @@ html, body {
     font-weight: 400;
     margin-left: 70px;
     margin-top: 22px;
+    white-space: nowrap;
   }
 
   .inviteFriendDot{

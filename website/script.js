@@ -19,6 +19,18 @@ function handleOrientationChange() {
   }
 }
 
+const dotMargins = [
+  { status: 'Bronze', margin: 115 },
+  { status: 'Silver', margin: 105 },
+  { status: 'Gold', margin: 104 },
+  { status: 'Platinum', margin: 125 },
+  { status: 'Diamond', margin: 127 },
+  { status: 'Epic', margin: 100 },
+  { status: 'Legendary', margin: 137 },
+  { status: 'Master', margin: 118 },
+  { status: 'Grand Master', margin:155 },
+  { status: 'Lord', margin: 104 }
+]
 
 const fixedScrollPosition = { top: 0, left: 0 };
 
@@ -580,18 +592,7 @@ function createElement(type, className, src) {
           status.textContent = nameLabel;
           money.textContent = user.coins;
 
-          // adjusting margin of dot, coin, money 
-          const dotMargin = 135;
-          const coinMargin = 119;
-          const moneyMargin = 142;
-          const statusBasicWidth = 48.8;
-
-          const statusWidth = parseInt(status.style.width, 10);
-          const difference = 30;
-
-          dot.style.marginLeft = (dotMargin + 5)+'px';
-          coin.style.marginLeft = (coinMargin + difference)+'px';
-          money.style.marginLeft = (moneyMargin + difference)+'px';
+          adjustDotMargin(nameLabel, dot, coin, money);
 
           div.appendChild(image)
           div.appendChild(usernameLabel)
@@ -1794,3 +1795,11 @@ document.getElementById('scroll').addEventListener('scroll', ()=>{
     document.getElementById('menuShadow').style.background = `background: linear-gradient(to bottom, rgba(28, 31, 36, 0) 0%, rgba(28, 31, 36, ${0.75-scrolledPercentage+0.05}) 52%, rgba(28, 31, 36, ${0.75-scrolledPercentage+0.05}) 100%)`;
     document.getElementById('menuShadow').style.top = `${650+scrolledPercentage*50}px`;
 })
+
+
+function adjustDotMargin(status, dot, coin, money){
+  const margin = dotMargins.find(margin => margin.status === status);
+  dot.style.marginLeft = margin.margin + 'px';
+  coin.style.marginLeft = (margin.margin + 9) + 'px';
+  money.style.marginLeft = (margin.margin + 31) + 'px';
+}
