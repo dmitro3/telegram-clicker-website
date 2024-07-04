@@ -1589,6 +1589,8 @@ function updateCard () {
   const userCoins = +getLeftCoins();
 
   if (userCoins >= price){
+    document.getElementById('getUpgradeBox').style.backgroundColor = '##A472D7'
+    document.getElementById('getUpgradeBoxLabel').textContent = 'Get'
     adjustCoinsVisual(userCoins - price);
     adjustCardsAvailability()
     postData('/updateCardLevel', {
@@ -1629,6 +1631,9 @@ function updateCard () {
         adjustCardsAvailability()
       });
     }
+  } else {
+    document.getElementById('getUpgradeBox').style.backgroundColor = '#454648'
+    document.getElementById('getUpgradeBoxLabel').textContent = 'You do not have enough funds'
   }
 }
 
