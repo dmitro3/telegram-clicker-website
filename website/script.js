@@ -265,8 +265,6 @@ function showGameMenu() {
   gameField.style.marginTop = '95px';
   earnPerClickCoin.style.marginTop = '145px';
   earnPerClickLabel.style.marginTop = '146px';
-  passiveClicksCoin.style.marginTop = '145px';
-  passiveClicksLabel.style.marginTop = '146px';
   menu.style.boxShadow = '0px 0px 0px 0px #000000'
 }
 
@@ -1064,8 +1062,6 @@ function showMineField() {
   document.documentElement.style.overflow = 'hidden';
   earnPerClickCoin.style.marginTop = '67px';
   earnPerClickLabel.style.marginTop = '67px';
-  passiveClicksCoin.style.marginTop = '67px';
-  passiveClicksLabel.style.marginTop = '67px';
 
   gameField.style.height = '979px';
 
