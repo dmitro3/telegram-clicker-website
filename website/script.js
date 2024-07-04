@@ -1039,6 +1039,7 @@ function getCurrentDateFormatted() {
 }
 
 function showMineField() {
+  adjustCardsAvailability();
   menuShadow.style.display = 'block';
   for (let i = 0; i < mineFieldElements.length; i++) {
     document.getElementById(mineFieldElements[i]).style.display = 'block'
@@ -1074,6 +1075,15 @@ function showMineField() {
 
   //asdfasdf
   
+}
+
+function adjustCardsAvailability() {
+  const coins = +getLeftCoins();
+  for (let i = 0; i < 10; i++){
+    if (coins > +document.getElementById(cardInfo[i].price).textContent){
+      document.getElementById('shadow'+(i+1)).style.opacity = 1;
+    }
+  }
 }
 
 function hideMineField() {
@@ -1587,12 +1597,14 @@ function updateCard () {
       document.getElementById(card.pph).textContent = '+' + levelProgress[index].coinPerHour;
       document.getElementById('passiveClicksLabel').innerHTML = (+document.getElementById('passiveClicksLabel').textContent + +diff);
       document.getElementById('cardUpgradeBox').style.display = 'none';
+      unBlur()
       postData('/updatePPH', {
         telegramId: getTelegramId(),
         pph: +document.getElementById('passiveClicksLabel').textContent + +diff
       })
       .then(data => {});
     } else{
+      unBlur();
       document.getElementById(card.level).textContent = moneyData.level;
       document.getElementById(card.price).textContent = 'Completed';
       document.getElementById(card.pph).textContent = '+' + levelProgress[index].coinPerHour;
@@ -1696,6 +1708,7 @@ function getDailyRewards() {
   .then(data => {
     document.getElementById('dailyRewardsWindow').style.display = 'none';
     dailyRewards()
+    unBlur();
   });
 };
 
@@ -1792,6 +1805,7 @@ document.getElementById('thanksFunticoLabel').addEventListener('click', ()=>{
   const money = +document.getElementById('passivePopUpLabel').textContent;
   adjustCoinsVisual(+getLeftCoins() + money);
   document.getElementById('passiveIncomePopUp').style.display = 'none';
+  unBlur();
 });
 
 //shadow tracking
@@ -1803,6 +1817,7 @@ document.getElementById('scroll').addEventListener('scroll', ()=>{
   const scrolledPercentage = Math.floor((scrollTop / (scrollHeight - clientHeight))*100)/100;
     document.getElementById('menuShadow').style.background = `background: linear-gradient(to bottom, rgba(28, 31, 36, 0) 0%, rgba(28, 31, 36, ${0.75-scrolledPercentage+0.05}) 52%, rgba(28, 31, 36, ${0.75-scrolledPercentage+0.05}) 100%)`;
     document.getElementById('menuShadow').style.top = `${650+scrolledPercentage*50}px`;
+    document.getElementById('menuShadow').style.height = `${345-scrolledPercentage*50}px`;
 })
 
 

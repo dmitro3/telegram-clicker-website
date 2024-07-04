@@ -14,6 +14,7 @@ body {
     -webkit-user-drag: none;
     -moz-user-drag: none;
     -ms-user-drag: none;
+    position: fixed;
 }
 
 #scroll::-webkit-scrollbar{
@@ -1148,7 +1149,7 @@ html, body {
     color: white;
     font-size: 18px;
     font-weight: 600;
-    margin-top: 14.98px;
+    margin-top: 17px;
     margin-left: 47px;
   }
 
@@ -2462,4 +2463,14 @@ html, body {
   display: none;
   top: 0;
   left: 0;
+}
+
+.cardShadow{
+  height: 45px;
+  width: 100px;
+  margin-top: 2px;
+  margin-left: 2px;
+  z-index: 8;
+  background-color: #282B30;
+  opacity: .3;
 }
