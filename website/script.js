@@ -218,8 +218,8 @@ function adjustScreenSize () {
 
 function showFriendsMenu() {
   document.getElementById('html').style.height = '797px'
-  body.style.height = '792px';
-  body.height = '792px';
+  body.style.height = '1000px';
+  body.height = '1000px';
   window.scrollTo({
     top: 0,
     behavior: 'auto'
@@ -1568,7 +1568,7 @@ function showCardUpgradeBox (cardId) {
   const index = balance.findIndex(level => level.coinPerHour === currentPPH);
   const moneyData = balance[index+1];
   if (coins >= +moneyData.updatePrice) {
-    document.getElementById('getUpgradeBox').style.backgroundColor = '##A472D7'
+    document.getElementById('getUpgradeBox').style.backgroundColor = '#A472D7'
     document.getElementById('getUpgradeBoxLabel').textContent = 'Get'
   } else {
     document.getElementById('getUpgradeBox').style.backgroundColor = '#454648'
