@@ -332,7 +332,8 @@ function showEarnMenu() {
     behavior: 'auto'
   });
   body.style.backgroundColor = '#000000'
-  body.height = '100vh'
+  body.style.height = '1000px'
+  html.style.height = '100vh'
   window.scrollTo({
     top: 0,
     behavior: 'auto'
@@ -1558,6 +1559,7 @@ document.getElementById('shitCoinsBox').addEventListener('click', function() {sh
 document.getElementById('getUpgradeBox').addEventListener('click', updateCard)
 
 function showCardUpgradeBox (cardId) {
+  adjustCardsAvailability()
   blur()
   const card = cardInfo.find(card => card.cardId === cardId);
   const balance = card.infoModule;
@@ -1588,6 +1590,7 @@ function updateCard () {
 
   if (userCoins >= price){
     adjustCoinsVisual(userCoins - price);
+    adjustCardsAvailability()
     postData('/updateCardLevel', {
       telegramId: getTelegramId(),
       cardId: cardId,
@@ -1603,6 +1606,7 @@ function updateCard () {
       document.getElementById(card.pph).textContent = '+' + balance[index].coinPerHour;
       document.getElementById('passiveClicksLabel').innerHTML = (+document.getElementById('passiveClicksLabel').textContent + +diff);
       document.getElementById('cardUpgradeBox').style.display = 'none';
+      adjustCardsAvailability()
       unBlur()
       postData('/updatePPH', {
         telegramId: getTelegramId(),
@@ -1616,11 +1620,14 @@ function updateCard () {
       document.getElementById(card.pph).textContent = '+' + balance[index].coinPerHour;
       document.getElementById('passiveClicksLabel').innerHTML = (+document.getElementById('passiveClicksLabel').textContent + +diff);
       document.getElementById('cardUpgradeBox').style.display = 'none';
+      adjustCardsAvailability()
       postData('/updatePPH', {
         telegramId: getTelegramId(),
         pph: +document.getElementById('passiveClicksLabel').textContent + +diff
       })
-      .then(data => {});
+      .then(data => {
+        adjustCardsAvailability()
+      });
     }
   }
 }
