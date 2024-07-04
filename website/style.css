@@ -1,4 +1,5 @@
 body {
+    z-index: 0;
     background: #282B30;
     width: 519px;
     margin: 0;
@@ -1885,10 +1886,10 @@ html, body {
   #cardUpgradeBox{
     display: none;
     position: fixed;
-    z-index: 5;
+    z-index: 9;
     width: 519px;
-    height: 619px;
-    margin-top: 278px;
+    height: 715px;
+    margin-top: 258px;
     background-color: #1c1f24;
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
@@ -1997,17 +1998,17 @@ html, body {
 }
 
 #dailyRewardsWindow {
-  display: none;
+  display: block;
   width: 519px;
-  height: 814px;
+  height: 924px;
   position: absolute;
-  margin-top: 90px;
+  margin-top: 50px;
   background-color: #1C1F24;
   border-top-right-radius: 50px;
   border-top-left-radius: 50px;
   box-shadow: 0px -6px 23.4px 0px #BB82F5;
   border-top: 5px solid #BB82F5;
-  z-index: 5;
+  z-index: 9;
 }
 
 #dailyRewardsWindowClose{
@@ -2288,18 +2289,18 @@ html, body {
   font-size: 50px;
 }
 
-#passiveIncomePopUp{
+#passiveIncomePopUp {
   display: none;
   position: absolute;
-  z-index: 10;
   width: 519px;
-  height: 510px;
-  background-color: #1C1F24;
-  margin-top: 390px;
+  height: 615px;
+  background-color: rgba(28, 31, 36, 1); /* Semi-transparent background */
+  margin-top: 360px;
   border-top-right-radius: 50px;
   border-top-left-radius: 50px;
   box-shadow: 0px -6px 23.4px 0px #BB82F5;
   border-top: 5px solid #BB82F5;
+  z-index: 9;
 }
 
 #rect{
@@ -2448,4 +2449,16 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#blurCover{
+  z-index: 8;
+  backdrop-filter: blur(1px);
+  -webkit-filter: blur(10px); /* For Safari and older versions of Chrome */
+  width: 519px;
+  height: 1000px;
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
 }

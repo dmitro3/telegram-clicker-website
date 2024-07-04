@@ -239,7 +239,6 @@ function hideFriendsMenu() {
 }
 
 function showGameMenu() {
-  
   for (let i = 0; i < gameFieldElements.length; i++) {
     document.getElementById(gameFieldElements[i]).style.display = 'block';
   }
@@ -251,7 +250,6 @@ function showGameMenu() {
   earnPerClickBox.style.marginTop = '114px';
   clicksTillLevelUp.style.marginTop = '114px';
   passiveClicks.style.marginTop = '114px';
-  
   document.documentElement.style.overflow = 'hidden';
   gameButton.style.backgroundColor = '#1C1F24';
   gameField.style.height = '880px';
@@ -1530,6 +1528,7 @@ function identifyIndex(coins) {
 
 document.getElementById('cardUpgradeBoxClose').addEventListener('click', ()=>{
   document.getElementById('cardUpgradeBox').style.display = 'none';
+  unBlur()
 });
 
 // mine cards upgrade menu
@@ -1546,6 +1545,7 @@ document.getElementById('shitCoinsBox').addEventListener('click', function() {sh
 document.getElementById('getUpgradeBox').addEventListener('click', updateCard)
 
 function showCardUpgradeBox (cardId) {
+  blur()
   const card = cardInfo.find(card => card.cardId === cardId);
   const currentPPH = +document.getElementById(card.pph).textContent.slice(1);
   const index = levelProgress.findIndex(level => level.coinPerHour === currentPPH);
@@ -1621,6 +1621,7 @@ function getCurrentDatee () {
 }
 document.getElementById('dailyRewardsWindowClose').addEventListener('click', function () {
   document.getElementById('dailyRewardsWindow').style.display = 'none';
+  unBlur()
 });
 
 document.getElementById('earnFieldDailyRewardDiv').addEventListener('click', showDailyRewardsWindow);
@@ -1628,6 +1629,7 @@ document.getElementById('earnFieldDailyRewardDiv').addEventListener('click', sho
 function showDailyRewardsWindow () {
   dailyRewards();
   document.getElementById('dailyRewardsWindow').style.display = 'block';
+  blur()
 }
 
 const dailyRewardsBegining = {
@@ -1770,10 +1772,20 @@ function getTimeInSeconds (time) {
 function showPassiveMiningPopUp(text){
   document.getElementById('passiveIncomePopUp').style.display = 'block';
   document.getElementById('passivePopUpLabel').textContent = text;
+  blur();
+}
+
+function unBlur(){
+  document.getElementById('blurCover').style.display = 'none';
+}
+
+function blur(){
+  document.getElementById('blurCover').style.display = 'block';
 }
 
 document.getElementById('closeImage1').addEventListener('click', ()=>{
-  document.getElementById('passiveIncomePopUp').style.display = 'none'
+  document.getElementById('passiveIncomePopUp').style.display = 'none';
+  unBlur();
 });
 
 document.getElementById('thanksFunticoLabel').addEventListener('click', ()=>{
