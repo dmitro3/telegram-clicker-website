@@ -861,7 +861,7 @@ html, body {
     height: 58px;
     margin-top: 216px;
     margin-left: 18px;
-    z-index: 2;
+    z-index: 5;
     display: none;
   }
 
