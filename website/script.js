@@ -1080,6 +1080,7 @@ function showMineField() {
 function adjustCardsAvailability() {
   const coins = +getLeftCoins();
   for (let i = 0; i < 10; i++){
+    document.getElementById('shadow'+(i+1)).style.opacity = 0.3;
     if (coins > +document.getElementById(cardInfo[i].price).textContent){
       document.getElementById('shadow'+(i+1)).style.opacity = 1;
     }
@@ -1582,6 +1583,7 @@ function updateCard () {
 
   if (userCoins >= price){
     adjustCoinsVisual(userCoins - price);
+    adjustCardsAvailability()
     postData('/updateCardLevel', {
       telegramId: getTelegramId(),
       cardId: cardId,
