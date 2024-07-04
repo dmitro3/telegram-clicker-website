@@ -1602,7 +1602,7 @@ function updateCard () {
       unBlur()
       postData('/updatePPH', {
         telegramId: getTelegramId(),
-        pph: +document.getElementById('passiveClicksLabel').textContent + +diff
+        pph: +document.getElementById('passiveClicksLabel').textContent
       })
       .then(data => {});
     } else{

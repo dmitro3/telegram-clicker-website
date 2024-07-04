@@ -2439,7 +2439,7 @@ html, body {
 
 #passiveContainer{
   position: absolute;
-  margin-top: -16px;
+  margin-top: -18px;
   width: 157px;
   height: 35px;
   display: flex;
