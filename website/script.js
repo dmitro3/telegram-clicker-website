@@ -99,13 +99,13 @@ const cardInfo = [
   { cardId: 'funTokensBox', label: 'Fan tokens', level: 'funTokenLevel', price: 'funTokenPrice', pph: 'funTokenPPH', image: 'sport.png', infoModule: funTokensBoxModule.getData()},
   { cardId: 'stakingBox', label: 'Staking', level: 'stakingLevel', price: 'stakingPrice', pph: 'stakingPPH', image: 'staking.png', infoModule: stakingBoxModule.getData() },
   { cardId: 'btcPairsBox', label: 'BTC pairs', level: 'btcPairLevel', price: 'btcPairPrice', pph: 'btcPairPPH', image: 'bitcoin.png', infoModule: btcPairsModule.getData() },
-  { cardId: 'ethPairsBox', label: 'ETH pairs', level: 'ethPairLevel', price: 'ethPairPrice', pph: 'ethPairPPH', image: 'ethereum.png', infoModule: funTokensBoxModule.getData() },
-  { cardId: 'top10CMCBox', label: 'Cmc pairs', level: 'cmcPairsLevel', price: 'cmcPairsPrice', pph: 'cmcPairsPPH', image: 'cmc.png', infoModule: funTokensBoxModule.getData() },
-  { cardId: 'gameFiBox', label: 'GameFi tokens', level: 'gameFiLevel', price: 'gameFiPrice', pph: 'gameFiPPH', image: 'gamefi.png', infoModule: funTokensBoxModule.getData() },
-  { cardId: 'defiBox', label: 'Defi2.0 tokens', level: 'defiLevel', price: 'defiPrice', pph: 'defiPPH', image: 'defi.png', infoModule: funTokensBoxModule.getData() },
-  { cardId: 'socialFiBox', label: 'SocialFi tokens', level: 'socialFiLevel', price: 'socialFiPrice', pph: 'socialFiPPH', image: 'socialfi.png', infoModule: funTokensBoxModule.getData() },
-  { cardId: 'memeCoinsBox', label: 'Meme coins', level: 'memeLevel', price: 'memePrice', pph: 'memePPH', image: 'mem.png', infoModule: funTokensBoxModule.getData() },
-  { cardId: 'shitCoinsBox', label: 'Shit coins', level: 'shitLevel', price: 'shitPrice', pph: 'shitPPH', image: 'shit.png', infoModule: funTokensBoxModule.getData() }
+  { cardId: 'ethPairsBox', label: 'ETH pairs', level: 'ethPairLevel', price: 'ethPairPrice', pph: 'ethPairPPH', image: 'ethereum.png', infoModule: ethPairsModule.getData() },
+  { cardId: 'top10CMCBox', label: 'Cmc pairs', level: 'cmcPairsLevel', price: 'cmcPairsPrice', pph: 'cmcPairsPPH', image: 'cmc.png', infoModule: cmcModule.getData() },
+  { cardId: 'gameFiBox', label: 'GameFi tokens', level: 'gameFiLevel', price: 'gameFiPrice', pph: 'gameFiPPH', image: 'gamefi.png', infoModule: gameModule.getData() },
+  { cardId: 'defiBox', label: 'Defi2.0 tokens', level: 'defiLevel', price: 'defiPrice', pph: 'defiPPH', image: 'defi.png', infoModule: defiModule.getData() },
+  { cardId: 'socialFiBox', label: 'SocialFi tokens', level: 'socialFiLevel', price: 'socialFiPrice', pph: 'socialFiPPH', image: 'socialfi.png', infoModule: socialModule.getData() },
+  { cardId: 'memeCoinsBox', label: 'Meme coins', level: 'memeLevel', price: 'memePrice', pph: 'memePPH', image: 'mem.png', infoModule: memeModule.getData() },
+  { cardId: 'shitCoinsBox', label: 'Shit coins', level: 'shitLevel', price: 'shitPrice', pph: 'shitPPH', image: 'shit.png', infoModule: shitModule.getData() }
 ];
 
 

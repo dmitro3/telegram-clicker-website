@@ -1,32 +1,3 @@
-var myModule = (function() {
-    var privateVariable = 'Hello, world!';
-    
-    return {
-        getVariable: function() {
-            return privateVariable;
-        }
-    };
-})();
-/*
-    var values = [
-        {level: 'lvl 0', updatePrice: 0, coinPerHour: 0},
-        {level: 'lvl 1', updatePrice: , coinPerHour: },
-        {level: 'lvl 2', updatePrice: , coinPerHour: },
-        {level: 'lvl 3', updatePrice: , coinPerHour: },
-        {level: 'lvl 4', updatePrice: , coinPerHour: },
-        {level: 'lvl 5', updatePrice: , coinPerHour: },
-        {level: 'lvl 6', updatePrice: , coinPerHour: },
-        {level: 'lvl 7', updatePrice: , coinPerHour: },
-        {level: 'lvl 8', updatePrice: , coinPerHour: },
-        {level: 'lvl 9', updatePrice: , coinPerHour: },
-        {level: 'lvl 10', updatePrice: , coinPerHour: },
-        {level: 'lvl 11', updatePrice: , coinPerHour: },
-        {level: 'lvl 12', updatePrice: , coinPerHour: },
-        {level: 'lvl 13', updatePrice: , coinPerHour: },
-        {level: 'lvl 14', updatePrice: , coinPerHour: },
-        {level: 'lvl 15', updatePrice: , coinPerHour: }
-      ];
-*/
 //Mine Cards Constants
     //Fun Tokens Box
     var funTokensBoxModule = (function() {
@@ -83,7 +54,7 @@ var myModule = (function() {
         };
     })();
      //BTC Pairs
-     var btcPairsModule = (function() {
+    var btcPairsModule = (function() {
         var values = [
             {level: 'lvl 0', updatePrice: 0, coinPerHour: 0},
             {level: 'lvl 1', updatePrice: 865, coinPerHour: 87},
@@ -101,6 +72,195 @@ var myModule = (function() {
             {level: 'lvl 13', updatePrice: 5830, coinPerHour: 583},
             {level: 'lvl 14', updatePrice: 6268, coinPerHour: 627},
             {level: 'lvl 15', updatePrice: 6705, coinPerHour: 671}
+          ];
+        
+        return {
+            getData: function() {
+                return values;
+            }
+        };
+    })();
+    //ETH Pairs
+    var ethPairsModule = (function() {
+        var values = [
+            {level: 'lvl 0', updatePrice: 0, coinPerHour: 0},
+            {level: 'lvl 1', updatePrice: 974, coinPerHour: 97},
+            {level: 'lvl 2', updatePrice: 1203, coinPerHour: 120},
+            {level: 'lvl 3', updatePrice: 1635, coinPerHour: 164},
+            {level: 'lvl 4', updatePrice: 2127, coinPerHour: 213},
+            {level: 'lvl 5', updatePrice: 2618, coinPerHour: 262},
+            {level: 'lvl 6', updatePrice: 3110, coinPerHour: 311},
+            {level: 'lvl 7', updatePrice: 3601, coinPerHour: 360},
+            {level: 'lvl 8', updatePrice: 4093, coinPerHour: 409},
+            {level: 'lvl 9', updatePrice: 4584, coinPerHour: 458},
+            {level: 'lvl 10', updatePrice: 5076, coinPerHour: 508},
+            {level: 'lvl 11', updatePrice: 5567, coinPerHour: 557},
+            {level: 'lvl 12', updatePrice: 6059, coinPerHour: 606},
+            {level: 'lvl 13', updatePrice: 6550, coinPerHour: 655},
+            {level: 'lvl 14', updatePrice: 7042, coinPerHour: 704},
+            {level: 'lvl 15', updatePrice: 7533, coinPerHour: 753}
+        ];
+        
+        return {
+            getData: function() {
+                return values;
+            }
+        };
+    })();
+    //CMC Tokens
+    var cmcModule = (function() {
+        var values = [
+            {level: 'lvl 0', updatePrice: 0, coinPerHour: 0},
+            {level: 'lvl 1', updatePrice: 1100, coinPerHour: 110},
+            {level: 'lvl 2', updatePrice: 1450, coinPerHour: 145},
+            {level: 'lvl 3', updatePrice: 1863, coinPerHour: 186},
+            {level: 'lvl 4', updatePrice: 2424, coinPerHour: 242},
+            {level: 'lvl 5', updatePrice: 2985, coinPerHour: 298},
+            {level: 'lvl 6', updatePrice: 3546, coinPerHour: 355},
+            {level: 'lvl 7', updatePrice: 4107, coinPerHour: 411},
+            {level: 'lvl 8', updatePrice: 4668, coinPerHour: 467},
+            {level: 'lvl 9', updatePrice: 5229, coinPerHour: 523},
+            {level: 'lvl 10', updatePrice: 5790, coinPerHour: 579},
+            {level: 'lvl 11', updatePrice: 6351, coinPerHour: 635},
+            {level: 'lvl 12', updatePrice: 6912, coinPerHour: 691},
+            {level: 'lvl 13', updatePrice: 7473, coinPerHour: 747},
+            {level: 'lvl 14', updatePrice: 8034, coinPerHour: 803},
+            {level: 'lvl 15', updatePrice: 8595, coinPerHour: 859}
+          ];
+        
+        return {
+            getData: function() {
+                return values;
+            }
+        };
+    })();
+    //GameFi Coins
+    var gameModule = (function() {
+        var values = [
+            {level: 'lvl 0', updatePrice: 0, coinPerHour: 0},
+            {level: 'lvl 1', updatePrice: 1500, coinPerHour: 150},
+            {level: 'lvl 2', updatePrice: 1740, coinPerHour: 174},
+            {level: 'lvl 3', updatePrice: 2529, coinPerHour: 253},
+            {level: 'lvl 4', updatePrice: 3290, coinPerHour: 329},
+            {level: 'lvl 5', updatePrice: 4051, coinPerHour: 405},
+            {level: 'lvl 6', updatePrice: 4812, coinPerHour: 481},
+            {level: 'lvl 7', updatePrice: 5573, coinPerHour: 557},
+            {level: 'lvl 8', updatePrice: 6334, coinPerHour: 633},
+            {level: 'lvl 9', updatePrice: 7095, coinPerHour: 710},
+            {level: 'lvl 10', updatePrice: 7856, coinPerHour: 786},
+            {level: 'lvl 11', updatePrice: 8617, coinPerHour: 862},
+            {level: 'lvl 12', updatePrice: 9378, coinPerHour: 938},
+            {level: 'lvl 13', updatePrice: 10139, coinPerHour: 1014},
+            {level: 'lvl 14', updatePrice: 10900, coinPerHour: 1090},
+            {level: 'lvl 15', updatePrice: 11661, coinPerHour: 1166}
+          ];
+        
+        return {
+            getData: function() {
+                return values;
+            }
+        };
+    })();
+    //Defi2.0 Coins
+    var defiModule = (function() {
+        var values = [
+            {level: 'lvl 0', updatePrice: 0, coinPerHour: 0},
+            {level: 'lvl 1', updatePrice: 2000, coinPerHour: 200},
+            {level: 'lvl 2', updatePrice: 2560, coinPerHour: 256},
+            {level: 'lvl 3', updatePrice: 3380, coinPerHour: 338},
+            {level: 'lvl 4', updatePrice: 4398, coinPerHour: 440},
+            {level: 'lvl 5', updatePrice: 5415, coinPerHour: 542},
+            {level: 'lvl 6', updatePrice: 6433, coinPerHour: 643},
+            {level: 'lvl 7', updatePrice: 7450, coinPerHour: 745},
+            {level: 'lvl 8', updatePrice: 8468, coinPerHour: 847},
+            {level: 'lvl 9', updatePrice: 9485, coinPerHour: 949},
+            {level: 'lvl 10', updatePrice: 10503, coinPerHour: 1050},
+            {level: 'lvl 11', updatePrice: 11520, coinPerHour: 1152},
+            {level: 'lvl 12', updatePrice: 12538, coinPerHour: 1254},
+            {level: 'lvl 13', updatePrice: 13555, coinPerHour: 1356},
+            {level: 'lvl 14', updatePrice: 14573, coinPerHour: 1457},
+            {level: 'lvl 15', updatePrice: 15590, coinPerHour: 1559}
+          ];
+        
+        return {
+            getData: function() {
+                return values;
+            }
+        };
+    })();
+    //SocialFi Coins
+    var socialModule = (function() {
+        var values = [
+            {level: 'lvl 0', updatePrice: 0, coinPerHour: 0},
+            {level: 'lvl 1', updatePrice: 2250, coinPerHour: 225},
+            {level: 'lvl 2', updatePrice: 2890, coinPerHour: 289},
+            {level: 'lvl 3', updatePrice: 3789, coinPerHour: 379},
+            {level: 'lvl 4', updatePrice: 4928, coinPerHour: 493},
+            {level: 'lvl 5', updatePrice: 6068, coinPerHour: 607},
+            {level: 'lvl 6', updatePrice: 7207, coinPerHour: 721},
+            {level: 'lvl 7', updatePrice: 8347, coinPerHour: 835},
+            {level: 'lvl 8', updatePrice: 9486, coinPerHour: 949},
+            {level: 'lvl 9', updatePrice: 10626, coinPerHour: 1063},
+            {level: 'lvl 10', updatePrice: 11765, coinPerHour: 1177},
+            {level: 'lvl 11', updatePrice: 12905, coinPerHour: 1290},
+            {level: 'lvl 12', updatePrice: 14044, coinPerHour: 1404},
+            {level: 'lvl 13', updatePrice: 15184, coinPerHour: 1518},
+            {level: 'lvl 14', updatePrice: 16323, coinPerHour: 1632},
+            {level: 'lvl 15', updatePrice: 17463, coinPerHour: 1746}
+          ];
+        
+        return {
+            getData: function() {
+                return values;
+            }
+        };
+    })();
+    //Meme Tokens
+    var memeModule = (function() {
+        var values = [
+            {level: 'lvl 0', updatePrice: 0, coinPerHour: 0},
+            {level: 'lvl 1', updatePrice: 2600, coinPerHour: 260},
+            {level: 'lvl 2', updatePrice: 3450, coinPerHour: 345},
+            {level: 'lvl 3', updatePrice: 4424, coinPerHour: 442},
+            {level: 'lvl 4', updatePrice: 5758, coinPerHour: 576},
+            {level: 'lvl 5', updatePrice: 7092, coinPerHour: 709},
+            {level: 'lvl 6', updatePrice: 8426, coinPerHour: 843},
+            {level: 'lvl 7', updatePrice: 9760, coinPerHour: 976},
+            {level: 'lvl 8', updatePrice: 11094, coinPerHour: 1109},
+            {level: 'lvl 9', updatePrice: 12428, coinPerHour: 1243},
+            {level: 'lvl 10', updatePrice: 13762, coinPerHour: 1376},
+            {level: 'lvl 11', updatePrice: 15096, coinPerHour: 1510},
+            {level: 'lvl 12', updatePrice: 16430, coinPerHour: 1643},
+            {level: 'lvl 13', updatePrice: 17764, coinPerHour: 1776},
+            {level: 'lvl 14', updatePrice: 19098, coinPerHour: 1910},
+            {level: 'lvl 15', updatePrice: 20432, coinPerHour: 2043}
+          ];
+        
+        return {
+            getData: function() {
+                return values;
+            }
+        };
+    })();
+    //Shit Tokens
+    var shitModule = (function() {
+        var values = [
+            {level: 'lvl 0', updatePrice: 0, coinPerHour: 0},
+            {level: 'lvl 1', updatePrice: 3500, coinPerHour: 350},
+            {level: 'lvl 2', updatePrice: 4890, coinPerHour: 489},
+            {level: 'lvl 3', updatePrice: 6167, coinPerHour: 617},
+            {level: 'lvl 4', updatePrice: 8042, coinPerHour: 804},
+            {level: 'lvl 5', updatePrice: 9917, coinPerHour: 992},
+            {level: 'lvl 6', updatePrice: 11792, coinPerHour: 1179},
+            {level: 'lvl 7', updatePrice: 13667, coinPerHour: 1367},
+            {level: 'lvl 8', updatePrice: 15542, coinPerHour: 1554},
+            {level: 'lvl 9', updatePrice: 17417, coinPerHour: 1742},
+            {level: 'lvl 10', updatePrice: 19292, coinPerHour: 1929},
+            {level: 'lvl 11', updatePrice: 21167, coinPerHour: 2117},
+            {level: 'lvl 12', updatePrice: 23042, coinPerHour: 2304},
+            {level: 'lvl 13', updatePrice: 24917, coinPerHour: 2492},
+            {level: 'lvl 14', updatePrice: 26792, coinPerHour: 2679},
+            {level: 'lvl 15', updatePrice: 28667, coinPerHour: 2867}
           ];
         
         return {
