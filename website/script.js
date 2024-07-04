@@ -1575,6 +1575,7 @@ function showCardUpgradeBox (cardId) {
 }
 
 function updateCard () {
+  adjustCardsAvailability()
   const cardId = document.getElementById('getUpgradeBox').getAttribute('data-value');
   const card = cardInfo.find(card => card.cardId === cardId);
   const balance = card.infoModule;
@@ -1587,7 +1588,6 @@ function updateCard () {
 
   if (userCoins >= price){
     adjustCoinsVisual(userCoins - price);
-    adjustCardsAvailability()
     postData('/updateCardLevel', {
       telegramId: getTelegramId(),
       cardId: cardId,
