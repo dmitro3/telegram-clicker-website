@@ -96,16 +96,16 @@ const gameFieldElements = [
 ]
 
 const cardInfo = [
-  { cardId: 'funTokensBox', label: 'Fan tokens', level: 'funTokenLevel', price: 'funTokenPrice', pph: 'funTokenPPH', image: 'sport.png' },
-  { cardId: 'stakingBox', label: 'Staking', level: 'stakingLevel', price: 'stakingPrice', pph: 'stakingPPH', image: 'staking.png' },
-  { cardId: 'btcPairsBox', label: 'BTC pairs', level: 'btcPairLevel', price: 'btcPairPrice', pph: 'btcPairPPH', image: 'bitcoin.png' },
-  { cardId: 'ethPairsBox', label: 'ETH pairs', level: 'ethPairLevel', price: 'ethPairPrice', pph: 'ethPairPPH', image: 'ethereum.png' },
-  { cardId: 'top10CMCBox', label: 'Cmc pairs', level: 'cmcPairsLevel', price: 'cmcPairsPrice', pph: 'cmcPairsPPH', image: 'cmc.png' },
-  { cardId: 'gameFiBox', label: 'GameFi tokens', level: 'gameFiLevel', price: 'gameFiPrice', pph: 'gameFiPPH', image: 'gamefi.png' },
-  { cardId: 'defiBox', label: 'Defi2.0 tokens', level: 'defiLevel', price: 'defiPrice', pph: 'defiPPH', image: 'defi.png' },
-  { cardId: 'socialFiBox', label: 'SocialFi tokens', level: 'socialFiLevel', price: 'socialFiPrice', pph: 'socialFiPPH', image: 'socialfi.png' },
-  { cardId: 'memeCoinsBox', label: 'Meme coins', level: 'memeLevel', price: 'memePrice', pph: 'memePPH', image: 'mem.png' },
-  { cardId: 'shitCoinsBox', label: 'Shit coins', level: 'shitLevel', price: 'shitPrice', pph: 'shitPPH', image: 'shit.png' }
+  { cardId: 'funTokensBox', label: 'Fan tokens', level: 'funTokenLevel', price: 'funTokenPrice', pph: 'funTokenPPH', image: 'sport.png', infoModule: funTokensBoxModule.getData()},
+  { cardId: 'stakingBox', label: 'Staking', level: 'stakingLevel', price: 'stakingPrice', pph: 'stakingPPH', image: 'staking.png', infoModule: stakingBoxModule.getData() },
+  { cardId: 'btcPairsBox', label: 'BTC pairs', level: 'btcPairLevel', price: 'btcPairPrice', pph: 'btcPairPPH', image: 'bitcoin.png', infoModule: btcPairsModule.getData() },
+  { cardId: 'ethPairsBox', label: 'ETH pairs', level: 'ethPairLevel', price: 'ethPairPrice', pph: 'ethPairPPH', image: 'ethereum.png', infoModule: funTokensBoxModule.getData() },
+  { cardId: 'top10CMCBox', label: 'Cmc pairs', level: 'cmcPairsLevel', price: 'cmcPairsPrice', pph: 'cmcPairsPPH', image: 'cmc.png', infoModule: funTokensBoxModule.getData() },
+  { cardId: 'gameFiBox', label: 'GameFi tokens', level: 'gameFiLevel', price: 'gameFiPrice', pph: 'gameFiPPH', image: 'gamefi.png', infoModule: funTokensBoxModule.getData() },
+  { cardId: 'defiBox', label: 'Defi2.0 tokens', level: 'defiLevel', price: 'defiPrice', pph: 'defiPPH', image: 'defi.png', infoModule: funTokensBoxModule.getData() },
+  { cardId: 'socialFiBox', label: 'SocialFi tokens', level: 'socialFiLevel', price: 'socialFiPrice', pph: 'socialFiPPH', image: 'socialfi.png', infoModule: funTokensBoxModule.getData() },
+  { cardId: 'memeCoinsBox', label: 'Meme coins', level: 'memeLevel', price: 'memePrice', pph: 'memePPH', image: 'mem.png', infoModule: funTokensBoxModule.getData() },
+  { cardId: 'shitCoinsBox', label: 'Shit coins', level: 'shitLevel', price: 'shitPrice', pph: 'shitPPH', image: 'shit.png', infoModule: funTokensBoxModule.getData() }
 ];
 
 
@@ -1177,9 +1177,10 @@ function showCurrentMineCards (information) {
 
 function updateCardVisual(cardId, level) {
   const card = cardInfo.find(card => card.cardId === cardId);
-  const price = levelProgress[level+1].updatePrice;
-  const pph = levelProgress[level].coinPerHour;
-  const levelLabel = levelProgress[level].level;
+  const balance = card.infoModule;
+  const price = balance[level+1].updatePrice;
+  const pph = balance[level].coinPerHour;
+  const levelLabel = balance[level].level;
 
   document.getElementById(card.level).textContent = levelLabel;
   document.getElementById(card.pph).textContent = pph;
@@ -1558,9 +1559,10 @@ document.getElementById('getUpgradeBox').addEventListener('click', updateCard)
 function showCardUpgradeBox (cardId) {
   blur()
   const card = cardInfo.find(card => card.cardId === cardId);
+  const balance = card.infoModule;
   const currentPPH = +document.getElementById(card.pph).textContent.slice(1);
-  const index = levelProgress.findIndex(level => level.coinPerHour === currentPPH);
-  const moneyData = levelProgress[index+1];
+  const index = balance.findIndex(level => level.coinPerHour === currentPPH);
+  const moneyData = balance[index+1];
   if (currentPPH !== 600){
     document.getElementById('cardUpgradeBoxImage').src = card.image;
     document.getElementById('cardUpgradeBoxLabel').textContent = card.label;
@@ -1574,9 +1576,10 @@ function showCardUpgradeBox (cardId) {
 function updateCard () {
   const cardId = document.getElementById('getUpgradeBox').getAttribute('data-value');
   const card = cardInfo.find(card => card.cardId === cardId);
+  const balance = card.infoModule;
   const currentPPH = +document.getElementById(card.pph).textContent.slice(1);
-  const index = levelProgress.findIndex(level => level.coinPerHour === currentPPH) + 1;
-  const moneyData = levelProgress[index];
+  const index = balance.findIndex(level => level.coinPerHour === currentPPH) + 1;
+  const moneyData = balance[index];
 
   const price = moneyData.updatePrice;
   const userCoins = +getLeftCoins();
@@ -1591,12 +1594,12 @@ function updateCard () {
     })
     .then(data => {});
     const prevPPH = +document.getElementById(card.pph).textContent;
-    const newPPH = +levelProgress[index].coinPerHour;
+    const newPPH = +balance[index].coinPerHour;
     const diff = newPPH - prevPPH;
     if (currentPPH != 575) {
       document.getElementById(card.level).textContent = moneyData.level;
-      document.getElementById(card.price).textContent = levelProgress[index+1].updatePrice;
-      document.getElementById(card.pph).textContent = '+' + levelProgress[index].coinPerHour;
+      document.getElementById(card.price).textContent = balance[index+1].updatePrice;
+      document.getElementById(card.pph).textContent = '+' + balance[index].coinPerHour;
       document.getElementById('passiveClicksLabel').innerHTML = (+document.getElementById('passiveClicksLabel').textContent + +diff);
       document.getElementById('cardUpgradeBox').style.display = 'none';
       unBlur()
@@ -1609,7 +1612,7 @@ function updateCard () {
       unBlur();
       document.getElementById(card.level).textContent = moneyData.level;
       document.getElementById(card.price).textContent = 'Completed';
-      document.getElementById(card.pph).textContent = '+' + levelProgress[index].coinPerHour;
+      document.getElementById(card.pph).textContent = '+' + balance[index].coinPerHour;
       document.getElementById('passiveClicksLabel').innerHTML = (+document.getElementById('passiveClicksLabel').textContent + +diff);
       document.getElementById('cardUpgradeBox').style.display = 'none';
       postData('/updatePPH', {
