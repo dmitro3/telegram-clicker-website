@@ -1998,11 +1998,11 @@ html, body {
 }
 
 #dailyRewardsWindow {
-  display: block;
+  display: none;
   width: 519px;
-  height: 924px;
+  height: 894px;
   position: absolute;
-  margin-top: 50px;
+  margin-top: 80px;
   background-color: #1C1F24;
   border-top-right-radius: 50px;
   border-top-left-radius: 50px;
@@ -2453,8 +2453,9 @@ html, body {
 
 #blurCover{
   z-index: 8;
-  backdrop-filter: blur(1px);
-  -webkit-filter: blur(10px); /* For Safari and older versions of Chrome */
+  backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 519px;
   height: 1000px;
   position: fixed;
