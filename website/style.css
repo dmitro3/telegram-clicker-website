@@ -293,20 +293,15 @@ html, body {
 }
 
 #passiveClicksCoin{
-    position: absolute;
     z-index: 3;
     width: 25px;
     height: 25px;
-    margin-left: 373px;
-    margin-top: 143px;
+    margin-right: 5px;
 }
 
 #passiveClicksLabel{
-    position: absolute;
     color: white;
     font-size: 18px;
-    margin-top: 145px;
-    margin-left: 405px;
     z-index: 3;
 }
 
@@ -2438,4 +2433,19 @@ html, body {
   top: 650px;
   display: none;
   pointer-events: none;
+}
+
+#passiveContainer{
+  position: absolute;
+  margin-top: -16px;
+  width: 157px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+}
+
+#passiveBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
