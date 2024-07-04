@@ -1158,7 +1158,7 @@ html, body {
     position: absolute;
     font-size: 12px;
     font-weight: 400;
-    margin-left: 77px;
+    margin-left: 86px;
     margin-top: 34px;
   }
 
@@ -1885,6 +1885,7 @@ html, body {
   }
 
   #cardUpgradeBox{
+    justify-content: center;
     display: none;
     position: fixed;
     z-index: 9;
@@ -1941,34 +1942,23 @@ html, body {
 #profitPerHourCoinImage{
   width: 23px;
   height: 23px;
-  position: absolute;
-  margin-left: 218px;
-  margin-top: -10px;
+  margin-right: 3px;
 }
 
 #profitPerHourPrice{
   font-size: 16px;
   font-weight: 500;
-  position: absolute;
-  margin-left: 248px;
   color: white;
-  margin-top: -6.5px;
 }
 
 #upgradePriceImage {
-  position: absolute;
   width: 34px;
   height: 34px;
-  margin-top: 50px;
-  margin-left: 210px;
 }
 
 #upgradePriceLabel{
   font-size: 30px;
   color: white;
-  margin-left: 250px;
-  margin-top: 50px;
-  position: absolute;
 }
 
 #getUpgradeBox{
@@ -1979,7 +1969,7 @@ html, body {
   height: 95px;
   text-align: center;
   border-radius: 23px;
-  margin-left: 22px;
+  margin-left: 19.5px;
   margin-top: 125px;
 }
 
@@ -2473,4 +2463,25 @@ html, body {
   z-index: 8;
   background-color: #282B30;
   opacity: .3;
+}
+
+.upgradeContainer{
+  position: absolute;
+  left: 0;
+  width: 519px;
+  display: flex;
+  justify-content: center;
+}
+
+#updateContainerPrice{
+  top: 400px; 
+}
+
+.upgradeBox{
+  display: flex;
+  align-items: center;
+}
+
+#updateContainerPPH{
+  top: 330px;
 }
