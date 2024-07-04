@@ -2433,7 +2433,8 @@ html, body {
   width: 519px;
   height: 345px;
   position: fixed;
-  z-index: 4;
+  z-index: 5;
   top: 650px;
   display: none;
+  pointer-events: none;
 }
