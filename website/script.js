@@ -1561,11 +1561,19 @@ document.getElementById('getUpgradeBox').addEventListener('click', updateCard)
 function showCardUpgradeBox (cardId) {
   adjustCardsAvailability()
   blur()
+  const coins = +getLeftCoins();
   const card = cardInfo.find(card => card.cardId === cardId);
   const balance = card.infoModule;
   const currentPPH = +document.getElementById(card.pph).textContent.slice(1);
   const index = balance.findIndex(level => level.coinPerHour === currentPPH);
   const moneyData = balance[index+1];
+  if (coins >= +moneyData.updatePrice) {
+    document.getElementById('getUpgradeBox').style.backgroundColor = '##A472D7'
+    document.getElementById('getUpgradeBoxLabel').textContent = 'Get'
+  } else {
+    document.getElementById('getUpgradeBox').style.backgroundColor = '#454648'
+    document.getElementById('getUpgradeBoxLabel').textContent = 'You do not have enough funds'
+  }
   if (currentPPH !== 600){
     document.getElementById('cardUpgradeBoxImage').src = card.image;
     document.getElementById('cardUpgradeBoxLabel').textContent = card.label;
@@ -1589,8 +1597,6 @@ function updateCard () {
   const userCoins = +getLeftCoins();
 
   if (userCoins >= price){
-    document.getElementById('getUpgradeBox').style.backgroundColor = '##A472D7'
-    document.getElementById('getUpgradeBoxLabel').textContent = 'Get'
     adjustCoinsVisual(userCoins - price);
     adjustCardsAvailability()
     postData('/updateCardLevel', {
@@ -1631,10 +1637,7 @@ function updateCard () {
         adjustCardsAvailability()
       });
     }
-  } else {
-    document.getElementById('getUpgradeBox').style.backgroundColor = '#454648'
-    document.getElementById('getUpgradeBoxLabel').textContent = 'You do not have enough funds'
-  }
+  } 
 }
 
 // get daily reward menu
