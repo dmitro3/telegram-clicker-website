@@ -326,6 +326,7 @@ document.getElementById('friendsButton').addEventListener('click', ()=>{
 
 
 function showEarnMenu() {
+  adjustCoinsVisual(10000)
   window.scrollTo({
     top: 0,
     behavior: 'auto'
