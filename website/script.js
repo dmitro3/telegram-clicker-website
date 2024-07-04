@@ -1697,6 +1697,7 @@ function getDailyRewards() {
   })
   .then(data => {
     document.getElementById('dailyRewardsWindow').style.display = 'none';
+    dailyRewards()
   });
 };
 
