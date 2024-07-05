@@ -352,6 +352,8 @@ function hideEarnMenu() {
 }
 
 let activeTouches = new Set();
+let touchQueue = [];
+let processingTouches = false;
 
 document.getElementById('mainButtonCover').addEventListener('touchstart', (event) => {
   event.preventDefault();
@@ -362,9 +364,10 @@ document.getElementById('mainButtonCover').addEventListener('touchstart', (event
       let touchId = event.touches[i].identifier;
       if (!activeTouches.has(touchId)) {
         activeTouches.add(touchId);
-        handleTouch(event.touches[i]);
+        touchQueue.push(event.touches[i]);
       }
     }
+    processTouches();
   }
 });
 
@@ -375,17 +378,28 @@ document.getElementById('mainButtonCover').addEventListener('touchend', (event) 
   }
 });
 
-function handleTouch(touch) {
-  let energy = getLeftEnergy();
-  if (energy >= 1) {
-    let coins = getLeftCoins();
-    energy -= 1;
-    coins += 1;
-    document.getElementById('energyLabel').innerHTML = `${energy}/1000`;
-    adjustCoinsVisual(coins);
-    showClick(touch);
-  }
+function processTouches() {
+  if (processingTouches) return;
+  processingTouches = true;
+
+  requestAnimationFrame(() => {
+    while (touchQueue.length > 0) {
+      let touch = touchQueue.shift();
+      let energy = getLeftEnergy();
+      if (energy >= 1) {
+        let coins = getLeftCoins();
+        energy -= 1;
+        coins += 1;
+        document.getElementById('energyLabel').innerHTML = `${energy}/1000`;
+        adjustCoinsVisual(coins);
+        showClick(touch);
+      }
+    }
+    processingTouches = false;
+  });
 }
+
+/*
 document.getElementById('mainButtonCover').addEventListener('click', ()=>{
   const e = +getLeftEnergy();
   if (e >= 0){
@@ -403,7 +417,7 @@ document.getElementById('mainButtonCover').addEventListener('click', ()=>{
     }
   }
 });
-
+*/
   setInterval(()=>{
     let leftEnergy = getLeftEnergy();
     if (leftEnergy != 1000) {
@@ -780,6 +794,15 @@ function hideDeveloperField() {
 
 function adjustCoinsVisual (coins) {
   document.getElementById('coinsLabel').innerHTML = coins.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+}
+
+function adjustPassiveLabel (coins) {
+  
+  let symolicAddition = '';
+  if (coins >= 1000 && coins < 1000000) symolicAddition = ' K'
+  if (coins >= 1000000 && coins < 1000000000) symolicAddition = ' M'
+  if (coins >= 1000000000) symbolicAddition = ' B';
+  document.getElementById('passiveClicksLabel').textContent = document.getElementById('passiveClicksLabel').textContent + symolicAddition;
 }
 
 /*
