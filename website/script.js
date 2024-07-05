@@ -19,9 +19,6 @@ function handleOrientationChange() {
   }
 }
 
-document.addEventListener('touchmove', preventScroll, { passive: false });
-
-
 const dotMargins = [
   { status: 'Bronze', margin: 115 },
   { status: 'Silver', margin: 105 },
@@ -363,6 +360,7 @@ let touchQueue = [];
 let processingTouches = false;
 
 document.getElementById('mainButtonCover').addEventListener('touchmove', function(event) {
+  console.log('prevented')
   event.preventDefault();
 }, { passive: false });
 
