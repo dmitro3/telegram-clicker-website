@@ -353,29 +353,39 @@ function hideEarnMenu() {
 
 let isTouching = false;
 
-document.getElementById('mainButtonCover').addEventListener('touchstart', (event) => {
-  if (isTouching) return;  
-  isTouching = true;
+let activeTouches = [];
 
+document.getElementById('mainButtonCover').addEventListener('touchstart', (event) => {
   event.preventDefault();
   adjustProgressBar();
 
-  if (window.Telegram.WebApp.platform == 'ios') {
-    let energy = getLeftEnergy();
-
-    if (energy >= 1) {
-      let coins = getLeftCoins();
-      energy -= 1;
-      coins += 1;
-      document.getElementById('energyLabel').innerHTML = energy + '/1000';
-      adjustCoinsVisual(coins);
-      showClick(event.touches[0]);
+  if (window.Telegram.WebApp.platform === 'ios') {
+    for (let i = 0; i < event.touches.length; i++) {
+      let touchId = event.touches[i].identifier;
+      if (!activeTouches.includes(touchId)) {
+        activeTouches.push(touchId);
+        let energy = getLeftEnergy();
+        if (energy >= 1) {
+          let coins = getLeftCoins();
+          energy -= 1;
+          coins += 1;
+          document.getElementById('energyLabel').innerHTML = `${energy}/1000`;
+          adjustCoinsVisual(coins);
+          showClick(event.touches[i]);
+        }
+      }
     }
   }
 });
 
 document.getElementById('mainButtonCover').addEventListener('touchend', (event) => {
-  isTouching = false;
+  for (let i = 0; i < event.changedTouches.length; i++) {
+    let touchId = event.changedTouches[i].identifier;
+    let index = activeTouches.indexOf(touchId);
+    if (index !== -1) {
+      activeTouches.splice(index, 1);
+    }
+  }
 });
 
 document.getElementById('mainButtonCover').addEventListener('click', ()=>{
