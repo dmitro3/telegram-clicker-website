@@ -366,11 +366,6 @@ document.getElementById('mainButtonCover').addEventListener('touchstart', (event
         activeTouches.push(touchId);
         let energy = getLeftEnergy();
         if (energy >= 1) {
-          let coins = getLeftCoins();
-          energy -= 1;
-          coins += 1;
-          document.getElementById('energyLabel').innerHTML = `${energy}/1000`;
-          adjustCoinsVisual(coins);
           showClick(event.touches[i]);
         }
       }
@@ -490,6 +485,12 @@ function postData(url, data) {
     }
   }
 function showClick(event) {
+  let coins = getLeftCoins();
+  let energy = +getLeftEnergy();
+  energy -= 1;
+  coins += 1;
+  adjustCoinsVisual(coins);
+  document.getElementById('energyLabel').innerHTML = `${energy}/1000`;
   const button = document.getElementById('mainButtonBox');
   triggerHapticFeedback()
   const rect = button.getBoundingClientRect();
