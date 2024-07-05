@@ -19,6 +19,9 @@ function handleOrientationChange() {
   }
 }
 
+document.addEventListener('touchmove', preventScroll, { passive: false });
+
+
 const dotMargins = [
   { status: 'Bronze', margin: 115 },
   { status: 'Silver', margin: 105 },
@@ -83,7 +86,6 @@ document.getElementById('body').addEventListener('touchstart', function(event) {
   this.touchStartY = event.touches[0].clientY;
   
   // Prevent scrolling on touchmove
-  document.addEventListener('touchmove', preventScroll, { passive: false });
 });
 */    
 
@@ -359,6 +361,10 @@ function hideEarnMenu() {
 let activeTouches = new Set();
 let touchQueue = [];
 let processingTouches = false;
+
+document.getElementById('mainButtonCover').addEventListener('touchmove', function(event) {
+  event.preventDefault();
+}, { passive: false });
 
 document.getElementById('mainButtonCover').addEventListener('touchstart', (event) => {
   event.preventDefault();
@@ -1272,9 +1278,7 @@ document.getElementById('mainButtonCover').addEventListener('dragstart', functio
   event.preventDefault();
 });
 
-document.getElementById('mainButtonCover').addEventListener('touchmove', function(event) {
-  event.preventDefault();
-}, { passive: false });
+
 
 
 
