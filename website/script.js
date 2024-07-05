@@ -3,6 +3,7 @@ var viewportWidth = window.innerWidth;
 // width: 430
 // height: 733
 var viewportHeight = window.innerHeight;
+window.Telegram.WebApp.enableClosingConfirmation()
 let tg = window.Telegram.WebApp;
 tg.expand();
 let friendDivTopMargin = 451
@@ -27,7 +28,7 @@ document.body.style.height = `${window.innerHeight + overflow}px`;
 document.body.style.paddingBottom = `${overflow}px`;
 window.scrollTo(0, overflow);
 
-let scrollableEl = null; // Identify your scrollable element here
+let scrollableEl = document.getElementById('scroll'); // Identify your scrollable element here
 
 const onTouchStart = (e) => {
   ts = e.touches[0].clientY;
