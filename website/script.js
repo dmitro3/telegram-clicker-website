@@ -279,6 +279,7 @@ function hideGameMenu() {
 
 
 document.getElementById('gameButton').addEventListener('click', ()=>{
+  hapticFeedback()
   adjustProgressBar()
   hideEarnMenu();
   hideMineField();
@@ -288,6 +289,7 @@ document.getElementById('gameButton').addEventListener('click', ()=>{
 });
 
 document.getElementById('earnButton').addEventListener('click', ()=>{
+  hapticFeedback()
   hideGameMenu();
   hideMineField();
   hideFriendsMenu();
@@ -296,6 +298,7 @@ document.getElementById('earnButton').addEventListener('click', ()=>{
 });
 
 developerButton.addEventListener('click', ()=>{
+  hapticFeedback()
   hideEarnMenu();
   hideMineField();
   hideFriendsMenu();
@@ -304,6 +307,7 @@ developerButton.addEventListener('click', ()=>{
 });
 
 document.getElementById('mineButton').addEventListener('click', ()=>{
+  hapticFeedback()
   document.documentElement.style.overflow = 'hidden';
   hideGameMenu();
   hideEarnMenu();
@@ -313,6 +317,7 @@ document.getElementById('mineButton').addEventListener('click', ()=>{
 });
 
 document.getElementById('friendsButton').addEventListener('click', ()=>{
+  hapticFeedback()
   window.scrollTo({
     top: 0,
     behavior: 'auto'
@@ -1530,6 +1535,10 @@ function adjustUpgradeCardBox (id) {
 
 function triggerHapticFeedback() {
   Telegram.WebApp.HapticFeedback.impactOccurred('light');
+}
+
+function hapticFeedback() {
+  Telegram.WebApp.HapticFeedback.impactOccurred('heavy');
 }
 
 document.getElementById('prTeamMenu').addEventListener('click', ()=>{
