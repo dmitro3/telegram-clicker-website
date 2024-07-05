@@ -352,7 +352,6 @@ function hideEarnMenu() {
 }
 
 let activeTouches = new Set();
-let lastUpdate = 0;
 
 document.getElementById('mainButtonCover').addEventListener('touchstart', (event) => {
   event.preventDefault();
@@ -377,10 +376,6 @@ document.getElementById('mainButtonCover').addEventListener('touchend', (event) 
 });
 
 function handleTouch(touch) {
-  const now = Date.now();
-  if (now - lastUpdate < 50) return; // Throttle updates to prevent flooding
-
-  lastUpdate = now;
   let energy = getLeftEnergy();
   if (energy >= 1) {
     let coins = getLeftCoins();
