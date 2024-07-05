@@ -351,24 +351,32 @@ function hideEarnMenu() {
   earnButton.style.backgroundColor = '#282B30';
 }
 
-document.getElementById('mainButtonCover').addEventListener('touchstart', (event)=>{
-  event.preventDefault()
-  adjustProgressBar()
-  //adjustMarginCoinBox();
-    if (window.Telegram.WebApp.platform == 'ios'){
-        for (let i = 0; i < event.touches.length; i++) {
-        let energy = getLeftEnergy();
-        if (energy >= 1){
-            let coins = getLeftCoins();
-            energy -= 1;
-            coins += 1;
-            document.getElementById('energyLabel').innerHTML = energy + '/1000'
-            adjustCoinsVisual(coins);
-            showClick(event.touches[i]);
-            }
-        }
+let isTouching = false;
+
+document.getElementById('mainButtonCover').addEventListener('touchstart', (event) => {
+  if (isTouching) return;  
+  isTouching = true;
+
+  event.preventDefault();
+  adjustProgressBar();
+
+  if (window.Telegram.WebApp.platform == 'ios') {
+    let energy = getLeftEnergy();
+
+    if (energy >= 1) {
+      let coins = getLeftCoins();
+      energy -= 1;
+      coins += 1;
+      document.getElementById('energyLabel').innerHTML = energy + '/1000';
+      adjustCoinsVisual(coins);
+      showClick(event.touches[0]);
     }
-  });
+  }
+});
+
+document.getElementById('mainButtonCover').addEventListener('touchend', (event) => {
+  isTouching = false;
+});
 
 document.getElementById('mainButtonCover').addEventListener('click', ()=>{
   const e = +getLeftEnergy();
