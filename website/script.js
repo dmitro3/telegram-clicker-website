@@ -411,17 +411,19 @@ document.getElementById('mainButtonCover').addEventListener('touchstart', (event
   //adjustMarginCoinBox();
     if (window.Telegram.WebApp.platform == 'ios'){
         for (let i = 0; i < event.touches.length; i++) {
-        let energy = getLeftEnergy();
-        if (energy >= 1){
-            let coins = getLeftCoins();
-            energy -= 1;
-            coins += 1;
-            document.getElementById('energyLabel').innerHTML = energy + '/1000'
-            adjustCoinsVisual(coins);
-            showClick(event.touches[i]);
+          showClick(event.touches[i]);
+          if (i % 2 == 0){
+            let energy = getLeftEnergy();
+            if (energy >= 1){
+              let coins = getLeftCoins();
+              energy -= 1;
+              coins += 1;
+              document.getElementById('energyLabel').innerHTML = energy + '/1000'
+              adjustCoinsVisual(coins);
             }
+          }
         }
-    }
+      }
   });
 
 /*
