@@ -814,7 +814,6 @@ html, body {
     height: 880px;
     margin-top: 95px;
     margin-left: 0px;
-    overflow-y: auto;
     
 }
 
@@ -1275,6 +1274,7 @@ html, body {
     -webkit-user-drag: none;
     -moz-user-drag: none;
     -ms-user-drag: none;
+    overflow-y: auto;
   }
 
   #upgradeCardBox{
