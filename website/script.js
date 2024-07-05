@@ -351,37 +351,24 @@ function hideEarnMenu() {
   earnButton.style.backgroundColor = '#282B30';
 }
 
-let isTouching = false;
-
-let activeTouches = [];
-
-document.getElementById('mainButtonCover').addEventListener('touchstart', (event) => {
-  event.preventDefault();
-  adjustProgressBar();
-
-  if (window.Telegram.WebApp.platform === 'ios') {
-    for (let i = 0; i < event.touches.length; i++) {
-      let touchId = event.touches[i].identifier;
-      if (!activeTouches.includes(touchId)) {
-        activeTouches.push(touchId);
+document.getElementById('mainButtonCover').addEventListener('touchend', (event)=>{
+  event.preventDefault()
+  adjustProgressBar()
+  //adjustMarginCoinBox();
+    if (window.Telegram.WebApp.platform == 'ios'){
+        for (let i = 0; i < event.touches.length; i++) {
         let energy = getLeftEnergy();
-        if (energy >= 1) {
-          showClick(event.touches[i]);
+        if (energy >= 1){
+            let coins = getLeftCoins();
+            energy -= 1;
+            coins += 1;
+            document.getElementById('energyLabel').innerHTML = energy + '/1000'
+            adjustCoinsVisual(coins);
+            showClick(event.touches[i]);
+            }
         }
-      }
     }
-  }
-});
-
-document.getElementById('mainButtonCover').addEventListener('touchend', (event) => {
-  for (let i = 0; i < event.changedTouches.length; i++) {
-    let touchId = event.changedTouches[i].identifier;
-    let index = activeTouches.indexOf(touchId);
-    if (index !== -1) {
-      activeTouches.splice(index, 1);
-    }
-  }
-});
+  });
 
 document.getElementById('mainButtonCover').addEventListener('click', ()=>{
   const e = +getLeftEnergy();
@@ -484,7 +471,7 @@ function postData(url, data) {
       return `${lastEnergy + differenceInSeconds}`+'/1000'
     }
   }
-function showClick(event, touches) {
+function showClick(event) {
   const button = document.getElementById('mainButtonBox');
   triggerHapticFeedback()
   const rect = button.getBoundingClientRect();
