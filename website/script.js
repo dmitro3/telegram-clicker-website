@@ -42,7 +42,7 @@ const fixedScrollPosition = { top: 0, left: 0 };
     // Listen to the scroll event
     window.addEventListener('scroll', maintainScrollPosition);
 
-    window.addEventListener('touchmove', maintainScrollPosition);
+    //window.addEventListener('touchmove', maintainScrollPosition);
 
     // Optionally, ensure the scroll position is set on page load
     window.addEventListener('load', () => {
