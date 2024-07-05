@@ -20,7 +20,7 @@ function handleOrientationChange() {
 }
 
 // JavaScript
-const overflow = 100; // Adjust as needed
+const overflow = 0; // Adjust as needed
 document.body.style.overflowY = 'hidden';
 document.body.style.marginTop = `${overflow}px`;
 document.body.style.height = `${window.innerHeight + overflow}px`;
