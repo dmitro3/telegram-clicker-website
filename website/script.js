@@ -355,7 +355,7 @@ function hideEarnMenu() {
   earnField.style.display = 'none';
   earnButton.style.backgroundColor = '#282B30';
 }
-/*
+
 let activeTouches = new Set();
 let touchQueue = [];
 let processingTouches = false;
@@ -365,6 +365,7 @@ document.getElementById('mainButtonCover').addEventListener('touchstart', (event
   adjustProgressBar();
 
   if (window.Telegram.WebApp.platform === 'ios') {
+    // Add all touches to the queue immediately
     for (let i = 0; i < event.touches.length; i++) {
       let touchId = event.touches[i].identifier;
       if (!activeTouches.has(touchId)) {
@@ -372,7 +373,12 @@ document.getElementById('mainButtonCover').addEventListener('touchstart', (event
         touchQueue.push(event.touches[i]);
       }
     }
-    processTouches();
+
+    // Start processing only if not already processing
+    if (!processingTouches) {
+      processingTouches = true;
+      setTimeout(processTouches, 0); // Process touches in the next available frame
+    }
   }
 });
 
@@ -384,11 +390,11 @@ document.getElementById('mainButtonCover').addEventListener('touchend', (event) 
 });
 
 function processTouches() {
-  if (processingTouches) return;
-  processingTouches = true;
-
   requestAnimationFrame(() => {
-    while (touchQueue.length > 0) {
+    let maxTouchesPerFrame = 5; // Adjust as needed
+    let touchesProcessed = 0;
+
+    while (touchQueue.length > 0 && touchesProcessed < maxTouchesPerFrame) {
       let touch = touchQueue.shift();
       let energy = getLeftEnergy();
       if (energy >= 1) {
@@ -399,12 +405,19 @@ function processTouches() {
         adjustCoinsVisual(coins);
         showClick(touch);
       }
+      touchesProcessed++;
     }
-    processingTouches = false;
+
+    if (touchQueue.length > 0) {
+      // If there are remaining touches, continue processing in the next frame
+      setTimeout(processTouches, 0);
+    } else {
+      processingTouches = false;
+    }
   });
 }
-*/
 
+/*
 document.getElementById('mainButtonCover').addEventListener('touchstart', (event)=>{
   event.preventDefault()
   adjustProgressBar()
@@ -425,7 +438,7 @@ document.getElementById('mainButtonCover').addEventListener('touchstart', (event
         }
       }
   });
-
+*/
 /*
 document.getElementById('mainButtonCover').addEventListener('click', ()=>{
   const e = +getLeftEnergy();
@@ -1540,7 +1553,7 @@ function triggerHapticFeedback() {
 }
 
 function hapticFeedback() {
-  Telegram.WebApp.HapticFeedback.impactOccurred('heavy');
+  Telegram.WebApp.HapticFeedback.impactOccurred('medium');
 }
 
 document.getElementById('prTeamMenu').addEventListener('click', ()=>{
