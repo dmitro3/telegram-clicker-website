@@ -484,13 +484,7 @@ function postData(url, data) {
       return `${lastEnergy + differenceInSeconds}`+'/1000'
     }
   }
-function showClick(event) {
-  let coins = getLeftCoins();
-  let energy = +getLeftEnergy();
-  energy -= 1;
-  coins += 1;
-  adjustCoinsVisual(coins);
-  document.getElementById('energyLabel').innerHTML = `${energy}/1000`;
+function showClick(event, touches) {
   const button = document.getElementById('mainButtonBox');
   triggerHapticFeedback()
   const rect = button.getBoundingClientRect();
