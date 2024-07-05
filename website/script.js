@@ -19,6 +19,10 @@ function handleOrientationChange() {
   }
 }
 
+document.addEventListener('touchstart', function(e) {
+  e.preventDefault();
+});
+
 const dotMargins = [
   { status: 'Bronze', margin: 115 },
   { status: 'Silver', margin: 105 },
