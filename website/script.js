@@ -1852,8 +1852,9 @@ function getDailyRewards() {
     date: getCurrentDatee()
   })
   .then(data => {
+    const money = [500 , 1000, 2500, 5000, 15000, 25000, 100000, 500000, 1000000, 5000000]
     document.getElementById('dailyRewardsWindow').style.display = 'none';
-    adjustCoinsVisual(+getLeftCoins() + +dailyRewardsMoney.getData().map(money => i == money.i).i)
+    adjustCoinsVisual(+getLeftCoins() + money[i-1])
     dailyRewards()
     unBlur();
   });
