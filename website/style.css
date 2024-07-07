@@ -746,6 +746,7 @@ html, body {
 .gameButtonLabel{
     margin-top: 47px;
     left: 0;
+    color: #4f5051;
 }
 
 #userLogoBackgroundDiv{ 
@@ -2266,6 +2267,7 @@ html, body {
 
 #exchangeLabel{
   margin-left: -2px;
+  color: white;
 }
 
 .plusOne{
@@ -2482,4 +2484,44 @@ html, body {
 #updateContainerPPH{
   top: 340px;
   position: absolute;
+}
+
+#mineImage{
+  filter: invert(0) brightness(1);
+}
+
+@keyframes whiteImage {
+  0% {
+    filter: invert(0) brightness(1);
+  }
+  100% {
+    filter: invert(1) brightness(2);
+  }
+}
+
+@keyframes whiteText {
+  0% {
+    color: #4f5051;
+  }
+  100% {
+    color: white;
+  }
+}
+
+@keyframes unwhiteText {
+  0% {
+    color: white;
+  }
+  100% {
+    color: #4f5051;
+  }
+}
+
+@keyframes unwhiteImage {
+  0% {
+    filter: invert(1) brightness(1);
+  }
+  100% {
+    filter: invert(0) brightness(1);
+  }
 }

@@ -275,7 +275,12 @@ function hideFriendsMenu() {
   friendsButton.style.backgroundColor = '#282B30';
 }
 
+
 function showGameMenu() {
+  unwhiteButton(image, label)
+  whiteButton('exchangeImage1', 'exchangeLabel')
+  image = 'exchangeImage1'
+  label = 'exchangeLabel'
   for (let i = 0; i < gameFieldElements.length; i++) {
     document.getElementById(gameFieldElements[i]).style.display = 'block';
   }
@@ -314,7 +319,8 @@ function hideGameMenu() {
   });
 }
 
-
+let image = 'exchangeImage1';
+let label = 'exchangeLabel';
 document.getElementById('gameButton').addEventListener('click', ()=>{
   hapticFeedback()
   adjustProgressBar()
@@ -343,7 +349,43 @@ developerButton.addEventListener('click', ()=>{
   showDeveloperField();
 });
 
+function whiteButton(image, label) {
+  if (image == 'exchangeImage1') {
+    document.getElementById(label).style.animation = 'whiteText 0.5s';
+    setTimeout(()=>{
+      document.getElementById(label).style.color = 'white';
+    }, 490)
+  }else {
+  document.getElementById(image).style.animation = 'whiteImage 0.5s';
+  document.getElementById(label).style.animation = 'whiteText 0.5s'
+  setTimeout(()=>{
+    document.getElementById(image).style.filter = 'invert(1) brightness(2)';
+    document.getElementById(label).style.color = 'white';
+  }, 490)
+}
+}
+
+function unwhiteButton(image, label) {
+  if (image == 'exchangeImage1') {
+    document.getElementById(label).style.animation = 'unwhiteText 0.5s';
+    setTimeout(()=>{
+      document.getElementById(label).style.color = '#4f5051';
+    }, 490)
+  }else {
+    document.getElementById(image).style.animation = 'unwhiteImage 0.5s';
+    document.getElementById(label).style.animation = 'unwhiteText 0.5s'
+    setTimeout(()=>{
+        document.getElementById(image).style.filter = 'invert(0) brightness(1)';
+        document.getElementById(label).style.color = '#4f5051';
+      }, 490)
+  }
+  }
+
 document.getElementById('mineButton').addEventListener('click', ()=>{
+  unwhiteButton(image, label)
+  whiteButton('mineImage', 'mineLabel')
+  image = 'mineImage'
+  label = 'mineLabel'
   hapticFeedback()
   document.documentElement.style.overflow = 'hidden';
   hideGameMenu();
@@ -353,7 +395,12 @@ document.getElementById('mineButton').addEventListener('click', ()=>{
   showMineField();
 });
 
+
 document.getElementById('friendsButton').addEventListener('click', ()=>{
+  unwhiteButton(image, label)
+  whiteButton('friendsImage', 'friendsLabel')
+  image = 'friendsImage'
+  label = 'friendsLabel'
   hapticFeedback()
   window.scrollTo({
     top: 0,
@@ -368,6 +415,10 @@ document.getElementById('friendsButton').addEventListener('click', ()=>{
 
 
 function showEarnMenu() {
+  unwhiteButton(image, label)
+  whiteButton('earnImage', 'earnLabel')
+  image = 'earnImage'
+  label = 'earnLabel'
   adjustCoinsVisual(10000)
   window.scrollTo({
     top: 0,
@@ -854,6 +905,10 @@ function manageProgressBar (level, levelLabel) {
 
 
 function showDeveloperField() {
+  unwhiteButton(image, label)
+  whiteButton('airdropImage1', 'airdropLabell')
+  image = 'airdropImage1'
+  label = 'airdropLabell'
   airdropField.style.display = 'block'
   developerButton.style.backgroundColor = '#1C1F24'
   window.scrollTo({
