@@ -19,6 +19,7 @@ function handleOrientationChange() {
       }
   }
 }
+let process = false;
 
 // JavaScript
 const overflow = 0; // Adjust as needed
@@ -193,6 +194,7 @@ function adjustReferrals () {
 };
 
 function showReferrals(id) {
+  process = true
   postData('/getReferrals', {
     telegramSourceId: id
   })
@@ -804,9 +806,8 @@ function adjustProgressBar() {
     manageProgressBar(nameLabel, levelLabel);
   }
 }
-let process = false;
 document.getElementById('friendBoxRestart').addEventListener('click', function(){
-  if (process == false) {   showReferrals(+getTelegramId()); process = true }
+  if (process == false) {   showReferrals(+getTelegramId()); process = false}
 })
 
 function manageProgressBar (level, levelLabel) {
