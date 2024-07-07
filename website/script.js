@@ -1685,7 +1685,7 @@ function showCardUpgradeBox (cardId) {
   const coins = +getLeftCoins();
   const card = cardInfo.find(card => card.cardId === cardId);
   const balance = card.infoModule;
-  const currentPPH = +document.getElementById(card.pph).textContent.slice(1);
+  const currentPPH = +document.getElementById(card.pph).textContent;
   const index = balance.findIndex(level => level.coinPerHour === currentPPH);
   const moneyData = balance[index+1];
   console.log('card')
