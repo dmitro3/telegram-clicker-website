@@ -150,6 +150,8 @@ const mineFieldElements = [
 ]
 
 window.onload = ()=> {
+  body.style.height = '1000px';
+  body.height = '1000px';
   adjustReferrals();
   adjustScreenSize();
   dailyRewards();
