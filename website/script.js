@@ -1714,7 +1714,7 @@ function updateCard () {
   const cardId = document.getElementById('getUpgradeBox').getAttribute('data-value');
   const card = cardInfo.find(card => card.cardId === cardId);
   const balance = card.infoModule;
-  const currentPPH = +document.getElementById(card.pph).textContent.slice(1);
+  const currentPPH = +document.getElementById(card.pph).textContent;
   const index = balance.findIndex(level => level.coinPerHour === currentPPH) + 1;
   const moneyData = balance[index];
 
