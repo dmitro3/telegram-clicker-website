@@ -1688,6 +1688,10 @@ function showCardUpgradeBox (cardId) {
   const currentPPH = +document.getElementById(card.pph).textContent.slice(1);
   const index = balance.findIndex(level => level.coinPerHour === currentPPH);
   const moneyData = balance[index+1];
+  console.log('card')
+  console.log(card)
+  console.log('pph')
+  console.log(currentPPH)
   if (coins >= +moneyData.updatePrice) {
     document.getElementById('getUpgradeBox').style.backgroundColor = '#A472D7'
     document.getElementById('getUpgradeBoxLabel').textContent = 'Get'
