@@ -351,33 +351,20 @@ developerButton.addEventListener('click', ()=>{
 
 function whiteButton(image, label) {
   if (image == 'exchangeImage1') {
-    document.getElementById(label).style.animation = 'whiteText 0.5s';
-    setTimeout(()=>{
-      document.getElementById(label).style.color = 'white';
-    }, 490)
+    document.getElementById(label).style.animation = 'whiteText 0.5s forwards';
   }else {
-  document.getElementById(image).style.animation = 'whiteImage 0.5s';
-  document.getElementById(label).style.animation = 'whiteText 0.5s'
-  setTimeout(()=>{
-    document.getElementById(image).style.filter = 'invert(1) brightness(2)';
-    document.getElementById(label).style.color = 'white';
-  }, 490)
+  document.getElementById(image).style.animation = 'whiteImage 0.5s forwards';
+  document.getElementById(label).style.animation = 'whiteText 0.5s forwards'
+  
 }
 }
 
 function unwhiteButton(image, label) {
   if (image == 'exchangeImage1') {
-    document.getElementById(label).style.animation = 'unwhiteText 0.5s';
-    setTimeout(()=>{
-      document.getElementById(label).style.color = '#4f5051';
-    }, 490)
+    document.getElementById(label).style.animation = 'unwhiteText 0.5s forwards';
   }else {
-    document.getElementById(image).style.animation = 'unwhiteImage 0.5s';
-    document.getElementById(label).style.animation = 'unwhiteText 0.5s'
-    setTimeout(()=>{
-        document.getElementById(image).style.filter = 'invert(0) brightness(1)';
-        document.getElementById(label).style.color = '#4f5051';
-      }, 490)
+    document.getElementById(image).style.animation = 'unwhiteImage 0.5s forwards';
+    document.getElementById(label).style.animation = 'unwhiteText 0.5s forwards'
   }
   }
 
