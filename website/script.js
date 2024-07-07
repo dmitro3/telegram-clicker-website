@@ -804,9 +804,9 @@ function adjustProgressBar() {
     manageProgressBar(nameLabel, levelLabel);
   }
 }
-
+let process = false;
 document.getElementById('friendBoxRestart').addEventListener('click', function(){
-  showReferrals(+getTelegramId());
+  if (process == false) {   showReferrals(+getTelegramId()); process = true }
 })
 
 function manageProgressBar (level, levelLabel) {
