@@ -273,16 +273,16 @@ html, body {
   position: absolute;
   width: 25px;
   height: 25px;
-  left: 71px;
-  margin-top: 145px;
+  top: 31px;
+  left: 50px;
   z-index: 3;
 }
 
 #earnPerClickLabel{
     position: absolute;
     color: white;
-    margin-top: 146px;
-    margin-left: 100px;
+    top: 9px;
+    left: 78px;
     z-index: 3;
     font-size: 18px;
 }
@@ -2523,5 +2523,29 @@ html, body {
   }
   100% {
     filter: invert(0) brightness(1);
+  }
+}
+
+@keyframes movingBlock {
+  0% {
+    margin-top: 90px;
+  }
+  70%{
+    margin-top: 120px;
+  }
+  100%{
+    margin-top: 114px;
+  }
+}
+
+@keyframes scaleAnimation {
+  0% {
+      transform: scale(0.4);
+  }
+  50% {
+      transform: scale(1.2);
+  }
+  100% {
+      transform: scale(1);
   }
 }

@@ -277,6 +277,17 @@ function hideFriendsMenu() {
 
 
 function showGameMenu() {
+  document.getElementById('earnPerClickBox').style.animation = 'movingBlock 0.2s forwards';
+  document.getElementById('clicksTillLevelUp').style.animation = 'movingBlock 0.2s forwards';
+  document.getElementById('passiveClicks').style.animation = 'movingBlock 0.2s forwards';
+  document.getElementById('mainButtonCover').style.animation = 'scaleAnimation 0.2s forwards';
+  document.getElementById('energyImage').style.animation = 'scaleAnimation 0.2s forwards';
+  document.getElementById('energyLabel').style.animation = 'scaleAnimation 0.2s forwards';
+  document.getElementById('cover').style.animation = 'scaleAnimation 0.2s forwards';
+  document.getElementById('progressBarBoxStatusLabel').style.animation = 'scaleAnimation 0.2s forwards';
+  document.getElementById('progressBarBoxLevelLabel').style.animation = 'scaleAnimation 0.2s forwards'
+  document.getElementById('progressBarBoxBox').style.animation = 'scaleAnimation 0.2s forwards'
+
   unwhiteButton(image, label)
   whiteButton('exchangeImage1', 'exchangeLabel')
   image = 'exchangeImage1'
@@ -303,8 +314,6 @@ function showGameMenu() {
   document.documentElement.style.overflow = 'hidden';
   gameButton.style.backgroundColor = '#1C1F24';
   gameField.style.marginTop = '95px';
-  earnPerClickCoin.style.marginTop = '145px';
-  earnPerClickLabel.style.marginTop = '146px';
   menu.style.boxShadow = '0px 0px 0px 0px #000000'
 }
 
@@ -369,6 +378,9 @@ function unwhiteButton(image, label) {
   }
 
 document.getElementById('mineButton').addEventListener('click', ()=>{
+  document.getElementById('earnPerClickBox').style.animation = 'none';
+  document.getElementById('clicksTillLevelUp').style.animation = 'none';
+  document.getElementById('passiveClicks').style.animation = 'none';
   unwhiteButton(image, label)
   whiteButton('mineImage', 'mineLabel')
   image = 'mineImage'
@@ -1203,6 +1215,7 @@ function getCurrentDateFormatted() {
 }
 
 function showMineField() {
+  document.getElementById('cover').style.animation = 'none'
   adjustCardsAvailability();
   menuShadow.style.display = 'block';
   for (let i = 0; i < mineFieldElements.length; i++) {
@@ -1223,9 +1236,7 @@ function showMineField() {
   cover.style.marginTop = '47px'
   body.style.height = '100vh'
   document.documentElement.style.overflow = 'hidden';
-  earnPerClickCoin.style.marginTop = '67px';
-  earnPerClickLabel.style.marginTop = '67px';
-
+ 
   gameField.style.height = '979px';
 
   gameField.style.marginTop = '16px';
