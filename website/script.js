@@ -1853,6 +1853,7 @@ function getDailyRewards() {
   })
   .then(data => {
     document.getElementById('dailyRewardsWindow').style.display = 'none';
+    adjustCoinsVisual(+getLeftCoins() + +dailyRewardsMoney.getData().map(money => i == money.i).i)
     dailyRewards()
     unBlur();
   });

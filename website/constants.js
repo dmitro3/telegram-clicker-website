@@ -269,3 +269,24 @@
             }
         };
     })();
+    //Daily Rewards
+    var dailyRewardsMoney = (function() {
+        var values = [
+            { 1: 500 },
+            { 2: 1000 },
+            { 3: 2500 },
+            { 4: 5000 },
+            { 5: 15000 },
+            { 6: 25000 },
+            { 7: 100000 },
+            { 8: 500000 },
+            { 9: 1000000 },
+            { 10: 5000000 }
+          ];
+        
+        return {
+            getData: function() {
+                return values;
+            }
+        };
+    })();
