@@ -129,16 +129,16 @@ const gameFieldElements = [
 ]
 
 const cardInfo = [
-  { cardId: 'funTokensBox', label: 'Fan tokens', level: 'funTokenLevel', price: 'funTokenPrice', pph: 'funTokenPPH', image: 'sport.png', infoModule: funTokensBoxModule.getData()},
-  { cardId: 'stakingBox', label: 'Staking', level: 'stakingLevel', price: 'stakingPrice', pph: 'stakingPPH', image: 'staking.png', infoModule: stakingBoxModule.getData() },
-  { cardId: 'btcPairsBox', label: 'BTC pairs', level: 'btcPairLevel', price: 'btcPairPrice', pph: 'btcPairPPH', image: 'bitcoin.png', infoModule: btcPairsModule.getData() },
-  { cardId: 'ethPairsBox', label: 'ETH pairs', level: 'ethPairLevel', price: 'ethPairPrice', pph: 'ethPairPPH', image: 'ethereum.png', infoModule: ethPairsModule.getData() },
-  { cardId: 'top10CMCBox', label: 'Cmc pairs', level: 'cmcPairsLevel', price: 'cmcPairsPrice', pph: 'cmcPairsPPH', image: 'cmc.png', infoModule: cmcModule.getData() },
-  { cardId: 'gameFiBox', label: 'GameFi tokens', level: 'gameFiLevel', price: 'gameFiPrice', pph: 'gameFiPPH', image: 'gamefi.png', infoModule: gameModule.getData() },
-  { cardId: 'defiBox', label: 'Defi2.0 tokens', level: 'defiLevel', price: 'defiPrice', pph: 'defiPPH', image: 'defi.png', infoModule: defiModule.getData() },
-  { cardId: 'socialFiBox', label: 'SocialFi tokens', level: 'socialFiLevel', price: 'socialFiPrice', pph: 'socialFiPPH', image: 'socialfi.png', infoModule: socialModule.getData() },
-  { cardId: 'memeCoinsBox', label: 'Meme coins', level: 'memeLevel', price: 'memePrice', pph: 'memePPH', image: 'mem.png', infoModule: memeModule.getData() },
-  { cardId: 'shitCoinsBox', label: 'Shit coins', level: 'shitLevel', price: 'shitPrice', pph: 'shitPPH', image: 'shit.png', infoModule: shitModule.getData() }
+  { cardId: 'funTokensBox', label: 'IT Specialists', level: 'funTokenLevel', price: 'funTokenPrice', pph: 'funTokenPPH', image: 'sport.png', infoModule: funTokensBoxModule.getData(), description: 'Hire highly skilled programmers to increase the efficiency and speed of development.'},
+  { cardId: 'stakingBox', label: 'Producer', level: 'stakingLevel', price: 'stakingPrice', pph: 'stakingPPH', image: 'staking.png', infoModule: stakingBoxModule.getData(), description: 'Delegate tasks to your assistant. Reduce workload, enhancing work efficiency.' },
+  { cardId: 'btcPairsBox', label: 'Game Engine', level: 'btcPairLevel', price: 'btcPairPrice', pph: 'btcPairPPH', image: 'bitcoin.png', infoModule: btcPairsModule.getData(), description: 'Developing a game engine reduces the cost of developing future games, improves game performance, and adds exclusive features that attract players.' },
+  { cardId: 'ethPairsBox', label: 'Servers', level: 'ethPairLevel', price: 'ethPairPrice', pph: 'ethPairPPH', image: 'ethereum.png', infoModule: ethPairsModule.getData(), description: 'Upgrade your infrastructure to improve game server stability and reduce the failure rate.' },
+  { cardId: 'top10CMCBox', label: 'Technical Upgrades', level: 'cmcPairsLevel', price: 'cmcPairsPrice', pph: 'cmcPairsPPH', image: 'cmc.png', infoModule: cmcModule.getData(), description: 'Improve automated testing systems to reduce the number of bugs and errors.' },
+  { cardId: 'gameFiBox', label: 'UI/UX Department', level: 'gameFiLevel', price: 'gameFiPrice', pph: 'gameFiPPH', image: 'gamefi.png', infoModule: gameModule.getData(), description: 'Interface updates improve user experience, increasing player retention.' },
+  { cardId: 'defiBox', label: 'DAO', level: 'defiLevel', price: 'defiPrice', pph: 'defiPPH', image: 'defi.png', infoModule: defiModule.getData(), description: 'Decentralized Autonomous Organizations add the ability for players to vote on game updates, increasing their loyalty.' },
+  { cardId: 'socialFiBox', label: 'Team Building', level: 'socialFiLevel', price: 'socialFiPrice', pph: 'socialFiPPH', image: 'socialfi.png', infoModule: socialModule.getData(), description: 'Improve team morale and increase their motivation through team-building activities to reduce task completion time and increase employee loyalty.' },
+  { cardId: 'memeCoinsBox', label: 'Office', level: 'memeLevel', price: 'memePrice', pph: 'memePPH', image: 'mem.png', infoModule: memeModule.getData(), description: 'Create a flexible work schedule and improve the office environment. Increase work comfort to boost productivity. Reduce team stress levels to enhance efficiency.' },
+  { cardId: 'shitCoinsBox', label: 'Art Department', level: 'shitLevel', price: 'shitPrice', pph: 'shitPPH', image: 'shit.png', infoModule: shitModule.getData(), description: 'Hire highly skilled artists to improve the quality and speed of art creation for games.' }
 ];
 
 
@@ -1688,10 +1688,15 @@ function showCardUpgradeBox (cardId) {
   const currentPPH = +document.getElementById(card.pph).textContent;
   const index = balance.findIndex(level => level.coinPerHour === currentPPH);
   const moneyData = balance[index+1];
-  console.log('card')
-  console.log(card)
-  console.log('pph')
-  console.log(currentPPH)
+  
+  if (card.cardId == 'btcPairsBox' || card.cardId == 'socialFiBox' || card.cardId == 'memeCoinsBox') {
+    document.getElementById('updateContainerPPH').style.top = '340px';
+    document.getElementById('updateContainerPrice').style.top = '420px';
+  } else {
+    document.getElementById('updateContainerPPH').style.top = '320px';
+    document.getElementById('updateContainerPrice').style.top = '410px';
+  }
+
   if (coins >= +moneyData.updatePrice) {
     document.getElementById('getUpgradeBox').style.backgroundColor = '#A472D7'
     document.getElementById('getUpgradeBoxLabel').textContent = 'Get'
@@ -1705,6 +1710,7 @@ function showCardUpgradeBox (cardId) {
     document.getElementById('profitPerHourPrice').textContent = '+' + moneyData.coinPerHour;
     document.getElementById('upgradePriceLabel').textContent = moneyData.updatePrice;
     document.getElementById('cardUpgradeBox').style.display = 'block';
+    document.getElementById('cardUpgradeBoxSubLabel1').textContent = card.description;
     document.getElementById('getUpgradeBox').setAttribute('data-value', cardId)
   }
 }

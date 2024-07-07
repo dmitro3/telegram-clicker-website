@@ -1159,7 +1159,7 @@ html, body {
     position: absolute;
     font-size: 12px;
     font-weight: 400;
-    margin-left: 86px;
+    margin-left: 78px;
     margin-top: 34px;
   }
 
@@ -1884,7 +1884,7 @@ html, body {
     position: fixed;
     z-index: 9;
     width: 519px;
-    height: 715px;
+    height: 740px;
     margin-top: 258px;
     background-color: #1c1f24;
     border-top-right-radius: 50px;
@@ -2468,7 +2468,7 @@ html, body {
 }
 
 #updateContainerPrice{
-  top: 400px; 
+  top: 410px; 
 }
 
 .upgradeBox{
@@ -2477,5 +2477,6 @@ html, body {
 }
 
 #updateContainerPPH{
-  top: 330px;
+  top: 340px;
+  position: absolute;
 }
