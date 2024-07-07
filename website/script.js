@@ -1216,6 +1216,8 @@ function getCurrentDateFormatted() {
 
 function showMineField() {
   document.getElementById('cover').style.animation = 'none'
+  document.getElementById('mineMenuMenu').style.animation = 'flowRight 0.2s forwards';
+  document.getElementById('mineScrollDiv').style.animation = 'flowLeft 0.2s forwards'
   adjustCardsAvailability();
   menuShadow.style.display = 'block';
   for (let i = 0; i < mineFieldElements.length; i++) {

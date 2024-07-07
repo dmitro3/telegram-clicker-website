@@ -864,6 +864,24 @@ html, body {
     display: none;
   }
 
+  @keyframes flowLeft {
+    0%{
+      left: 600px;
+    }
+    100%{
+      left: 0px;
+    }
+  }
+
+  @keyframes flowRight {
+    0%{
+      margin-left: -20px;
+    }
+    100%{
+      margin-left: 18px;
+    }
+  }
+
   #marketsMenu{
     text-align: center;
     color: white;
