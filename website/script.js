@@ -137,7 +137,7 @@ const cardInfo = [
   { cardId: 'gameFiBox', label: 'UI/UX Department', level: 'gameFiLevel', price: 'gameFiPrice', pph: 'gameFiPPH', image: 'gamefi.png', infoModule: gameModule.getData(), description: 'Interface updates improve user experience, increasing player retention.' },
   { cardId: 'defiBox', label: 'DAO', level: 'defiLevel', price: 'defiPrice', pph: 'defiPPH', image: 'defi.png', infoModule: defiModule.getData(), description: 'Decentralized Autonomous Organizations add the ability for players to vote on game updates, increasing their loyalty.' },
   { cardId: 'socialFiBox', label: 'Team Building', level: 'socialFiLevel', price: 'socialFiPrice', pph: 'socialFiPPH', image: 'socialfi.png', infoModule: socialModule.getData(), description: 'Improve team morale and increase their motivation through team-building activities to reduce task completion time and increase employee loyalty.' },
-  { cardId: 'memeCoinsBox', label: 'Office', level: 'memeLevel', price: 'memePrice', pph: 'memePPH', image: 'mem.png', infoModule: memeModule.getData(), description: 'Create a flexible work schedule and improve the office environment. Increase work comfort to boost productivity. Reduce team stress levels to enhance efficiency.' },
+  { cardId: 'memeCoinsBox', label: 'Office', level: 'memeLevel', price: 'memePrice', pph: 'memePPH', image: 'mem.png', infoModule: memeModule.getData(), description: 'Create a flexible work schedule and improve the office environment. Increase comfort to boost productivity. Reduce team stress levels to enhance efficiency.' },
   { cardId: 'shitCoinsBox', label: 'Art Department', level: 'shitLevel', price: 'shitPrice', pph: 'shitPPH', image: 'shit.png', infoModule: shitModule.getData(), description: 'Hire highly skilled artists to improve the quality and speed of art creation for games.' }
 ];
 
@@ -1689,7 +1689,7 @@ function showCardUpgradeBox (cardId) {
   const index = balance.findIndex(level => level.coinPerHour === currentPPH);
   const moneyData = balance[index+1];
   
-  if (card.cardId == 'btcPairsBox' || card.cardId == 'socialFiBox' || card.cardId == 'memeCoinsBox') {
+  if (card.cardId == 'btcPairsBox' || card.cardId == 'socialFiBox' || card.cardId == 'defiBox' || card.cardId == 'memeCoinsBox') {
     document.getElementById('updateContainerPPH').style.top = '340px';
     document.getElementById('updateContainerPrice').style.top = '420px';
   } else {
