@@ -723,7 +723,7 @@ function createElement(type, className, src) {
           telegramId: id
         })
         .then(data1 => {
-          const user = Array.from(data1['data'])[0];
+          const user = data1; 
           let username = aaab;
           const premium = username.isPremium;
 
