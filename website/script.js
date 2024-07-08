@@ -171,13 +171,15 @@ window.onload = ()=> {
       telegramId: getTelegramId(),
     })
     .then(data => {
-      newData = Array.from(data.data);
-      const record = newData[newData.length-1];
-      const coins = record.coins;
-      adjustCoinsVisual(coins);
-      adjustProgressBar()
-      document.getElementById('energyLabel').innerHTML = calculateEnergy(record.energy, record.time);
-      showPassiveMining(record.time);
+      if (!data.message && data) {
+        const { energy, coins, time } = data;
+        document.getElementById('energyLabel').innerHTML = calculateEnergy(energy, time);
+        adjustCoinsVisual(coins);
+        adjustProgressBar();
+        showPassiveMining(time);
+      } else {
+        console.log('No data received from the server');
+      }
     });
 }
 
@@ -630,7 +632,7 @@ function postData(url, data) {
         time: getCurrentTime()
       })
       .then(data => {
-
+        
       });
   }, 2000);
 

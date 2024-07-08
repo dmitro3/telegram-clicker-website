@@ -1,0 +1,31 @@
+const express = require('express');
+
+const updateGameData = require('./updateGameData');
+const getGameData = require('./getGameData');
+const addReferral = require('./addReferral');
+const getReferrals = require('./getReferrals');
+const addUserInformation = require('./addUserInformation');
+const getUserInformation = require('./getUserInformation');
+const verifyReferral = require('./verifyReferral');
+const getDailyRewardsState = require('./getDailyRewardsState');
+const updateDailyRewards = require('./updateDailyRewards');
+const getMineCardsInformation = require('./getMineCardsInformation');
+const updateCardLevel = require('./updateCardLevel');
+const getPPHInfo = require('./getPPHInfo');
+const updatePPH = require('./updatePPH');
+
+module.exports = (app) => {
+  app.use('/updateGameData', updateGameData);
+  app.use('/getGameData', getGameData);
+  app.use('/addReferral', addReferral);
+  app.use('/getReferrals', getReferrals);
+  app.use('/addUserInformation', addUserInformation);
+  app.use('/getUserInformation', getUserInformation);
+  app.use('/verifyReferral', verifyReferral);
+  app.use('/getDailyRewardsState', getDailyRewardsState);
+  app.use('/updateDailyRewards', updateDailyRewards);
+  app.use('/getMineCardsInformation', getMineCardsInformation);
+  app.use('/updateCardLevel', updateCardLevel);
+  app.use('/getPPHInfo', getPPHInfo);
+  app.use('/updatePPH', updatePPH);
+};

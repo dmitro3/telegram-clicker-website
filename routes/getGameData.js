@@ -1,24 +1,21 @@
 const express = require('express');
 const router = express.Router();
-const sqlite3 = require('sqlite3');
-const db = new sqlite3.Database('mydatabase.db');
+const GameData = require('../models/GameData');
 
-router.post('/', async (req, res, next) => {
-    const data = req.body;
-    const rows = await getGameData(data.telegramId)
-    res.json({'data': rows})
+router.post('/', async (req, res) => {
+    const { telegramId } = req.body;
+    
+    try {
+        const gameData = await GameData.findOne({ telegramId: telegramId });
+
+        if (!gameData) {
+            return res.status(404).json({ message: 'Game data not found' });
+        }
+
+        res.json(gameData);
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+    }
 });
 
-async function getGameData(telegramId) {
-    console.log(telegramId)
-    return new Promise((resolve, reject) => {
-        db.all(`SELECT * FROM users_data WHERE telegramId = ?`,[telegramId] , function (err, rows) {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(rows);
-            }
-        });
-    }
-    )}
 module.exports = router;
