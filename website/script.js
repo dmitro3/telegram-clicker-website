@@ -693,8 +693,8 @@ function showClick(event) {
 function addReferal(srcTelegramId){
   const refTelegramId = getTelegramId();
   postData('/addReferral', {
-    srcTelegramId: srcTelegramId,
-    refTelegramId: refTelegramId,
+    telegramSourceId: srcTelegramId,
+    telegramReferralId: refTelegramId,
     clicked: 0,
     verified: 0
   })
