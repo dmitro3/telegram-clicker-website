@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const path = require('path');
 const routes = require('./routes/routes');
 
 dotenv.config();
@@ -10,6 +11,8 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware to parse JSON
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, 'website')));
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, {

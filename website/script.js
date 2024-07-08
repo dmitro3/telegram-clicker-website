@@ -167,20 +167,18 @@ window.onload = ()=> {
     adjustClickedReferral(getTelegramId());
   }
   tg.expand();
-  postData('/getGameData', {
-      telegramId: getTelegramId(),
-    })
-    .then(data => {
-      if (!data.message && data) {
-        const { energy, coins, time } = data;
-        document.getElementById('energyLabel').innerHTML = calculateEnergy(energy, time);
-        adjustCoinsVisual(coins);
-        adjustProgressBar();
-        showPassiveMining(time);
-      } else {
-        console.log('No data received from the server');
-      }
-    });
+  postData('/getGameData', { telegramId: getTelegramId() })
+  .then(data => {
+    if (!data.message && data) {
+      const { energy, coins, time } = data;
+      document.getElementById('energyLabel').innerHTML = calculateEnergy(energy, time);
+      adjustCoinsVisual(coins);
+      adjustProgressBar();
+      showPassiveMining(time);
+    } else {
+      console.log('No data received from the server');
+    }
+  });
 }
 
 function adjustReferrals () {
