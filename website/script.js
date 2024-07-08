@@ -1820,13 +1820,14 @@ function updateCard () {
       document.getElementById(card.level).textContent = moneyData.level;
       document.getElementById(card.price).textContent = balance[index+1].updatePrice;
       document.getElementById(card.pph).textContent = '+' + balance[index].coinPerHour;
-      document.getElementById('passiveClicksLabel').innerHTML = (+document.getElementById('passiveClicksLabel').textContent + +diff);
+      document.getElementById('passiveClicksLabel').setAttribute('data-value', +document.getElementById('passiveClicksLabel').getAttribute('data-value') + +diff);
+      document.getElementById('passiveClicksLabel').innerHTML = encodePassiveLabel();
       document.getElementById('cardUpgradeBox').style.display = 'none';
       adjustCardsAvailability()
       unBlur()
       postData('/updatePPH', {
         telegramId: getTelegramId(),
-        pph: +document.getElementById('passiveClicksLabel').textContent
+        pph: +document.getElementById('passiveClicksLabel').getAttribute('data-value')
       })
       .then(data => {});
     } else{
@@ -1834,12 +1835,13 @@ function updateCard () {
       document.getElementById(card.level).textContent = moneyData.level;
       document.getElementById(card.price).textContent = 'Completed';
       document.getElementById(card.pph).textContent = '+' + balance[index].coinPerHour;
-      document.getElementById('passiveClicksLabel').innerHTML = (+document.getElementById('passiveClicksLabel').textContent + +diff);
+      document.getElementById('passiveClicksLabel').setAttribute('data-value', +document.getElementById('passiveClicksLabel').getAttribute('data-value'));
+      document.getElementById('passiveClicksLabel').innerHTML = encodePassiveLabel();
       document.getElementById('cardUpgradeBox').style.display = 'none';
       adjustCardsAvailability()
       postData('/updatePPH', {
         telegramId: getTelegramId(),
-        pph: +document.getElementById('passiveClicksLabel').textContent + +diff
+        pph: +document.getElementById('passiveClicksLabel').getAttribute('dataValue')
       })
       .then(data => {
         adjustCardsAvailability()
@@ -1977,7 +1979,7 @@ document.addEventListener('touchstart', function(event) {
 // passive clicks calculation
 let passiveCounter = 0;
 setInterval(()=>{
-  const pph = +document.getElementById('passiveClicksLabel').textContent;
+  const pph = +document.getElementById('passiveClicksLabel').getAttribute('data-value');
   const value = pph / 3600;
   passiveCounter += value;
   if (passiveCounter >= 1) {
@@ -1997,7 +1999,8 @@ function showPassiveMining(time) {
     if (data.data != 'User added') {
       const info = Array.from(data.data)[0];
       console.log(info)
-      document.getElementById('passiveClicksLabel').innerHTML = info.pph;
+      document.getElementById('passiveClicksLabel').setAttribute('data-value', info.pph);
+      encodePassiveLabel();
       const pph = info.pph / 3600;
       const difference = getTimeInSeconds(getCurrentTime()) - getTimeInSeconds(time);
       console.log(difference)
@@ -2059,4 +2062,21 @@ function adjustDotMargin(status, dot, coin, money){
   dot.style.marginLeft = margin.margin + 'px';
   coin.style.marginLeft = (margin.margin + 9) + 'px';
   money.style.marginLeft = (margin.margin + 31) + 'px';
+}
+
+function encodePassiveLabel () {
+  const number = getPassiveLabel();
+  if (number >= 1000000) {
+    // Handle millions
+    return (number / 1000000).toFixed(3).replace('.', ',') + 'M';
+} else if (number >= 1000) {
+    // Handle thousands
+    return (number / 1000).toFixed(2).replace('.', ',') + 'K';
+}
+// Handle numbers less than 1000
+return number.toString();
+}
+
+function getPassiveLabel () {
+  return +document.getElementById('passiveClicksLabel').getAttribute('data-value');
 }
