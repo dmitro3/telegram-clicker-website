@@ -1804,6 +1804,7 @@ function updateCard () {
   const userCoins = +getLeftCoins();
 
   if (userCoins >= price){
+    hapticFeedback();
     adjustCoinsVisual(userCoins - price);
     adjustCardsAvailability()
     postData('/updateCardLevel', {
@@ -1934,6 +1935,7 @@ function getDailyRewards() {
     date: getCurrentDatee()
   })
   .then(data => {
+    hapticFeedback();
     const money = [500 , 1000, 2500, 5000, 15000, 25000, 100000, 500000, 1000000, 5000000]
     document.getElementById('dailyRewardsWindow').style.display = 'none';
     adjustCoinsVisual(+getLeftCoins() + money[i == 0? 0 : i-1])
@@ -1944,13 +1946,14 @@ function getDailyRewards() {
 
 // referral system
 document.getElementById('inviteFriendDiv').addEventListener('click', ()=>{
+  hapticFeedback();
   const shareUrl = `https://t.me/share/url?url=https%3A%2F%2Ft.me/clicker_test_test_bot?start=${getTelegramId()}&text=Join%20this%20game!`;
 
     Telegram.WebApp.openTelegramLink(shareUrl);
 });
 
 document.getElementById('inviteFriendCopyDiv').addEventListener('click', ()=>{
-
+  hapticFeedback();
   navigator.clipboard.writeText(`https://t.me/share/url?url=https%3A%2F%2Ft.me/clicker_test_test_bot?start=${getTelegramId()}&text=Join%20this%20game!`);
             
   Telegram.WebApp.showPopup({
