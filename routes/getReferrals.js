@@ -1,25 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const sqlite3 = require('sqlite3');
-const db = new sqlite3.Database('mydatabase.db');
+const Referrals = require('../models/Referrals');
 
-router.post('/', async (req, res, next) => {
-    const data = req.body;
-    const rows = await getGameData(+data.telegramSourceId)
-    console.log('ROWS '+ rows)
-    res.json({'data': rows})
+router.post('/', async (req, res) => {
+    const { telegramSourceId } = req.body;
+    
+    try {
+        const referralData = await Referrals.find({telegramSourceId: telegramSourceId});
+        res.status(200).json(referralData);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
 });
 
-async function getGameData(telegramId) {
-    console.log('ID ' + telegramId)
-    return new Promise((resolve, reject) => {
-        db.all(`SELECT * FROM referrals_data WHERE telegramSourceId = ?`,[+telegramId] , function (err, rows) {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(rows);
-            }
-        });
-    }
-    )}
-module.exports = router;  
+module.exports = router;

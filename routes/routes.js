@@ -15,17 +15,22 @@ const getPPHInfo = require('./getPPHInfo');
 const updatePPH = require('./updatePPH');
 
 module.exports = (app) => {
-  app.use('/updateGameData', updateGameData);
-  app.use('/getGameData', getGameData);
-  app.use('/addReferral', addReferral);
-  app.use('/getReferrals', getReferrals);
+  app.use('/updateGameData', updateGameData); //done
+  app.use('/getGameData', getGameData); //done
+
+  app.use('/addReferral', addReferral); //done
+  app.use('/getReferrals', getReferrals); //done
+  app.use('/verifyReferral', verifyReferral); //done
+
   app.use('/addUserInformation', addUserInformation);
   app.use('/getUserInformation', getUserInformation);
-  app.use('/verifyReferral', verifyReferral);
+
   app.use('/getDailyRewardsState', getDailyRewardsState);
   app.use('/updateDailyRewards', updateDailyRewards);
+
   app.use('/getMineCardsInformation', getMineCardsInformation);
   app.use('/updateCardLevel', updateCardLevel);
+
   app.use('/getPPHInfo', getPPHInfo);
   app.use('/updatePPH', updatePPH);
 };

@@ -1,24 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const sqlite3 = require('sqlite3');
-const db = new sqlite3.Database('mydatabase.db');
+const Referrals = require('../models/Referrals');
 
-router.post('/', async (req, res, next) => {
-    data = req.body;
-    await updateGameData(data)
-    res.json({})
+router.post('/', async (req, res) => {
+    const { telegramReferralId } = req.body;
+
+    try {
+        const updatedReferral = await Referrals.findOneAndUpdate({ telegramReferralId: telegramReferralId }, { verified: 1 }, { new: true });
+        if (!updatedReferral) {
+            return res.status(404).json({ message: 'Referral not found' });
+        }
+
+        res.status(200).json(updatedReferral);
+    }catch (err) {
+        res.status(500).json({ message: err.message });
+    }
 });
 
-async function updateGameData(data) {
-    return new Promise((resolve, reject) => {
-        db.run("UPDATE referrals_data SET verified = ? WHERE telegramReferralId = ?", [1, +data.telegramId], function (err) {
-            if (err) {
-                console.error("Error inserting data:", err.message);
-                reject(err);
-            } else {
-                resolve();
-            }
-        });
-    }
-    )}
 module.exports = router;

@@ -1,42 +1,21 @@
 const express = require('express');
 const router = express.Router();
-const sqlite3 = require('sqlite3');
-const db = new sqlite3.Database('mydatabase.db');
+const Referrals = require('../models/Referrals');
 
-router.post('/', async (req, res, next) => {
-    const data = req.body;
-    const information = await getDBrows(+data.refTelegramId);
-    if (information.length == 0) {
-        await addUser(data);
-        res.json({data: "User added"})
-    } else {
-        res.json({data: "User was already in database"})
+router.post('/', async (req, res) => {
+    const { telegramSourceId, telegramReferralId, clicked, verified } = req.body;
+
+    try {
+        const referralExist = await Referrals.findOne({ telegramReferralId: telegramReferralId });
+        if (referralExist) {
+            return res.status(400).json({ message: 'Referral already exists' });
+        }
+        const newReferral = new Referrals({ telegramSourceId: telegramSourceId, telegramReferralId: telegramReferralId, clicked: clicked, verified: verified });
+        await newReferral.save();
+        res.status(200).json(newReferral)
+    } catch (err) {
+        res.status(500).json({ message: err.message })
     }
 });
 
-async function addUser(data) {
-    console.log(data)
-    return new Promise((resolve, reject) => {
-        db.run("INSERT INTO referrals_data (telegramSourceId, telegramReferralId, clicked, verified) VALUES (?, ?, ?, ?)", [+data.srcTelegramId, +data.refTelegramId, 0, 0], function (err) {
-            if (err) {
-                console.error("Error inserting data:", err.message);
-                reject(err);
-            } else {
-                resolve();
-            }
-        });
-    }
-    )}
-    
-    async function getDBrows(telegramId) {
-        return new Promise((resolve, reject) => {
-            db.all(`SELECT * FROM referrals_data WHERE telegramReferralId = ?`,[+telegramId] , function (err, rows) {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(rows);
-                }
-            });
-        }
-        )}
 module.exports = router;

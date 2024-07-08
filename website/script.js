@@ -199,17 +199,19 @@ function showReferrals(id) {
     telegramSourceId: id
   })
   .then(data => { 
-    const newData = Array.from(data.data);
-    console.log(newData)
-    document.getElementById('refFriendsNumber').textContent = +newData.length;
-    if (newData.length != 0){
-      const invitedFriendBoxes = document.querySelectorAll('.invitedFriendBox');
-      invitedFriendBoxes.forEach(box => {
-      box.remove();
-      });
-      friendDivTopMargin = 451;
-      for (let i = 0; i < newData.length; i++) {
-        createSubFriend(newData[i].telegramReferralId, newData[i].verified)
+    if (data && !data.message){
+      const newData = Array.from(data);
+      console.log(newData)
+      document.getElementById('refFriendsNumber').textContent = +newData.length;
+      if (newData.length != 0){
+        const invitedFriendBoxes = document.querySelectorAll('.invitedFriendBox');
+        invitedFriendBoxes.forEach(box => {
+        box.remove();
+        });
+        friendDivTopMargin = 451;
+        for (let i = 0; i < newData.length; i++) {
+          createSubFriend(newData[i].telegramReferralId, newData[i].verified)
+        }
       }
     }
   });
@@ -226,6 +228,7 @@ function identifyReferral(){
       telegramSourceId: +code,
     })
     .then(data => { 
+      if (data && !data.message){
       let referrals = Array.from(data.data);
       let checker = false;
       if (referrals.length != 0) {
@@ -237,6 +240,7 @@ function identifyReferral(){
       if (checker == false) {
         addReferal(code);
       }
+    }
     });
   }
 }
@@ -688,7 +692,9 @@ function addReferal(srcTelegramId){
   const refTelegramId = getTelegramId();
   postData('/addReferral', {
     srcTelegramId: srcTelegramId,
-    refTelegramId: refTelegramId
+    refTelegramId: refTelegramId,
+    clicked: 0,
+    verified: 0
   })
   .then(data => {
     console.log()
@@ -809,7 +815,7 @@ function registerUser() {
 
 function verifyReferral(telegramId){
   postData('/verifyReferral', {
-    telegramId: telegramId,
+    telegramReferralId: telegramId,
     verified: 1
   })
   .then(data => { 
