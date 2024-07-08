@@ -1573,6 +1573,15 @@ html, body {
     width: 519px;
   }
 
+  @keyframes moveToLeft {
+    0%{
+      margin-left: 300px;
+    }
+    100%{
+      margin-left: 104.5px;
+    }
+  }
+
   #friendsFieldBringSubLabel{
     font-size: 20px;
     margin-left: 76px;
@@ -1581,6 +1590,15 @@ html, body {
     font-weight: 400;
     position: absolute;
     width: 370px;
+  }
+
+  @keyframes moveToRight {
+    0%{
+      margin-left: -200px;
+    }
+    100%{
+      margin-left: 76px;
+    }
   }
 
   #friendsField{
@@ -1853,6 +1871,15 @@ html, body {
     height: 27.85px;
     margin-top: 410px;
     margin-left: 468.79px;
+  }
+
+  @keyframes moveToTop {
+    0%{
+      margin-top: 900px;
+    }
+    100%{
+      margin-top: 760px;
+    }
   }
 
   #inviteFriendDiv{

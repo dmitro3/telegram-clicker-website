@@ -254,6 +254,16 @@ function adjustScreenSize () {
 }
 
 function showFriendsMenu() {
+  document.getElementById('inviteBoxSimpleImage').style.animation = 'scaleAnimation 0.2s forwards';
+  document.getElementById('inviteBoxPremiumImage1').style.animation = 'scaleAnimation 0.2s forwards';
+  document.getElementById('inviteBoxPremiumImage2').style.animation = 'scaleAnimation 0.2s forwards';
+  document.getElementById('inviteBoxPremiumImage3').style.animation = 'scaleAnimation 0.2s forwards';
+  document.getElementById('friendsFieldBringFriends').style.animation = 'moveToLeft 0.2s forwards';
+  document.getElementById('friendsFieldBringSubLabel').style.animation = 'moveToRight 0.2s forwards';
+  document.getElementById('inviteFriendCopyDiv').style.animation = 'moveToTop 0.2s forwards';
+  document.getElementById('inviteFriendDiv').style.animation = 'moveToTop 0.2s forwards'
+
+
   document.getElementById('html').style.height = '797px'
   body.style.height = '1000px';
   body.height = '1000px';
