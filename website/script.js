@@ -199,6 +199,7 @@ function showReferrals(id) {
     telegramSourceId: id
   })
   .then(data => { 
+    console.log(data)
     if (data && !data.message){
       const newData = Array.from(data);
       console.log(newData)
@@ -228,6 +229,7 @@ function identifyReferral(){
       telegramSourceId: +code,
     })
     .then(data => { 
+      console.log(data)
       if (data && !data.message){
       let referrals = Array.from(data.data);
       let checker = false;
