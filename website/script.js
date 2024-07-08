@@ -424,6 +424,13 @@ document.getElementById('friendsButton').addEventListener('click', ()=>{
 
 
 function showEarnMenu() {
+  document.getElementById('earnFieldCoinLogo').style.animation = 'moveToBottom 0.2s forwards';
+  document.getElementById('earnFieldLabel').style.animation = 'showMoveToRight 0.2s forwards';
+  document.getElementById('calendarImg').style.animation = 'scaleAnimation 0.2s forwards';
+  document.getElementById('telegramImg').style.animation = 'scaleAnimation 0.2s forwards';
+  document.getElementById('youtubeImg').style.animation = 'scaleAnimation 0.2s forwards';
+  document.getElementById('xImg').style.animation = 'scaleAnimation 0.2s forwards';
+
   unwhiteButton(image, label)
   whiteButton('earnImage', 'earnLabel')
   image = 'earnImage'
@@ -914,6 +921,9 @@ function manageProgressBar (level, levelLabel) {
 
 
 function showDeveloperField() {
+  document.getElementById('airdropFieldCoinImage').style.animation = 'moveToBottom 0.2s forwards';
+  document.getElementById('airdropFieldLabel1').style.animation = 'scaleAnimation 0.2s forwards';
+  document.getElementById('airdropFieldLabel2').style.animation = 'scaleAnimation 0.2s forwards';
   unwhiteButton(image, label)
   whiteButton('airdropImage1', 'airdropLabell')
   image = 'airdropImage1'

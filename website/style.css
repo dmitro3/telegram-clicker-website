@@ -1454,6 +1454,15 @@ html, body {
     border-radius: 50%;
     margin-left: 138px;
   }
+  
+  @keyframes moveToBottom {
+    0%{
+      margin-top: -10px;
+    }
+    100%{
+      margin-top: 38px;
+    }
+  }
 
   #earnFieldLabel{
     position: absolute;
@@ -1462,6 +1471,15 @@ html, body {
     font-weight: 550;
     margin-top: 295px;
     margin-left: 64.125px;
+  }
+
+  @keyframes showMoveToRight {
+    0%{
+      margin-left: 20px;
+    }
+    100%{
+      margin-left: 64.125px;
+    }
   }
 
   #earnFieldDailyTasksLabel{
