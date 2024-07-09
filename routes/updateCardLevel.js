@@ -1,6 +1,6 @@
 const express = require('express');
+const MineCards = require('../models/MineCards');
 const router = express.Router();
-const MineCards = require('../models/GameData');
 
 // POST route to insert or update game data
 router.post('/', async (req, res) => {
