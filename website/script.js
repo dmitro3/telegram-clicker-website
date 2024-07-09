@@ -1362,7 +1362,7 @@ function adjustMineCards() {
     telegramId: telegramId
   })
   .then(data => {
-    if (data.data != 'User added') {
+    if (data.length != 0) {
       const information = Array.from(data.data)[0];
       showCurrentMineCards(information);
     }
