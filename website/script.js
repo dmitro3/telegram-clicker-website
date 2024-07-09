@@ -723,7 +723,7 @@ function createElement(type, className, src) {
           telegramId: id
         })
         .then(data1 => {
-          if (!data1.message && data1) {
+          if (data1) {
             const { coins } = data1;
           
           let username = aaab;
