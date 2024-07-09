@@ -725,6 +725,7 @@ function createElement(type, className, src) {
         .then(data1 => {
           const user = data1; 
           let username = aaab;
+          const telgramUsername = username.telegramUsername;
           const premium = username.isPremium;
 
           if (+verified == 0){
@@ -773,7 +774,7 @@ function createElement(type, className, src) {
           const coin = createElement('img', 'inviteFriendCoinImage', 'coin.png');
           const money = createElement('h6', 'invitedFriendMoney');
           status.style.width = 'auto';
-          usernameLabel.textContent = username['telegramUsername'];
+          usernameLabel.textContent = telegramUsername;
           status.textContent = nameLabel;
           money.textContent = user.coins;
 
