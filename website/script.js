@@ -2009,6 +2009,8 @@ function showPassiveMining(time) {
   })
   .then(data => {
     if (data) {
+      console.log('hello')
+      console.log(data)
       const info = Array.from(data);
       document.getElementById('passiveClicksLabel').setAttribute('data-value', info.profitPerHour);
       document.getElementById('passiveClicksLabel').innerHTML = encodePassiveLabel();
