@@ -717,7 +717,7 @@ function createElement(type, className, src) {
         telegramId: id
       })
       .then(data => {
-        username = Array.from(data.data)[0];
+        username = Array.from(data);
         aaab = username;
         postData('/getGameData', {
           telegramId: id
@@ -800,13 +800,11 @@ function registerUser() {
 
       const telegramId = getTelegramId(); 
       const telegramUsername = user.username || 'No username';
-      const photo = user.photo_url || 'No photo available';
       const isPremium = user.is_premium || false;
 
       postData('/addUserInformation', {
         telegramId: telegramId,
         telegramUsername: telegramUsername,
-        photo: photo,
         isPremium: isPremium
       })
       .then(data => { 

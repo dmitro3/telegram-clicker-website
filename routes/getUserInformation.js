@@ -1,23 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const sqlite3 = require('sqlite3');
-const db = new sqlite3.Database('mydatabase.db');
+const User = require('../models/User');
 
-router.post('/', async (req, res, next) => {
-    const data = req.body;
-    const information = await showTable(data.telegramId);
-    res.json({data: information})
+router.post('/', async (req, res) => {
+    const { telegramId } = req.body;
+    
+    try {
+        const userData = await User.find({telegramId: telegramId});
+        res.status(200).json(userData);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
 });
 
-    async function showTable(telegramId) {
-        return new Promise((resolve, reject) => {
-            db.all(`SELECT * FROM users_information WHERE telegramId = ?`, [+telegramId], function (err, rows) {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(rows);
-                }
-            });
-        }
-        )}
-module.exports = router;  
+module.exports = router;
