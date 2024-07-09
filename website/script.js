@@ -717,6 +717,8 @@ function createElement(type, className, src) {
         telegramId: id
       })
       .then(data => {
+        console.log(data)
+        console.log(typeof data)
         username = Array.from(data);
         aaab = username;
         postData('/getGameData', {
@@ -808,7 +810,7 @@ function registerUser() {
         isPremium: isPremium
       })
       .then(data => { 
-        console.log(data.information)
+        console.log(data)
       });
   } 
 }
@@ -1773,7 +1775,7 @@ function showCardUpgradeBox (cardId) {
   
   if (card.cardId == 'btcPairsBox' || card.cardId == 'socialFiBox' || card.cardId == 'defiBox' || card.cardId == 'memeCoinsBox') {
     document.getElementById('updateContainerPPH').style.top = '340px';
-    document.getElementById('updateContainerPrice').style.top = '420px';
+    document.getElementById('updateContainerPrice').style.top = '430px';
   } else {
     document.getElementById('updateContainerPPH').style.top = '320px';
     document.getElementById('updateContainerPrice').style.top = '410px';
