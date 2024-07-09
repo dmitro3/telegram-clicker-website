@@ -723,7 +723,9 @@ function createElement(type, className, src) {
           telegramId: id
         })
         .then(data1 => {
-          const user = data1; 
+          if (!data1.message && data1) {
+            const { coins } = data1;
+          
           let username = aaab;
           const telegramUsername = username.telegramUsername;
           const premium = username.isPremium;
@@ -738,8 +740,6 @@ function createElement(type, className, src) {
               adjustCoinsVisual(coins+25000);
           }
         }
-          console.log(user);
-          const coins = +user['coins'];
           let nameLabel;
           if (coins >= 0 && coins <= 5000) {
             nameLabel = 'Bronze';
@@ -776,7 +776,7 @@ function createElement(type, className, src) {
           status.style.width = 'auto';
           usernameLabel.textContent = telegramUsername;
           status.textContent = nameLabel;
-          money.textContent = user.coins;
+          money.textContent = coins;
 
           adjustDotMargin(nameLabel, dot, coin, money);
 
@@ -788,6 +788,7 @@ function createElement(type, className, src) {
           div.appendChild(money)
           mainDiv.appendChild(div)
           friendsField.appendChild(mainDiv)
+        }
         })
     });
   }
