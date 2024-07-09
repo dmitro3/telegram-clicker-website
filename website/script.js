@@ -717,8 +717,6 @@ function createElement(type, className, src) {
         telegramId: id
       })
       .then(data => {
-        console.log(data)
-        console.log(typeof data)
         username = Array.from(data);
         aaab = username;
         postData('/getGameData', {
@@ -775,7 +773,7 @@ function createElement(type, className, src) {
           const coin = createElement('img', 'inviteFriendCoinImage', 'coin.png');
           const money = createElement('h6', 'invitedFriendMoney');
           status.style.width = 'auto';
-          usernameLabel.textContent = username['username'];
+          usernameLabel.textContent = username['telegramUsername'];
           status.textContent = nameLabel;
           money.textContent = user.coins;
 
