@@ -288,7 +288,6 @@ html, body {
 }
 
 #clicksTillLevelUpLabel{
-    margin-top: -10px;
     text-align: center;
     color: white;
     font-size: 18px;
@@ -1382,26 +1381,17 @@ html, body {
 
   #insideEarnPerClickLabel{
     font-weight: bold;
-    background: linear-gradient(to right, #27B4E6, #4149EC, #9736F0);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: white;
   }
 
   #insideCoinsTillLevelUpLabel{
     font-weight: bold;
-    background: linear-gradient(to left, #27B4E6, #4149EC, #9736F0);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: white;
   }
 
   #insidePassiveCLicksLabel{
     font-weight: bold;
-    background: linear-gradient(to right, #27B4E6, #4149EC, #9736F0);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: white;
   }
 
   .menuImage{
@@ -2498,7 +2488,22 @@ html, body {
   justify-content: center;
 }
 
+#tillContainer{
+  position: absolute;
+  margin-top: -18px;
+  width: 157px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+}
+
 #passiveBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#tillBox{
   display: flex;
   align-items: center;
   justify-content: center;
