@@ -1853,7 +1853,7 @@ function updateCard () {
       adjustCardsAvailability()
       postData('/updatePPH', {
         telegramId: getTelegramId(),
-        pph: +document.getElementById('passiveClicksLabel').getAttribute('dataValue')
+        pph: +document.getElementById('passiveClicksLabel').getAttribute('data-value')
       })
       .then(data => {
         adjustCardsAvailability()
@@ -2008,7 +2008,7 @@ function showPassiveMining(time) {
     telegramId: telegramId
   })
   .then(data => {
-    if (data) {
+    if (data && data.length!=0) {
       console.log('hello')
       console.log(data)
       const info = Array.from(data);
