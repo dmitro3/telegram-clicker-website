@@ -1,3 +1,4 @@
+/*
 const express = require('express');
 const router = express.Router();
 const sqlite3 = require('sqlite3');
@@ -40,3 +41,21 @@ async function addUser(data) {
 )}
 
 module.exports = router;  
+*/
+
+const express = require('express');
+const ProfitPerHour = require('../models/ProfitPerHour');
+const router = express.Router();
+
+router.post('/', async (req, res) => {
+    const { telegramId } = req.body;
+    
+    try {
+        const profitPerHourData = await ProfitPerHour.find({telegramId: telegramId});
+        res.status(200).json(profitPerHourData);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+module.exports = router;

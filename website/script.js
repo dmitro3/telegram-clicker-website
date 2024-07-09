@@ -2008,8 +2008,8 @@ function showPassiveMining(time) {
     telegramId: telegramId
   })
   .then(data => {
-    if (data.data != 'User added') {
-      const info = Array.from(data.data)[0];
+    if (data) {
+      const info = Array.from(data)[0];
       document.getElementById('passiveClicksLabel').setAttribute('data-value', info.pph);
       document.getElementById('passiveClicksLabel').innerHTML = encodePassiveLabel();
       const pph = info.pph / 3600;

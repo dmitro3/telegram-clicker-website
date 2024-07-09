@@ -1,3 +1,4 @@
+/*
 const express = require('express');
 const router = express.Router();
 const sqlite3 = require('sqlite3');
@@ -40,5 +41,38 @@ async function updateCard(pph, telegramId) {
         attemptUpdate();
     });
 }
+
+module.exports = router;
+*/
+
+const express = require('express');
+const ProfitPerHour = require('../models/ProfitPerHour');
+const router = express.Router();
+
+// POST route to insert or update game data
+router.post('/', async (req, res) => {
+    const { telegramId } = req.body;
+
+    try {
+        let profitPerHourData = await ProfitPerHour.findOne({ telegramId });
+
+        if (profitPerHourData) {
+            // Update existing record
+            profitPerHourData.ProfitPerHour = req.body.pph;
+
+        } else {
+            // Insert new record
+            profitPerHourData = new ProfitPerHour({
+                telegramId: req.body.telegramId,
+                profitPerHour: req.body.profitPerHour                
+            });
+        }
+
+        const savedProfitPerHourData = await profitPerHourData.save();
+        res.status(200).json(savedProfitPerHourData);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+});
 
 module.exports = router;
