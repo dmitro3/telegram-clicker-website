@@ -22,8 +22,8 @@ module.exports = (app) => {
   app.use('/getReferrals', getReferrals); //done
   app.use('/verifyReferral', verifyReferral); //done
 
-  app.use('/addUserInformation', addUserInformation);
-  app.use('/getUserInformation', getUserInformation);
+  app.use('/addUserInformation', addUserInformation);//done
+  app.use('/getUserInformation', getUserInformation);//done
 
   app.use('/getDailyRewardsState', getDailyRewardsState);
   app.use('/updateDailyRewards', updateDailyRewards);

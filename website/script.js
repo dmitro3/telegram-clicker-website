@@ -1903,8 +1903,8 @@ function dailyRewards() {
   })
   .then(data => {
     let dailyRewData;
-    if (data.data.length !== 0) {
-      const information = Array.from(data.data)[0];
+    if (data) {
+      const information = Array.from(data)[0];
       dailyRewData = information;
     } else { dailyRewData = dailyRewardsBegining }
     modifyDailyRewardsWindow(dailyRewData);
