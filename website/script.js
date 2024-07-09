@@ -1371,6 +1371,8 @@ function adjustMineCards() {
 
 
 function showCurrentMineCards (information) {
+  console.log('information');
+  console.log(information)
   for (let i = 0; i < cardInfo.length; i++) {
     const cardId = cardInfo[i].cardId;
     const level = information[cardId];
