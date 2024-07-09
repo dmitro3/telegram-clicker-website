@@ -717,7 +717,7 @@ function createElement(type, className, src) {
         telegramId: id
       })
       .then(data => {
-        username = Array.from(data);
+        username = Array.from(data)[0];
         console.log(username)
         aaab = username;
         postData('/getGameData', {
