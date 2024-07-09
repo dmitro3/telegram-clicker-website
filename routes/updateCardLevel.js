@@ -1,50 +1,35 @@
-/*
 const express = require('express');
 const router = express.Router();
-const sqlite3 = require('sqlite3');
-const db = new sqlite3.Database('mydatabase.db');
-
-router.post('/', async (req, res, next) => {
-    const data = req.body;
-    const telegramId = data.telegramId;
-    const cardId = data.cardId;
-    const level = data.level;
-    await updateCard(telegramId, cardId, level);
-    res.json({});
-});
-
-async function updateCard(telegramId, cardId, level) {
-    return new Promise((resolve, reject) => {
-        const querry = `UPDATE cards SET ${cardId} = ? WHERE telegramId = ?`
-        db.run(querry, [+level, +telegramId], function (err) {
-            if (err) {
-                console.error("Error inserting data:", err.message);
-                reject(err);
-            } else {
-                resolve();
-            }
-        });
-    }
-)}
-
-module.exports = router;
-*/
-
-const express = require('express');
-const MineCards = require('../models/MineCards');
-const router = express.Router();
+const MineCards = require('../models/GameData');
 
 // POST route to insert or update game data
 router.post('/', async (req, res) => {
     const { telegramId, cardId, level } = req.body;
 
     try {
-        let mineCards = await MineCards.findOne({ telegramId });
+        let cardsData = await MineCards.findOne({ telegramId });
 
-        mineCards[cardId] = +level;
+        if (cardsData) {
+            cardsData[cardId] = +level;
+        } else {
+            cardData = new MineCards({
+                telegramId: req.body.telegramId,
+                funTokensBox: 0,
+                stakingBox: 0,
+                btcPairsBox: 0,
+                ethPartsBox: 0,
+                top10CMCBox: 0,
+                gameFiBox: 0,
+                defiBox: 0,
+                socialFiBox: 0,
+                memeCoinsBox: 0,
+                shitCoinsBox: 0
+            });
+            cardData[cardId] = +level;
+        }
 
-        const savedMineCards = await MineCards.save();
-        res.status(200).json(savedMineCards);
+        const savedGameData = await cardData.save();
+        res.status(200).json(savedGameData);
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
