@@ -1363,7 +1363,7 @@ function adjustMineCards() {
   })
   .then(data => {
     if (data.length != 0) {
-      const information = Array.from(data.data)[0];
+      const information = Array.from(data)[0];
       showCurrentMineCards(information);
     }
   });
