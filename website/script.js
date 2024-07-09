@@ -2009,7 +2009,7 @@ function showPassiveMining(time) {
   })
   .then(data => {
     if (data) {
-      const info = Array.from(data)[0];
+      const info = Array.from(data);
       document.getElementById('passiveClicksLabel').setAttribute('data-value', info.profitPerHour);
       document.getElementById('passiveClicksLabel').innerHTML = encodePassiveLabel();
       const pph = info.pph / 3600;
