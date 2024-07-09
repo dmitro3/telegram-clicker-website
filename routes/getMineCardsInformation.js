@@ -6,7 +6,7 @@ router.post('/', async (req, res) => {
     const { telegramId } = req.body;
     
     try {
-        const cardsData = await MineCards.find({telegramId: telegramId});
+        let cardsData = await MineCards.find({telegramId: telegramId});
 
         if (cardsData.length == 0) {
             cardsData = new MineCards({
