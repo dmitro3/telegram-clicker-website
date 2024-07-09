@@ -11,8 +11,8 @@ router.post('/', async (req, res) => {
 
         if (dailyRewardsData) {
             // Update existing record
-            dailyRewardsData[`day${day}_claimed`] = 'true';
-            dailyRewardsData[`day${day}_claimed`] = req.body.date;
+            dailyRewardsData[`day${day+1}_claimed`] = 'true';
+            dailyRewardsData[`day${day+1}_claimed`] = req.body.date;
         } else {
             dailyRewardsData.day1_claimed = 'true';
             dailyRewardsData.day1_claimed = req.body.date;
