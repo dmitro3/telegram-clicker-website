@@ -58,13 +58,13 @@ router.post('/', async (req, res) => {
 
         if (profitPerHourData) {
             // Update existing record
-            profitPerHourData.ProfitPerHour = req.body.pph;
+            profitPerHourData.profitPerHour = req.body.pph;
 
         } else {
             // Insert new record
             profitPerHourData = new ProfitPerHour({
                 telegramId: req.body.telegramId,
-                profitPerHour: req.body.profitPerHour                
+                profitPerHour: req.body.pph                
             });
         }
 
