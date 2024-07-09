@@ -14,35 +14,37 @@ router.post('/', async (req, res) => {
             dailyRewardsData[`day${day+1}_claimed`] = 'true';
             dailyRewardsData[`day${day+1}_claimed`] = req.body.date;
         } else {
-            dailyRewardsData.day1_claimed = 'true';
-            dailyRewardsData.day1_claimed = req.body.date;
 
-            dailyRewardsData.day2_claimed = 'false';
-            dailyRewardsData.day2_claimed = 'false';
-
-            dailyRewardsData.day3_claimed = 'false';
-            dailyRewardsData.day3_claimed = 'false';
-
-            dailyRewardsData.day4_claimed = 'false';
-            dailyRewardsData.day4_claimed = 'false';
-
-            dailyRewardsData.day5_claimed = 'false';
-            dailyRewardsData.day5_claimed = 'false';
-
-            dailyRewardsData.day6_claimed = 'false';
-            dailyRewardsData.day6_claimed = 'false';
-
-            dailyRewardsData.day7_claimed = 'false';
-            dailyRewardsData.day7_claimed = 'false';
-
-            dailyRewardsData.day8_claimed = 'false';
-            dailyRewardsData.day8_claimed = 'false';
-
-            dailyRewardsData.day9_claimed = 'false';
-            dailyRewardsData.day9_claimed = 'false';
-
-            dailyRewardsData.day10_claimed = 'false';
-            dailyRewardsData.day10_claimed = 'false';
+            dailyRewardsData = new DailyRewards({
+                telegramId: telegramId,
+                day1_claimed: 'true',
+                day1_claimed: req.body.date,
+                day2_claimed: 'false',
+                day2_claimed: 'false',
+    
+                day3_claimed: 'false',
+                day3_claimed: 'false',
+    
+                day4_claimed: 'false',
+                day4_claimed: 'false',
+                day5_claimed: 'false',
+                day5_claimed: 'false',
+    
+                day6_claimed: 'false',
+                day6_claimed: 'false',
+    
+                day7_claimed: 'false',
+                day7_claimed: 'false',
+    
+                day8_claimed: 'false',
+                day8_claimed: 'false',
+    
+                day9_claimed: 'false',
+                day9_claimed: 'false',
+    
+                day10_claimed: 'false',
+                day10_claimed: 'false'
+            })
         }
 
         const savedDailyData = await dailyRewardsData.save();
