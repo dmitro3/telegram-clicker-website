@@ -1902,6 +1902,8 @@ function dailyRewards() {
     telegramId: getTelegramId(),
   })
   .then(data => {
+    console.log('dataaaaaa');
+    console.log(data)
     let dailyRewData;
     if (data) {
       const information = Array.from(data)[0];
