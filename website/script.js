@@ -723,9 +723,9 @@ function createElement(type, className, src) {
           telegramId: id
         })
         .then(data1 => {
+          console.log(data1)
           if (data1) {
             const { coins } = data1;
-          
           let username = aaab;
           const telegramUsername = username.telegramUsername;
           const premium = username.isPremium;
