@@ -13,6 +13,36 @@ router.post('/', async (req, res) => {
             // Update existing record
             dailyRewardsData[`day${day}_claimed`] = 'true';
             dailyRewardsData[`day${day}_claimed`] = req.body.date;
+        } else {
+            dailyRewardsData.day1_claimed = 'true';
+            dailyRewardsData.day1_claimed = req.body.date;
+
+            dailyRewardsData.day2_claimed = 'false';
+            dailyRewardsData.day2_claimed = 'false';
+
+            dailyRewardsData.day3_claimed = 'false';
+            dailyRewardsData.day3_claimed = 'false';
+
+            dailyRewardsData.day4_claimed = 'false';
+            dailyRewardsData.day4_claimed = 'false';
+
+            dailyRewardsData.day5_claimed = 'false';
+            dailyRewardsData.day5_claimed = 'false';
+
+            dailyRewardsData.day6_claimed = 'false';
+            dailyRewardsData.day6_claimed = 'false';
+
+            dailyRewardsData.day7_claimed = 'false';
+            dailyRewardsData.day7_claimed = 'false';
+
+            dailyRewardsData.day8_claimed = 'false';
+            dailyRewardsData.day8_claimed = 'false';
+
+            dailyRewardsData.day9_claimed = 'false';
+            dailyRewardsData.day9_claimed = 'false';
+
+            dailyRewardsData.day10_claimed = 'false';
+            dailyRewardsData.day10_claimed = 'false';
         }
 
         const savedDailyData = await dailyRewardsData.save();

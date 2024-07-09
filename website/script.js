@@ -1884,7 +1884,7 @@ function showDailyRewardsWindow () {
 }
 
 const dailyRewardsBegining = {
-  "ID": undefined,"telegramId": 88888,
+  "ID": undefined,"telegramId": getTelegramId(),
   "day1_claimed": "false","day1_date": "false",
   "day2_claimed": "false","day2_date": "false",
   "day3_claimed": "false","day3_date": "false",
