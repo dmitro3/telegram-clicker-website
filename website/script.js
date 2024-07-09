@@ -725,7 +725,7 @@ function createElement(type, className, src) {
         .then(data1 => {
           const user = data1; 
           let username = aaab;
-          const telgramUsername = username.telegramUsername;
+          const telegramUsername = username.telegramUsername;
           const premium = username.isPremium;
 
           if (+verified == 0){
