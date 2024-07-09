@@ -21,27 +21,20 @@ router.post('/', async (req, res) => {
                 day1_date: req.body.date,
                 day2_claimed: 'false',
                 day2_date: 'false',
-    
                 day3_claimed: 'false',
                 day3_date: 'false',
-    
                 day4_claimed: 'false',
                 day4_date: 'false',
                 day5_claimed: 'false',
                 day5_date: 'false',
-    
                 day6_claimed: 'false',
                 day6_date: 'false',
-    
                 day7_claimed: 'false',
                 day7_date: 'false',
-    
                 day8_claimed: 'false',
                 day8_date: 'false',
-    
                 day9_claimed: 'false',
                 day9_date: 'false',
-    
                 day10_claimed: 'false',
                 day10_date: 'false'
             })

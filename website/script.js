@@ -441,7 +441,6 @@ function showEarnMenu() {
   whiteButton('earnImage', 'earnLabel')
   image = 'earnImage'
   label = 'earnLabel'
-  adjustCoinsVisual(10000)
   window.scrollTo({
     top: 0,
     behavior: 'auto'

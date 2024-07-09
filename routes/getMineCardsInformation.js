@@ -1,42 +1,34 @@
 const express = require('express');
+const MineCards = require('../models/MineCards');
 const router = express.Router();
-const sqlite3 = require('sqlite3');
-const db = new sqlite3.Database('mydatabase.db');
 
-router.post('/', async (req, res, next) => {
-    const data = req.body;
-    const information = await getMineCardsData(data.telegramId);
-    if (information.length == 0) {
-        await addUser(data);
-        res.json({data: "User added"})
-    } else {
-        res.json({data: information})
+router.post('/', async (req, res) => {
+    const { telegramId } = req.body;
+    
+    try {
+        const cardsData = await MineCards.find({telegramId: telegramId});
+
+        if (cardsData.length == 0) {
+            cardsData = new MineCards({
+                telegramId: telegramId,
+                funTokensBox: 0,
+                stakingBox: 0,
+                btcPairsBox: 0,
+                ethPairsBox: 0,
+                top10CMCBox: 0,
+                gameFiBox: 0,
+                defiBox: 0,
+                socialFiBox: 0,
+                memeCoinsBox: 0,
+                shitCoinsBox: 0
+            })
+            await cardsData.save();
+        } 
+
+        res.status(200).json(cardsData);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
     }
 });
 
-async function getMineCardsData(telegramId) {
-    return new Promise((resolve, reject) => {
-        db.all(`SELECT * FROM cards WHERE telegramId = ?`,[telegramId] , function (err, rows) {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(rows);
-            }
-        });
-    }
-)}
-
-async function addUser(data) {
-    return new Promise((resolve, reject) => {
-        db.run("INSERT INTO cards (telegramId, funTokensBox, stakingBox, btcPairsBox, ethPairsBox, top10CMCBox, gameFiBox, defiBox, socialFiBox, memeCoinsBox, shitCoinsBox) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [+data.telegramId, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], function (err) {
-            if (err) {
-                console.error("Error inserting data:", err.message);
-                reject(err);
-            } else {
-                resolve();
-            }
-        });
-    }
-)}
-
-module.exports = router;  
+module.exports = router;

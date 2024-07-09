@@ -1,3 +1,4 @@
+/*
 const express = require('express');
 const router = express.Router();
 const sqlite3 = require('sqlite3');
@@ -25,5 +26,28 @@ async function updateCard(telegramId, cardId, level) {
         });
     }
 )}
+
+module.exports = router;
+*/
+
+const express = require('express');
+const MineCards = require('../models/MineCards');
+const router = express.Router();
+
+// POST route to insert or update game data
+router.post('/', async (req, res) => {
+    const { telegramId, cardId, level } = req.body;
+
+    try {
+        let mineCards = await MineCards.findOne({ telegramId });
+
+        mineCards[cardId] = +level;
+
+        const savedMineCards = await MineCards.save();
+        res.status(200).json(savedMineCards);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+});
 
 module.exports = router;

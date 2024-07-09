@@ -25,8 +25,8 @@ module.exports = (app) => {
   app.use('/addUserInformation', addUserInformation);//done
   app.use('/getUserInformation', getUserInformation);//done
 
-  app.use('/getDailyRewardsState', getDailyRewardsState);
-  app.use('/updateDailyRewards', updateDailyRewards);
+  app.use('/getDailyRewardsState', getDailyRewardsState);//done
+  app.use('/updateDailyRewards', updateDailyRewards);//done
 
   app.use('/getMineCardsInformation', getMineCardsInformation);
   app.use('/updateCardLevel', updateCardLevel);
