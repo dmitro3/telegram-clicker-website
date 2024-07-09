@@ -1382,8 +1382,11 @@ function showCurrentMineCards (information) {
 };
 
 function updateCardVisual(cardId, level) {
+  console.log(cardId)
   const card = cardInfo.find(card => card.cardId === cardId);
+  console.log(card)
   const balance = card.infoModule;
+  console.log(balance)
   const price = balance[level+1].updatePrice;
   const pph = balance[level].coinPerHour;
   const levelLabel = balance[level].level;
