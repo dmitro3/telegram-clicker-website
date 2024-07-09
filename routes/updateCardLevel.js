@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
         if (cardsData) {
             cardsData[cardId] = +level;
         } else {
-            cardData = new MineCards({
+            cardsData = new MineCards({
                 telegramId: req.body.telegramId,
                 funTokensBox: 0,
                 stakingBox: 0,
@@ -25,10 +25,10 @@ router.post('/', async (req, res) => {
                 memeCoinsBox: 0,
                 shitCoinsBox: 0
             });
-            cardData[cardId] = +level;
+            cardsData[cardId] = +level;
         }
 
-        const savedGameData = await cardData.save();
+        const savedGameData = await cardsData.save();
         res.status(200).json(savedGameData);
     } catch (err) {
         res.status(400).json({ message: err.message });
