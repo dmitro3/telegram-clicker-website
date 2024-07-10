@@ -68,7 +68,6 @@ html, body {
 }
 
 #mainButtonBox{
-  box-shadow: 0 0px 30px #BB82F5;
   transition: transform 0.1s;
   perspective: 1000px;
   position: absolute;
@@ -348,7 +347,7 @@ html, body {
     position: absolute;
     color: white;
     z-index: 2;
-    margin-left: 420px;
+    margin-left: 410px;
     margin-top: 289px;
 
 }
@@ -2644,4 +2643,5 @@ html, body {
   height: 33px;
   margin-top: -40px;
   margin-left: 430px;
+  display: none;
 }

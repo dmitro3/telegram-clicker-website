@@ -672,8 +672,6 @@ function showClick(event) {
     gameField.offsetHeight;
     gameField.style.animation = 'highlight';
     gameField.style.animationDuration = '1s';
-    mainButtonBox.style.animation = 'highlighButton';
-    mainButtonBox.style.animationDuration = '1s';
     document.body.appendChild(plusOne);
 
         setTimeout(() => {
