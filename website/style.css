@@ -2505,6 +2505,11 @@ html, body {
   justify-content: center;
   top: 755px;
   height: 60px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #tillContainer{
