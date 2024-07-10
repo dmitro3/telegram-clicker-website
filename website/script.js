@@ -1775,7 +1775,7 @@ function showCardUpgradeBox (cardId) {
     document.getElementById('updateContainerPrice').style.top = '430px';
   } else {
     document.getElementById('updateContainerPPH').style.top = '320px';
-    document.getElementById('updateContainerPrice').style.top = '410px';
+    document.getElementById('updateContainerPrice').style.top = '400px';
   }
 
   if (coins >= +moneyData.updatePrice) {

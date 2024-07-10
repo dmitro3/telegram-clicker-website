@@ -803,15 +803,14 @@ html, body {
 #gameField {
     position: fixed;
     background-color: #1C1F24;    ;
-    border-top-right-radius: 50px;
-    border-top-left-radius: 50px;
+    border-top-right-radius: 26px;
+    border-top-left-radius: 26px;
     box-shadow: 0px -6px 23.4px 0px #BB82F5;
     border-top: 5px solid #BB82F5;
     width: 519px;
     height: 880px;
     margin-top: 95px;
     margin-left: 0px;
-    
 }
 
 @keyframes highlight {
@@ -1288,7 +1287,7 @@ html, body {
     margin-top: 336px;
     margin-left: 0px;
     width: 540px;
-    height: 620px;
+    height: 500px;
     overflow-y: auto;
     z-index: 5;
   }
@@ -1946,8 +1945,8 @@ html, body {
     height: 740px;
     margin-top: 258px;
     background-color: #1c1f24;
-    border-top-right-radius: 50px;
-    border-top-left-radius: 50px;
+    border-top-right-radius: 26px;
+    border-top-left-radius: 26px;
     box-shadow: 0px -6px 23.4px 0px #BB82F5;
     border-top: 5px solid #BB82F5;
   }
@@ -2026,14 +2025,14 @@ html, body {
   text-align: center;
   border-radius: 23px;
   margin-left: 19.5px;
-  margin-top: 125px;
+  margin-top: 160px;
 }
 
 #getUpgradeBoxLabel{
   font-size: 25px;
   font-weight: 500;
   color: white;
-  margin-top: 35px;
+  margin-top: 32px;
 }
 
 #cardUpgradeBoxClose{
