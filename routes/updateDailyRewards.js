@@ -7,7 +7,7 @@ router.post('/', async (req, res) => {
     const { telegramId, day } = req.body;
 
     try {
-        let dailyRewardsData = await DailyRewards.findOne({ telegramId });
+        let dailyRewardsData = await DailyRewards.findOne({ telegramId: telegramId });
 
         if (dailyRewardsData) {
             // Update existing record
