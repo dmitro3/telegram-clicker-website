@@ -1288,8 +1288,9 @@ html, body {
     margin-left: 0px;
     width: 519px;
     height: 410px;
-    overflow-y: auto;
+    overflow-y: none;
     z-index: 5;
+
   }
 
   #upgradeCardBox{
