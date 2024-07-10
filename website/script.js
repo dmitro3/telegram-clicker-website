@@ -287,7 +287,7 @@ function showFriendsMenu() {
 
 function hideFriendsMenu() {
   friendsField.style.display = 'none';
-  body.style.background = '#282B30';
+  body.style.background = '#000000';
   friendsButton.style.backgroundColor = '#282B30';
 }
 
@@ -454,7 +454,7 @@ function showEarnMenu() {
 }
 
 function hideEarnMenu() {
-  body.style.background = '#282B30';
+  body.style.background = '#000000';
   earnField.style.display = 'none';
   earnButton.style.backgroundColor = '#282B30';
 }
@@ -955,7 +955,7 @@ function showDeveloperField() {
 function hideDeveloperField() {
   airdropField.style.display = 'none'
   developerButton.style.backgroundColor = '#282B30'
-  body.style.background = '#282B30'
+  body.style.background = '#000000'
 
 }
 
