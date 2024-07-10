@@ -1943,7 +1943,7 @@ function modifyDailyRewardsWindow (data) {
 document.getElementById('dailyRewardsGet').addEventListener('click', getDailyRewards);
 
 function getDailyRewards() {
-  const i = document.getElementById('dailyRewardsGet').getAttribute('data-value');
+  const i = +document.getElementById('dailyRewardsGet').getAttribute('data-value');
   postData('/updateDailyRewards', {
     telegramId: getTelegramId(),
     day: i,

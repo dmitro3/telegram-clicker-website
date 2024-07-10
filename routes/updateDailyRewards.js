@@ -4,15 +4,40 @@ const router = express.Router();
 
 // POST route to insert or update game data
 router.post('/', async (req, res) => {
-    const { telegramId, day } = req.body;
-
+    const { telegramId, day, date } = req.body;
     try {
         let dailyRewardsData = await DailyRewards.findOne({ telegramId: telegramId });
 
         if (dailyRewardsData) {
             // Update existing record
-            dailyRewardsData[`day${day+1}_claimed`] = 'true';
-            dailyRewardsData[`day${day+1}_claimed`] = req.body.date;
+            if (+day == 2) {
+                dailyRewardsData.day2_claimed = 'true';
+                dailyRewardsData.day2_date = date;
+            } else if (+day == 3) {
+                dailyRewardsData.day3_claimed = 'true';
+                dailyRewardsData.day3_date = date;
+            } else if (+day == 4) {
+                dailyRewardsData.day4_claimed = 'true';
+                dailyRewardsData.day4_date = date;
+            } else if (+day == 5) {
+                dailyRewardsData.day5_claimed = 'true';
+                dailyRewardsData.day5_date = date;
+            } else if (+day == 6) {
+                dailyRewardsData.day6_claimed = 'true';
+                dailyRewardsData.day6_date = date;
+            } else if (+day == 7) {
+                dailyRewardsData.day7_claimed = 'true';
+                dailyRewardsData.day7_date = date;
+            } else if (+day == 8) {
+                dailyRewardsData.day8_claimed = 'true';
+                dailyRewardsData.day8_date = date;
+            } else if (+day == 9) {
+                dailyRewardsData.day9_claimed = 'true';
+                dailyRewardsData.day9_date = date;
+            } else if (+day == 10) {
+                dailyRewardsData.day10_claimed = 'true';
+                dailyRewardsData.day10_date = date;
+            } 
         } else {
 
             dailyRewardsData = new DailyRewards({
