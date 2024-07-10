@@ -834,43 +834,53 @@ function adjustProgressBar() {
   if (coins >= 0 && coins <= 5000) {
     nameLabel = 'Bronze';
     levelLabel = 1;
+    document.getElementById('mainButtonBox').src = 'coin.png'
     manageProgressBar(nameLabel, levelLabel);
   } else if (coins > 5000 && coins <= 25000) {
     nameLabel = 'Silver';
     levelLabel = 2;
+    document.getElementById('mainButtonBox').src = 'Coins/Iron.png'
     manageProgressBar(nameLabel, levelLabel);
   } else if (coins > 25000 && coins <= 100000) {
     nameLabel = 'Gold';
     levelLabel = 3;
+    document.getElementById('mainButtonBox').src = 'Coins/Marble.png'
     manageProgressBar(nameLabel, levelLabel);
   } else if (coins > 100000 && coins <= 1000000) {
     nameLabel = 'Platinum';
     levelLabel = 4;
+    document.getElementById('mainButtonBox').src = 'Coins/Bronze.png'
     manageProgressBar(nameLabel, levelLabel);
   } else if (coins > 1000000 && coins <= 2000000) {
     nameLabel = 'Diamond';
     levelLabel = 5;
+    document.getElementById('mainButtonBox').src = 'Coins/Silver.png'
     manageProgressBar(nameLabel, levelLabel);
   } else if (coins > 2000000 && coins <= 10000000) {
     nameLabel = 'Epic';
     levelLabel = 6;
+    document.getElementById('mainButtonBox').src = 'Coins/Gold.png'
     manageProgressBar(nameLabel, levelLabel);
   } else if (coins > 10000000 && coins <= 50000000) {
     nameLabel = 'Legendary';
     levelLabel = 7;
+    document.getElementById('mainButtonBox').src = 'Coins/pinkGold.png'
     manageProgressBar(nameLabel, levelLabel);
   } else if (coins > 50000000 && coins <= 100000000) {
     nameLabel = 'Master';
     levelLabel = 8;
+    document.getElementById('mainButtonBox').src = 'Coins/Ruby.png'
     manageProgressBar(nameLabel, levelLabel);
   }else if (coins > 100000000 && coins <= 1000000000) {
     nameLabel = 'Grandmaster';
     levelLabel = 9;
+    document.getElementById('mainButtonBox').src = 'Coins/Emerald.png'
     manageProgressBar(nameLabel, levelLabel);
   }else if (coins > 1000000000) {
     nameLabel = 'Lord';
     levelLabel = 10;
     manageProgressBar(nameLabel, levelLabel);
+    document.getElementById('mainButtonBox').src = 'Coins/Crystal.png'
   }
 }
 document.getElementById('friendBoxRestart').addEventListener('click', function(){
