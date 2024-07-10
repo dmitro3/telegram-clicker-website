@@ -293,6 +293,7 @@ function hideFriendsMenu() {
 
 
 function showGameMenu() {
+
   document.getElementById('earnPerClickBox').style.animation = 'movingBlock 0.2s forwards';
   document.getElementById('clicksTillLevelUp').style.animation = 'movingBlock 0.2s forwards';
   document.getElementById('passiveClicks').style.animation = 'movingBlock 0.2s forwards';
@@ -331,6 +332,7 @@ function showGameMenu() {
   gameButton.style.backgroundColor = '#1C1F24';
   gameField.style.marginTop = '95px';
   menu.style.boxShadow = '0px 0px 0px 0px #000000'
+  body.style.backgroundColor = '000000'
 }
 
 function hideGameMenu() {

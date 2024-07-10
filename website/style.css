@@ -1290,7 +1290,11 @@ html, body {
     height: 410px;
     overflow-y: none;
     z-index: 5;
-
+    border: none;
+    outline: none;
+    box-shadow: none;
+    backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
   }
 
   #upgradeCardBox{
