@@ -586,7 +586,7 @@ document.getElementById('mainButtonCover').addEventListener('click', ()=>{
 }
 function getLeftEnergy() {
     let energy = document.getElementById('energyLabel').textContent;
-    const parts = energy.split('/');
+    const parts = energy.split(' ');
     let leftEnergy = +parseInt(parts[0]);
     return +leftEnergy;
 }

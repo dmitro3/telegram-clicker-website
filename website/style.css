@@ -1,6 +1,6 @@
 body {
     z-index: 0;
-    background: #282B30;
+    background: #000000;
     width: 519px;
     margin: 0;
     padding: 0;
@@ -340,7 +340,7 @@ html, body {
     position: absolute;
     color: white;
     margin-top: 289px;
-    margin-left: 22px;
+    margin-left: 27px;
     z-index: 2;
 }
 
@@ -468,7 +468,7 @@ html, body {
     height: 60px;
     background-color: white;
     position: absolute;
-    border-radius: 5px;
+    border-radius: 26px;
     margin-top: -10px;
 }
 
@@ -2432,7 +2432,7 @@ html, body {
   width: 34px;
   height: 214px;
   position: absolute;
-  left: 24px;
+  left: 10px;
   top: 439px;
 }
 
@@ -2493,7 +2493,7 @@ html, body {
 }
 
 #energyContainer{
-  z-index: 5;
+  z-index: 6;
   width: 505px;
   position: absolute;
   display: flex;
