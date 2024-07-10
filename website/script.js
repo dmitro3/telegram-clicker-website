@@ -960,6 +960,7 @@ function hideDeveloperField() {
 }
 
 function adjustCoinsVisual (coins) {
+  adjustProgressBar();
   document.getElementById('coinsLabel').innerHTML = coins.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
 
