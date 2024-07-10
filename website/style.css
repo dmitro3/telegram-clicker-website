@@ -1290,7 +1290,7 @@ html, body {
     width: 540px;
     height: 620px;
     overflow-y: auto;
-    z-index: 2;
+    z-index: 5;
   }
 
   #upgradeCardBox{
