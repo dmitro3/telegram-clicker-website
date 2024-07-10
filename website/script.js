@@ -375,22 +375,14 @@ developerButton.addEventListener('click', ()=>{
 });
 
 function whiteButton(image, label) {
-  if (image == 'exchangeImage1') {
-    document.getElementById(label).style.animation = 'whiteText 0.5s forwards';
-  }else {
   document.getElementById(image).style.animation = 'whiteImage 0.5s forwards';
   document.getElementById(label).style.animation = 'whiteText 0.5s forwards'
-  
-}
 }
 
+
 function unwhiteButton(image, label) {
-  if (image == 'exchangeImage1') {
-    document.getElementById(label).style.animation = 'unwhiteText 0.5s forwards';
-  }else {
     document.getElementById(image).style.animation = 'unwhiteImage 0.5s forwards';
     document.getElementById(label).style.animation = 'unwhiteText 0.5s forwards'
-  }
   }
 
 document.getElementById('mineButton').addEventListener('click', ()=>{
@@ -680,6 +672,8 @@ function showClick(event) {
     gameField.offsetHeight;
     gameField.style.animation = 'highlight';
     gameField.style.animationDuration = '1s';
+    mainButtonBox.style.animation = 'highlighButton';
+    mainButtonBox.style.animationDuration = '1s';
     document.body.appendChild(plusOne);
 
         setTimeout(() => {
@@ -1917,6 +1911,9 @@ function dailyRewards() {
 };
 
 function modifyDailyRewardsWindow (data) {
+  document.getElementById('dailyRewLabel').style.color = 'white';
+  document.getElementById('dailyRewMoney').style.color = 'white';
+  document.getElementById('doneImage').style.display = 'none'
   console.log(data)
   for (let i = 2; i < 12; i++) {
     if (data[`day${i-2}_claimed`] == 'true') {
@@ -1933,7 +1930,10 @@ function modifyDailyRewardsWindow (data) {
           document.getElementById('dailyRewardsGet').style.backgroundColor = '#454648';
           document.getElementById('dailyRewardsGetLabel').innerHTML = 'Come back tomorrow';
           document.getElementById('dailyRewardsGet').removeEventListener('click', getDailyRewards);
-          document.getElementById('dailyRewardsGet').setAttribute('data-value', 0)
+          document.getElementById('dailyRewardsGet').setAttribute('data-value', 0);
+          document.getElementById('dailyRewLabel').style.color = '#888888';
+          document.getElementById('dailyRewMoney').style.color = '#888888';
+          document.getElementById('doneImage').style.display = 'block'
         }
       break;
     }

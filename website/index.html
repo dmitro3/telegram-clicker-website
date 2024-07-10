@@ -12,8 +12,12 @@
 </head>
 <body id="body">
     <div id="blurCover"></div>
-    <h3 id="energyLabel">1000/1000</h3>
-
+    <div id="energyContainer">
+        <div id="energyBox">
+            <img src="energy.png" id="energyImage">
+            <h3 id="energyLabel">1000/1000</h3>
+        </div>
+    </div>
     <!-- Passive Income Pop Up Window -->
     <div id="passiveIncomePopUp">
         <img src="close.png" id="closeImage1">
@@ -165,9 +169,10 @@
         <h5 id="earnFieldDailyTasksLabel">Daily tasks</h5>
         <div id="earnFieldDailyRewardDiv">
             <img src="calendar.png" class="calendarImage" id="calendarImg">
-            <h4 class="dailyRewardDivLabel">Daily reward</h4>
+            <h4 class="dailyRewardDivLabel" id="dailyRewLabel">Daily reward</h4>
             <img src="coin.png" class="dailyRewardsImage">
-            <h4 class="dailyRewardDivProfit">+6 649 000</h4>
+            <h4 class="dailyRewardDivProfit" id="dailyRewMoney">+6 649 000</h4>
+            <img src="done.png" id="doneImage" alt="">
         </div>
         <h5 id="earnFieldDailyTasksLabel2">Daily tasks</h5>
         <div id="telegramDiv">
@@ -177,7 +182,7 @@
             <h4 class="dailyRewardDivProfit">+5 000</h4>
         </div>
         <div id="youtubeDiv">
-            <img src="youtube.png" id="youtubeImg" class="calendarImage" style="height: 47px; margin-top: 14px;">
+            <img src="youtube.png" id="youtubeImg" class="calendarImage">
             <h4 class="dailyRewardDivLabel">Join to our Youtube channel</h4>
             <img src="coin.png" class="dailyRewardsImage">
             <h4 class="dailyRewardDivProfit">+5 000</h4>
@@ -187,7 +192,6 @@
             <h4 class="dailyRewardDivLabel">Join to our X channel</h4>
             <img src="coin.png" class="dailyRewardsImage">
             <h4 class="dailyRewardDivProfit">+5 000</h4>
-            <div id="underX"></div>
         </div>
     </div>
     <!-- Coming Soon Div -->
@@ -230,7 +234,6 @@
     <div id="progressBar"></div>
     <h4 id="progressBarBoxStatusLabel">Silver ➤</h4>
     <h4 id="progressBarBoxLevelLabel"><span style="color: grey;">Level </span><span id="levelLevelId">1</span>/10</h4>
-    <img src="energy.png" id="energyImage">
     <!-- Mine Subfields -->
     <div id="mineMenuMenu">
         <div id="marketsMenu">
